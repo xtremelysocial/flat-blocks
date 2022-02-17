@@ -1,0 +1,136 @@
+/**
+ * Theme:	Flat Blocks
+ * File:	editor-style.css
+ * 
+ * The stylesheet for the block editor
+ *
+ * Includes only CSS specific to the block editor. Other CSS files are also loaded into 
+ * the editor.
+ *
+ * @package flat-blocks
+ */
+
+/*--------------------------------------------------------------
+# Import all front-end stylesheets
+--------------------------------------------------------------*/
+
+/*@import "assets/css/base.css";
+@import "assets/css/blocks.css";
+@import "assets/css/custom-styles.css";*/
+
+/*--------------------------------------------------------------
+# Set max-widths for default, wide, and full
+--------------------------------------------------------------*/
+/*.is-root-container {
+	padding-left: var(--wp--custom--spacing--unit);
+	padding-right: var(--wp--custom--spacing--unit);
+}*/
+
+/*body {
+	background: green !important;
+}*/
+
+.wp-block {
+    /*max-width: var(--wp--custom--layout--content-size);*/
+    max-width: min(calc(100vw - 2 * var(--wp--custom--gap--baseline)), var(--wp--custom--layout--content-size));
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+
+.wp-block[data-align=wide],
+.wp-block[data-align=full] > *,
+.editor_styles_wrapper .wp-block[data-align=full] > *[class*="wp-container-"] {
+    /*max-width: var(--wp--custom--layout--wide-size) !important;*/    
+    max-width: min(calc(100vw - 2 * var(--wp--custom--gap--baseline)), var(--wp--custom--layout--wide-size));
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+
+.wp-block[data-align=full] { /*,
+.wp-block-group.alignfull *[class*="wp-container-"],
+.wp-block-group.alignfull > .alignfull,
+*[class*="wp-container-"] *[class*="wp-container-"],
+*[class*="wp-container-"] > .alignfull {*/
+    /*max-width: var(--wp--custom--layout--full-size);*/
+    max-width: min(calc(100vw - 2 * var(--wp--custom--gap--baseline)), var(--wp--custom--layout--full-size));
+    width: 100%;    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+
+.wp-block[data-align=full] > *:not(.wp-block[data-align=full]) {
+	max-width: var(--wp--custom--layout--wide-size);
+	/*padding-left: var(--wp--custom--gap--horizontal);
+  	padding-right: var(--wp--custom--gap--horizontal);*/
+	margin-left: auto;
+    margin-right: auto;
+}
+
+/*.wp-block:not(.wp-block[data-align=wide]):not(.wp-block[data-align=full]) {
+	padding-left: var(--wp--custom--spacing--unit);
+	padding-right: var(--wp--custom--spacing--unit);
+}
+.wp-block[data-align=wide],
+.wp-block[data-align=full] {
+	padding: 0;
+}*/
+
+/**
+ * Block editor adds --wp--style--block-gap and we use padding within blocks instead
+ */
+/* MOVED TO THEME.CSS */
+/*.wp-block-group,
+.wp-block-template-part,
+.wp-block-cover {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}*/
+/**.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper > *, 
+.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper > * + *, 
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > *,
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > * + * {**/
+/*.edit-post-visual-editor__post-title-wrapper > * + *, 
+.block-editor-block-list__layout.is-root-container > * + * {*/
+/**	margin-top: 0 !important;
+}**/
+
+/*--------------------------------------------------------------
+# Padding for Background colors
+--------------------------------------------------------------*/
+/*p.has-background {
+	padding: var(--wp--custom--spacing--unit);
+	border-radius: var(--wp--custom--border-radius);
+}
+
+.wp-block-group.has-background {
+	padding: var(--wp--custom--spacing--vertical) var(--wp--custom--spacing--horizontal);
+}
+
+.wp-block-columns.has-background {
+	padding: var(--wp--custom--spacing--vertical) var(--wp--custom--spacing--horizontal);
+}
+
+.wp-block-column.has-background {
+	padding: var(--wp--custom--spacing--vertical) var(--wp--custom--spacing--horizontal);
+}*/
+
+/* Groups w/backgrounds already have padding, so remove top margin on first and last element */
+/*.wp-block-group.has-background > *:first-child,
+.wp-block-group.has-background .wp-block-column > *:first-child,
+.wp-block-column.has-background > *:first-child {
+	margin-top: 0;
+}
+.wp-block-group.has-background > *:last-child,
+.wp-block-group.has-background .wp-block-column > *:last-child,
+.wp-block-column.has-background > *:last-child {
+	margin-bottom: 0;
+}*/
+
+/* For Groups w/out backgrounds, add margin to first and last element */
+/*.wp-block-group:not(.has-background):not(.page-content) > *:last-child {
+	margin-bottom: calc(var(--wp--custom--spacing--vertical) - var(--wp--custom--spacing--unit));
+}*/

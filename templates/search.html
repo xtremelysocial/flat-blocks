@@ -1,0 +1,25 @@
+<!-- wp:template-part {"slug":"header"} /-->
+
+<!-- wp:group {"tagName":"header","align":"full","style":{"color":{"link":"var:preset|color|title-link"},"elements":{"link":{"color":{"text":"var:preset|color|title-link"}}}},"backgroundColor":"title","textColor":"title-text","className":"entry-header","layout":{"inherit":true}} -->
+<header class="wp-block-group alignfull entry-header has-title-text-color has-title-background-color has-text-color has-background has-link-color" id="page" style="--wp--style--color--link:var(--wp--preset--color--title-link)"><!-- wp:heading {"level":1,"align":"wide"} -->
+<h1 class="alignwide" id="search-results">Search Results</h1>
+<!-- /wp:heading -->
+
+<!-- wp:query-title {"type":"archive","className":"page-description has-normal-font-size"} /--></header>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"main","className":"is-style-no-padding page-content type-search template-search"} -->
+<main id="page-content" class="wp-block-group is-style-no-padding page-content type-search template-search">
+
+	<!-- wp:group {"className":"search-block","align":"wide","layout":{"inherit":true}} -->
+	<div class="wp-block-group search-block alignwide">
+	<!-- wp:search {"label":"Search...","buttonText":"Search","buttonUseIcon":true} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:template-part {"slug":"query-loop"} /-->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer"} /-->

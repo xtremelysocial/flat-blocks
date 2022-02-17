@@ -1,0 +1,275 @@
+{
+	"$schema": "https://json.schemastore.org/theme-v1.json",
+	"version": 2,
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "header",
+					"color": "var(--wp--preset--color--purple)",
+					"name": "Header"
+				},
+				{
+					"slug": "header-alt",
+					"color": "var(--wp--preset--color--darkpurple)",
+					"name": "Header Alternate"
+				},
+				{
+					"slug": "header-text",
+					"color": "var(--wp--preset--color--offwhite)",
+					"name": "Header Text"
+				},
+				{
+					"slug": "header-link",
+					"color": "var(--wp--preset--color--offwhite)",
+					"name": "Header Link"
+				},
+				{
+					"slug": "title",
+					"color": "var(--wp--preset--color--yellow)",
+					"name": "Title"
+				},
+				{
+					"slug": "title-alt",
+					"color": "var(--wp--preset--color--lightorange)",
+					"name": "Title Alternate"
+				},
+				{
+					"slug": "title-text",
+					"color": "var(--wp--preset--color--white)",
+					"name": "Title Text"
+				},
+				{
+					"slug": "title-link",
+					"color": "var(--wp--preset--color--white)",
+					"name": "Title Link"
+				},
+				{
+					"slug": "primary",
+					"color": "var(--wp--preset--color--purple)",
+					"name": "Primary"
+				},
+				{
+					"slug": "primary-alt",
+					"color": "var(--wp--preset--color--darkpurple)",
+					"name": "Primary Alternate"
+				},
+				{
+					"slug": "primary-text",
+					"color": "var(--wp--preset--color--offwhite)",
+					"name": "Primary Text"
+				},
+				{
+					"slug": "primary-link",
+					"color": "var(--wp--preset--color--offwhite)",
+					"name": "Primary Link"
+				},
+				{
+					"slug": "secondary",
+					"color": "var(--wp--preset--color--yellow)",
+					"name": "Secondary"
+				},
+				{
+					"slug": "secondary-alt",
+					"color": "var(--wp--preset--color--lightorange)",
+					"name": "Secondary Alternate"
+				},
+				{
+					"slug": "secondary-text",
+					"color": "var(--wp--preset--color--white)",
+					"name": "Secondary Text"
+				},
+				{
+					"slug": "secondary-link",
+					"color": "var(--wp--preset--color--white)",
+					"name": "Secondary Link"
+				},
+				{
+					"slug": "tertiary",
+					"color": "var(--wp--preset--color--midnightblue)",
+					"name": "tertiary Color"
+				},
+				{
+					"slug": "tertiary-alt",
+					"color": "var(--wp--preset--color--darkmidnightblue)",
+					"name": "tertiary Alternate"
+				},
+				{
+					"slug": "tertiary-text",
+					"color": "var(--wp--preset--color--offwhite)",
+					"name": "tertiary Text"
+				},
+				{
+					"slug": "tertiary-link",
+					"color": "var(--wp--preset--color--offwhite)",
+					"name": "Constrast Link"
+				},
+				{
+					"slug": "background",
+					"color": "var(--wp--preset--color--offwhite)",
+					"name": "Background"
+				},
+				{
+					"slug": "foreground",
+					"color": "var(--wp--preset--color--almostblack)",
+					"name": "Foreground"
+				},
+				{
+					"slug": "border",
+					"color": "var(--wp--preset--color--darkgray)",
+					"name": "Border"
+				},
+				{
+					"slug": "footer",
+					"color": "var(--wp--preset--color--almostblack)",
+					"name": "Footer"
+				},
+				{
+					"slug": "footer-alt",
+					"color": "var(--wp--preset--color--notquiteblack)",
+					"name": "Footer Alternate"
+				},
+				{
+					"slug": "footer-text",
+					"color": "var(--wp--preset--color--offwhite)",
+					"name": "Footer Text"
+				},
+				{
+					"slug": "footer-link",
+					"color": "var(--wp--preset--color--yellow)",
+					"name": "Footer Link"
+				},
+				{
+					"slug": "white",
+					"color": "#ffffff",
+					"name": "White"
+				},
+				{
+					"slug": "offwhite",
+					"color": "#f2f2f2",
+					"name": "Offwhite"
+				},
+				{
+					"slug": "lightgray",
+					"color": "#ebebeb",
+					"name": "Light Gray"
+				},
+				{
+					"slug": "gray",
+					"color": "#e7e7e7",
+					"name": "Gray"
+				},
+				{
+					"slug": "darkgray",
+					"color": "#e0e0e0",
+					"name": "Dark Gray"
+				},
+				{
+					"slug": "darkergray",
+					"color": "#95a5a6",
+					"name": "Darker Gray"
+				},
+				{
+					"slug": "lightgreen",
+					"color": "#1abc9c",
+					"name": "Light Green"
+				},
+				{
+					"slug": "darkgreen",
+					"color": "#16a085",
+					"name": "Dark Green"
+				},
+				{
+					"slug": "brightgreen",
+					"color": "#2ecc71",
+					"name": "Bright Green"
+				},
+				{
+					"slug": "darkbrightgreen",
+					"color": "#27ae60",
+					"name": "Dark Bright Green"
+				},
+				{
+					"slug": "yellow",
+					"color": "#f1c40f",
+					"name": "Yellow"
+				},
+				{
+					"slug": "lightorange",
+					"color": "#f39c12",
+					"name": "Light Orange"
+				},
+				{
+					"slug": "orange",
+					"color": "#e67e22",
+					"name": "Orange"
+				},
+				{
+					"slug": "darkorange",
+					"color": "#d35400",
+					"name": "Dark Orange"
+				},
+				{
+					"slug": "blue",
+					"color": "#3498db",
+					"name": "Blue"
+				},
+				{
+					"slug": "darkblue",
+					"color": "#2980b9",
+					"name": "Dark Blue"
+				},
+				{
+					"slug": "midnightblue",
+					"color": "#34495e",
+					"name": "Midnight Blue"
+				},
+				{
+					"slug": "darkmidnightblue",
+					"color": "#2c3e50",
+					"name": "Dark Midnight Blue"
+				},
+				{
+					"slug": "purple",
+					"color": "#9b59b6",
+					"name": "Purple"
+				},
+				{
+					"slug": "darkpurple",
+					"color": "#8e44ad",
+					"name": "Dark Purple"
+				},
+				{
+					"slug": "lightred",
+					"color": "#ff7878",
+					"name": "Light Red"
+				},
+				{
+					"slug": "red",
+					"color": "#e74c3c",
+					"name": "Red"
+				},
+				{
+					"slug": "darkred",
+					"color": "#c0392b",
+					"name": "Dark Red"
+				},
+				{
+					"slug": "almostblack",
+					"color": "#2f2f2f",
+					"name": "Almost Black"
+				},
+				{
+					"slug": "notquiteblack",
+					"color": "#222222",
+					"name": "Not Quite Black"
+				},
+				{
+					"slug": "black",
+					"color": "#000000",
+					"name": "Black"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,54 @@
+/**
+ * Theme:	Flat Blocks
+ * File:	custom-sticky.css
+ * 
+ * The stylesheet for our theme's custom sticky header and menu.
+ * Note: This is a separate file from the main custom-styles.css file because it should
+ * ONLY be loaded when sticky header or menu are used.
+ *
+ * @package flat-blocks
+ */
+
+/*--------------------------------------------------------------
+# Cover
+--------------------------------------------------------------*/
+
+/*.main-header-menu a {
+	color: white !important;
+}
+.main-header-menu a:hover {
+	color: #46b2ff !important;
+}
+
+ .main-header-bar {
+    background: rgba(49,49,49,.9);
+}*/
+
+/*Make Header Sticky*/
+.wp-site-blocks .site-header {
+    position: fixed;
+    top: 0;
+    left: var(--wp--custom--gap--horizontal);
+    right: var(--wp--custom--gap--horizontal);
+    width: 100%;
+    z-index: 10;
+}
+
+/*Adjust Content Padding*/
+.wp-site-blocks {
+    padding-top: 63px;
+}
+
+/*Adjust Content Padding for tablet*/
+/*@media (max-width: 800px) {
+    .wp-sitle-blocks {
+        padding-top: 126px;
+    }
+}*/
+
+/*Adjust Content Padding for mobile*/
+/*@media (max-width: 650px) {
+    .wp-sitle-blocks {
+        padding-top: 153px;
+    }
+}*/

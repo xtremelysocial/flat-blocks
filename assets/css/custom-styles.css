@@ -1,0 +1,498 @@
+/**
+ * Theme:	Flat Blocks
+ * File:	custom-styles.css
+ * 
+ * The stylesheet for our theme's custom block styles
+ *
+ * @package flat-blocks
+ */
+
+/*--------------------------------------------------------------
+# Cover
+--------------------------------------------------------------*/
+
+.wp-block-cover.is-style-cover-border {
+	border: var(--wp--custom--border--normal) var(--wp--custom--border--style) var(--wp--preset--color--border);
+	padding: var(--wp--custom--gap--vertical) var(--wp--custom--gap--horizontal);
+}
+
+/*--------------------------------------------------------------
+# Group
+--------------------------------------------------------------*/
+
+.wp-block-group.is-style-group-border {
+	border: var(--wp--custom--border--normal) var(--wp--custom--border--style) var(--wp--preset--color--border);
+	/*padding: var(--wp--custom--gap--vertical) var(--wp--custom--gap--horizontal);*/
+	padding: var(--wp--custom--gap--baseline);
+}
+
+.wp-block-group.is-style-thick-top-border {
+	/*border-top: var(--wp--custom--border--thick) var(--wp--custom--border--style) var(--wp--preset--color--border);*/
+	border: var(--wp--custom--border--thick) var(--wp--custom--border--style) var(--wp--preset--color--border);
+	border-width: var(--wp--custom--border--thick) 0 0 0;
+}
+
+.wp-block-group.is-style-thin-top-border {
+	/*border-top: var(--wp--custom--border--thin) var(--wp--custom--border--style) var(--wp--preset--color--border);*/
+	border: var(--wp--custom--border--thin) var(--wp--custom--border--style) var(--wp--preset--color--border);
+	border-width: var(--wp--custom--border--thin) 0 0 0;
+}
+
+.wp-block-group.is-style-thick-bottom-border {
+	/*border-bottom: var(--wp--custom--border--thick) var(--wp--custom--border--style) var(--wp--preset--color--border);*/
+	border: var(--wp--custom--border--thick) var(--wp--custom--border--style) var(--wp--preset--color--border);
+	border-width: 0 0 var(--wp--custom--border--thick) 0;
+}
+
+.wp-block-group.is-style-thin-bottom-border {
+	/*border-bottom: var(--wp--custom--border--thin) var(--wp--custom--border--style) var(--wp--preset--color--border);*/
+	border: var(--wp--custom--border--thin) var(--wp--custom--border--style) var(--wp--preset--color--border);
+	border-width: 0 0 var(--wp--custom--border--thin) 0;
+}
+
+.wp-block-group.is-style-thick-padding {
+	padding: calc(2 * var(--wp--custom--gap--vertical)) calc(2 * var(--wp--custom--gap--horizontal));
+}
+
+/*.wp-block-group.is-style-default-padding {
+	padding: var(--wp--custom--gap--vertical) var(--wp--custom--gap--horizontal);
+}*/
+
+.wp-block-group.is-style-thin-padding {
+	padding: calc(.5 * var(--wp--custom--gap--vertical)) calc(.5 * var(--wp--custom--gap--horizontal));
+}
+
+.wp-block-group.is-style-no-padding {
+	padding: 0;
+	/*padding-top: 0;
+	padding-bottom: 0;*/
+}
+
+/*--------------------------------------------------------------
+# Columns
+--------------------------------------------------------------*/
+
+/* When columns collapse on mobile, center them */
+/* Breakpoint of 599 is what is hard-coded in Gutenberg to collapse columns */
+/* Breakpoint of 781 is what is hard-coded in Gutenberg to set columns to 50% */
+/*@media only screen and (max-width: 599px) {*/
+@media only screen and (max-width: 781px) {
+	/* Always align text center */
+	.wp-block-columns.is-style-center-on-mobile .wp-block-column,
+	.wp-block-columns.is-style-center-on-mobile .wp-block-column .has-text-align-right,
+	.wp-block-columns.is-style-center-on-mobile .wp-block-column .has-text-align-left {
+		text-align: center;
+	}
+
+	/*.wp-block-column.is-style-center-on-mobile,
+	.wp-block-column.is-style-center-on-mobile .has-text-align-right,
+	.wp-block-column.is-style-center-on-mobile .has-text-align-left {
+		text-align: center;
+	}*/
+
+	/* For flex box items, align center */
+	/*.wp-block-columns.is-style-center-on-mobile .wp-block-column > .items-justified-left,
+	.wp-block-columns.is-style-center-on-mobile .wp-block-column > .items-justified-right,
+	.wp-block-columns.is-style-center-on-mobile .wp-block-column > .alignleft,
+	.wp-block-columns.is-style-center-on-mobile .wp-block-column > .alignright,*/
+	.wp-block-columns.is-style-center-on-mobile .wp-block-column > * {
+		text-align: center;
+		display: flex;
+		justify-content: center !important;
+		--navigation-layout-justification-setting: center;
+		--navigation-layout-justify: center;
+		float: none;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	/*.wp-block-column.is-style-center-on-mobile > .items-justified-left,
+	.wp-block-column.is-style-center-on-mobile > .items-justified-right,
+	.wp-block-column.is-style-center-on-mobile > .alignleft,
+	.wp-block-column.is-style-center-on-mobile > .alignright {
+		display: flex;
+		justify-content: center !important;
+		--navigation-layout-justification-setting: center;
+		--navigation-layout-justify: center;
+		float: none;
+		margin-left: 0;
+		margin-right: 0;
+	}*/
+		
+	/* Center block buttons */
+	.wp-block-columns.is-style-center-on-mobile .wp-block-buttons,
+	.wp-block-columns.is-style-center-on-mobile .wp-block-button {
+		display: flex;
+		justify-content: center !important;
+	}
+	
+	/* Center the mobile navigation button */
+	/*.wp-block-columns.is-style-center-on-mobile .wp-block-column .items-justified-left .wp-block-navigation__responsive-container-open,
+	.wp-block-columns.is-style-center-on-mobile .wp-block-column .items-justified-right .wp-block-navigation__responsive-container-open {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.wp-block-columnn.is-style-center-on-mobile .items-justified-left .wp-block-navigation__responsive-container-open,
+	.wp-block-columnn.is-style-center-on-mobile .items-justified-right .wp-block-navigation__responsive-container-open {
+		margin-left: auto;
+		margin-right: auto;
+	}*/
+
+}
+
+/* TO:DO - GET THIS WORKING! */
+/*
+@media (min-width: 600px) and(max-width: 781px) {
+    .wp-block-column:not(:only-child) {
+        flex-basis: calc(50% - 1em) !important;
+        flex-grow:0
+    }
+
+    .wp-block-column:nth-child(2n) {
+        margin-left:2em
+    }
+}
+
+@media (min-width: 782px) {
+    .wp-block-column {
+        flex-basis: 0;
+        flex-grow:1
+    }
+
+    .wp-block-column[style * =flex-basis] {
+        flex-grow:0
+    }
+
+    .wp-block-column:not(:first-child) {
+        margin-left:2rem;
+    }
+}
+@media (max-width: 599px) {
+    .wp-block-column {
+        margin-bottom: var(--wp--custom--gap--baseline);
+    }
+} 
+*/
+/*.wp-block-columns.is-style-thick-padding,
+.wp-block-columns.is-style-thick-padding.has-background:not(.alignful) {
+	padding: calc(2 * var(--wp--custom--gap--vertical));
+}
+
+.wp-block-columns.is-style-regular-padding,
+.wp-block-columns.is-style-regular-padding.has-background:not(.alignful) {
+	padding: var(--wp--custom--gap--vertical) var(--wp--custom--gap--horizontal);
+}
+
+.wp-block-columns.is-style-thin-padding,
+.wp-block-columns.is-style-thin-padding.has-background:not(.alignful) {
+	padding: var(--wp--custom--gap--baseline);
+}*/
+
+/*.wp-block-columns.is-style-no-padding,
+.wp-block-columns.is-style-no-padding.has-background:not(.alignful) {
+	padding: 0;
+}*/
+
+.wp-block-columns.is-style-no-margin,
+.wp-block-columns.is-style-no-margin.has-background {
+	/*margin: 0;*/ /*Removed 2/15/22*/
+	gap: 0 !important;
+	/*padding:0;*/ /*Removed 2/15/22*/
+	/*padding-left: 0 !important;*/ /*added 2/15/22*/
+	/*padding-right: 0 !important;*/ /*added 2/15/22*/
+	/*margin-left: calc(-1 * var(--wp--custom--gap--baseline)) !important;*/ /*Added 2/15/22*/
+	/*margin-right: calc(-1 * var(--wp--custom--gap--baseline)) !important;*/ /*Added 2/15/22*/
+}
+
+/*:where(.wp-block-columns.has-background) {
+        padding:1.25em 2.375em
+}*/
+
+@media (max-width: 599px) {
+    .wp-block-columns.is-style-no-margin > .wp-block-column,
+    .wp-block-column.is-style-no-margin {
+		margin-bottom: 0;
+	}
+}
+
+@media (min-width: 600px) and(max-width: 781px) {
+    .wp-block-columns.is-style-no-margin > .wp-block-column:nth-child(2n),
+    .wp-block-column.is-style-no-margin:nth-child(2n) {
+        margin-left:0;
+        padding-left: var(--wp--custom--gap--horizontal); /* 2em */
+        padding-right: var(--wp--custom--gap--horizontal); /* 2em */
+    }
+}
+
+@media (min-width: 782px) {
+	.wp-block-columns.is-style-no-margin > .wp-block-column:not(:first-child),
+	.wp-block-column.is-style-no-margin:not(:first-child) {
+		margin-left: 0;
+	}
+}
+
+/*--------------------------------------------------------------
+# Column
+--------------------------------------------------------------*/
+.wp-block-column.is-style-thick-padding,
+.wp-block-column.is-style-thick-padding.has-background:not(.alignful) {
+	padding: calc(2 * var(--wp--custom--gap--vertical)) calc(2 * var(--wp--custom--gap--horizontal));
+}
+
+.wp-block-column.is-style-regular-padding,
+.wp-block-column.is-style-regular-padding.has-background:not(.alignful) {
+	padding: var(--wp--custom--gap--vertical) var(--wp--custom--gap--horizontal);
+}
+
+.wp-block-column.is-style-thin-padding,
+.wp-block-column.is-style-thin-padding.has-background:not(.alignful) {
+	padding: calc(.5 * var(--wp--custom--gap--vertical)) calc(.5 * var(--wp--custom--gap--horizontal));
+}
+
+/*--------------------------------------------------------------
+# Buttons
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Images
+--------------------------------------------------------------*/
+
+.is-style-image-no-border,
+/*.wp-block-image.is-style-image-no-border img,*/
+.wp-block-post-featured-image.is-style-image-no-border img {	
+	border: none;
+}
+
+.wp-block-image.is-style-image-border img {
+	padding: var(--wp--custom--border--radius);
+	border: var(--wp--custom--border--thin) var(--wp--custom--border--style) var(--wp--preset--color--border);
+	border-radius: var(--wp--custom--border--radius);
+}
+
+/*.wp-block-image.is-style-image-frame img {
+	padding: var(--wp--custom--gap--baseline);
+}*/
+
+/*--------------------------------------------------------------
+# Latest Posts
+--------------------------------------------------------------*/
+
+.wp-block-latest-posts__featured-image img {
+	padding: var(--wp--custom--border-radius);
+	border: var(--wp--custom--border--thin) var(--wp--custom--border--style) var(--wp--preset--color--border);
+	border-radius: var(--wp--custom--border-radius);
+}
+
+/* Fix non-grid latest post list should have bullets like all ul's */
+.wp-block-latest-posts.wp-block-latest-posts__list:not(.is-style-latest-posts-plain):not(.is-grid) {
+	list-style: disc;
+	padding-left: var(--wp--custom--gap--horizontal); /*40px;*/
+}
+
+@media (max-width: 599px) {
+
+	/* Remove extra right margin on columns when collapsed */
+	.wp-block-latest-posts.wp-block-latest-posts__list.is-grid li {
+		margin-right: 0;
+	}
+}
+
+/* Latest Posts Dividers */
+.wp-block-latest-posts.is-style-latest-posts-dividers {
+	padding-top: var(--wp--custom--gap--vertical);
+	border-top: var(--wp--custom--border--normal) var(--wp--custom--border--style) var(--wp--preset--color--border);
+	border-bottom: var(--wp--custom--border--normal) var(--wp--custom--border--style) var(--wp--preset--color--border);
+}
+
+/* Latest Posts Borders */
+.wp-block-latest-posts.is-style-latest-posts-borders li {
+	border: var(--wp--custom--border--normal) var(--wp--custom--border--style) var(--wp--preset--color--border);
+	/*padding: var(--wp--custom--gap--vertical) var(--wp--custom--gap--horizontal);*/
+	padding: var(--wp--custom--gap--baseline)
+}
+
+.wp-block-latest-posts.is-style-latest-posts-borders:not(.is-grid) li {
+	/*margin-top: var(--wp--custom--gap--horizontal);
+	margin-bottom: var(--wp--custom--gap--horizontal);*/
+	margin-top: var(--wp--custom--gap--baseline);
+	margin-bottom: var(--wp--custom--gap--baseline);
+}
+
+/* Latest Posts Plain */
+.wp-block-latest-posts.is-style-latest-posts-plain:not(.is-grid) {
+	padding-left: 0;
+}
+
+.wp-block-latest-posts.is-style-latest-posts-plain:not(.is-grid) li {
+	margin-bottom: calc(0.5 * var(--wp--custom--gap--baseline));
+}
+
+.is-style-latest-posts-plain:not(.is-grid) a {
+    text-decoration: none;
+    /*color: var(--wp--preset--color--border);*/
+}
+
+.is-style-latest-posts-plain:not(.is-grid) a:hover,
+.is-style-latest-posts-plain:not(.is-grid) a:focus { /* Added 6/25/21 */
+    text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
+# Latest Comments
+--------------------------------------------------------------*/
+/* Set latest comments list (ol's) to match ul lists */
+ol.wp-block-latest-comments:not(.is-style-latest-comments-plain) {
+    padding-left: var(--wp--custom--gap--horizontal); /* 40px; */
+}
+
+ol.wp-block-latest-comments.is-style-latest-comments-plain {
+	padding-left: 0 !important;
+}
+
+.wp-block-latest-comments__comment {
+	list-style: disc;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.is-style-latest-comments-plain > .wp-block-latest-comments__comment {
+	list-style: none;
+	margin-bottom: calc(0.5 * var(--wp--custom--gap--baseline));
+}
+
+.is-style-latest-comments-plain a {
+    text-decoration: none;
+    /*color: var(--wp--preset--color--border);*/
+}
+
+.is-style-latest-comments-plain a:hover,
+.is-style-latest-comments-plain a:focus { /* Added 6/25/21 */
+    text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
+# Media & Text
+--------------------------------------------------------------*/
+
+.wp-block-media-text.is-style-media-text-border {
+	border: var(--wp--custom--border--normal) var(--wp--custom--border--style) var(--wp--preset--color--border);
+}
+
+/*--------------------------------------------------------------
+# Separator (hr) - MOVED TO BLOCKS.CSS SINCE WIDE AND DOTS ARE WP CORE
+--------------------------------------------------------------*/
+/*hr.wp-block-separator:not(.is-style-wide):not(.alignwide) {
+	max-width: var(--wp--custom--width--default);
+	max-width: var(--responsive--aligndefault-width);
+}
+
+hr.wp-block-separator.is-style-wide {
+	max-width: var(--wp--custom--width--wide) !important;
+	max-width: var(--responsive--alignwide-width) !important;
+}
+
+
+
+hr.wp-block-separator:not(.is-style-dots).alignwide {
+	max-width: var(--wp--custom--width--wide);
+	max-width: var(--responsive--alignwide-width);
+}
+
+hr.wp-block-separator:not(.is-style-dots).alignfull {
+	max-width: var(--wp--custom--width--wide);
+	max-width: var(--responsive--alignfull-width);
+}*/
+
+/*--------------------------------------------------------------
+# Separator
+--------------------------------------------------------------*/
+
+hr.is-style-separator-thick,
+.wp-block-separator.is-style-separator-thick {
+	border-bottom-width: var(--wp--custom--border--normal);
+}
+
+/*.wp-block-separator.is-style-dots {
+	border-bottom: none;
+}
+
+.wp-block-separator.is-style-dots > hr {
+	display: none;
+}*/
+
+/*--------------------------------------------------------------
+# Dashicons
+--------------------------------------------------------------*/
+/* TO-DO: BLOCKBASE NOW USES SVG'S FOR THIS, SO DECIDE WHETHER TO USE THOSE OR
+	OR STILL USE DASHICONS SO THAT MORE ICONS ARE AVAILABLE TO THE USER.
+*/
+.wp-block-post-author:not(.is-style-no-icon):before,
+.wp-block-post-date:not(.is-style-no-icon):before,
+/*.wp-block-post-terms:not(.is-style-no-icon-tags):before,
+.wp-block-post-terms:not(.is-style-no-icon-cats):before,*/
+.wp-block-post-terms:not(.is-style-no-icon):before,
+.wp-block-post-comments-count:not(.is-style-no-icon):before {
+	font-family: dashicons;
+	vertical-align: top;
+	padding-right: calc(.5 * var(--wp--custom--gap--horizontal)); /* .5em */
+}
+
+.rtl .wp-block-post-author:not(.is-style-no-icon):before,
+.rtl .wp-block-post-date:not(.is-style-no-icon):before,
+/*.rtl .wp-block-post-terms:not(.is-style-no-icon-tags):before,
+.rtl .wp-block-post-terms:not(.is-style-no-icon-cats):before,*/
+.rtl .wp-block-post-terms:not(.is-style-no-icon):before,
+.rtl .wp-block-post-comments-count:not(.is-style-no-icon):before {
+	padding-right: 0;
+	padding-left: calc(.5 * var(--wp--custom--gap--horizontal)); /* .5em */
+}
+
+/* dashicons-admin-users */
+.wp-block-post-author:not(.is-style-no-icon):before {
+	content: "\f110";
+}
+
+/* dashicons-calendar-alt */
+.wp-block-post-date:not(.is-style-no-icon):before {
+	content: "\f508";
+}
+
+/* dashicons-tag */
+.wp-block-post-terms.taxonomy-category:not(.is-style-no-icon):before {
+	content: "\f318";
+}
+
+/* dashicons-category */
+.wp-block-post-terms.taxonomy-post_tag:not(.is-style-no-icon):before {
+	content: "\f323";
+}
+
+/* dashicons-admin-comments for comments count */
+.wp-block-post-comments-count:not(.is-style-no-icon):before {
+	content: "\f101";
+}
+
+/* Add the word Comment(s) to the end of the comments count*/
+.wp-block-post-comments-count:not(.is-style-no-icon):after {
+	content: " Comment(s)";
+}
+
+/* dashicons-arrow-down-alt2 */
+.is-style-down-arrow-icon:before {
+	font-family: dashicons;
+	content: " \f347 ";
+	margin: var(--wp--custom--gap--vertical); /* 2rem */;
+}
+.is-style-down-arrow-icon {
+	visibility: hidden;
+	position: absolute;
+	top: -999px;
+}
+/*.is-style-down-arrow-icon {
+	position: relative;
+    top: 1px;
+    display: inline-block;
+	padding: var(--wp--custom--gap--vertical) var(--wp--custom--gap--horizontal);
+}*/
