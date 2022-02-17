@@ -20,10 +20,10 @@ class GlobalStylesColorCustomizer {
 		wp_enqueue_script( 'customizer-preview-color', get_template_directory_uri() . '/inc/customizer/wp-customize-colors-preview.js', array( 'customize-preview' ) );
 		wp_add_inline_script( 'customizer-preview-color', 'var userColorSectionKey="' . $this->section_key . '";', 'before' );
 		wp_localize_script( 'customizer-preview-color', 'userColorPalette', $this->user_color_palette );
-		/*if ( $this->theme_duotone_settings ) {
+		if ( $this->theme_duotone_settings ) {
 			wp_enqueue_script( 'colord', get_template_directory_uri() . '/inc/customizer/vendors/colord.min.js' );
 			wp_localize_script( 'customizer-preview-color', 'userColorDuotone', $this->theme_duotone_settings );
-		}*/
+		}
 	}
 
 	function update_user_color_palette( $wp_customize ) {
