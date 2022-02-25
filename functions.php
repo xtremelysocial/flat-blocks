@@ -109,6 +109,15 @@ if ( ! function_exists( 'flat_blocks_scripts' ) ) :
 		// Smooth scrolling javascript
 		wp_enqueue_script( 'flat-blocks-smoothscroll', get_template_directory_uri() . '/assets/js/smoothscroll.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
 
+		// Register custom block styles
+		if ( function_exists( 'register_block_style' ) ) {
+			wp_register_style('flat-blocks-custom-styles', get_template_directory_uri() . '/assets/css/custom-styles.css' );
+			wp_enqueue_style( 'flat-blocks-custom-styles' ); //TEST
+
+			wp_register_style('flat-blocks-custom-sticky', get_stylesheet_directory_uri() . '/assets/css/custom-sticky.css' );
+			wp_enqueue_style( 'flat-blocks-custom-sticky' ); //TEST
+		}
+
 		// Add the child theme CSS if it exists.
 		if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
 			wp_enqueue_style( 'flat-blocks-child-style', get_stylesheet_directory_uri() . '/assets/theme.css', array('flat-blocks-ponyfill'), wp_get_theme()->get( 'Version' ) );

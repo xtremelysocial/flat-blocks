@@ -12,14 +12,14 @@ if ( ! function_exists( 'flat_blocks_register_block_patterns' ) ) :
 			//'featured' 	=> array( 'label' => __( 'Featured', 'flat-blocks' ) ),
 			'header'   			=> array( 'label' => __( 'Headers', 'flat-blocks' ) ), // Core
 			'query'    			=> array( 'label' => __( 'Query', 'flat-blocks' ) ), // Core
-			//'pages'    		  => array( 'label' => __( 'Pages', 'flat-blocks' ) ),
 			'text'    			=> array( 'label' => __( 'Pages', 'flat-blocks' ) ), // Core
 			'buttons'    		=> array( 'label' => __( 'Buttons', 'flat-blocks' ) ), // Core
 			'gallery'    		=> array( 'label' => __( 'Gallery', 'flat-blocks' ) ), // Core
 			'columns'    		=> array( 'label' => __( 'Columns', 'flat-blocks' ) ), // Core
-			'flat-blocks'   => array( 'label' => __( 'Flat Blocks', 'flat-blocks' ) ), // Ours
+			'flat-blocks'   	=> array( 'label' => __( 'Flat Blocks', 'flat-blocks' ) ), // Ours
 			'cover'   			=> array( 'label' => __( 'Cover Image', 'flat-blocks' ) ), // Ours
-			'footer'   			=> array( 'label' => __( 'Footers', 'flat-blocks' ) ), // Ours
+			'footer'   			=> array( 'label' => __( 'Footers', 'flat-blocks' ) ) // Ours
+			//'pages'    		  => array( 'label' => __( 'Pages', 'flat-blocks' ) ), //ours
 		);
 
 		/**
@@ -57,7 +57,7 @@ if ( ! function_exists( 'flat_blocks_register_block_patterns' ) ) :
 				'columns-features-3-columns',
 				'columns-features-4-columns',
 				'columns-social-media-3-columns',
-				'columns-social-media-4-columns',
+				'columns-social-media-4-columns'
 			);
 			
 			//foreach ( scandir( $directory ) as $file ) {
@@ -73,8 +73,8 @@ if ( ! function_exists( 'flat_blocks_register_block_patterns' ) ) :
 				//var_dump($pattern_name); //TEST
 				
 				$pattern_title = ucwords( str_ireplace( '-', ' ', $pattern_name ) );
-				$pattern_categories = array ( 'flat-blocks', strtok( $pattern_name, '-' ) );
-				
+
+				$pattern_categories = array ( 'flat-blocks', strtok( $pattern_name, '-' ) );				
 				if ( in_array( $pattern_name, $featured_patterns ) ) {
 					$pattern_categories[] = 'featured';
 				}
@@ -83,13 +83,46 @@ if ( ! function_exists( 'flat_blocks_register_block_patterns' ) ) :
 				//var_dump($pattern_categories); //TEST
 										
 				register_block_pattern(
-					'flat-blocks-/' . $pattern_name,
+					'flat-blocks/' . $pattern_name,
 					array(
 						'title'      => __( $pattern_title, 'flat-blocks' ),
-						'categories'	=> $pattern_categories,
+						'categories' => $pattern_categories,
 						'content'    => file_get_contents (get_stylesheet_directory() . '/patterns/' . $block_pattern )
 					)
 				);
+			}
+			
+			// Load our template parts as patterns too. e.g. headers, footers, etc.
+			$core_block_types = array( 'header', 'footer', 'query' );
+
+			$template_parts = get_block_templates( 
+				$query = array(), 
+				$template_type = 'wp_template_part'
+			);
+			
+			foreach ( $template_parts as $template_part ) {
+				
+				$part_category = strtok( $template_part->slug, "-");
+				if ( array_key_exists( $part_category, $block_pattern_categories ) ) {
+
+					$part_categories = array( 'flat-blocks', $part_category );
+					
+					$block_types = array();
+					if ( in_array ( $part_category, $core_block_types ) ) {
+						$block_types[] = 'core/template-part/' . $part_category;
+					}
+					
+					register_block_pattern(
+						'flat-blocks/' . $template_part->slug,
+						array(
+							'title'      => __( $template_part->title, 'flat-blocks' ),
+							'categories' => $part_categories,
+							'blockTypes' => $block_types,
+							'content'    => $template_part->content
+						)
+					);
+
+				}
 			}
 
 			// Load header /parts html files also
@@ -105,7 +138,7 @@ if ( ! function_exists( 'flat_blocks_register_block_patterns' ) ) :
 
 			foreach ( $header_patterns as $header_pattern ) {
 				register_block_pattern(
-					'flat-blocks-/' . $header_pattern,
+					'flat-blocks/' . $header_pattern,
 					array(
 						'title'      => __( $header_pattern, 'flat-blocks' ),
 						'categories' => array( 'flat-blocks', 'header' ),
@@ -131,7 +164,7 @@ if ( ! function_exists( 'flat_blocks_register_block_patterns' ) ) :
 
 			foreach ( $footer_patterns as $footer_pattern ) {
 				register_block_pattern(
-					'flat-blocks-/' . $footer_pattern,
+					'flat-blocks/' . $footer_pattern,
 					array(
 						'title'      => __( $footer_pattern, 'flat-blocks' ),
 						'categories' => array( 'flat-blocks', 'footer' ),
@@ -145,4 +178,6 @@ if ( ! function_exists( 'flat_blocks_register_block_patterns' ) ) :
 	} //endfunction
 endif;
 
-add_action( 'init', 'flat_blocks_register_block_patterns', 10 );
+//add_action( 'init', 'flat_blocks_register_block_patterns', 10 );
+add_action( 'init', 'flat_blocks_register_block_patterns', 100 );
+//add_action( 'after_setup_theme', 'flat_blocks_register_block_patterns', 10 );

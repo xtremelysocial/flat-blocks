@@ -13,29 +13,23 @@
 # Cover
 --------------------------------------------------------------*/
 
-/*.main-header-menu a {
-	color: white !important;
-}
-.main-header-menu a:hover {
-	color: #46b2ff !important;
-}
-
- .main-header-bar {
-    background: rgba(49,49,49,.9);
-}*/
-
 /*Make Header Sticky*/
-.wp-site-blocks .site-header {
+/*.wp-site-blocks .site-header {*/
+/*.site-header.is-style-sticky-menu {*/
+header.wp-block-template-part.is-style-sticky-header {
     position: fixed;
     top: 0;
     left: var(--wp--custom--gap--horizontal);
     right: var(--wp--custom--gap--horizontal);
-    width: 100%;
     z-index: 10;
+    height: 63px;
 }
 
 /*Adjust Content Padding*/
-.wp-site-blocks {
+/*.wp-site-blocks {*/
+/*header div.site-header.is-style-sticky-menu + #page-content {*/
+/*header.wp-block-template-part.is-style-sticky-header + #page-content {*/
+header.wp-block-template-part.is-style-sticky-header + * {
     padding-top: 63px;
 }
 

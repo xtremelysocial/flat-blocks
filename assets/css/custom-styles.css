@@ -77,12 +77,13 @@
 /* Breakpoint of 781 is what is hard-coded in Gutenberg to set columns to 50% */
 /*@media only screen and (max-width: 599px) {*/
 @media only screen and (max-width: 781px) {
+
 	/* Always align text center */
-	.wp-block-columns.is-style-center-on-mobile .wp-block-column,
+	/**.wp-block-columns.is-style-center-on-mobile .wp-block-column,
 	.wp-block-columns.is-style-center-on-mobile .wp-block-column .has-text-align-right,
 	.wp-block-columns.is-style-center-on-mobile .wp-block-column .has-text-align-left {
 		text-align: center;
-	}
+	}**/
 
 	/*.wp-block-column.is-style-center-on-mobile,
 	.wp-block-column.is-style-center-on-mobile .has-text-align-right,
@@ -95,7 +96,7 @@
 	.wp-block-columns.is-style-center-on-mobile .wp-block-column > .items-justified-right,
 	.wp-block-columns.is-style-center-on-mobile .wp-block-column > .alignleft,
 	.wp-block-columns.is-style-center-on-mobile .wp-block-column > .alignright,*/
-	.wp-block-columns.is-style-center-on-mobile .wp-block-column > * {
+	/**.wp-block-columns.is-style-center-on-mobile .wp-block-column > * {
 		text-align: center;
 		display: flex;
 		justify-content: center !important;
@@ -104,7 +105,7 @@
 		float: none;
 		margin-left: 0;
 		margin-right: 0;
-	}
+	}**/
 
 	/*.wp-block-column.is-style-center-on-mobile > .items-justified-left,
 	.wp-block-column.is-style-center-on-mobile > .items-justified-right,
@@ -118,13 +119,19 @@
 		margin-left: 0;
 		margin-right: 0;
 	}*/
+
+	.wp-block-columns.is-style-center-on-mobile .wp-block-column:not(.wp-block-navigation__responsive-container-content) > * {
+		display: flex;
+		justify-content: center;
+		--navigation-layout-justify: center;		
+	}
 		
 	/* Center block buttons */
-	.wp-block-columns.is-style-center-on-mobile .wp-block-buttons,
-	.wp-block-columns.is-style-center-on-mobile .wp-block-button {
+	/*.wp-block-columns.is-style-center-on-mobile .wp-block-column > .wp-block-buttons,
+	.wp-block-columns.is-style-center-on-mobile .wp-block-column > .wp-block-button {
 		display: flex;
 		justify-content: center !important;
-	}
+	}*/
 	
 	/* Center the mobile navigation button */
 	/*.wp-block-columns.is-style-center-on-mobile .wp-block-column .items-justified-left .wp-block-navigation__responsive-container-open,
@@ -219,7 +226,7 @@
 @media (min-width: 600px) and(max-width: 781px) {
     .wp-block-columns.is-style-no-margin > .wp-block-column:nth-child(2n),
     .wp-block-column.is-style-no-margin:nth-child(2n) {
-        margin-left:0;
+        margin-left: 0;
         padding-left: var(--wp--custom--gap--horizontal); /* 2em */
         padding-right: var(--wp--custom--gap--horizontal); /* 2em */
     }
@@ -274,6 +281,14 @@
 /*.wp-block-image.is-style-image-frame img {
 	padding: var(--wp--custom--gap--baseline);
 }*/
+
+/*--------------------------------------------------------------
+# Featured Images (post / page "thumbnails")
+--------------------------------------------------------------*/
+.wp-block-post-featured-image.is-style-image-no-border img {
+	padding: none;
+	border: none;
+}
 
 /*--------------------------------------------------------------
 # Latest Posts
@@ -436,7 +451,7 @@ hr.is-style-separator-thick,
 .wp-block-post-comments-count:not(.is-style-no-icon):before {
 	font-family: dashicons;
 	vertical-align: top;
-	padding-right: calc(.5 * var(--wp--custom--gap--horizontal)); /* .5em */
+	padding-right: calc(.5 * var(--wp--custom--gap--baseline)); /* .5em */
 }
 
 .rtl .wp-block-post-author:not(.is-style-no-icon):before,
@@ -446,7 +461,7 @@ hr.is-style-separator-thick,
 .rtl .wp-block-post-terms:not(.is-style-no-icon):before,
 .rtl .wp-block-post-comments-count:not(.is-style-no-icon):before {
 	padding-right: 0;
-	padding-left: calc(.5 * var(--wp--custom--gap--horizontal)); /* .5em */
+	padding-left: calc(.5 * var(--wp--custom--gap--baseline)); /* .5em */
 }
 
 /* dashicons-admin-users */

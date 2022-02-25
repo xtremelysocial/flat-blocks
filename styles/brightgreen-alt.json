@@ -6,22 +6,22 @@
 			"palette": [
 				{
 					"slug": "header",
-					"color": "#f2f2f2",
+					"color": "#2ecc71",
 					"name": "Header"
 				},
 				{
 					"slug": "header-alt",
-					"color": "#ebebeb",
+					"color": "#27ae60",
 					"name": "Header Alternate"
 				},
 				{
 					"slug": "header-text",
-					"color": "#2f2f2f",
+					"color": "#f2f2f2",
 					"name": "Header Text"
 				},
 				{
 					"slug": "header-link",
-					"color": "#1abc9c",
+					"color": "#f2f2f2",
 					"name": "Header Link"
 				},
 				{
@@ -41,17 +41,17 @@
 				},
 				{
 					"slug": "title-link",
-					"color": "#1abc9c",
+					"color": "#2ecc71",
 					"name": "Title Link"
 				},
 				{
 					"slug": "primary",
-					"color": "#1abc9c",
+					"color": "#2ecc71",
 					"name": "Primary"
 				},
 				{
 					"slug": "primary-alt",
-					"color": "#16a085",
+					"color": "#27ae60",
 					"name": "Primary Alternate"
 				},
 				{
@@ -81,28 +81,28 @@
 				},
 				{
 					"slug": "secondary-link",
-					"color": "#1abc9c",
+					"color": "#2ecc71",
 					"name": "Secondary Link"
 				},
 				{
 					"slug": "tertiary",
 					"color": "#f1c40f",
-					"name": "Tertiary Color"
+					"name": "tertiary Color"
 				},
 				{
 					"slug": "tertiary-alt",
 					"color": "#f39c12",
-					"name": "Tertiary Alternate"
+					"name": "tertiary Alternate"
 				},
 				{
 					"slug": "tertiary-text",
 					"color": "#ffffff",
-					"name": "Tertiary Text"
+					"name": "tertiary Text"
 				},
 				{
 					"slug": "tertiary-link",
-					"color": "#1abc9c",
-					"name": "Tertiary Link"
+					"color": "#2ecc71",
+					"name": "Constrast Link"
 				},
 				{
 					"slug": "background",
@@ -121,12 +121,12 @@
 				},
 				{
 					"slug": "footer",
-					"color": "#34495e",
+					"color": "#2f2f2f",
 					"name": "Footer"
 				},
 				{
 					"slug": "footer-alt",
-					"color": "#2c3e50",
+					"color": "#222222",
 					"name": "Footer Alternate"
 				},
 				{
@@ -136,7 +136,7 @@
 				},
 				{
 					"slug": "footer-link",
-					"color": "#1abc9c",
+					"color": "#2ecc71",
 					"name": "Footer Link"
 				},
 				{

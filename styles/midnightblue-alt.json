@@ -6,37 +6,37 @@
 			"palette": [
 				{
 					"slug": "header",
-					"color": "#f2f2f2",
+					"color": "#34495e",
 					"name": "Header"
 				},
 				{
 					"slug": "header-alt",
-					"color": "#ebebeb",
+					"color": "#2c3e50",
 					"name": "Header Alternate"
 				},
 				{
 					"slug": "header-text",
-					"color": "#2f2f2f",
+					"color": "#f2f2f2",
 					"name": "Header Text"
 				},
 				{
 					"slug": "header-link",
-					"color": "#1abc9c",
+					"color": "#f2f2f2",
 					"name": "Header Link"
 				},
 				{
 					"slug": "title",
-					"color": "#34495e",
+					"color": "#f1c40f",
 					"name": "Title"
 				},
 				{
 					"slug": "title-alt",
-					"color": "#2c3e50",
+					"color": "#f39c12",
 					"name": "Title Alternate"
 				},
 				{
 					"slug": "title-text",
-					"color": "#f2f2f2",
+					"color": "#34495e",
 					"name": "Title Text"
 				},
 				{
@@ -46,12 +46,12 @@
 				},
 				{
 					"slug": "primary",
-					"color": "#1abc9c",
+					"color": "#34495e",
 					"name": "Primary"
 				},
 				{
 					"slug": "primary-alt",
-					"color": "#16a085",
+					"color": "#2c3e50",
 					"name": "Primary Alternate"
 				},
 				{
@@ -61,7 +61,7 @@
 				},
 				{
 					"slug": "primary-link",
-					"color": "#34495e",
+					"color": "#1abc9c",
 					"name": "Primary Link"
 				},
 				{
@@ -81,7 +81,7 @@
 				},
 				{
 					"slug": "secondary-link",
-					"color": "#1abc9c",
+					"color": "#f1c40f",
 					"name": "Secondary Link"
 				},
 				{
@@ -101,7 +101,7 @@
 				},
 				{
 					"slug": "tertiary-link",
-					"color": "#1abc9c",
+					"color": "#3498db",
 					"name": "Tertiary Link"
 				},
 				{

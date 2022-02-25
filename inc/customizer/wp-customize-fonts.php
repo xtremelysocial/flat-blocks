@@ -14,7 +14,9 @@ class GlobalStylesFontsCustomizer {
 
 	//Not all fonts support v2 of the API that allows for the shorter URls
 	//list of supported fonts: https://fonts.google.com/variablefonts
+	private $fonts = array();
 	private $default_fonts = array(
+	//private $fonts = array (
 		'system-font'       => array(
 			'fontFamily' => '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
 			'slug'       => 'system-font',
@@ -208,8 +210,6 @@ class GlobalStylesFontsCustomizer {
 		),
 	);
 	
-	private $fonts = array();
-
 	function __construct() {
 		add_action( 'customize_register', array( $this, 'initialize' ) );
 		add_action( 'customize_preview_init', array( $this, 'handle_customize_preview_init' ) );
@@ -301,18 +301,8 @@ class GlobalStylesFontsCustomizer {
 
 		$merged_json                = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
 		$theme_font_families        = $merged_json['settings']['typography']['fontFamilies']['theme'];
-
-    	// If theme.json has fonts then use those
-		if ( ! empty( $theme_font_families ) ) {
-			foreach ( $theme_font_families as $font ) {
-				$this->fonts[$font['slug']] = $font;
-			}		
-		// Otherwise, use the default fonts 
-		} else {
-			$this->fonts = $this->default_fonts;
-		}
-    
-    $body_font_default_array    = array_filter(
+		    
+    	$body_font_default_array    = array_filter(
 			$theme_font_families,
 			function( $font_family ) {
 				return 'body-font' === $font_family['slug'];
@@ -343,6 +333,36 @@ class GlobalStylesFontsCustomizer {
 
 			return;
 		}
+		
+		// If theme.json has fonts then use those
+		//if ( ! empty( $theme_font_families ) && count( $theme_font_families > 2) ) {
+		if ( ! empty( $theme_font_families ) ) {
+			foreach ( $theme_font_families as $font ) {
+				//$font_values = $this->build_font_from_theme_data( $font['slug'], $merged_json );
+				/*$font_values = array(
+					//$font[slug]  => array(
+					$font[fontSlug]  => array(
+					'fontFamily' => $font[fontFamily],
+					'slug'       => $font[slug],
+					'name'       => $font[name],
+					'google'     => $font[google]
+					)
+				);
+				//$this->fonts[$font['slug']] = $font;
+				$this->fonts[$font['slug']] = $font_values;*/
+				$font_values = array(
+					'fontFamily' => $font[fontFamily],
+					'slug'       => $font[fontSlug],
+					'name'       => $font[name],
+					'google'     => $font[google]
+				);
+				$this->fonts[$font['fontSlug']] = $font_values;
+			}		
+		// Otherwise, use the default fonts 
+		} else {
+			$this->fonts = $this->default_fonts;
+		}
+		//var_dump($this->fonts); //TEST
 
 		if ( array_key_exists( 'custom', $merged_json['settings']['typography']['fontFamilies'] ) ) {
 			$merged_font_families     = $merged_json['settings']['typography']['fontFamilies']['custom'];

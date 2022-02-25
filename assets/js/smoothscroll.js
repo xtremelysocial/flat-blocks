@@ -56,12 +56,16 @@
 			  // Figure out element to scroll to
 			  var target = $(this.hash);
 			  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+			  
+			  var topOffset = $('#page-content').css('padding-top');
+			  if (topOffset) topOffset = topOffset.replace('px','');
+
 			  // Does a scroll target exist?
 			  if (target.length) {
 				// Only prevent default if animation is actually gonna happen
 				event.preventDefault();
 				$('html, body').animate({
-				  scrollTop: target.offset().top
+				  scrollTop: ( target.offset().top - topOffset )
 				}, 1000, function() {
 				  // Callback after animation
 				  // Must change focus!

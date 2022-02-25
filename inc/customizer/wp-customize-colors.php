@@ -20,10 +20,11 @@ class GlobalStylesColorCustomizer {
 		wp_enqueue_script( 'customizer-preview-color', get_template_directory_uri() . '/inc/customizer/wp-customize-colors-preview.js', array( 'customize-preview' ) );
 		wp_add_inline_script( 'customizer-preview-color', 'var userColorSectionKey="' . $this->section_key . '";', 'before' );
 		wp_localize_script( 'customizer-preview-color', 'userColorPalette', $this->user_color_palette );
-		if ( $this->theme_duotone_settings ) {
+		/* TO-DO: FIX THIS */
+		/*if ( $this->theme_duotone_settings ) {
 			wp_enqueue_script( 'colord', get_template_directory_uri() . '/inc/customizer/vendors/colord.min.js' );
 			wp_localize_script( 'customizer-preview-color', 'userColorDuotone', $this->theme_duotone_settings );
-		}
+		}*/
 	}
 
 	function update_user_color_palette( $wp_customize ) {
@@ -73,14 +74,14 @@ class GlobalStylesColorCustomizer {
 
 		$combined_color_palette = $theme_json['settings']['color']['palette']['theme'];
 		$user_color_palette     = null;
-		if ( isset( $theme_json['settings']['color']['palette']['custom'] ) ) {
+		/*if ( isset( $theme_json['settings']['color']['palette']['custom'] ) ) {
 			$user_color_palette = $theme_json['settings']['color']['palette']['custom'];
 		}
 
 		// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
 		else if ( isset( $theme_json['settings']['color']['palette']['user'] ) ) {
 			$user_color_palette = $theme_json['settings']['color']['palette']['user'];
-		}
+		}*/
 		// End Gutenberg < 12.1 compatibility patch
 
 		// Combine theme settings with user settings.
@@ -182,10 +183,12 @@ class GlobalStylesColorCustomizer {
 		}
 
 		//Set the color palette if it is !== the default
-		if ( ! $this->check_if_colors_are_default() ) {
+		//if ( ! $this->check_if_colors_are_default() ) {
 			$user_theme_json_post_content = set_settings_array(
 				$user_theme_json_post_content,
-				array( 'settings', 'color', 'palette', 'custom' ),
+				//array( 'settings', 'color', 'palette', 'custom' ),
+				//array( 'settings', 'color', 'palette', 'user' ),
+				array( 'settings', 'color', 'palette', 'theme' ),
 				$this->user_color_palette
 			);
 
@@ -232,7 +235,7 @@ class GlobalStylesColorCustomizer {
 					}
 				}
 			}
-		}
+		//}
 
 		// Update the theme.json with the new settings.
 		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );
@@ -244,14 +247,14 @@ class GlobalStylesColorCustomizer {
 	}
 
 
-	function check_if_colors_are_default() {
+	/*function check_if_colors_are_default() {
 		foreach ( $this->user_color_palette as $palette_color ) {
 			if ( strtoupper( $palette_color['color'] ) !== strtoupper( $palette_color['default'] ) ) {
 				return false;
 			}
 		}
 		return true;
-	}
+	}*/
 }
 
 new GlobalStylesColorCustomizer;

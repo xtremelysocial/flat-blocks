@@ -13,7 +13,7 @@ if ( ! function_exists( 'flat_blocks_add_edit_link' ) ) :
 		if( is_singular() and current_user_can( 'edit_post', $post_id ) ) {
 			$content = $content . '<p class="edit-post-link has-small-font-size"><a href="' 
 				. get_edit_post_link( $post_id ) 
-				. '">' . __("Edit", "flat-blocks-") 
+				. '">' . __("Edit", "flat-blocks") 
 				. '</a></p>';
 		}
 		return $content;	

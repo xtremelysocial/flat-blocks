@@ -232,13 +232,14 @@ a:hover, a:focus {
 
 .block-editor-block-list__layout a,
 .wp-block-post-content a {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  -webkit-text-decoration-line: var(--wp--custom--link--typography--text-decoration, none); /*underline;*/
+          text-decoration-line: var(--wp--custom--link--typography--text-decoration, none); /*underline;*/
 }
-.block-editor-block-list__layout a:hover, .block-editor-block-list__layout a:focus,
-.wp-block-post-content a:hover,
-.wp-block-post-content a:focus {
-  text-decoration: none;
+.block-editor-block-list__layout a:not(.wp-block-button__link):hover, 
+.block-editor-block-list__layout a:not(.wp-block-button__link):focus,
+.wp-block-post-content a:not(.wp-block-button__link):hover,
+.wp-block-post-content a:not(.wp-block-button__link):focus {
+  text-decoration: var(--wp--custom--hover--typography--text-decoration, underline); /*none;*/
 }
 
 a:not(.ab-item):not(.screen-reader-shortcut):active, a:not(.ab-item):not(.screen-reader-shortcut):focus {
@@ -380,6 +381,22 @@ input[type=checkbox] + label {
   background-color: var(--wp--custom--button--color--background);
   border-color: currentColor;
 }
+
+.wp-block-button.wp-block-button__link:hover, 
+.wp-block-button.wp-block-button__link:focus, 
+.wp-block-button.wp-block-button__link.has-focus,
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link.has-focus, 
+.wp-block-button__link.wp-block-button__link:hover, 
+.wp-block-button__link.wp-block-button__link:focus, 
+.wp-block-button__link.wp-block-button__link.has-focus,
+.wp-block-button__link .wp-block-button__link:hover,
+.wp-block-button__link .wp-block-button__link:focus,
+.wp-block-button__link .wp-block-button__link.has-focus {
+  filter: brightness(85%);
+}
+
 .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
 .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
 .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
@@ -409,6 +426,21 @@ input[type=checkbox] + label {
 .wp-block-button.is-style-outline .wp-block-button__link svg, .wp-block-button__link.is-style-outline.wp-block-button__link svg,
 .wp-block-button__link.is-style-outline .wp-block-button__link svg {
   fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:hover, 
+.wp-block-button.is-style-outline.wp-block-button__link:focus, 
+.wp-block-button.is-style-outline.wp-block-button__link.has-focus,
+.wp-block-button.is-style-outline .wp-block-button__link:hover,
+.wp-block-button.is-style-outline .wp-block-button__link:focus,
+.wp-block-button.is-style-outline .wp-block-button__link.has-focus, 
+.wp-block-button__link.is-style-outline.wp-block-button__link:hover, 
+.wp-block-button__link.is-style-outline.wp-block-button__link:focus, 
+.wp-block-button__link.is-style-outline.wp-block-button__link.has-focus,
+.wp-block-button__link.is-style-outline .wp-block-button__link:hover,
+.wp-block-button__link.is-style-outline .wp-block-button__link:focus,
+.wp-block-button__link.is-style-outline .wp-block-button__link.has-focus {
+  filter: brightness(85%);
 }
 
 .wp-block-buttons .wp-block-button:last-child {
@@ -457,6 +489,7 @@ ol {
 .wp-block-navigation .has-child .wp-block-navigation__submenu-container {
   background-color: var(--wp--custom--navigation--submenu--color--background);
   border: var(--wp--custom--navigation--submenu--border--width) var(--wp--custom--navigation--submenu--border--style) var(--wp--custom--navigation--submenu--border--color);
+  border-radius: var(--wp--custom--navigation--submenu--border--radius);
 }
 .wp-block-navigation .has-child .wp-block-navigation__submenu-container a {
   color: var(--wp--custom--navigation--submenu--color--text);
@@ -947,6 +980,12 @@ p.wp-block-site-tagline {
 }
 .wp-block-file .wp-block-file__button:not(.has-background):not(.has-text-color):hover svg, .wp-block-file .wp-block-file__button:not(.has-background):not(.has-text-color):focus svg, .wp-block-file .wp-block-file__button:not(.has-background):not(.has-text-color).has-focus svg {
   fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-file .wp-block-file__button:hover, 
+.wp-block-file .wp-block-file__button:focus, 
+.wp-block-file .wp-block-file__button.has-focus {
+	filter: brightness(85%)
 }
 
 .wp-block-table.is-style-stripes,

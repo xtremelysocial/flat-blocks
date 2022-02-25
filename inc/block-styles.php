@@ -20,27 +20,37 @@ if ( function_exists( 'register_block_style' ) ) {
 	 */
 	function flat_blocks_register_block_styles() {
 
-		//wp_register_style('flat-blocks--custom-styles', get_stylesheet_directory_uri() . '/assets/css/custom-styles.css', array(), wp_get_theme()->get( 'Version' ) );
-		//wp_register_style('flat-blocks--custom-sticky', get_stylesheet_directory_uri() . '/assets/css/custom-sticky.css', array(), wp_get_theme()->get( 'Version' ) );
+		//wp_register_style('flat-blocks-custom-styles', get_stylesheet_directory_uri() . '/assets/css/custom-styles.css', array(), wp_get_theme()->get( 'Version' ) );
+		//wp_register_style('flat-blocks-custom-sticky', get_stylesheet_directory_uri() . '/assets/css/custom-sticky.css', array(), wp_get_theme()->get( 'Version' ) );
 
 		//wp_register_style('flat-blocks-custom-styles', get_stylesheet_directory_uri() . '/assets/css/custom-styles.css' );
-		wp_register_style('flat-blocks-custom-styles', get_template_directory_uri() . '/assets/css/custom-styles.css' );
+		/*wp_register_style('flat-blocks-custom-styles', get_template_directory_uri() . '/assets/css/custom-styles.css' );
 		wp_enqueue_style( 'flat-blocks-custom-styles' ); //TEST
 
-		//wp_register_style('flat-blocks--custom-sticky', get_stylesheet_directory_uri() . '/assets/css/custom-sticky.css' );
-		//wp_enqueue_style( 'flat-blocks--custom-sticky' ); //TEST
+		wp_register_style('flat-blocks-custom-sticky', get_stylesheet_directory_uri() . '/assets/css/custom-sticky.css' );
+		wp_enqueue_style( 'flat-blocks-custom-sticky' ); //TEST*/
 		
 		/*--------------------------------------------------------------
 		# Sticky Header and Menu
 		--------------------------------------------------------------*/
 		 
 		// Sticky Header
+		register_block_style(
+			'core/template',
+			array(
+				'name'  => 'sticky-header',
+				'label' => esc_html__( 'Sticky Header', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-sticky'
+			)
+		);
+				 
+		// Sticky Header
 		/*register_block_style(
 			'core/group',
 			array(
 				'name'  => 'sticky-header',
 				'label' => esc_html__( 'Sticky Header', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-sticky'
+				'style_handle'	=> 'flat-blocks-custom-sticky'
 			)
 		);*/
 
@@ -50,7 +60,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'sticky-menu',
 				'label' => esc_html__( 'Sticky Menu', 'flat-blocks' ),
-				'style_handle' => 'flat-blocks--custom-sticky'
+				'style_handle' => 'flat-blocks-custom-sticky'
 				/*'inline_style' => '.wp-site-blocks .site-header { position: fixed; top: 0; left: var(--wp--custom--gap--horizontal); right: var(--wp--custom--gap--horizontal); width: 100%; z-index: 10; }'
 								  . '.wp-site-blocks { padding-top: 63px; }'*/
 			)
@@ -66,7 +76,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'cover-border',
 				'label' => esc_html__( 'Borders', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -79,7 +89,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'media-text-border',
 				'label' => esc_html__( 'Borders', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -92,19 +102,9 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'image-border',
 				'label' => esc_html__( 'Borders', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
-
-		// Featured Image: No Borders.
-		/*register_block_style(
-			'core/featured-image',
-			array(
-				'name'  => 'image-no-border',
-				'label' => esc_html__( 'No Borders', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
-			)
-		);*/
 
 		// Image: Frame.
 		/*register_block_style(
@@ -112,9 +112,22 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'image-frame',
 				'label' => esc_html__( 'Frame', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);*/
+
+		/*--------------------------------------------------------------
+		# Featured Images (post / page "Thumbnails")
+		--------------------------------------------------------------*/
+		// Featured Image: No Borders.
+		register_block_style(
+			'core/featured-image',
+			array(
+				'name'  => 'image-no-border',
+				'label' => esc_html__( 'No Borders', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
 
 		/*--------------------------------------------------------------
 		# Latest Posts and Latest Comments styles
@@ -125,7 +138,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'latest-posts-dividers',
 				'label' => esc_html__( 'Dividers', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -135,7 +148,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'latest-posts-borders',
 				'label' => esc_html__( 'Borders', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -145,7 +158,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'latest-posts-plain',
 				'label' => esc_html__( 'Plain', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -155,7 +168,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'latest-comments-plain',
 				'label' => esc_html__( 'Plain', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -165,7 +178,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'list-plain',
 				'label' => esc_html__( 'Plain', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);*/
 
@@ -178,7 +191,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'padding',
 				'label' => esc_html__( 'Padding', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);*/
 
@@ -188,7 +201,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'thick-padding',
 				'label' => esc_html__( 'Thick Padding', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -198,7 +211,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'thin-padding',
 				'label' => esc_html__( 'Thin Padding', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -208,7 +221,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'no-padding',
 				'label' => esc_html__( 'No Padding', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -218,7 +231,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'group-border',
 				'label' => esc_html__( 'Borders', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -228,7 +241,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'thick-top-border',
 				'label' => esc_html__( 'Thick Top Border', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -238,7 +251,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'thin-top-border',
 				'label' => esc_html__( 'Thin Top Border', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 		
@@ -248,7 +261,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'thick-bottom-border',
 				'label' => esc_html__( 'Thick Bottom Border', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -258,7 +271,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'thin-bottom-border',
 				'label' => esc_html__( 'Thin Bottom Border', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -268,7 +281,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'no-margin',
 				'label' => esc_html__( 'No Margin', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -281,7 +294,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'center-on-mobile',
 				'label' => esc_html__( 'Center on Mobile', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -291,7 +304,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'thick-padding',
 				'label' => esc_html__( 'Thin Padding', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -301,7 +314,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'thin-padding',
 				'label' => esc_html__( 'Thin Padding', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -311,7 +324,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'no-padding',
 				'label' => esc_html__( 'No Padding', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);*/
 
@@ -321,7 +334,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'no-margin',
 				'label' => esc_html__( 'No Margin', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -334,7 +347,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'thick-padding',
 				'label' => esc_html__( 'Thick Padding', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -344,7 +357,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'regular-padding',
 				'label' => esc_html__( 'Regular Padding', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -354,7 +367,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'thin-padding',
 				'label' => esc_html__( 'Thin Padding', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -364,7 +377,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'no-margin',
 				'label' => esc_html__( 'No Margin', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);*/
 		
@@ -374,7 +387,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'columns-overlap',
 				'label' => esc_html__( 'Overlap', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);*/
 
@@ -387,7 +400,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'separator-thick',
 				'label' => esc_html__( 'Thick', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 		
@@ -399,7 +412,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'			=> 'no-icon',
 				'label'			=> __( 'No Icon', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -408,7 +421,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'			=> 'no-icon',
 				'label'			=> __( 'No Icon', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -417,7 +430,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'			=> 'no-icon',
 				'label'			=> __( 'No Icon', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -426,7 +439,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'			=> 'no-icon-cats',
 				'label'			=> __( 'With Category Icon', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);*/
 		
@@ -435,7 +448,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'			=> 'no-icon',
 				'label'			=> __( 'No Icon', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 
@@ -447,7 +460,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'			=> 'down-arrow-icon',
 				'label'			=> __( 'Down Arrow Icon', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);*/
 
@@ -456,7 +469,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'			=> 'down-arrow-icon',
 				'label'			=> __( 'Down Arrow Icon', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks--custom-styles'
+				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
 

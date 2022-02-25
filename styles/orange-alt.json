@@ -6,57 +6,57 @@
 			"palette": [
 				{
 					"slug": "header",
-					"color": "#f2f2f2",
+					"color": "#e67e22",
 					"name": "Header"
 				},
 				{
 					"slug": "header-alt",
-					"color": "#ebebeb",
+					"color": "#d35400",
 					"name": "Header Alternate"
 				},
 				{
 					"slug": "header-text",
-					"color": "#2f2f2f",
+					"color": "#ffffff",
 					"name": "Header Text"
 				},
 				{
 					"slug": "header-link",
-					"color": "#1abc9c",
+					"color": "#ffffff",
 					"name": "Header Link"
 				},
 				{
 					"slug": "title",
-					"color": "#34495e",
+					"color": "#f1c40f",
 					"name": "Title"
 				},
 				{
 					"slug": "title-alt",
-					"color": "#2c3e50",
+					"color": "#f39c12",
 					"name": "Title Alternate"
 				},
 				{
 					"slug": "title-text",
-					"color": "#f2f2f2",
+					"color": "#ffffff",
 					"name": "Title Text"
 				},
 				{
 					"slug": "title-link",
-					"color": "#1abc9c",
+					"color": "#34495e",
 					"name": "Title Link"
 				},
 				{
 					"slug": "primary",
-					"color": "#1abc9c",
+					"color": "#f39c12",
 					"name": "Primary"
 				},
 				{
 					"slug": "primary-alt",
-					"color": "#16a085",
+					"color": "#e67e22",
 					"name": "Primary Alternate"
 				},
 				{
 					"slug": "primary-text",
-					"color": "#f2f2f2",
+					"color": "#ffffff",
 					"name": "Primary Text"
 				},
 				{
@@ -66,12 +66,12 @@
 				},
 				{
 					"slug": "secondary",
-					"color": "#3498db",
+					"color": "#f1c40f",
 					"name": "Secondary"
 				},
 				{
 					"slug": "secondary-alt",
-					"color": "#2980b9",
+					"color": "#f39c12",
 					"name": "Secondary Alternate"
 				},
 				{
@@ -81,27 +81,27 @@
 				},
 				{
 					"slug": "secondary-link",
-					"color": "#1abc9c",
+					"color": "#34495e",
 					"name": "Secondary Link"
 				},
 				{
 					"slug": "tertiary",
-					"color": "#f1c40f",
+					"color": "#34495e",
 					"name": "Tertiary Color"
 				},
 				{
 					"slug": "tertiary-alt",
-					"color": "#f39c12",
+					"color": "#2c3e50",
 					"name": "Tertiary Alternate"
 				},
 				{
 					"slug": "tertiary-text",
-					"color": "#ffffff",
+					"color": "#f2f2f2",
 					"name": "Tertiary Text"
 				},
 				{
 					"slug": "tertiary-link",
-					"color": "#1abc9c",
+					"color": "#e67e22",
 					"name": "Tertiary Link"
 				},
 				{
@@ -121,12 +121,12 @@
 				},
 				{
 					"slug": "footer",
-					"color": "#34495e",
+					"color": "#2f2f2f",
 					"name": "Footer"
 				},
 				{
 					"slug": "footer-alt",
-					"color": "#2c3e50",
+					"color": "#222222",
 					"name": "Footer Alternate"
 				},
 				{
@@ -136,7 +136,7 @@
 				},
 				{
 					"slug": "footer-link",
-					"color": "#1abc9c",
+					"color": "#f39c12",
 					"name": "Footer Link"
 				},
 				{

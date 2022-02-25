@@ -1,142 +1,142 @@
 {
-	"$schema": "https://json.schemastore.org/theme-v1.json",
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 2,
 	"settings": {
 		"color": {
 			"palette": [
 				{
 					"slug": "header",
-					"color": "var(--wp--preset--color--offwhite)",
+					"color": "#f2f2f2",
 					"name": "Header"
 				},
 				{
 					"slug": "header-alt",
-					"color": "var(--wp--preset--color--lightgray)",
+					"color": "#ebebeb",
 					"name": "Header Alternate"
 				},
 				{
 					"slug": "header-text",
-					"color": "var(--wp--preset--color--almostblack)",
+					"color": "#555555",
 					"name": "Header Text"
 				},
 				{
 					"slug": "header-link",
-					"color": "var(--wp--preset--color--purple)",
+					"color": "#9b59b6",
 					"name": "Header Link"
 				},
 				{
 					"slug": "title",
-					"color": "var(--wp--preset--color--purple)",
+					"color": "#9b59b6",
 					"name": "Title"
 				},
 				{
 					"slug": "title-alt",
-					"color": "var(--wp--preset--color--darkpurple)",
+					"color": "#8e44ad",
 					"name": "Title Alternate"
 				},
 				{
 					"slug": "title-text",
-					"color": "var(--wp--preset--color--offwhite)",
+					"color": "#f2f2f2",
 					"name": "Title Text"
 				},
 				{
 					"slug": "title-link",
-					"color": "var(--wp--preset--color--offwhite)",
+					"color": "#f1c40f",
 					"name": "Title Link"
 				},
 				{
 					"slug": "primary",
-					"color": "var(--wp--preset--color--purple)",
+					"color": "#9b59b6",
 					"name": "Primary"
 				},
 				{
 					"slug": "primary-alt",
-					"color": "var(--wp--preset--color--darkpurple)",
+					"color": "#8e44ad",
 					"name": "Primary Alternate"
 				},
 				{
 					"slug": "primary-text",
-					"color": "var(--wp--preset--color--offwhite)",
+					"color": "#f2f2f2",
 					"name": "Primary Text"
 				},
 				{
 					"slug": "primary-link",
-					"color": "var(--wp--preset--color--offwhite)",
+					"color": "#f1c40f",
 					"name": "Primary Link"
 				},
 				{
 					"slug": "secondary",
-					"color": "var(--wp--preset--color--yellow)",
+					"color": "#f1c40f",
 					"name": "Secondary"
 				},
 				{
 					"slug": "secondary-alt",
-					"color": "var(--wp--preset--color--lightorange)",
+					"color": "#f39c12",
 					"name": "Secondary Alternate"
 				},
 				{
 					"slug": "secondary-text",
-					"color": "var(--wp--preset--color--white)",
+					"color": "#ffffff",
 					"name": "Secondary Text"
 				},
 				{
 					"slug": "secondary-link",
-					"color": "var(--wp--preset--color--white)",
+					"color": "#9b59b6",
 					"name": "Secondary Link"
 				},
 				{
 					"slug": "tertiary",
-					"color": "var(--wp--preset--color--midnightblue)",
+					"color": "#34495e",
 					"name": "tertiary Color"
 				},
 				{
 					"slug": "tertiary-alt",
-					"color": "var(--wp--preset--color--darkmidnightblue)",
+					"color": "#2c3e50",
 					"name": "tertiary Alternate"
 				},
 				{
 					"slug": "tertiary-text",
-					"color": "var(--wp--preset--color--offwhite)",
+					"color": "#f2f2f2",
 					"name": "tertiary Text"
 				},
 				{
 					"slug": "tertiary-link",
-					"color": "var(--wp--preset--color--offwhite)",
+					"color": "#f1c40f",
 					"name": "Constrast Link"
 				},
 				{
 					"slug": "background",
-					"color": "var(--wp--preset--color--offwhite)",
+					"color": "#f2f2f2",
 					"name": "Background"
 				},
 				{
 					"slug": "foreground",
-					"color": "var(--wp--preset--color--almostblack)",
+					"color": "#555555",
 					"name": "Foreground"
 				},
 				{
 					"slug": "border",
-					"color": "var(--wp--preset--color--darkgray)",
+					"color": "#e0e0e0",
 					"name": "Border"
 				},
 				{
 					"slug": "footer",
-					"color": "var(--wp--preset--color--almostblack)",
+					"color": "#2f2f2f",
 					"name": "Footer"
 				},
 				{
 					"slug": "footer-alt",
-					"color": "var(--wp--preset--color--notquiteblack)",
+					"color": "#222222",
 					"name": "Footer Alternate"
 				},
 				{
 					"slug": "footer-text",
-					"color": "var(--wp--preset--color--offwhite)",
+					"color": "#f2f2f2",
 					"name": "Footer Text"
 				},
 				{
 					"slug": "footer-link",
-					"color": "var(--wp--preset--color--yellow)",
+					"color": "#f1c40f",
 					"name": "Footer Link"
 				},
 				{
@@ -168,6 +168,11 @@
 					"slug": "darkergray",
 					"color": "#95a5a6",
 					"name": "Darker Gray"
+				},
+				{
+					"slug": "darkestgray",
+					"color": "#555555",
+					"name": "Darkest Gray"
 				},
 				{
 					"slug": "lightgreen",
