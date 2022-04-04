@@ -40,7 +40,6 @@
 	});*/
 	
 	// Select all links with hashes
-	// TO-DO: ADD OFFSET WHEN .WP-SITE-BLOCKS (OR BODY?) HAS TOP PADDING
 	$(document).ready(function() {
 		$('a[href*="#"]')
 		  // Remove links that don't actually link to anything
@@ -57,7 +56,8 @@
 			  var target = $(this.hash);
 			  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 			  
-			  var topOffset = $('#page-content').css('padding-top');
+			  //var topOffset = $('body').css('padding-top');
+			  var topOffset = $('.wp-site-blocks').css('padding-top');
 			  if (topOffset) topOffset = topOffset.replace('px','');
 
 			  // Does a scroll target exist?
@@ -65,6 +65,7 @@
 				// Only prevent default if animation is actually gonna happen
 				event.preventDefault();
 				$('html, body').animate({
+				  /*scrollTop: ( target.offset().top)*/
 				  scrollTop: ( target.offset().top - topOffset )
 				}, 1000, function() {
 				  // Callback after animation

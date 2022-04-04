@@ -36,7 +36,7 @@
 			},
 			"h3": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--bigger)",
+					"fontSize": "var(--wp--preset--font-size--medium)",
 					"textTransform": "uppercase"
 				}
 			}
@@ -128,17 +128,17 @@
 				{
 					"slug": "tertiary",
 					"color": "#e7e7e7",
-					"name": "tertiary Color"
+					"name": "Tertiary Color"
 				},
 				{
 					"slug": "tertiary-alt",
 					"color": "#e0e0e0",
-					"name": "tertiary Alternate"
+					"name": "Tertiary Alternate"
 				},
 				{
 					"slug": "tertiary-text",
 					"color": "#555555",
-					"name": "tertiary Text"
+					"name": "Tertiary Text"
 				},
 				{
 					"slug": "tertiary-link",
@@ -156,7 +156,7 @@
 					"name": "Foreground"
 				},
 				{
-					"slug": "border",
+					"slug": "default-border",
 					"color": "#e0e0e0",
 					"name": "Border"
 				},

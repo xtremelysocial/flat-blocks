@@ -87,17 +87,17 @@
 				{
 					"slug": "tertiary",
 					"color": "#34495e",
-					"name": "tertiary Color"
+					"name": "Tertiary Color"
 				},
 				{
 					"slug": "tertiary-alt",
 					"color": "#2c3e50",
-					"name": "tertiary Alternate"
+					"name": "Tertiary Alternate"
 				},
 				{
 					"slug": "tertiary-text",
 					"color": "#f2f2f2",
-					"name": "tertiary Text"
+					"name": "Tertiary Text"
 				},
 				{
 					"slug": "tertiary-link",
@@ -115,7 +115,7 @@
 					"name": "Foreground"
 				},
 				{
-					"slug": "border",
+					"slug": "default-border",
 					"color": "#e0e0e0",
 					"name": "Border"
 				},

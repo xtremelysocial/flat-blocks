@@ -45,12 +45,12 @@ function get_social_menu_as_social_links_block( $block ) {
 
 	// Get color for social icons.
 	$theme_data = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
-	$social_links_icon_color_value = "var(--wp--custom--color--primary)";
+	$social_links_icon_color_value = "var(--wp--preset--color--primary)";
 	$social_links_icon_color = 'primary';
 
 	if ( flat_blocks_theme_has_navigation_social_links_settings( $theme_data ) ) {
 		$social_links_icon_color_value = $theme_data['settings']['custom']['navigation/social-links']['color']['text'];
-		$social_links_icon_color = preg_replace( '/var\(--wp--custom--color--(.+)\)/', '$0 --> $2 $1', $social_links_icon_color_value );
+		$social_links_icon_color = preg_replace( '/var\(--wp--preset--color--(.+)\)/', '$0 --> $2 $1', $social_links_icon_color_value );
 	}
 
 	$social_links_content = '<!-- wp:social-links {"iconColor":"' . $social_links_icon_color . '","iconColorValue":"' . $social_links_icon_color_value . '","className":"' . $class_name . '"} --><ul class="wp-block-social-links has-icon-color ' . $class_name . '">';

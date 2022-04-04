@@ -6,6 +6,9 @@
  * @since 0.1
  */
 
+/* Allow excerpts on pages so users can control what shows in searches, etc. */
+add_post_type_support( 'page', 'excerpt' );
+
 /* Since there is no full-site template tag for edit page or post, add one here */
 if ( ! function_exists( 'flat_blocks_add_edit_link' ) ) :
 	function flat_blocks_add_edit_link ( $content ) {
@@ -26,7 +29,8 @@ endif; // end ! function_exists
  */
 if ( ! function_exists( 'flat_blocks_excerpt_more' ) ) :
 	function flat_blocks_excerpt_more( $more ) {
-		return '';
+		return '&hellip;';
+		//return str_ireplace( '[…]', '&hellip;', $more);
 	}
 	add_filter( 'excerpt_more', 'flat_blocks_excerpt_more' );
 endif; // end ! function_exists
@@ -34,7 +38,7 @@ endif; // end ! function_exists
 /**
  * Add the read more link to excerpts, except for image attachment pages
  */
-if ( ! function_exists( 'flat_blocks_get_the_excerpt' ) ) :
+/**if ( ! function_exists( 'flat_blocks_get_the_excerpt' ) ) :
 	function flat_blocks_get_the_excerpt( $excerpt ) {
 
 		if ( ! is_attachment() ) {
@@ -46,7 +50,7 @@ if ( ! function_exists( 'flat_blocks_get_the_excerpt' ) ) :
 		return $excerpt;
 	}
 	add_filter( 'get_the_excerpt', 'flat_blocks_get_the_excerpt' );
-endif; // end ! function_exists
+endif; // end ! function_exists**/
 
 /**
  * Allow pages to have tags and categories as well as excerpts

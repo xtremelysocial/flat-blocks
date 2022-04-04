@@ -21,46 +21,47 @@ if ( function_exists( 'register_block_style' ) ) {
 	function flat_blocks_register_block_styles() {
 
 		//wp_register_style('flat-blocks-custom-styles', get_stylesheet_directory_uri() . '/assets/css/custom-styles.css', array(), wp_get_theme()->get( 'Version' ) );
-		//wp_register_style('flat-blocks-custom-sticky', get_stylesheet_directory_uri() . '/assets/css/custom-sticky.css', array(), wp_get_theme()->get( 'Version' ) );
+		//wp_register_style('flat-blocks-custom-fixed', get_stylesheet_directory_uri() . '/assets/css/custom-fixed.css', array(), wp_get_theme()->get( 'Version' ) );
 
 		//wp_register_style('flat-blocks-custom-styles', get_stylesheet_directory_uri() . '/assets/css/custom-styles.css' );
 		/*wp_register_style('flat-blocks-custom-styles', get_template_directory_uri() . '/assets/css/custom-styles.css' );
 		wp_enqueue_style( 'flat-blocks-custom-styles' ); //TEST
 
-		wp_register_style('flat-blocks-custom-sticky', get_stylesheet_directory_uri() . '/assets/css/custom-sticky.css' );
-		wp_enqueue_style( 'flat-blocks-custom-sticky' ); //TEST*/
+		wp_register_style('flat-blocks-custom-fixed', get_stylesheet_directory_uri() . '/assets/css/custom-fixed.css' );
+		wp_enqueue_style( 'flat-blocks-custom-fixed' ); //TEST*/
 		
 		/*--------------------------------------------------------------
-		# Sticky Header and Menu
+		# Fixed Header and Menu
 		--------------------------------------------------------------*/
 		 
-		// Sticky Header
-		register_block_style(
+		// Fixed Header
+		/*register_block_style(
 			'core/template',
 			array(
-				'name'  => 'sticky-header',
-				'label' => esc_html__( 'Sticky Header', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks-custom-sticky'
-			)
-		);
-				 
-		// Sticky Header
-		/*register_block_style(
-			'core/group',
-			array(
-				'name'  => 'sticky-header',
-				'label' => esc_html__( 'Sticky Header', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks-custom-sticky'
+				'name'  => 'fixed-header',
+				'label' => esc_html__( 'Fixed Header', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-fixed'
 			)
 		);*/
+				 
+		// Fixed Header
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'fixed-header',
+				'label' => esc_html__( 'Fixed Header', 'flat-blocks' ),
+				//'style_handle'	=> 'flat-blocks-custom-fixed'
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
 
-		// Sticky Menu
+		// Fixed Menu
 		register_block_style(
 			'core/navigation',
 			array(
-				'name'  => 'sticky-menu',
-				'label' => esc_html__( 'Sticky Menu', 'flat-blocks' ),
-				'style_handle' => 'flat-blocks-custom-sticky'
+				'name'  => 'fixed-menu',
+				'label' => esc_html__( 'Fixed Menu', 'flat-blocks' ),
+				'style_handle' => 'flat-blocks-custom-styles'
 				/*'inline_style' => '.wp-site-blocks .site-header { position: fixed; top: 0; left: var(--wp--custom--gap--horizontal); right: var(--wp--custom--gap--horizontal); width: 100%; z-index: 10; }'
 								  . '.wp-site-blocks { padding-top: 63px; }'*/
 			)
@@ -83,7 +84,7 @@ if ( function_exists( 'register_block_style' ) ) {
 		/*--------------------------------------------------------------
 		# Media and Text styles
 		--------------------------------------------------------------*/
-		// Media & Text: Borders.
+		// Media and Text: Borders.
 		register_block_style(
 			'core/media-text',
 			array(
@@ -102,6 +103,27 @@ if ( function_exists( 'register_block_style' ) ) {
 			array(
 				'name'  => 'image-border',
 				'label' => esc_html__( 'Borders', 'flat-blocks' ),
+				'is_default' => true,
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		// Image: Round with Borders.
+		register_block_style(
+			'core/image',
+			array(
+				'name'  => 'image-round-border',
+				'label' => esc_html__( 'Round Borders', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		// Image: Computer Screen.
+		register_block_style(
+			'core/image',
+			array(
+				'name'  => 'image-computer-screen',
+				'label' => esc_html__( 'Computer Screen', 'flat-blocks' ),
 				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
@@ -121,7 +143,7 @@ if ( function_exists( 'register_block_style' ) ) {
 		--------------------------------------------------------------*/
 		// Featured Image: No Borders.
 		register_block_style(
-			'core/featured-image',
+			'core/post-featured-image',
 			array(
 				'name'  => 'image-no-border',
 				'label' => esc_html__( 'No Borders', 'flat-blocks' ),
@@ -172,38 +194,18 @@ if ( function_exists( 'register_block_style' ) ) {
 			)
 		);
 
-		// List: Plain.
-		/*register_block_style(
-			'core/list',
-			array(
-				'name'  => 'list-plain',
-				'label' => esc_html__( 'Plain', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks-custom-styles'
-			)
-		);*/
-
 		/*--------------------------------------------------------------
 		# Group styles
 		--------------------------------------------------------------*/
-		// Group: Padding.
-		/*register_block_style(
-			'core/group',
-			array(
-				'name'  => 'padding',
-				'label' => esc_html__( 'Padding', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks-custom-styles'
-			)
-		);*/
-
 		// Group: Thick Padding.
-		register_block_style(
+		/*register_block_style(
 			'core/group',
 			array(
 				'name'  => 'thick-padding',
 				'label' => esc_html__( 'Thick Padding', 'flat-blocks' ),
 				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
-		);
+		);*/
 
 		// Group: Thin Padding.
 		register_block_style(
@@ -235,8 +237,18 @@ if ( function_exists( 'register_block_style' ) ) {
 			)
 		);
 
-		// Group: Thick top border.
+		// Group: Rounded Borders.
 		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'group-rounded-border',
+				'label' => esc_html__( 'Rounded Borders', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		// Group: Thick top border.
+		/*register_block_style(
 			'core/group',
 			array(
 				'name'  => 'thick-top-border',
@@ -253,18 +265,8 @@ if ( function_exists( 'register_block_style' ) ) {
 				'label' => esc_html__( 'Thin Top Border', 'flat-blocks' ),
 				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
-		);
+		);*/
 		
-		// Group: Thick bottom border.
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'thick-bottom-border',
-				'label' => esc_html__( 'Thick Bottom Border', 'flat-blocks' ),
-				'style_handle'	=> 'flat-blocks-custom-styles'
-			)
-		);
-
 		// Group: Thin bottom border.
 		register_block_style(
 			'core/group',
@@ -275,15 +277,94 @@ if ( function_exists( 'register_block_style' ) ) {
 			)
 		);
 
-		// Group: No Margins (well, no top or bottom margins. Need to leave left and right for wide group handling.).
+		// Group: Thick bottom border.
 		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'thick-bottom-border',
+				'label' => esc_html__( 'Thick Bottom Border', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		// Group: Top Margin
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'top-margin',
+				'label' => esc_html__( 'Top Margin', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		// Group: Thin Top Margin
+		/*register_block_style(
+			'core/group',
+			array(
+				'name'  => 'thin-top-margin',
+				'label' => esc_html__( 'Thin Top Margin', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		// Group: Thick Top Margin
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'thick-top-margin',
+				'label' => esc_html__( 'Thick Top Margin', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);*/
+
+		// Group: Top and Bottom Margin
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'margin',
+				'label' => esc_html__( 'Top and Bottom Margin', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'bottom-margin',
+				'label' => esc_html__( 'Bottom Margin', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		// Group: Thin Top and Bottom Margin
+		/*register_block_style(
+			'core/group',
+			array(
+				'name'  => 'thin-margin',
+				'label' => esc_html__( 'Thin Top and Bottom Margin', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		// Group: Thick Top and Bottom Margin
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'thick-margin',
+				'label' => esc_html__( 'Thick Top and Bottom Margin', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);*/
+
+		// Group: No Margins (well, no top or bottom margins. Need to leave left and right for wide group handling.).
+		/*register_block_style(
 			'core/group',
 			array(
 				'name'  => 'no-margin',
 				'label' => esc_html__( 'No Margin', 'flat-blocks' ),
 				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
-		);
+		);*/
 
 		/*--------------------------------------------------------------
 		# Columns styles
@@ -371,6 +452,16 @@ if ( function_exists( 'register_block_style' ) ) {
 			)
 		);
 
+		// Column: Rounded Borders.
+		register_block_style(
+			'core/column',
+			array(
+				'name'  => 'column-rounded-border',
+				'label' => esc_html__( 'Rounded Border', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
 		// Column: No margin.
 		/*register_block_style(
 			'core/column',
@@ -392,6 +483,111 @@ if ( function_exists( 'register_block_style' ) ) {
 		);*/
 
 		/*--------------------------------------------------------------
+		# Site Title
+		--------------------------------------------------------------*/
+		// Site Title: Plain (normal font size).
+		/*register_block_style(
+			'core/site-title',
+			array(
+				'name'  => 'plain-title',
+				'label' => esc_html__( 'Plain', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);*/
+
+		/*--------------------------------------------------------------
+		# Site Tagline
+		--------------------------------------------------------------*/
+		// Site Title: Plain (normal font size).
+		/*register_block_style(
+			'core/site-title',
+			array(
+				'name'  => 'plain-title',
+				'label' => esc_html__( 'Plain', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);*/
+
+		/*--------------------------------------------------------------
+		# Comments
+		--------------------------------------------------------------*/
+		// Comments: Thin Padding (doesn't show up in editor).
+		/*register_block_style(
+			'core/comments',
+			array(
+				'name'  => 'thin-padding',
+				'label' => esc_html__( 'Thin Padding', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);*/
+		
+		// Group: Rounded Borders.
+		register_block_style(
+			'core/post-comments',
+			array(
+				'name'  => 'comments-rounded-border',
+				'label' => esc_html__( 'Rounded Borders', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		/*--------------------------------------------------------------
+		# Excerpts
+		--------------------------------------------------------------*/
+		// Excerpts: No Read More link.
+		register_block_style(
+			'core/post-excerpt',
+			array(
+				'name'  => 'no-readmore',
+				'label' => esc_html__( 'No Read More', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		/*--------------------------------------------------------------
+		# List styles
+		--------------------------------------------------------------*/
+		// List: Plain.
+		/*register_block_style(
+			'core/list',
+			array(
+				'name'  => 'list-plain',
+				'label' => esc_html__( 'Plain', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);*/
+
+		// List: Checkmarks.
+		register_block_style(
+			'core/list',
+			array(
+				'name'  => 'list-checkmarks',
+				'label' => esc_html__( 'Checkmarks', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		// List: Plain (no bullets).
+		register_block_style(
+			'core/list',
+			array(
+				'name'  => 'list-plain',
+				'label' => esc_html__( 'Plain', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		// List: Plain Centered).
+		register_block_style(
+			'core/list',
+			array(
+				'name'  => 'list-plain-centered',
+				'label' => esc_html__( 'Plain Centered', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		/*--------------------------------------------------------------
 		# Separator styles
 		--------------------------------------------------------------*/
 		// Separator: Thick.
@@ -404,6 +600,20 @@ if ( function_exists( 'register_block_style' ) ) {
 			)
 		);
 		
+		/*--------------------------------------------------------------
+		# Social Icons
+		--------------------------------------------------------------*/
+
+		// Social Icons: No Margin.
+		register_block_style(
+			'core/social-icons',
+			array(
+				'name'  => 'no-margin',
+				'label' => esc_html__( 'No Margin', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+				
 		/*--------------------------------------------------------------
 		# Post Meta styles
 		--------------------------------------------------------------*/
@@ -455,20 +665,66 @@ if ( function_exists( 'register_block_style' ) ) {
 		/*--------------------------------------------------------------
 		# Elements styles
 		--------------------------------------------------------------*/
+
+		/* Paragraphs */
+		register_block_style(
+			'core/paragraph',
+			array(
+				'name'			=> 'no-margin',
+				'label'			=> __( 'No Margin', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		register_block_style(
+			'core/paragraph',
+			array(
+				'name'			=> 'arrow-icon',
+				'label'			=> __( 'Arrow Icon', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		register_block_style(
+			'core/paragraph',
+			array(
+				'name'			=> 'arrow-icon-no-text',
+				'label'			=> __( 'Arrow No Text', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
 		/*register_block_style(
 			'core/paragraph',
+			array(
+				'name'			=> 'down-arrow-no-text',
+				'label'			=> __( 'Link Down Arrow No Text', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);*/
+
+		/*register_block_style(
+			'core/link',
 			array(
 				'name'			=> 'down-arrow-icon',
 				'label'			=> __( 'Down Arrow Icon', 'flat-blocks' ),
 				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);*/
+		register_block_style(
+			'core/paragraph',
+			array(
+				'name'			=> 'link-underline',
+				'label'			=> __( 'Underline', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
 
 		register_block_style(
-			'core/link',
+			'core/paragraph',
 			array(
-				'name'			=> 'down-arrow-icon',
-				'label'			=> __( 'Down Arrow Icon', 'flat-blocks' ),
+				'name'			=> 'link-no-underline',
+				'label'			=> __( 'No Underline', 'flat-blocks' ),
 				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);

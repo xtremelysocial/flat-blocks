@@ -9,37 +9,112 @@
 
 @charset "UTF-8";
 
-/**
- * Block editor adds --wp--style--block-gap and we use padding within blocks instead
- */
-/**.wp-block-group,
-.wp-block-template-part,
-.wp-block-cover {
-	margin-top: 0 !important;
-	margin-bottom: 0 !important;
-}**/
+/*--------------------------------------------------------------
+# html
+--------------------------------------------------------------*/
+/*html {
+	font-size: var(--wp--custom--body--typography--font-size);*/ /*18px;*/ /* Establishes 1em */
+/*}*/
 
+/* Prevent iOS text size adjust after orientation change, without disabling user zoom. */
+html {
+	-webkit-text-size-adjust: 100%
+}
+
+/*--------------------------------------------------------------
+# Body
+--------------------------------------------------------------*/
 /* Don't let anything be wider than our max width. This is so fullwidth images don't
  * get so wide they lose resolution
  */
-.body {
-	font-size: var(--wp--preset--font-size--normal); /* Establishes 1em */
+body {
 	max-width: var(--wp--custom--layout--full-size);
 	margin-left: auto;
     margin-right: auto;
 }
 
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
 /* Don't let anything within alignfull be wider than alignwide. This is because 
  * WordPress core doesn't have any width constraint and paragraphs will be crazy wide
  * and break the page layout.
  */
 .alignwide,
-.alignfull:not(.wp-block-cover) > *:not(.alignfull):not(img):not(.wp-block-columns.is-style-no-margin):not(.wp-block-cover__inner-container) {
+.alignfull:not(.wp-block-cover) > *:not(.alignfull):not(aligndefault):not(img):not(.wp-block-columns.is-style-no-margin):not(.wp-block-cover__inner-container):not(.wp-block-cover__background),
+.alignfull.wp-block-cover > .wp-block-cover__inner-container > *:not(img) {
 	max-width: var(--wp--custom--layout--wide-size);
 	/*padding-left: var(--wp--custom--gap--horizontal);
   	padding-right: var(--wp--custom--gap--horizontal);*/
 	margin-left: auto;
     margin-right: auto;
+}
+
+.alignfull > .alignfull > *:not(img):not(.wp-block-columns.is-style-no-margin):not(.wp-block-cover__inner-container):not(.wp-block-cover__background) {
+	max-width: var(--wp--custom--layout--wide-size);
+	margin-left: auto;
+    margin-right: auto;
+}
+
+/**
+ * Block editor adds --wp--style--block-gap and we use padding within blocks instead
+ */
+/**.wp-block-group,
+.wp-block-template-part,
+.wp-block-cover {**/
+.wp-block-template-part {
+	/*margin-top: 0 !important;
+	margin-bottom: 0 !important;*/
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+/* Constrain content narrow unless wide or full */
+aligndefault,
+.wp-block-post-content:not(.alignwide):not:(.alignfull) {
+	max-width: var(--wp--custom--layout--content-size);
+	margin-left: auto;
+    margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Main Content (Pages and Posts)
+--------------------------------------------------------------*/
+/* First add top and bottom margin to main content */
+/*.main-content {
+	margin-top: var(--wp--custom--gap--baseline);
+	margin-bottom: var(--wp--custom--gap--baseline);
+}*/
+
+/* Then add first and last element margins */
+/*.main-content > *:first-child:not(.wp-block-cover) {
+	margin-top: var(--wp--custom--gap--baseline);
+}
+.main-content > *:last-child {
+	margin-bottom: var(--wp--custom--gap--baseline);
+}*/
+
+/*--------------------------------------------------------------
+# Clear floats
+--------------------------------------------------------------*/
+.wp-block-group:after,
+.wp-block-post-comments > .navigation:after,
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*--------------------------------------------------------------
+# Post Content
+--------------------------------------------------------------*/
+/* These fixes should actually be submitted to the blockbase theme (ponyfill.css) */
+.wp-block-post-content p.wp-block.wp-block-paragraph,
+.wp-block-post-content *[class^=wp-container] > * + p,
+.wp-block-post-content *[class^=wp-container] > p + *,
+.wp-block-post-content p {
+  margin-top: var(--wp--custom--gap--baseline);
 }
 
 /*--------------------------------------------------------------
@@ -62,23 +137,24 @@ img {
 	width: 100%; /*100vw;*/
 }
 
-.wp-block-group:not(.is-style-no-padding) > p:first-child {
-	margin-top: 0;
-}
-.wp-block-group:not(.is-style-no-padding) > p:last-child {
-	margin-bottom: 0;
-}
-
 /*--------------------------------------------------------------
 # Groups
 --------------------------------------------------------------*/
 /* Leave this until WordPress core or Blockbase supports blockGap setting on Groups */
-.wp-block-group {
-	--wp--style--block-gap: var(--wp--custom--gap--group);
+/**.wp-block-group {**/
+	/**--wp--style--block-gap: var(--wp--custom--gap--group);**/
 	/*gap: var(--wp--custom--gap--group) !important*/
-}
+	/**margin-top: var(--wp--custom--gap--group) !important;
+}**/
 
 /* Remove first and last element margins */
+.wp-block-group:not(.is-style-no-padding) > *:first-child {
+	margin-top: 0 !important;
+}
+.wp-block-group:not(.is-style-no-padding) > *:last-child {
+	margin-bottom: 0 !important;
+}
+
 /*.wp-block-group:not(.is-style-no-padding) > *:first-child {
 	margin-top: 0;
 }
@@ -89,31 +165,249 @@ img {
 /*--------------------------------------------------------------
 # Columns
 --------------------------------------------------------------*/
-/* Leave this until WordPress core or Blockbase supports blockGap setting on Groups */
+/* This shouldn't be needed, but there is some bug in WordPress */
 .wp-block-columns {
-	--wp--style--block-gap: var(--wp--custom--gap--horizontal);
+	gap: var(--wp--custom--gap--vertical) var(--wp--custom--gap--horizontal);
+	/*gap: var(--wp--custom--gap--baseline);*/
+	/*--wp--style--block-gap: var(--wp--custom--gap--horizontal);*/
+}
+
+/* Leave this until WordPress core or Blockbase supports blockGap setting on Columns */
+/*.wp-block-columns {
+	--wp--style--block-gap: var(--wp--custom--gap--horizontal);*/
 	/*gap: var(--wp--custom--gap--horizontal) !important*/
 	/*gap: var(--wp--custom--columns--spacing--block-gap) !important*/
-}
+/*}*/
 
-/* Remove first and last element margins */
-.wp-block-column:not(.is-style-no-padding) > *:first-child {
-	margin-top: 0;
-}
-.wp-block-column:not(.is-style-no-padding) > *:last-child {
-	margin-bottom: 0;
-}
+/* Remove first and last element margins but not on mobile */
+/**@media screen and (min-width: 783px) {
+	.wp-block-column:not(.is-style-no-padding) > *:first-child {
+		margin-top: 0;
+	}
+	.wp-block-column:not(.is-style-no-padding) > *:last-child {
+		margin-bottom: 0;
+	}
+}**/
 
+
+/*--------------------------------------------------------------
+# Queries
+--------------------------------------------------------------*/
+/* Doesn't work: they use ems that are hard-coded */
+/*.wp-block-post-template.is-flex-container, 
+.wp-block-query-loop.is-flex-container {
+	gap: var(--wp--custom--gap--vertical) var(--wp--custom--gap--horizontal);
+	--wp--style--block-gap: var(--wp--custom--gap--horizontal);	
+}*/
 
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 /* Leave this until WordPress core or Blockbase supports blockGap setting on Groups */
-.wp-block-navigation {
+/**.wp-block-navigation {**/
 	/*--wp--style--block-gap: var(--wp--custom--navigation--spacing--block-gap);
 	gap: var(--wp--custom--navigation--spacing--block-gap) !important*/
-	--wp--style--block-gap: var(--wp--custom--gap--baseline);
+	/**--wp--style--block-gap: var(--wp--custom--gap--baseline);
+}**/
+
+/* These fixes should actually be submitted to the blockbase theme (ponyfill.css) */
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+    padding-top: var(--wp--custom--gap--baseline);
 }
+
+.wp-block-navigation__responsive-container.is-menu-open {
+    padding: var(--wp--custom--gap--baseline);
+}
+
+/* Adjust mobile menu top padding so its underneath the WordPress admin bar */
+/*.admin-bar .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+		padding-top: calc(46px + var(--wp--custom--gap--baseline));
+}*/
+.admin-bar .wp-block-navigation__responsive-container.is-menu-open {
+	padding-top: calc(46px + var(--wp--custom--gap--baseline));
+}
+/*@media screen and (min-width: 783px) {*/
+	/*.admin-bar .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+			padding-top: calc(32px + var(--wp--custom--gap--baseline));
+	}
+	.admin-bar .wp-block-navigation__responsive-container.is-menu-open {
+			padding-top: calc(32px + var(--wp--custom--gap--baseline));
+	}*/
+/*}*/
+
+/*#wpadminbar {
+	flex-wrap: nowrap;
+}*/
+
+/* Prevent secondary admin bar from covering header. This really should be a fix to WordPress itself */
+@media screen adn (max-width: 600px) {
+	.ab-top-secondary ab-top-menu {
+		display:none;
+	}
+}
+
+.wp-block-navigation .wp-block-navigation-item__content {
+    text-transform: inherit;
+    font-weight: inherit;
+}
+
+/* Fix nav submenu colors */
+/*.wp-block-navigation.is-responsive:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
+  background-color: var(--wp--custom--navigation--submenu--color--background);
+  color: var(--wp--custom--navigation--submenu--color--text);
+}*/
+
+/* Fix nav submenus when colored in the block editor */
+.wp-block-navigation .has-child .wp-block-navigation__submenu-container a {
+  /*color: var(--wp--custom--navigation--submenu--color--text);*/
+  color: inherit;
+}
+
+/* Fix the mobile nav menu button color (use header colors) */
+.wp-block-navigation .wp-block-navigation__responsive-container-open {
+	/*color: var(--wp--custom--navigation--submenu--color--background);
+	background-color: var(--wp--custom--navigation--submenu--color--text);*/
+	background-color: var(--wp--preset--color--header);
+	color: var(--wp--preset--color--header-text);
+}
+
+/* Fix the close button (X) to the same place as the open button */
+.wp-block-navigation.is-responsive .wp-block-navigation__responsive-container-close {
+  right: 8px;
+  top: 10px;
+}
+
+/*.wp-block-navigation-submenu__toggle {
+    font-weight: var(--wp--custom--navigation--typography--font-weight);
+}*/
+
+/*--------------------------------------------------------------
+# Buttons
+--------------------------------------------------------------*/
+/* Leave this until WordPress core or Blockbase supports blockGap setting on Groups */
+/**.wp-block-buttons {**/
+	/*--wp--style--block-gap: var(--wp--custom--navigation--spacing--block-gap);
+	gap: var(--wp--custom--navigation--spacing--block-gap) !important*/
+	/**--wp--style--block-gap: var(--wp--custom--gap--baseline);
+}**/
+
+/* Fix for comment submit button */
+/*.wp-block-post-comments form p {*/
+.form-submit.wp-block-button {
+  margin-bottom: 0;
+}
+
+/* Prevent iOS from rounding buttons */
+input:not([type="radio"]):not([type="checkbox"]) {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
+/* These fixes should actually be submitted to the blockbase theme (ponyfill.css) */
+.post-comments:empty,
+.post-comments > *:empty {
+	display: none;
+}
+
+/* Fix this so its not pulled outside the container */
+.wp-block-post-comments .comment-meta {
+	/*font-size: .875em;
+	line-height: 1.5;*/
+	margin-left: 0; /*-3.25em*/
+}
+
+/* Get rid of the extra space at the top */
+#respond > *:first-child {
+	margin-top: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Site Logo
+--------------------------------------------------------------*/
+@media (max-width: 599px) {
+  /*.wp-site-blocks .site-header .site-brand {
+    display: contents;
+  }*/
+  .wp-site-blocks .site-header .wp-block-site-logo {
+    flex-basis: auto;
+    margin-bottom: 0;
+    margin-top: 0;
+    /*text-align: reset;*/
+  }
+}
+
+
+
+
+/*--------------------------------------------------------------
+# Author Bio
+--------------------------------------------------------------*/
+/* These fixes should actually be submitted to the blockbase theme (ponyfill.css) */
+.wp-block-post-author__bio {
+	font-size: var(--wp--preset--font-size--small);
+}
+
+/*--------------------------------------------------------------
+# Custom User Page/Post Titles w/Excerpt
+--------------------------------------------------------------*/
+header.entry-header .wp-block-post-excerpt__excerpt .read-more {
+	display: none;
+}
+header.entry-header .wp-block-post-excerpt__excerpt {
+	margin-bottom: 0;
+	/*white-space: nowrap;
+  	overflow: hidden;
+	text-overflow: ellipsis;*/
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+/* These fixes should actually be submitted to the blockbase theme (ponyfill.css) */
+p.has-background {
+	padding: var(--wp--custom--gap--vertical) var(--wp--custom--gap--horizontal); /*1.25em 2.375em*/
+}
+
+/* Fix blocks adding top margin to a spacer */
+/*.wp-block-spacer {
+	margin-top: 0 !important;
+}*/
+
+.wp-block-term-description > p {
+	margin-bottom: 0;
+}
+
+ol.has-background, 
+ul.has-background {
+	/*padding: var(--wp--custom--gap--vertical) var(--wp--custom--gap--horizontal);*/
+	padding: var(--wp--custom--gap--baseline);
+}
+
+/*--------------------------------------------------------------
+# Social Link Icons
+--------------------------------------------------------------*/
+/* These fixes should actually be submitted to the blockbase theme (ponyfill.css) */
+/*.wp-block-social-links.has-small-icon-size {
+    font-size: var(--wp--preset--font-size--normal, 16px);
+}
+
+.wp-block-social-links, .wp-block-social-links.has-normal-icon-size {
+    font-size: var(--wp--preset--font-size--medium, 24px);
+}
+
+.wp-block-social-links.has-large-icon-size {
+    font-size: var(--wp--preset--font-size--x-large, 36px);
+}
+
+.wp-block-social-links.has-huge-icon-size {
+    font-size: var(--wp--preset--font-size--huge, 48px);
+}*/
+
 
 /*--------------------------------------------------------------
 # Dashicons
@@ -124,13 +418,4 @@ img {
 .dashicons-before:before {
 	width: auto !important;
 	height: auto !important;
-}
-
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-/* This fix should actually be submitted to the blockbase theme (ponyfill.css) */
-.wp-block-navigation .wp-block-navigation-item__content {
-    text-transform: inherit;
 }

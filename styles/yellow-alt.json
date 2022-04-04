@@ -120,7 +120,7 @@
 					"name": "Foreground"
 				},
 				{
-					"slug": "border",
+					"slug": "default-border",
 					"color": "#e0e0e0",
 					"name": "Border"
 				},

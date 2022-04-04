@@ -11,9 +11,6 @@ if ( ! function_exists( 'flat_blocks_support' ) ) :
 		// https://github.com/WordPress/gutenberg/issues/26901
 		add_theme_support( 'responsive-embeds' );
 
-		// Add support for editor styles.
-		add_theme_support( 'editor-styles' );
-
 		// Add support for post thumbnails.
 		add_theme_support( 'post-thumbnails' );
 
@@ -22,6 +19,19 @@ if ( ! function_exists( 'flat_blocks_support' ) ) :
 
 		// Experimental support for adding blocks inside nav menus
 		add_theme_support( 'block-nav-menus' );
+
+		// Add support for editor styles.
+		add_theme_support( 'editor-styles' );
+		
+		// Enqueue editor styles.
+		add_editor_style(
+			array(
+				'/assets/ponyfill.css',
+				'/assets/theme.css',
+				'/assets/css/custom-styles.css',
+				//'/assets/css/editor-style.css'
+			)
+		);
 
 		// This theme uses wp_nav_menu() in up to 4 locations
 		register_nav_menus( array(
@@ -36,6 +46,7 @@ if ( ! function_exists( 'flat_blocks_support' ) ) :
 			'block_editor_settings_all',
 			function( $settings ) {
 				$settings['defaultBlockTemplate'] = '<!-- wp:group {"layout":{"inherit":true}} --><div class="wp-block-group"><!-- wp:post-content /--></div><!-- /wp:group -->';
+				//$settings['defaultBlockTemplate'] = '<-- wp:post-excerpt --><!-- wp:group {"layout":{"inherit":true}} --><div class="wp-block-group"><!-- wp:post-content /--></div><!-- /wp:group -->';
 				return $settings;
 			}
 		);
@@ -51,6 +62,11 @@ if ( ! function_exists( 'flat_blocks_support' ) ) :
 			)
 		);
 		
+		// This is our standard thumbnail size for things like blog posts.
+		//set_post_thumbnail_size( 750, 422, array( 'left', 'top' ) ); // crop left top
+		//set_post_thumbnail_size( 750, 422, true ) ); // crop center
+		add_image_size( 'medium-large', 750, 422 ); // 16:9 ratio
+		
 		// Add support for starter content
 		/*include get_stylesheet_directory() . '/inc/starter-content.php';
 		add_theme_support(
@@ -63,19 +79,31 @@ add_action( 'after_setup_theme', 'flat_blocks_support', 9 );
 
 /**
  *
- * Enqueue scripts and styles.
+ * Admin Enqueue scripts and styles.
  */
 if ( ! function_exists( 'flat_blocks_editor_styles' ) ) :
 	function flat_blocks_editor_styles() {
+
 		// Enqueue editor styles.
 		add_editor_style(
 			array(
 				flat_blocks_fonts_url(),
-				'/assets/theme.css',
-				'/assets/css/custom-styles.css',
+				//'/assets/theme.css',
+				//'/assets/css/custom-styles.css',
 				//'/assets/css/editor-style.css'
 			)
 		);
+		
+		// Smooth scrolling javascript
+		wp_enqueue_script( 'flat-blocks-smoothscroll', get_template_directory_uri() . '/assets/js/smoothscroll.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
+
+		// Fixed header javascript
+		wp_enqueue_script( 'flat-blocks-fixedheader', get_template_directory_uri() . '/assets/js/fixedheader.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
+
+		// For single pages or posts, add javascript to reply inline (from old _S Theme)
+		/*if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}*/
 
 		// Add the child theme CSS if it exists.
 		if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
@@ -89,7 +117,7 @@ add_action( 'admin_init', 'flat_blocks_editor_styles' );
 
 /**
  *
- * Enqueue scripts and styles.
+ * Front-end Enqueue scripts and styles.
  */
 if ( ! function_exists( 'flat_blocks_scripts' ) ) :
 	function flat_blocks_scripts() {
@@ -109,13 +137,16 @@ if ( ! function_exists( 'flat_blocks_scripts' ) ) :
 		// Smooth scrolling javascript
 		wp_enqueue_script( 'flat-blocks-smoothscroll', get_template_directory_uri() . '/assets/js/smoothscroll.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
 
+		// Fixed header javascript
+		wp_enqueue_script( 'flat-blocks-fixedheader', get_template_directory_uri() . '/assets/js/fixedheader.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
+
 		// Register custom block styles
 		if ( function_exists( 'register_block_style' ) ) {
 			wp_register_style('flat-blocks-custom-styles', get_template_directory_uri() . '/assets/css/custom-styles.css' );
 			wp_enqueue_style( 'flat-blocks-custom-styles' ); //TEST
 
-			wp_register_style('flat-blocks-custom-sticky', get_stylesheet_directory_uri() . '/assets/css/custom-sticky.css' );
-			wp_enqueue_style( 'flat-blocks-custom-sticky' ); //TEST
+			/*wp_register_style('flat-blocks-custom-fixed', get_stylesheet_directory_uri() . '/assets/css/custom-fixed.css' );
+			wp_enqueue_style( 'flat-blocks-custom-fixed' ); //TEST*/
 		}
 
 		// Add the child theme CSS if it exists.
@@ -188,6 +219,9 @@ if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
 	require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
 }
 
+// Append social icons to menus
+/////require get_template_directory() . '/inc/social-navigation.php';
+
 // Force menus to reload
 add_action(
 	'customize_controls_enqueue_scripts',
@@ -205,7 +239,7 @@ add_action(
 /**
  * Social Navigation Menu.
  */
-//require get_template_directory() . '/inc/social-navigation.php';
+require get_template_directory() . '/inc/social-navigation.php';
 
 /**
  * Block Styles.
