@@ -219,9 +219,6 @@ if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
 	require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
 }
 
-// Append social icons to menus
-/////require get_template_directory() . '/inc/social-navigation.php';
-
 // Force menus to reload
 add_action(
 	'customize_controls_enqueue_scripts',
@@ -256,8 +253,10 @@ if ( file_exists( get_stylesheet_directory() . '/inc/block-patterns.php' ) ) {
 	require_once get_stylesheet_directory() . '/inc/block-patterns.php';
 }
 
+// Give admin notices regarding gutenberg compatibility
+require get_template_directory() . '/inc/gutenberg-dependency-check.php';
+
 /**
  * Additional theme functions
- *
  */
 require get_stylesheet_directory() . '/inc/theme-functions.php';
