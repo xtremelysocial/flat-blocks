@@ -93,8 +93,8 @@ class GlobalStylesColorCustomizer {
 			$this->section_key,
 			array(
 				'capability'  => 'edit_theme_options',
-				'description' => sprintf( __( 'Color Customization for %1$s', 'blockbase' ), $theme->name ),
-				'title'       => __( 'Colors', 'blockbase' ),
+				'description' => sprintf( __( 'Color Customization for %1$s', 'flat-blocks' ), $theme->name ),
+				'title'       => __( 'Colors', 'flat-blocks' ),
 			)
 		);
 

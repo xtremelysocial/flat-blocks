@@ -76,8 +76,8 @@ class GlobalStylesColorPalettes {
 				$wp_customize,
 				'color_palette',
 				array(
-					'label'       => __( 'Color Scheme', 'blockbase' ),
-					'description' => __( 'Choose a color scheme for your website.', 'blockbase' ),
+					'label'       => __( 'Color Scheme', 'flat-blocks' ),
+					'description' => __( 'Choose a color scheme for your website.', 'flat-blocks' ),
 					'section'     => $this->section_key,
 					'choices'     => $this->palettes,
 					'settings'    => 'color_palette',

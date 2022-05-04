@@ -6,6 +6,21 @@
  * @since 0.1
  */
 
+/**
+ * Allow pages to have tags and categories as well as excerpts
+ */
+/*if ( ! function_exists( 'flat_blocks_add_page_features' ) ) :
+  function flat_blocks_add_page_features() {
+      register_taxonomy_for_object_type( 'post_tag', 'page' );
+      register_taxonomy_for_object_type( 'category', 'page' );
+      
+      add_post_type_support( 'page', 'excerpt' );
+      
+  }
+	//add_action( 'init', array( $this, 'flat_blocks_add_page_features' ) );
+	add_action( 'init', 'flat_blocks_add_page_features' );
+endif;*/
+
 /* Allow excerpts on pages so users can control what shows in searches, etc. */
 add_post_type_support( 'page', 'excerpt' );
 
@@ -25,7 +40,7 @@ if ( ! function_exists( 'flat_blocks_add_edit_link' ) ) :
 endif; // end ! function_exists
 
 /**
- * Remove the [...] from the excerpt (will replace it next)
+ * Replace the [...] with ... from the excerpt
  */
 if ( ! function_exists( 'flat_blocks_excerpt_more' ) ) :
 	function flat_blocks_excerpt_more( $more ) {
@@ -51,21 +66,6 @@ endif; // end ! function_exists
 	}
 	add_filter( 'get_the_excerpt', 'flat_blocks_get_the_excerpt' );
 endif; // end ! function_exists**/
-
-/**
- * Allow pages to have tags and categories as well as excerpts
- */
-/*if ( ! function_exists( 'flat_blocks_add_page_features' ) ) :
-  function flat_blocks_add_page_features() {
-      register_taxonomy_for_object_type( 'post_tag', 'page' );
-      register_taxonomy_for_object_type( 'category', 'page' );
-      
-      add_post_type_support( 'page', 'excerpt' );
-      
-  }
-	//add_action( 'init', array( $this, 'flat_blocks_add_page_features' ) );
-	add_action( 'init', 'flat_blocks_add_page_features' );
-endif;*/
 
 /**
  * Adds custom color palettes to wp.color picker.

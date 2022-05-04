@@ -149,6 +149,10 @@ if ( ! function_exists( 'flat_blocks_register_block_patterns' ) ) :
 					'title' => __( 'Sample Services Page', 'flat-blocks' ),
 					'categories' => array ('flat-blocks', 'page' )
 				),
+				'text-social-icons-huge' => array( 
+					'title' => __( 'Social Icons Huge', 'flat-blocks' ),
+					'categories' => array ('flat-blocks', 'text' )
+				),
 				'text-title-and-subtitle' => array( 
 					'title' => __( 'Title and Subtitle', 'flat-blocks' ),
 					'categories' => array ('flat-blocks', 'text' )
@@ -194,6 +198,14 @@ if ( ! function_exists( 'flat_blocks_register_block_patterns' ) ) :
 					} // content
 				} // file_exists				
 			} // foreach
+			
+			$theme_data = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_settings();
+			$block_patterns = $theme_data['patterns'];
+			if ( empty( $block_patterns ) ) {
+				return '';
+			}
+			var_dump( $block_patterns ); //TEST
+
 
 				/*$pattern_name = str_ireplace( '.html', '', $block_pattern, $count);
 				//if ( strpos($block_pattern, '.html') === false ) {

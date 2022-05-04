@@ -522,8 +522,17 @@ if ( function_exists( 'register_block_style' ) ) {
 		);*/
 		
 		// Group: Rounded Borders.
-		register_block_style(
+		/*register_block_style(
 			'core/post-comments',
+			array(
+				'name'  => 'comments-rounded-border',
+				'label' => esc_html__( 'Rounded Borders', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);*/
+
+		register_block_style(
+			'core/comments-query-loop',
 			array(
 				'name'  => 'comments-rounded-border',
 				'label' => esc_html__( 'Rounded Borders', 'flat-blocks' ),
@@ -590,6 +599,36 @@ if ( function_exists( 'register_block_style' ) ) {
 		/*--------------------------------------------------------------
 		# Separator styles
 		--------------------------------------------------------------*/
+		// Separator: Full.
+		register_block_style(
+			'core/separator',
+			array(
+				'name'  => 'separator-full',
+				'label' => esc_html__( 'Full', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		// Separator: Dots Wide.
+		/*register_block_style(
+			'core/separator',
+			array(
+				'name'  => 'separator-dots-wide',
+				'label' => esc_html__( 'Dots Wide', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);*/
+
+		// Separator: Dots Full.
+		/*register_block_style(
+			'core/separator',
+			array(
+				'name'  => 'separator-dots-full',
+				'label' => esc_html__( 'Dots Full', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);*/
+		
 		// Separator: Thick.
 		register_block_style(
 			'core/separator',
@@ -599,7 +638,27 @@ if ( function_exists( 'register_block_style' ) ) {
 				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);
-		
+
+		// Separator: Thick Wide.
+		register_block_style(
+			'core/separator',
+			array(
+				'name'  => 'separator-thick-wide',
+				'label' => esc_html__( 'Thick Wide', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
+		// Separator: Thick Full.
+		register_block_style(
+			'core/separator',
+			array(
+				'name'  => 'separator-thick-full',
+				'label' => esc_html__( 'Thick Full', 'flat-blocks' ),
+				'style_handle'	=> 'flat-blocks-custom-styles'
+			)
+		);
+
 		/*--------------------------------------------------------------
 		# Social Icons
 		--------------------------------------------------------------*/
@@ -670,8 +729,8 @@ if ( function_exists( 'register_block_style' ) ) {
 		register_block_style(
 			'core/paragraph',
 			array(
-				'name'			=> 'no-margin',
-				'label'			=> __( 'No Margin', 'flat-blocks' ),
+				'name'			=> 'single-space',
+				'label'			=> __( 'Single Space', 'flat-blocks' ),
 				'style_handle'	=> 'flat-blocks-custom-styles'
 			)
 		);

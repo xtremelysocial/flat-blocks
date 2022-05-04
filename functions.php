@@ -51,7 +51,7 @@ if ( ! function_exists( 'flat_blocks_support' ) ) :
 			}
 		);
 
-		// Add support for core custom logo.
+		// Add support for core custom logo (@3x resolution: 192 / 3 = 64px)
 		add_theme_support(
 			'custom-logo',
 			array(
@@ -157,8 +157,69 @@ if ( ! function_exists( 'flat_blocks_scripts' ) ) :
 	endif;
 add_action( 'wp_enqueue_scripts', 'flat_blocks_scripts' );
 
+// Force menus to reload
+add_action(
+	'customize_controls_enqueue_scripts',
+	static function () {
+		wp_enqueue_script(
+			'wp-customize-nav-menu-refresh',
+			get_template_directory_uri() . '/inc/customizer/wp-customize-nav-menu-refresh.js',
+			[ 'customize-nav-menus' ],
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
+	}
+);
+
 /**
- * Add Google webfonts
+ * Customize Global Styles
+ */
+if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
+	require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
+	require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
+	require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
+}
+
+/**
+ * Disable the fallback for the core/navigation block.
+ */
+/* TO-DO: Return home and blog links */
+/*function flat_blocks_core_navigation_render_fallback() {
+	return null;
+}
+add_filter( 'block_core_navigation_render_fallback', 'flat_blocks_core_navigation_render_fallback' );*/
+//add_filter('block_core_navigation_render_fallback', '__return_false');
+
+/**
+ * Social Navigation Menu.
+ */
+require get_template_directory() . '/inc/social-navigation.php';
+
+/**
+ * Block Styles.
+ */
+require get_template_directory() . '/inc/block-styles.php';
+
+/**
+ * Block Patterns.
+ */
+require get_template_directory() . '/inc/block-patterns.php';
+
+// Add the child theme patterns if they exist.
+if ( file_exists( get_stylesheet_directory() . '/inc/block-patterns.php' ) ) {
+	require_once get_stylesheet_directory() . '/inc/block-patterns.php';
+}
+
+// Give admin notices regarding gutenberg compatibility
+require get_template_directory() . '/inc/gutenberg-dependency-check.php';
+
+/**
+ * Additional theme functions
+ */
+require get_stylesheet_directory() . '/inc/theme-functions.php';
+
+/**
+ * Add Google webfonts in use from theme.json
  *
  * @return $fonts_url
  */
@@ -211,60 +272,57 @@ if ( ! function_exists( 'flat_blocks_fonts_url' ) ) :
 endif;
 
 /**
- * Customize Global Styles
+ * Add custom colors to theme.json user's ("custom") colors
+ *
+ * @return settings
+ *
+ * TO-DO: THIS DOESN'T TRIGGER SOON ENOUGH TO WORK!
  */
-if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
-	require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
-	require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
-	require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
-}
+/*if ( ! function_exists( 'flat_blocks_add_custom_colors' ) ) :
+	function flat_blocks_add_custom_colors() {
+		if ( ! class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
+			return '';
+		}
 
-// Force menus to reload
-add_action(
-	'customize_controls_enqueue_scripts',
-	static function () {
-		wp_enqueue_script(
-			'wp-customize-nav-menu-refresh',
-			get_template_directory_uri() . '/inc/customizer/wp-customize-nav-menu-refresh.js',
-			[ 'customize-nav-menus' ],
-			wp_get_theme()->get( 'Version' ),
-			true
-		);
+		$theme_data = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_settings();
+		$custom_colors = $theme_data['__experimentalFeatures']['custom']['color']['palette'];
+		if ( empty( $custom_colors ) ) {
+			return '';
+		}
+		var_dump( $custom_colors ); //TEST
+		
 	}
-);
+endif;
+add_action( 'after_setup_theme', 'flat_blocks_add_custom_colors' );*/
+ 
+/*if ( ! function_exists( 'flat_blocks_add_custom_colors' ) ) :
+	function flat_blocks_add_custom_colors( $settings ) {
 
-/**
- * Disable the fallback for the core/navigation block.
- */
-function blockbase_core_navigation_render_fallback() {
-	return null;
-}
-add_filter( 'block_core_navigation_render_fallback', 'blockbase_core_navigation_render_fallback' );
+		//var_dump( 'EXPERIMENTAL FEATURES CUSTOM COLOR PALETTE:', $settings['__experimentalFeatures']['custom']['color']['palette'] ); //TEST
 
-/**
- * Social Navigation Menu.
- */
-require get_template_directory() . '/inc/social-navigation.php';
+		//var_dump( 'EXPERIMENTAL FEATURES COLOR PALETTE CUSTOM:', $settings['__experimentalFeatures']['color']['palette']['custom'] ); //TEST
 
-/**
- * Block Styles.
- */
-require get_template_directory() . '/inc/block-styles.php';
+		//var_dump ( $settings ); //TEST
+		//var_dump( 'OUR CUSTOM:', $settings['custom'] ); //TEST
 
-/**
- * Block Patterns.
- */
-require get_template_directory() . '/inc/block-patterns.php';
+		$our_colors = $settings['__experimentalFeatures']['custom']['color']['palette'];
+		///var_dump( 'OUR COLORS:', $our_colors ); //TEST
 
-// Add the child theme patterns if they exist.
-if ( file_exists( get_stylesheet_directory() . '/inc/block-patterns.php' ) ) {
-	require_once get_stylesheet_directory() . '/inc/block-patterns.php';
-}
+		//if !empty( $our_colors ) {
 
-// Give admin notices regarding gutenberg compatibility
-require get_template_directory() . '/inc/gutenberg-dependency-check.php';
+			// Combine our custom colors w/user's custom colors
+			$custom_colors = $settings['__experimentalFeatures']['color']['palette']['custom'];
+			///var_dump( 'CUSTOM COLORS:', $custom_colors ); //TEST
 
-/**
- * Additional theme functions
- */
-require get_stylesheet_directory() . '/inc/theme-functions.php';
+			$custom_colors[] = $our_colors;
+
+			//var_dump( 'CUSTOM COLORS:', $custom_colors ); //TEST
+
+			// Make sure we have unique items. Use array_flip instead of array_unique for improved performance.
+			$settings['__experimentalFeatures']['color']['palette']['custom'] = array_flip( array_flip( $custom_colors ) );
+			var_dump( $settings['__experimentalFeatures']['color']['palette']['custom'] ); //TEST
+		//}				
+		return $settings;
+	}
+endif;
+add_filter( 'block_editor_settings_all', 'flat_blocks_add_custom_colors', 5 );*/

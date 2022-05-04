@@ -43,6 +43,37 @@
 		}
 	},
 	"settings": {
+		"custom": {
+			"color": {
+				"header": "#2f2f2f",
+				"header-alt": "#222222",
+				"header-text": "#f2f2f2",
+				"header-link": "#ff7878",
+				"title": "#3498db",
+				"title-alt": "#2980b9",
+				"title-text": "#f2f2f2",
+				"title-link": "#ff7878",
+				"primary": "#ff7878",
+				"primary-alt": "#e74c3c",
+				"primary-text": "#f2f2f2",
+				"primary-link": "#3498db",
+				"secondary": "#3498db",
+				"secondary-alt": "#2980b9",
+				"secondary-text": "#f2f2f2",
+				"secondary-link": "#ff7878",
+				"tertiary": "#e7e7e7",
+				"tertiary-alt": "#e0e0e0",
+				"tertiary-text": "#555555",
+				"tertiary-link": "#ff7878",
+				"background": "#f2f2f2",
+				"foreground": "#555555",
+				"default-border": "#e0e0e0",
+				"footer": "#2f2f2f",
+				"footer-alt": "#222222",
+				"footer-text": "#f2f2f2",
+				"footer-link": "#ff7878"
+			}
+		},
 		"color": {
 			"palette": [
 				{

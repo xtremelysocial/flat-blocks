@@ -294,8 +294,8 @@ class GlobalStylesFontsCustomizer {
 			$this->section_key,
 			array(
 				'capability'  => 'edit_theme_options',
-				'description' => sprintf( __( 'Font Customization for %1$s', 'blockbase' ), $theme->name ),
-				'title'       => __( 'Fonts', 'blockbase' ),
+				'description' => sprintf( __( 'Font Customization for %1$s', 'flat-blocks' ), $theme->name ),
+				'title'       => __( 'Fonts', 'flat-blocks' ),
 			)
 		);
 
@@ -323,7 +323,7 @@ class GlobalStylesFontsCustomizer {
 				array(
 					'type'        => 'hidden',
 					'description' => '<div class="notice notice-warning">
-					<p>' . __( 'Your theme needs to be updated before you can customize fonts', 'blockbase' ) . '</p>
+					<p>' . __( 'Your theme needs to be updated before you can customize fonts', 'flat-blocks' ) . '</p>
 					</div>',
 					'settings'    => array(),
 					'section'     => $this->section_key,
@@ -435,14 +435,14 @@ class GlobalStylesFontsCustomizer {
 				'settings'    => array(),
 				'section'     => $this->section_key,
 				'input_attrs' => array(
-					'value' => __( 'Reset to Default', 'blockbase' ),
+					'value' => __( 'Reset to Default', 'flat-blocks' ),
 					'class' => 'button button-link',
 				),
 			)
 		);
 
-		$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_default['fontSlug'], $body_font_selected_font_slug, 'sanitize_title' );
-		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_default['fontSlug'], $heading_font_selected_font_slug, 'sanitize_title' );
+		$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'flat-blocks' ), $body_font_default['fontSlug'], $body_font_selected_font_slug, 'sanitize_title' );
+		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'flat-blocks' ), $heading_font_default['fontSlug'], $heading_font_selected_font_slug, 'sanitize_title' );
 	}
 
 	function get_font_family( $array, $configuration ) {
