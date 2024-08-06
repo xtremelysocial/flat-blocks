@@ -69,7 +69,7 @@
 .wp-block-details:not(.has-text-color) > summary {
   color: var(--wp--custom--link--color);
   font-weight: var(--wp--custom--typography--font-weight--medium);
-  transition: color var(--wp--custom--animation--duration--medium) var(--wp--custom--animation--timing-function);
+  transition: color var(--wp--custom--animation--duration--medium, 500ms) var(--wp--custom--animation--timing-function, ease-in);
 }
 
 /* Highlight Summary on hover and when open */

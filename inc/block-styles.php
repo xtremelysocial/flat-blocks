@@ -29,7 +29,7 @@ if ( ! function_exists( 'flatblocks_register_block_styles' ) ) :
 			'fixed-header' 		=> array( esc_html__('Fixed Header', 'flat-blocks'), 
 				array('group' )
 			),
-			'cover-border' 		=> array( esc_html__('Borders', 'flat-blocks'), 
+			'cover-border' 		=> array( esc_html__('Border', 'flat-blocks'), 
 				array('cover' )
 			),
 			'cover-rounded-corners' => array( esc_html__('Rounded Corners', 'flat-blocks'), 
@@ -41,13 +41,16 @@ if ( ! function_exists( 'flatblocks_register_block_styles' ) ) :
 			'image-border' 		=> array( esc_html__('Border', 'flat-blocks'), 
 				array('image' )
 			),
-			'image-round-border' => array( esc_html__('Round Border', 'flat-blocks'), 
+			'image-round-border' => array( esc_html__('Rounded w/Border', 'flat-blocks'), 
 				array('image' )
+			),
+			'image-border' 		=> array( esc_html__('Image Border', 'flat-blocks'), 
+				array( 'gallery' )
 			),
 			'image-computer-screen' => array( esc_html__('Computer Screen', 'flat-blocks'), 
 				array('image' )
 			),
-			'image-tablet-phone-screen' => array( esc_html__('Phone/Tablet Screen', 'flat-blocks'), 
+			'image-tablet-phone-screen' => array( esc_html__('Tablet/Phone Screen', 'flat-blocks'), 
 				array('image' )
 			),
 			'image-no-border'	=> array( esc_html__('No Border', 'flat-blocks'), 
@@ -120,6 +123,9 @@ if ( ! function_exists( 'flatblocks_register_block_styles' ) ) :
 		
 		/* 
 		 * Loop through each style and create the custom style for each of its blocks.
+		 * 
+		 * TO-DO: Once minimum WordPress version is 6.6, the array of blocks can be sent
+		 * to register_block_style instead of looping through each block.
 		 */
 		//foreach ( $custom_styles as $custom_style => [$label, $blocks, $style_handle_or_inline] ) {
 		foreach ( $custom_styles as $custom_style => $properties ) {
@@ -138,7 +144,7 @@ if ( ! function_exists( 'flatblocks_register_block_styles' ) ) :
 						'name'  => $custom_style,
 						'label' => $label,
 						'inline_style' => $properties['inline_style'] ?? '',
-						'style_handle' => $properties['style_handle'] ?? 'flatblocks-custom-styles'
+						'style_handle' => $properties['style_handle'] ?? ''
 					)
 				);
 			} //end foreach $custom_styles
