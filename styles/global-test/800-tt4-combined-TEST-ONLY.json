@@ -1,0 +1,381 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "TT4 Combined Colors",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "primary",
+					"color": "#cfcabe",
+					"name": "Primary (Beige / TT4 Beige / TT4 Accent)"
+				},
+				{
+					"slug": "secondary",
+					"color": "#b1c5a4",
+					"name": "Secondary (Light Green / TT4 Sage / TT4 Accent 4)"
+				},
+				{
+					"slug": "tertiary",
+					"color": "#d8613c",
+					"name": "Tertiary (Light Red / TT4 Rust / TT4 Accent 3)"
+				},
+				{
+					"slug": "dark",
+					"color": "#2f2f2f",
+					"name": "Dark (Almost Black)"
+				},
+				{
+					"slug": "neutral",
+					"color": "#efeeea",
+					"name": "Neutral (Very Light Gray / TT4 Very Light Beige)"
+				},
+				{
+					"slug": "primary-alt",
+					"color": "#c2a990",
+					"name": "Primary Alt (Dark Beige / TT4 Sandstone / TT4 Accent 2)"
+				},
+				{
+					"slug": "secondary-alt",
+					"color": "#7c8f70",
+					"name": "Secondary Alt (Green / TT4 Dark Sage)"
+				},
+				{
+					"slug": "tertiary-alt",
+					"color": "#9B2C0D",
+					"name": "Tertiary Alt (Dark Red / TT4 Dark Rust)"
+				},
+				{
+					"slug": "dark-alt",
+					"color": "#222222 /*#111111*/",
+					"name": "Dark Alt (Not Quite Black)"
+				},
+				{
+					"slug": "neutral-alt",
+					"color": "#e5e2db",
+					"name": "Neutral Alt (Light Gray / TT4 Light Beige)"
+				},
+				{
+					"slug": "foreground-alt",
+					"color": "#ffffff",
+					"name": "Foreground Alt (White)"
+				},
+				{
+					"slug": "base",
+					"color": "#f9f9f9",
+					"name": "Base / Background (Offwhite / TT4 White)"
+				},
+				{
+					"slug": "contrast",
+					"color": "#222222 /*#111111*/",
+					"name": "Contrast / Foreground (Not Quite Black)"
+				},
+				{
+					"color": "#f9f9f9",
+					"name": "Base",
+					"slug": "base"
+				},
+				{
+					"color": "#ffffff",
+					"name": "Base / Two",
+					"slug": "base-2"
+				},
+				{
+					"color": "#111111",
+					"name": "Contrast",
+					"slug": "contrast"
+				},
+				{
+					"color": "#636363",
+					"name": "Contrast / Two",
+					"slug": "contrast-2"
+				},
+				{
+					"color": "#A4A4A4",
+					"name": "Contrast / Three",
+					"slug": "contrast-3"
+				},
+				{
+					"color": "#f6decd",
+					"name": "Linen #f6decd",
+					"slug": "accent"
+				},
+				{
+					"color": "#E1DFDB",
+					"name": "Linen #E1DFDB",
+					"slug": "accent-2"
+				},
+				{
+					"color": "#ECEADF",
+					"name": "Light Beige? #ECEADF",
+					"slug": "accent-3"
+				},
+				{
+					"color": "#F4F0E6",
+					"name": "Light Beige? #F4F0E6",
+					"slug": "accent-4"
+				},
+				{
+					"color": "#b5bdbc",
+					"name": "Pastel Blue (TT4 Accent / Five",
+					"slug": "accent-5"
+				},
+				{
+					"color": "#958D86",
+					"name": "Taupe #958D86",
+					"slug": "accent-6"
+				},
+				{
+					"color": "#5F584F",
+					"name": "Driftwood or Beige? #5F584F",
+					"slug": "accent-7"
+				},
+				{
+					"color": "#F3F0E7",
+					"name": "Beige #F3F0E7",
+					"slug": "accent-8"
+				},
+				{
+					"color": "#D6D2CE",
+					"name": "Beige #D6D2CE",
+					"slug": "accent-9"
+				},
+				{
+					"color": "#6D533C",
+					"name": "Walnut #6D533C",
+					"slug": "accent-10"
+				},
+				{
+					"color": "#FFFFFF",
+					"name": "White (TT4 Base 2)",
+					"slug": "white"
+				},
+				{
+					"color": "#FFFFFFA1",
+					"name": "Light Yellow? #FFFFFFA1",
+					"slug": "off-white"
+				},
+				{
+					"color": "#cfcabe",
+					"name": "Beige (TT4 Accent)",
+					"slug": "beige"
+				},
+				{
+					"color": "#c2a990",
+					"name": "Sandstone (TT4 Accent / Two)",
+					"slug": "dark-beige"
+				},
+				{
+					"color": "#65574E",
+					"name": "Dark Sandstone (TT4 Sable Accent / Two)",
+					"slug": "very-dark-beige"
+				},
+				{
+					"color": "#EBEBEF",
+					"name": "Light Ice #EBEBEF",
+					"slug": "very-light-gray"
+				},
+				{
+					"color": "#DCE0E6",
+					"name": "Ice #DCE0E6",
+					"slug": "light-gray"
+				},
+				{
+					"color": "#A4A4A4",
+					"name": "Gray #A4A4A4 (TT4 Contrast 3)",
+					"slug": "gray"
+				},
+				{
+					"color": "#909090",
+					"name": "Pewter #909090",
+					"slug": "dark-gray"
+				},
+				{
+					"color": "#96A5B2",
+					"name": "Darker Gray #96A5B2",
+					"slug": "darker-gray"
+				},
+				{
+					"color": "#4F5959",
+					"name": "Very Dark Gray (Steel Blue) #4F5959",
+					"slug": "very-dark-gray"
+				},
+				{
+					"color": "#272727",
+					"name": "Very Dark Gray 2 #272727",
+					"slug": "very-dark-gray-2"
+				},
+				{
+					"color": "#353535",
+					"name": "Very Dark Gray 3 #353535",
+					"slug": "very-dark-gray-3"
+				},
+				{
+					"color": "#FF3C00",
+					"name": "Red? #FF3C00",
+					"slug": "light-red"
+				},
+				{
+					"color": "#973C20",
+					"name": "Cinnamon #973C20",
+					"slug": "red"
+				},
+				{
+					"color": "#A62B0C",
+					"name": "Rust #A62B0C",
+					"slug": "dark-red"
+				},
+				{
+					"color": "#f1fefb",
+					"name": "Light Mint? #f1fefb",
+					"slug": "light-green"
+				},
+				{
+					"color": "#e4efeb",
+					"name": "Mint? #e4efeb",
+					"slug": "green"
+				},
+				{
+					"color": "#4D5B48",
+					"name": "Olive #4D5B48",
+					"slug": "bright-green"
+				},
+				{
+					"color": "#65574E",
+					"name": "Sable #65574E",
+					"slug": "dark-bright-green"
+				},
+				{
+					"color": "#D5E0F0",
+					"name": "Light Blue-Gray? #D5E0F0",
+					"slug": "light-blue"
+				},
+				{
+					"color": "#37505d",
+					"name": "Ocean #37505d",
+					"slug": "blue"
+				},
+				{
+					"color": "#38629F",
+					"name": "Maelstrom? #38629F",
+					"slug": "midnight-blue"
+				},
+				{
+					"color": "#244E8A",
+					"name": "Dark Maelstrom? #244E8A",
+					"slug": "dark-midnight-blue"
+				},
+				{
+					"color": "#4F5959",
+					"name": "Steel Gray #4F5959",
+					"slug": "dark-blue"
+				},
+				{
+					"color": "#1C2930",
+					"name": "Ink #1C2930",
+					"slug": "almost-black"
+				},
+				{
+					"color": "#1A1514",
+					"name": "Ebony #1A1514",
+					"slug": "not-quite-black"
+				},
+				{
+					"color": "#000000",
+					"name": "Black",
+					"slug": "black"
+				}
+			],
+			"duotone": [
+				{
+					"colors": ["#111111", "#ffffff"],
+					"slug": "duotone-1",
+					"name": "Black and white"
+				},
+				{
+					"colors": ["#111111", "#C2A990"],
+					"slug": "duotone-2",
+					"name": "Black and sandstone"
+				},
+				{
+					"colors": ["#111111", "#D8613C"],
+					"slug": "duotone-3",
+					"name": "Black and rust"
+				},
+				{
+					"colors": ["#111111", "#B1C5A4"],
+					"slug": "duotone-4",
+					"name": "Black and sage"
+				},
+				{
+					"colors": ["#111111", "#B5BDBC"],
+					"slug": "duotone-5",
+					"name": "Black and pastel blue"
+				}
+			],
+			"gradients": [
+				{
+					"slug": "gradient-1",
+					"gradient": "linear-gradient(to bottom, #cfcabe 0%, #F9F9F9 100%)",
+					"name": "Vertical soft beige to white"
+				},
+				{
+					"slug": "gradient-2",
+					"gradient": "linear-gradient(to bottom, #C2A990 0%, #F9F9F9 100%)",
+					"name": "Vertical soft sandstone to white"
+				},
+				{
+					"slug": "gradient-3",
+					"gradient": "linear-gradient(to bottom, #D8613C 0%, #F9F9F9 100%)",
+					"name": "Vertical soft rust to white"
+				},
+				{
+					"slug": "gradient-4",
+					"gradient": "linear-gradient(to bottom, #B1C5A4 0%, #F9F9F9 100%)",
+					"name": "Vertical soft sage to white"
+				},
+				{
+					"slug": "gradient-5",
+					"gradient": "linear-gradient(to bottom, #B5BDBC 0%, #F9F9F9 100%)",
+					"name": "Vertical soft mint to white"
+				},
+				{
+					"slug": "gradient-6",
+					"gradient": "linear-gradient(to bottom, #A4A4A4 0%, #F9F9F9 100%)",
+					"name": "Vertical soft pewter to white"
+				},
+				{
+					"slug": "gradient-7",
+					"gradient": "linear-gradient(to bottom, #cfcabe 50%, #F9F9F9 50%)",
+					"name": "Vertical hard beige to white"
+				},
+				{
+					"slug": "gradient-8",
+					"gradient": "linear-gradient(to bottom, #C2A990 50%, #F9F9F9 50%)",
+					"name": "Vertical hard sandstone to white"
+				},
+				{
+					"slug": "gradient-9",
+					"gradient": "linear-gradient(to bottom, #D8613C 50%, #F9F9F9 50%)",
+					"name": "Vertical hard rust to white"
+				},
+				{
+					"slug": "gradient-10",
+					"gradient": "linear-gradient(to bottom, #B1C5A4 50%, #F9F9F9 50%)",
+					"name": "Vertical hard sage to white"
+				},
+				{
+					"slug": "gradient-11",
+					"gradient": "linear-gradient(to bottom, #B5BDBC 50%, #F9F9F9 50%)",
+					"name": "Vertical hard mint to white"
+				},
+				{
+					"slug": "gradient-12",
+					"gradient": "linear-gradient(to bottom, #A4A4A4 50%, #F9F9F9 50%)",
+					"name": "Vertical hard pewter to white"
+				}
+			]
+		}
+	}
+}
+			

@@ -53,6 +53,7 @@ build
 # Ignore save, test files, and zip files
 **/*-SAVE*
 styles/*TEST-ONLY*.json
+styles/global-test/
 *.css.map
 zz_unused
 *.zip

@@ -12,20 +12,6 @@
 				}
 			},
 			"color": {
-				"contrast": {
-					"primary": "var(--wp--preset--color--foreground-alt)",
-					"primaryAlt": "var(--wp--preset--color--foreground-alt)",
-					"secondary": "var(--wp--preset--color--foreground-alt)",
-					"secondaryAlt": "var(--wp--preset--color--foreground-alt)",
-					"tertiary": "var(--wp--preset--color--foreground-alt)",
-					"tertiaryAlt": "var(--wp--preset--color--foreground-alt)",
-					"highlight": "var(--wp--preset--color--foreground-alt)",
-					"highlightAlt": "var(--wp--preset--color--foreground-alt)",
-					"dark": "var(--wp--preset--color--foreground-alt)",
-					"darkAlt": "var(--wp--preset--color--foreground-alt)",
-					"neutral": "var(--wp--preset--color--contrast)",
-					"neutralAlt": "var(--wp--preset--color--contrast)"
-				},
 				"field": {
 					"background": "revert",
 					"text": "inherit",
@@ -72,7 +58,7 @@
 		"useRootPaddingAwareAlignments": true,
 		"appearanceTools": true,
 		"position": {
-			"sticky": false
+			"sticky": true
 		},
 		"lightbox": {
 			"allowEditing": true,
@@ -1752,14 +1738,20 @@
 		},
 		{
 			"name": "page-title",
-			"title": "Page Title",
-			"description": "Title for pages",
+			"title": "Page Title w/Excerpt",
+			"description": "Title with excerpt for pages",
 			"area": "title"
 		},
 		{
 			"name": "page-title-excerpt",
 			"title": "Page Title w/Excerpt",
 			"description": "Page title with excerpt",
+			"area": "title"
+		},
+		{
+			"name": "page-title-no-excerpt",
+			"title": "Page Title w/out Excerpt",
+			"description": "Page title without excerpt",
 			"area": "title"
 		},
 		{
@@ -1787,9 +1779,27 @@
 			"area": "content"
 		},
 		{
+			"name": "sidebar-default",
+			"title": "Sidebar Default",
+			"description": "Sidebar (search, account, categories, social links)",
+			"area": "content"
+		},
+		{
 			"name": "comments",
 			"title": "Comments",
 			"description": "Comments list and comment form",
+			"area": "content"
+		},
+		{
+			"name": "comments-default",
+			"title": "Comments Default",
+			"description": "Comments list and comment form",
+			"area": "content"
+		},
+		{
+			"name": "comments-hideable",
+			"title": "Comments Hideable",
+			"description": "Comments list and comment form that can be hidden by viewer",
 			"area": "content"
 		},
 		{

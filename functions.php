@@ -291,6 +291,11 @@ if ( file_exists( get_stylesheet_directory() . '/inc/block-patterns.php' ) ) {
 	require_once get_stylesheet_directory() . '/inc/block-patterns.php';
 }
 
+// Include WordPress version compatibility features
+if ( file_exists( get_template_directory() . '/inc/wp-compatability.php' ) ) {
+	require_once get_template_directory() . '/inc/wp-compatability.php';
+}
+
 // Include Pro version features
 if ( file_exists( get_template_directory() . '/pro/flat-blocks-pro.php' ) ) {
 	require_once get_template_directory() . '/pro/flat-blocks-pro.php';
