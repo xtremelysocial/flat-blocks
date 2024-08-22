@@ -22,7 +22,7 @@
 				},
 				"linkStyle": {
 					"default": "dotted"
-				},
+				}
 			},
 			"border": {
 				"color": "var(--wp--preset--color--gray)"

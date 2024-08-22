@@ -71,19 +71,9 @@
 					"name": "Contrast / Foreground (Not Quite Black)"
 				},
 				{
-					"color": "#f9f9f9",
-					"name": "Base",
-					"slug": "base"
-				},
-				{
 					"color": "#ffffff",
 					"name": "Base / Two",
 					"slug": "base-2"
-				},
-				{
-					"color": "#111111",
-					"name": "Contrast",
-					"slug": "contrast"
 				},
 				{
 					"color": "#636363",
@@ -153,7 +143,7 @@
 				{
 					"color": "#FFFFFFA1",
 					"name": "Light Yellow? #FFFFFFA1",
-					"slug": "off-white"
+					"slug": "light-yellow"
 				},
 				{
 					"color": "#cfcabe",
