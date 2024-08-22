@@ -65,7 +65,6 @@ if ( ! function_exists( 'flatblocks_support' ) ) :
 		if ( apply_filters( 'flatblocks_allow_page_excerpts', $allow_page_excerpts ?? true ) ) {
 			add_post_type_support( 'page', 'excerpt' );		
 		}
-		
 	}
 endif;
 
