@@ -11,8 +11,11 @@
 /* Match our bottom margin */
 // TO-DO: See if we can remove having to use our ID
 //.wp-block-group:has(.wp-block-comments) {
-#post-comments {
-	margin-bottom: var(--wp--style--block-gap);
+// #post-comments {
+// 	margin-bottom: var(--wp--style--block-gap);
+// }
+p.form-submit.wp-block-button {
+	margin-bottom: 0;
 }
 
 /* Hide empty comments so no extra vertical margin */
@@ -36,6 +39,13 @@
 		padding-left: var(--wp--style--root--padding-left) !important;
 		padding-right: var(--wp--style--root--padding-right) !important;
 	}
+}
+
+/* Hide empty comments (e.g. when comments turned off for a post)*/
+//.is-style-template-comments.wp-block-template-part:has(#post-comments:empty),
+//#post-comments:empty {
+.is-style-template-comments.wp-block-template-part:empty {
+    display: none;
 }
 
 /*--------------------------------------------------------------
