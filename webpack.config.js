@@ -1,14 +1,14 @@
 // WordPress webpack config.
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 
+// Utilities.
+//const p ath = require( 'path' );
+
 // Plugins.
-const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
 // const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 //const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-
-// Utilities.
-//const p ath = require( 'path' );
+const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
 
 // package.json sets the default source to ./src and output to ./assets/css
 // so entry and output below should be relative to those.
