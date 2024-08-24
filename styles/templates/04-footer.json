@@ -6,9 +6,10 @@
 	"blockTypes": [ "core/template-part" ],
 	"styles": {
 		"color": {
-			"background": "var(--wp--preset--color--primary)",
+			"background": "var(--wp--preset--color--dark)",
 			"text": "var(--wp--preset--color--foreground-alt)"
 		},
+		"shadow": "none",		
 		"spacing": {
 			"padding": {
 				"top": "var:preset|spacing|60",
@@ -18,19 +19,19 @@
 		"elements": {
 			"link": {
 				"color": {
-					"text": "var(--wp--preset--color--contrast)"
+					"text": "var(--wp--preset--color--highlight)"
 				},
 				"typography": {
-					"textDecoration": "underline"
+					"textDecoration": "none"
 				},
 				":hover": {
 					"color": {
-						"text": "var(--wp--preset--color--dark-alt)"
+						"text": "var(--wp--preset--color--highlight-alt)"
 					}
 				},
 				":active": {
 					"color": {
-						"text": "var(--wp--preset--color--dark-alt)"
+						"text": "var(--wp--preset--color--highlight-alt)"
 					}
 				}
 			}

@@ -15,11 +15,10 @@
 			"radius": "var(--wp--custom--border--radius)",
 			"width": "1px"
 		},
+		"shadow": "none",
 		"spacing": {
 			"padding": {
-				"top": "var:preset|spacing|40",
 				"right": "var:preset|spacing|40",
-				"bottom": "var:preset|spacing|40",
 				"left": "var:preset|spacing|40"
 			},
 			"margin": {

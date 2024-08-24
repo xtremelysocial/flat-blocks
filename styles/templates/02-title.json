@@ -9,12 +9,11 @@
 			"background": "var(--wp--preset--color--primary)",
 			"text": "var(--wp--preset--color--foreground-alt)"
 		},
+		"shadow": "none",
 		"spacing": {
 			"padding": {
 				"top": "var:preset|spacing|60",
-				"left": "var:preset|spacing|40",
-				"bottom": "var:preset|spacing|60",
-				"right": "var:preset|spacing|40"
+				"bottom": "var:preset|spacing|60"
 			}
 		}
 	}

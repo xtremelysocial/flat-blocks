@@ -19,10 +19,12 @@ p.form-submit.wp-block-button {
 }
 
 /* Hide empty comments so no extra vertical margin */
-// #post-comments:empty {
-// 	display: none;
-// 	margin-top: 0;
-// }
+#post-comments:empty,
+.is-style-template-comments > #post-comments:empty,
+.is-style-template-comments:has(#post-comments:empty) {
+	display: none;
+	margin-top: 0;
+}
 
 /* Add padding to comment page numbers */
 .wp-block-comments-pagination .page-numbers:nth-last-child(n+2) {

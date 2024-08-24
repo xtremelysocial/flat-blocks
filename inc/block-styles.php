@@ -189,7 +189,8 @@ if ( ! function_exists( 'flatblocks_block_variations' ) ) :
 		$metadata['supports']['color'] = [
 			'background' => true,
 			'text' => true,
-			'gradients' => true,
+			//'gradients' => true,
+			'link' => true,
 			'heading' => true,
 			'button' => true
 		];
@@ -208,9 +209,12 @@ if ( ! function_exists( 'flatblocks_block_variations' ) ) :
 		//$metadata['supports']['typography']['textAlign'] = true;
 
 		// Allow other properties
-		$metadata['supports']['align'] = true;
-		$metadata['supports']['postion'] = true;
+		//$metadata['supports']['align'] = true;
+		//$metadata['supports']['postion'] = true;
+		$metadata['supports']['experimentalBorder'] = true;
+		$metadata['supports']['border'] = true;
 		$metadata['supports']['shadow'] = true;
+		$metadata['supports']['customClassName'] = true;
 				
 		return $metadata;
 	}

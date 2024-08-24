@@ -16,15 +16,20 @@ module.exports = {
 	...defaultConfig,
 	...{
 		entry: {
+			// Compile our CSS files from src
 			'flat-blocks': './src/scss/flat-blocks.scss',
 			'editor-styles': './src/scss/editor-styles.scss',
 			'block-styles': './src/scss/block-styles.scss',
 			'wp-compat': './src/scss/wp-compat.scss',
+			//'./blocks/calendar': './src/scss/blocks/calendar.scss',
+
+			// Compile our CSS files from PRO
 			'./../../pro/assets/css/pro-custom-styles': './pro/src/scss/pro-custom-styles.scss',
 // 			'./../pro/assets/css/pro-jetpack': './pro/src/scss/pro-jetpack.scss',
 // 			'./../pro/assets/css/pro-woocommerce': './pro/src/scss/pro-woocommerce.scss',
 		},
 		module: {
+			// Turn off minification of CSS
 			rules: [
 				{
 					test: /\.(sa|sc|c)ss$/,
@@ -34,7 +39,7 @@ module.exports = {
 						{ loader: 'sass-loader', options: { 
 							//sourceMap: false,
 							sassOptions: { 
-								outputStyle: 'expanded'  // turn of minification
+								outputStyle: 'expanded',
 							} 
 						} },
 					],
@@ -55,9 +60,10 @@ module.exports = {
 				stage: RemoveEmptyScriptsPlugin.STAGE_AFTER_PROCESS_PLUGINS
 			} )
 		],
+		// Turn off source maps since CSS isn't minified
 		//mode: 'development',
 		//devtool: 'source-map',
-		devtool: false, // turn off source maps
+		devtool: false,
 		//optimization: {
 		//    minimize: false,
 		//}
