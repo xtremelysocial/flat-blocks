@@ -20,15 +20,15 @@ figcaption a {
 
 /* Colored link hover styles */
 .has-text-color a:not(.wp-element-button):not(.wp-block-button):not(.wp-block-social-link-anchor):hover {
-	opacity: 0.8;
+	opacity: var(--wp--custom--link--hover-opacity, 0.85);
 }
 
 /* 
  * Style basic buttons to match block buttons. 
  */
-input[type=button],
-input[type=submit][class*="button"],
-input[type=reset][class*="button"],
+input[type=button]:not(.wp-element-button),
+input[type=submit][class*="button"]:not(.wp-element-button),
+input[type=reset][class*="button"]:not(.wp-element-button),
 input[type=file]::file-selector-button {
 	color: var(--wp--preset--color--foreground-alt, white);
 	background-color: var(--wp--preset--color--highlight); //var(--wp--preset--color--primary);
@@ -74,7 +74,7 @@ input[type=file]::file-selector-button:hover,
 .wp-block-file .wp-block-file__button:hover,
 .wp-block-button__link:hover {
 	cursor: pointer;
-	opacity: 0.8;
+	opacity: var(--wp--custom--button--hover-opacity, 0.85);
 }
 
 /*--------------------------------------------------------------
@@ -94,7 +94,7 @@ input[type=file]::file-selector-button:hover,
 
 .is-style-link-underline a:hover,
 .is-style-link-no-underline a:hover {
-	opacity: 0.8;
+	opacity: var(--wp--custom--link--hover-opacity, 0.85);
 }
 
 /* Underline links on hover */
@@ -102,4 +102,3 @@ input[type=file]::file-selector-button:hover,
 	opacity: 1;
 	text-decoration: underline;
 }
-

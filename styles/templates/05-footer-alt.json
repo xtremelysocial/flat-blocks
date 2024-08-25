@@ -1,0 +1,40 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"slug": "template-footer-alt",
+	"title": "Footer Alt",
+	"blockTypes": [ "core/template-part" ],
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--dark-alt)",
+			"text": "var(--wp--preset--color--foreground-alt)"
+		},
+		"shadow": "none",		
+		"spacing": {
+			"padding": {
+				"top": "var:preset|spacing|40",
+				"bottom": "var:preset|spacing|40"
+			}
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var(--wp--preset--color--highlight)"
+				},
+				"typography": {
+					"textDecoration": "none"
+				},
+				":hover": {
+					"color": {
+						"text": "var(--wp--preset--color--highlight-alt)"
+					}
+				},
+				":active": {
+					"color": {
+						"text": "var(--wp--preset--color--highlight-alt)"
+					}
+				}
+			}
+		}
+	}
+}
