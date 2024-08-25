@@ -24,6 +24,7 @@ node_modules/
 **/*-SAVE*
 styles/*TEST-ONLY*.json
 *.css.map
+styles/*-test/
 zz_unused
 *.zip
 
