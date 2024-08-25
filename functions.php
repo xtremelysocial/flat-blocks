@@ -65,6 +65,7 @@ if ( ! function_exists( 'flatblocks_support' ) ) :
 		if ( apply_filters( 'flatblocks_allow_page_excerpts', $allow_page_excerpts ?? true ) ) {
 			add_post_type_support( 'page', 'excerpt' );		
 		}
+		
 	}
 endif;
 
@@ -273,11 +274,6 @@ if ( file_exists( get_template_directory() . '/inc/block-styles.php' ) ) {
 if ( file_exists( get_stylesheet_directory() . '/inc/block-styles.php' ) ) {
 	require_once get_stylesheet_directory() . '/inc/block-styles.php';
 }
-
-// Add custom block variations via TEST method
-// if ( file_exists( get_template_directory() . '/inc/block-variations-test.php' ) ) {
-// 	require_once get_template_directory() . '/inc/block-variations-test.php';
-// }
 
 // Add block patterns
 if ( file_exists( get_template_directory() . '/inc/block-patterns.php' ) ) {

@@ -3,15 +3,9 @@
 --------------------------------------------------------------*/
 
 /* For convenience, remove padding from inner containers */
-main.wp-block-group:not(.has-global-padding) {
+main.wp-block-group:not(.has-global-padding),
+.wp-block-template-part {
 	padding: 0;
-}
-
-//.wp-block-template-part {
-.wp-block-template-part:not([class*="is-style-template-"]) {
-	padding-top: 0;
-	padding-bottom: 0;
-    //margin-block-start: 0; //?
 }
 
 // /* 
@@ -43,11 +37,13 @@ header.entry-header:not(.has-global-padding):not(.is-style-no-padding),
 }
 
 /* But REMOVE duplicate padding */
+/* 
 .has-global-padding :where(.has-global-padding):not(.has-background),
 .has-global-padding > .alignfull:where(:not(.has-global-padding)) > :where(.wp-block-image) {
 	padding-left: 0;
 	padding-right: 0;
 }
+ */
 
 /* FIX alignfull in WordPress.org theme preview */
 .has-global-padding > #wporg-pattern-preview > div > .alignfull {

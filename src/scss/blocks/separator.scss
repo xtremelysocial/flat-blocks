@@ -2,12 +2,6 @@
 # Separator
 --------------------------------------------------------------*/
 
-/* TO-DO: FIX separator color */
-// .wp-block-separator {
-// 	border-color: currentColor;
-// 	background-color: currentColor;
-// }
-
 /* FIX to center default (narrow) separator when user selects alignfull */
 .wp-block-separator.alignfull {
 	margin-left: auto !important;

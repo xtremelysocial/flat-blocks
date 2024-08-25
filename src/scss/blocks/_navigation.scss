@@ -2,7 +2,6 @@
 # Navigation
 --------------------------------------------------------------*/
 
-// Load our mixins to use for browser extensions
 @use "../utils/mixins";
 
 /** 
@@ -10,7 +9,6 @@
  * background color or not 
  */
 //.wp-block-navigation:not(.has-background) .wp-block-navigation-item {
-/* 
 .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item {
 	&.current-menu-item,
 	&:has(.current-menu-ancestor),
@@ -32,20 +30,16 @@
 		font-weight: var(--wp--custom--typography--font-weight--medium);
 	}
 }
- */
 
 /* Bold or highlight active sub-menu items, depending on whether text color or not */
-/* 
 .wp-block-navigation__submenu-container:not(.has-text-color) .wp-block-navigation-item.current-menu-item .wp-block-navigation-item__content.wp-block-navigation-item__content {
 	color: var(--wp--preset--color--highlight);
 }
 .wp-block-navigation__submenu-container.has-text-color .wp-block-navigation-item.current-menu-item .wp-block-navigation-item__content.wp-block-navigation-item__content {
 	font-weight: var(--wp--custom--typography--font-weight--medium);
 }
- */
 
 /* On hover, bold or highlight top-level menu items, depending on whether background color or not */
-/* 
 .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item { //, 
 	&:hover > .wp-block-navigation-item__content, // top-level
 	&:hover > .wp-block-navigation__submenu-icon, // top-level
@@ -54,10 +48,8 @@
     	color: var(--wp--preset--color--highlight-alt);
     }
 }
- */
 
 /* Drop-down link hover color. */
-/* 
 .site-header:not(.has-background) .wp-block-navigation-submenu.open-on-click:hover,
 .site-header:not(.has-background) .wp-block-navigation-item.has-child.open-on-click:hover {
     color: var(--wp--preset--color--highlight);
@@ -70,10 +62,9 @@
 .wp-block-navigation.has-background .wp-block-navigation-item {
 	&:hover > .wp-block-navigation-item__content, // top-level
 	&:hover > .wp-block-navigation__submenu-icon { // top-level
-    	opacity: var(--wp--custom--link--hover-opacity, 0.85);
+    	opacity: 0.8;
     }
 }
- */
 
 /* But on mobile nav, don't hover on non-clickable links */
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item.has-child.open-on-click > .wp-block-navigation-item:hover,

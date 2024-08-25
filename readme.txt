@@ -1,4 +1,4 @@
-=== Flat Blocks PRO ===
+=== Flat Blocks ===
 Contributors:  XtremelySocial
 
 == Description ==
