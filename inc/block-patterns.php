@@ -240,11 +240,6 @@ if ( ! function_exists( 'flatblocks_register_block_patterns' ) ) :
 				'categories' => array ('flatblocks', 'query' ),
 				'blockTypes' => array ('core/query')
 			),
-			'pro-query-loop-3-columns' => array( 
-				'title' => __( 'Query Loop 3 Columns', 'flat-blocks' ),
-				'categories' => array ('flatblocks', 'query' ),
-				'blockTypes' => array ('core/query')
-			),
 			'query-loop-sidebar-left' => array( 
 				'title' => __( 'Query Loop with Left Sidebar', 'flat-blocks' ),
 				'categories' => array ('flatblocks', 'query' ),
