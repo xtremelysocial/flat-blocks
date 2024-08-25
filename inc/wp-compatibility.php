@@ -46,9 +46,6 @@ if ( version_compare( get_bloginfo( 'version' ), '6.6', '<' ) and
 
 		// Define custom styles and what blocks they apply to. 
 		$compat_styles = array(
-// 			'cover-rounded-corners' => array( esc_html__('Rounded Corners', 'flat-blocks'), 
-// 				array('cover' )
-// 			),
 			'rounded-corners' => array( esc_html__('Rounded Corners', 'flat-blocks'), 
 				array('group', 'columns', 'column', 'cover', 'media-text', 'comments')
 			),
@@ -58,6 +55,9 @@ if ( version_compare( get_bloginfo( 'version' ), '6.6', '<' ) and
 			'thick-rounded-border' => array( esc_html__('Thick Border', 'flat-blocks'), 
 				array('group', 'columns', 'column', 'cover', 'media-text', 'comments')
 			),
+// 			'cover-rounded-corners' => array( esc_html__('Rounded Corners', 'flat-blocks'), 
+// 				array('cover' )
+// 			),
 // 			'cover-border' 		=> array( esc_html__('Border', 'flat-blocks'), 
 // 				array('cover' )
 // 			),

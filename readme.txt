@@ -148,7 +148,7 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 == Changelog ==
 
 = 1.6.4 =
-August 22, 2024
+August 24, 2024
 
 Version Summary: Added 4 new button styles. Button Alt and Button Outline Alt have no border-radius so they are rectangular. Button Alt 2 and Outline Alt 2 are pill shaped. Extended Rounded Corners, Rounded Border, and Thick Rounded Border to Cover, Media & Text, Code, Columns, and individual Column blocks. With WordPress v6.6, all of these new styles can be edited in the Styles Editor.
 
