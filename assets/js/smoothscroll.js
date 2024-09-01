@@ -19,9 +19,9 @@
 		/*
 		 * Figure out top offset from fixed headers height and/or admin bar
 		 */
-		const fixedHeader = $('.wp-site-blocks > header:has(.is-style-fixed-header)');
+		const fixedHeader = $('.wp-site-blocks > .wp-block-template-part:has(.is-style-fixed-header)');
 		//const scrollHeader = $('header.site-header.is-style-scroll-header');
-		const stickyHeader = $('.wp-site-blocks > header:has(.is-position-sticky)');
+		const stickyHeader = $('.wp-site-blocks > .wp-block-template-part:has(.is-position-sticky)');
 		const adminBar = $('#wpadminbar');
 
 		var topOffset = 0;

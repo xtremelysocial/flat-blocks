@@ -1,7 +1,8 @@
-/*--------------------------------------------------------------
+/*---------------------------------------------------------------------------------------
 # Navigation
---------------------------------------------------------------*/
+----------------------------------------------------------------------------------------*/
 
+// Load our mixins to use for browser extensions
 @use "../utils/mixins";
 
 /** 
@@ -50,6 +51,7 @@
 }
 
 /* Drop-down link hover color. */
+/* 
 .site-header:not(.has-background) .wp-block-navigation-submenu.open-on-click:hover,
 .site-header:not(.has-background) .wp-block-navigation-item.has-child.open-on-click:hover {
     color: var(--wp--preset--color--highlight);
@@ -62,9 +64,10 @@
 .wp-block-navigation.has-background .wp-block-navigation-item {
 	&:hover > .wp-block-navigation-item__content, // top-level
 	&:hover > .wp-block-navigation__submenu-icon { // top-level
-    	opacity: 0.8;
+    	opacity: var(--wp--custom--link--hover-opacity, 0.85);
     }
 }
+ */
 
 /* But on mobile nav, don't hover on non-clickable links */
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item.has-child.open-on-click > .wp-block-navigation-item:hover,
@@ -157,9 +160,9 @@ header > .wp-block-cover {
 	@include mixins.vendor-prefix('transition-delay', var(--wp--custom--animation--duration--short));
 }
 
-/*--------------------------------------------------------------
+/*---------------------------------------------------------------------------------------
 # Navigation: Custom
---------------------------------------------------------------*/
+----------------------------------------------------------------------------------------*/
 
 /* Navigation Fixed menu */
 /* TO-DO: Consider adding .site-header:not(.is-style-fixed-header) */

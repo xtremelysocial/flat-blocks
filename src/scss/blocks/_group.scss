@@ -1,18 +1,19 @@
-/*--------------------------------------------------------------
+/*---------------------------------------------------------------------------------------
 # Group
---------------------------------------------------------------*/
+----------------------------------------------------------------------------------------*/
 
 /* 
  * Note: Padding for colored backgrounds on groups is now in
  * theme.json as custom block CSS.
  */
 
-/* For convenience, remove padding on nested groups */
-.wp-block-group > .wp-block-group:not(.has-background) {
-	padding: 0;
+/* For convenience, remove padding on nested groups and template parts */
+//[class*="is-style-template-"] > .wp-block-group:not(.has-background):not[class*="is-style-template-"],
+.wp-block-group > .wp-block-group:not(.has-background):not[class*="is-style-template-"] {
+	padding: 0; // !important;
 }
 
-/* If global padding, then OVERRIDE horizontal padding on mobile
+/* If global padding, then OVERRIDE horizontal padding on tablet and below
  *
  * Note: Breakpoint of 781 is what is hard-coded in WordPress 
  * v6.0+ to collapse columns
@@ -24,39 +25,50 @@
 	//.post-comments.has-global-padding.wp-block-group {
 		padding-left: var(--wp--style--root--padding-left) !important;
 		padding-right: var(--wp--style--root--padding-right) !important;
-	}
-	
-	.is-nowrap.is-layout-flex.wp-block-group {
-		flex-wrap: wrap;
-		//overflow: hidden;
-	}		
+	}	
 }
 
-/*--------------------------------------------------------------
-# Group: Custom
---------------------------------------------------------------*/
+// /* If global padding, then OVERRIDE horizontal padding on mobile
+//  *
+//  * Note: Breakpoint of 601 is what is hard-coded in WordPress 
+//  * v6.0+ for mobile
+//  */
+// @media only screen and (max-width: 601px) {
+// 
+// 	.is-nowrap.is-layout-flex.wp-block-group {
+// 		flex-wrap: wrap;
+// 
+// 		& > * {
+// 			width: 100%;
+//     	}	
+//     }	
+// }
 
-/* Group borders */
+/*---------------------------------------------------------------------------------------
+# Group: Custom
+----------------------------------------------------------------------------------------*/
+
+//* Group borders */
 // .wp-block-group.is-style-rounded-border {
-// 	border: 1px solid var(--wp--custom--border--color);
+// 	border: 1px solid var(--wp--custom--color--border);
 // 	border-radius: var(--wp--custom--border--radius);
 // 	padding: var(--wp--preset--spacing--40);
 //     //box-shadow: var(--wp--custom--shadow--default);
 // }
 
-.wp-block-group.is-style-rounded-border.is-layout-flex {
-	overflow: hidden;
-}
+// .wp-block-group.is-style-rounded-border.is-layout-flex {
+// 	overflow: hidden;
+// }
 
 // .wp-block-group.is-style-thick-rounded-border {
-// 	border: 3px solid var(--wp--custom--border--color);
+// 	border: 3px solid var(--wp--custom--color--border);
 // 	border-radius: var(--wp--custom--border--radius);
 //     //box-shadow: var(--wp--custom--shadow--default);
 // }
 
-.wp-block-group.is-style-thick-rounded-border.is-layout-flex {
-	overflow: hidden;
-}
+// .wp-block-group.is-style-thick-rounded-border.is-layout-flex {
+// 	overflow: hidden;
+// }
 
 /* Group no padding */
 .wp-block-group.is-style-no-padding {
@@ -69,28 +81,26 @@
 }
 
 /* Group fixed header (position: sticky) */
-//.wp-site-blocks > header.wp-block-template-part:has(header.is-position-sticky),
-.wp-block-group.header.is-position-sticky, 
-.wp-block-group.is-style-fixed-header,
-.wp-block-group.has-background.is-style-fixed-header {
-	background-color: var(--wp--preset--color--base); 
-//     border: 1px solid var(--wp--custom--border--color);
+header.wp-block-group.is-position-sticky, 
+header.wp-block-group.is-style-fixed-header,
+header.wp-block-group.has-background.is-style-fixed-header {
+// 	background-color: var(--wp--preset--color--base); 
+//     border: 1px solid var(--wp--custom--color--border);
 //     border-width: 0 0 1px;
 //     padding-top: var(--wp--preset--spacing--40);
 //     padding-bottom: var(--wp--preset--spacing--40);
-    box-shadow: var(--wp--custom--shadow--default);
+//     box-shadow: var(--wp--custom--shadow--default);
 }
 
 /* Line up menu close button with menu open button */
-//.wp-site-blocks > header.wp-block-template-part:has(header.is-position-sticky) .wp-block-navigation__responsive-container.is-menu-open,
 .wp-block-group.header.is-position-sticky .wp-block-navigation__responsive-container.is-menu-open,
 .wp-block-group.is-style-fixed-header .wp-block-navigation__responsive-container.is-menu-open {
 	padding-top: var(--wp--preset--spacing--50);
 }
 
 /* Position the fixed header using sticky so we don't have to have top site margin */
-.wp-site-blocks > header.wp-block-template-part:has(header.is-position-sticky),
-.wp-site-blocks > header:has(.is-style-fixed-header) {
+.wp-site-blocks > .wp-block-template-part:has(header.is-position-sticky),
+.wp-site-blocks > .wp-block-template-part:has(.is-style-fixed-header) {
 	position: sticky;
 	top: 0;
 	background-color: var(--wp--preset--color--base);
@@ -98,7 +108,7 @@
 }
 
 /* If WordPress Admin Bar, then adjust fixed header position so its underneath it */
-.admin-bar .wp-site-blocks > header.wp-block-template-part:has(header.is-position-sticky),
-.admin-bar .wp-site-blocks > header:has(.is-style-fixed-header) {
+.admin-bar .wp-site-blocks > .wp-block-template-part:has(header.is-position-sticky),
+.admin-bar .wp-site-blocks > .wp-block-template-part:has(.is-style-fixed-header) {
   top: var(--wp-admin--admin-bar--height, 32px);
 }

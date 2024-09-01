@@ -1,6 +1,6 @@
-/*--------------------------------------------------------------
+/*---------------------------------------------------------------------------------------
 # Alignments
---------------------------------------------------------------*/
+----------------------------------------------------------------------------------------*/
 
 /*
  * Don't let anything be wider than our max width. This is so 
@@ -34,6 +34,24 @@ body .is-layout-constrained > .alignright {
 	padding-right: calc(0.5 * (100% - var(--wp--style--global--wide-size)));
 	margin-inline-start: var(--wp--style--root--padding-left, var(--wp--preset--spacing--50));
 }
+/*--------------------------------------------------------------
+## WordPress Admin Bar
+--------------------------------------------------------------*/
+
+/* Prevent admin bar from spilling over site header */
+#wpadminbar {
+	overflow: hidden;
+}
+#wpadminbar .quicklinks {
+	display: flex;
+}
+#wpadminbar #wp-admin-bar-top-secondary {
+	flex-grow: 2;
+	flex-basis: auto;
+}
+#wpadminbar .ab-top-secondary {
+	float: none;
+}
 
 /* Fix WordPress Admin bar on phones not sticking to the top */
 //
@@ -47,4 +65,3 @@ body .is-layout-constrained > .alignright {
         position: fixed;
     }
 }
-

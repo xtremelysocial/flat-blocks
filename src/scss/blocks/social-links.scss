@@ -1,6 +1,6 @@
-/*--------------------------------------------------------------
+/*---------------------------------------------------------------------------------------
 # Social Links (Icons)
---------------------------------------------------------------*/
+----------------------------------------------------------------------------------------*/
 
 /* Set some defaults. These are needed for WordPres.org theme preview */
 .wp-block-social-links {
@@ -8,7 +8,7 @@
 	gap: var(--wp--style--block-gap);
 }
 
-/* Adjust icon sizes */
+/* Make small and normal icon sizes larger */
 .wp-block-social-links.has-small-icon-size {
   font-size: var(--wp--preset--font-size--medium);
 }

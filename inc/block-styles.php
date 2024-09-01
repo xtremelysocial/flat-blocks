@@ -80,9 +80,9 @@ if ( ! function_exists( 'flatblocks_register_block_styles' ) ) :
 			'bullets' 			=> array( esc_html__('Bullets', 'flat-blocks'), 
 				array('latest-posts', 'latest-comments' )
 			),
-			'no-padding' 		=> array( esc_html__('No Padding', 'flat-blocks'), 
-				array('group', 'column' )
-			),
+// 			'no-padding' 		=> array( esc_html__('No Padding', 'flat-blocks'), 
+// 				array('group', 'column' )
+// 			),
 // 			'rounded-border' 	=> array( esc_html__('Border', 'flat-blocks'), 
 // 				array('group', 'columns', 'column', 'comments', 'post-comments' )
 // 			),
