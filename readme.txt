@@ -147,6 +147,25 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 
 == Changelog ==
 
+= 1.6.5 =
+September 1, 2024
+
+Version Summary: Recent versions enhanced the default font and link colors on colored backgrounds. This version expands that to default link underlines on backgrounds where the link color is different than the default. For example, dark colored sections default light link colors and now they will default to being underlined. You can always override this with custom styles for Link No Underline or Link Underline on Hover.
+
+Page Titles now default to showing the first 25 words of the post excerpt. The post excerpt defaults to the first part of the post itself, but you can override it in the Post Settings to say whatever you want. Or if you don't want it at all, you can just delete the excerpt field from the Page Title Template Part.
+
+Added Next and Previous post links to all the Post Templates.
+
+Here are more updates in this version:
+* Added Footer About 3 Navs Template Part in case you don't also want the site info at the bottom.
+* Enhanced the CSS for defaulting font color on Block Styles for Rounded Corners, Border, and Thick Border.
+* Added new custom variables for button colors: --wp--custom--color--button-background and --wp--custom--color--button--text. Replaced --wp--custom--border--color with --wp--custom--color--border to be consistent with the new color variables. Set Menu Header Dark to use foreground-alt color instead of white so it changes appropriately on light backgrounds.
+* Added new custom variables for button and link hover opacity and set them slightly differently. --wp--custom--link--hover-opacity is now 0.85 so it doesn't lighten it as much. --wp--custom--button--hover-opacity remains at 0.80.
+* Added new custom variables for link underlines: --wp--custom--color--underline--default, etc. These are used to control the default underlines on links in sections with colored backgrounds.
+* Set field border color to inherit via new custom variable, --wp--custom--color--field--border.
+* Replaced the CSS for the Quote block with styles in theme.json.
+* Applied fix to core WordPress admin bar which can line-wrap and overlap page content. This was moved into Flat Bootstrap from the PRO version. 
+
 = 1.6.4 =
 August 24, 2024
 
