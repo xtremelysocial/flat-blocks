@@ -147,6 +147,16 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 
 == Changelog ==
 
+= 1.6.7 =
+October 29, 2024
+
+* Added new gradient backgrounds: Primary to Primary Alt, Secondary to Secondary Alt, Tertiary to Tertiary Alt.
+* Updated social media icons in the various footer template parts to switch over to X instead of Twitter.
+* Updated social media icons in the Social Media block patterns to be white instead of off-white for greater contrast with the background color.
+* On header nav menu with colored background, lighten the link text on hover.
+* On blocks with gradient background, default the text color and inherit the link color from the text color.
+* Moved the padding on colored groups and columns to CSS (flat-blocks.css) instead of in "additional CSS" on those blocks in theme.json. This keeps the "additional CSS" clean for users to add their own without messing up the defaults.
+
 = 1.6.6 =
 October 12, 2024
 

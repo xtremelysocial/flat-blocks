@@ -8,6 +8,11 @@
 	margin-right: auto !important;
 }
 
+/* Default separator width */
+.wp-block-separator {
+	width: calc(1.5 * var(--wp--preset--spacing--80))
+}
+
 /* Override our short separator width for wide and dotted separators */
 .wp-block-separator.is-style-wide,
 .wp-block-separator.is-style-dots {

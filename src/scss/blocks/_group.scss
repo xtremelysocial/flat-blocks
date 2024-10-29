@@ -1,10 +1,12 @@
 /*-----------------------------------------------------------------------------
 # Group
 -----------------------------------------------------------------------------*/
-/* 
- * Note: Padding for colored backgrounds on groups is now in theme.json as 
- * custom block CSS.
- */
+
+/* Padding for colored backgrounds on groups */
+
+.wp-block-group.has-background { 
+	padding: var(--wp--preset--spacing--60) 
+}
 
 // .wp-block-group-is-layout-flex > .wp-block-group {
 // 	flex: 1 1 100%;

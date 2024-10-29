@@ -1,10 +1,15 @@
 /*-----------------------------------------------------------------------------
 # Columns and Column
 -----------------------------------------------------------------------------*/
-/* 
- * Note: Padding for colored backgrounds on columns is now in
- * theme.json as custom block CSS.
- */
+/* Padding for colored backgrounds on columns and individual column */
+
+.wp-block-columns.has-background { 
+	padding: var(--wp--preset--spacing--60) 
+}
+
+.wp-block-column.has-background { 
+	padding: var(--wp--preset--spacing--40) 
+}
 
 /* 
  * Note: Breakpoint of 781 is what is hard-coded in WordPress 

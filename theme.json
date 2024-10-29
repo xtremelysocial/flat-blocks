@@ -15,12 +15,6 @@
 					"midnightBlue": "var(--wp--preset--color--highlight)",
 					"darkMidnightBlue": "var(--wp--preset--color--highlight)"
 				},
-				"hover": {
-					"secondary": "var(--wp--preset--color--highlight-alt)",
-					"secondary-alt": "var(--wp--preset--color--highlight-alt)",
-					"midnightBlue": "var(--wp--preset--color--highlight-alt)",
-					"darkMidnightBlue": "var(--wp--preset--color--highlight-alt)"
-				},
 				"button": {
 					"hoverOpacity": "0.8"
 				},
@@ -384,6 +378,21 @@
 			],
 			"gradients": [
 				{
+					"slug": "primary",
+					"gradient": "linear-gradient(160deg, var(--wp--preset--color--primary), var(--wp--preset--color--primary-alt))",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
+					"gradient": "linear-gradient(160deg, var(--wp--preset--color--secondary), var(--wp--preset--color--secondary-alt))",
+					"name": "Secondary"
+				},
+				{
+					"slug": "tertiary",
+					"gradient": "linear-gradient(160deg, var(--wp--preset--color--tertiary), var(--wp--preset--color--tertiary-alt))",
+					"name": "Tertiary"
+				},
+				{
 					"slug": "primary-to-secondary",
 					"gradient": "linear-gradient(160deg, var(--wp--preset--color--primary), var(--wp--preset--color--secondary))",
 					"name": "Primary to Secondary"
@@ -424,14 +433,14 @@
 					"name": "Yellow"
 				},
 				{
-					"slug": "orange",
-					"gradient": "linear-gradient(160deg, var(--wp--preset--color--light-orange), var(--wp--preset--color--dark-orange))",
-					"name": "Orange"
-				},
-				{
 					"slug": "blue",
 					"gradient": "linear-gradient(160deg, var(--wp--preset--color--light-blue), var(--wp--preset--color--dark-midnight-blue))",
 					"name": "Blue"
+				},
+				{
+					"slug": "orange",
+					"gradient": "linear-gradient(160deg, var(--wp--preset--color--light-orange), var(--wp--preset--color--dark-orange))",
+					"name": "Orange"
 				},
 				{
 					"slug": "purple",
@@ -1052,8 +1061,7 @@
 							"textDecoration": "none"
 						}
 					}
-				},
-				"css": "text-align: center"
+				}
 			}					
 		},
 		"blocks": {
@@ -1068,20 +1076,13 @@
 					}
 				}
 			},
-			"core/group": {
-				"css": "&.has-background { padding: var(--wp--preset--spacing--60) }"
-			},
 			"core/columns": {
 				"spacing": {
 					"blockGap": "var:preset|spacing|40",
 					"margin": {
 						"bottom": "0"
 					}
-				},
-				"css": "&.has-background { padding: var(--wp--preset--spacing--60) }"
-			},
-			"core/column": {
-				"css": "&.has-background { padding: var(--wp--preset--spacing--40) }"
+				}
 			},
 			"core/button": {
 				"border": {
@@ -1126,8 +1127,7 @@
 					"margin": {
 						"bottom": "var:preset|spacing|40"
 					}
-				},
-				"css": "&.has-background { padding: var(--wp--preset--spacing--40) }"
+				}
 			},
 			"core/cover": {
 				"spacing": {
@@ -1538,6 +1538,7 @@
 								"border": {
 									"radius": "var(--wp--custom--button--radius)"
 								},
+								"shadow": "var(--wp--custom--shadow--default)",
 								"spacing": {
 									"padding": {
 										"top": "var:preset|spacing|20",
@@ -1571,8 +1572,7 @@
 						"left": "auto",
 						"right": "auto"
 					}
-				},
-				"css": "width: calc(3 * var(--wp--preset--spacing--60))"
+				}
 			},
 			"core/spacer": {
 				"spacing": {
