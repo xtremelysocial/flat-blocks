@@ -71,12 +71,12 @@ if ( ! function_exists( 'flatblocks_register_block_styles' ) ) :
 			'image-no-border'	=> array( esc_html__('No Border', 'flat-blocks'), 
 				array('post-featured-image' )
 			),
-			'thick' 			=> array( esc_html__('Thick', 'flat-blocks'), 
-				array('separator' )
-			),
-			'thick-wide' 		=> array( esc_html__('Thick Wide', 'flat-blocks'), 
-				array('separator' )
-			),
+// 			'thick' 			=> array( esc_html__('Thick', 'flat-blocks'), 
+// 				array('separator' )
+// 			),
+// 			'thick-wide' 		=> array( esc_html__('Thick Wide', 'flat-blocks'), 
+// 				array('separator' )
+// 			),
 			'bullets' 			=> array( esc_html__('Bullets', 'flat-blocks'), 
 				array('latest-posts', 'latest-comments' )
 			),

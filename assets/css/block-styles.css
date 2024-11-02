@@ -19,6 +19,10 @@
 /*-----------------------------------------------------------------------------
 # Calendar
 -----------------------------------------------------------------------------*/
+.wp-block-calendar table:not(.has-background) th {
+  background-color: var(--wp--preset--color--neutral);
+}
+
 .wp-block-calendar table:where(:not(.has-text-color)),
 .wp-block-calendar table th:not(.has-text-color) {
   color: var(--wp--preset--color--contrast);
@@ -461,12 +465,6 @@ ol.is-style-list-plain-centered li {
 /*-----------------------------------------------------------------------------
 # Separator
 -----------------------------------------------------------------------------*/
-/* FIX to center default (narrow) separator when user selects alignfull */
-.wp-block-separator.alignfull {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
 /* Default separator width */
 .wp-block-separator {
   width: calc(1.5 * var(--wp--preset--spacing--80));
@@ -476,6 +474,17 @@ ol.is-style-list-plain-centered li {
 .wp-block-separator.is-style-wide,
 .wp-block-separator.is-style-dots {
   width: 100% !important;
+}
+
+/* FIX to center default (narrow) separator when user selects alignfull */
+.wp-block-separator.alignfull {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* FIX for theme setting colors on separators. Use only the background color */
+.wp-block-separator:not(.is-style-dots) {
+  color: transparent;
 }
 
 /* Default separator color when on colored background */
@@ -528,11 +537,13 @@ ol.is-style-list-plain-centered li {
   overflow-x: scroll;
 }
 
-/* On striped tables, use our neutral color for odd rows */
-.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
-  background-color: var(--wp--preset--color--neutral);
+/* On striped tables, alternate our neutral and neutral-alt colors */
+.wp-block-table.is-style-stripes tbody tr:nth-child(even) {
+  background-color: var(--wp--preset--color--neutral-alt);
+  color: currentcolor;
 }
 
-.wp-block-table.is-style-stripes table:not(.has-text-color) tbody tr:nth-child(odd) {
-  color: var(--wp--preset--color--almost-black);
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+  background-color: var(--wp--preset--color--neutral);
+  color: currentcolor;
 }

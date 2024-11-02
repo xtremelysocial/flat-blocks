@@ -644,19 +644,19 @@ body .is-layout-constrained > .alignright {
 }
 
 /* Set the text color on gradient backgrounds */
-:where([class*=-gradient-background]:not(.has-gray-gradient-background):not(.has-yellow-gradient-background)) {
+:root :where([class*=-gradient-background]:not(.has-gray-gradient-background):not(.has-yellow-gradient-background)) {
   color: var(--wp--preset--color--foreground-alt);
 }
 
-:where(.has-primary-gradient-background, .has-primary-to-secondary-gradient-background, .has-secondary-to-primary-gradient-background, .has-primary-to-tertiary-gradient-background, .has-tertiary-to-primary-gradient-background) {
+:root :where(.has-primary-gradient-background, .has-primary-to-secondary-gradient-background, .has-secondary-to-primary-gradient-background, .has-primary-to-tertiary-gradient-background, .has-tertiary-to-primary-gradient-background) {
   color: var(--wp--custom--color--contrast--primary, var(--wp--preset--color--foreground-alt));
 }
 
-:where(.has-secondary-gradient-background, .has-secondary-to-tertiary-gradient-background, .has-tertiary-to-secondary-gradient-background) {
+:root :where(.has-secondary-gradient-background, .has-secondary-to-tertiary-gradient-background, .has-tertiary-to-secondary-gradient-background) {
   color: var(--wp--custom--color--contrast--secondary, var(--wp--preset--color--foreground-alt));
 }
 
-:where(.has-tertiary-gradient-background) {
+:root :where(.has-tertiary-gradient-background) {
   color: var(--wp--custom--color--contrast--tertiary, var(--wp--preset--color--foreground-alt));
 }
 

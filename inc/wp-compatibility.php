@@ -64,6 +64,12 @@ if ( version_compare( get_bloginfo( 'version' ), '6.6', '<' ) and
 // 			'media-text-border' => array( esc_html__('Border', 'flat-blocks'), 
 // 				array('media-text' )
 // 			),
+			'thick' 			=> array( esc_html__('Thick', 'flat-blocks'), 
+				array('separator' )
+			),
+			'thick-wide' 		=> array( esc_html__('Wide Thick', 'flat-blocks'), 
+				array('separator' )
+			),
 			'button-alt' => array( esc_html__('Button Alt', 'flat-blocks'), 
 				array('button' )
 			),

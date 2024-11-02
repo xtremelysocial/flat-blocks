@@ -2,12 +2,6 @@
 # Separator
 -----------------------------------------------------------------------------*/
 
-/* FIX to center default (narrow) separator when user selects alignfull */
-.wp-block-separator.alignfull {
-	margin-left: auto !important;
-	margin-right: auto !important;
-}
-
 /* Default separator width */
 .wp-block-separator {
 	width: calc(1.5 * var(--wp--preset--spacing--80))
@@ -16,7 +10,20 @@
 /* Override our short separator width for wide and dotted separators */
 .wp-block-separator.is-style-wide,
 .wp-block-separator.is-style-dots {
-	width: 100% !important;; 
+	width: 100% !important;
+}
+
+/* FIX to center default (narrow) separator when user selects alignfull */
+.wp-block-separator.alignfull {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+/* FIX for theme setting colors on separators. Use only the background color */
+.wp-block-separator:not(.is-style-dots) {
+//.wp-block-separator {
+	//border-color: transparent;
+	color: transparent;
 }
 
 /* Default separator color when on colored background */
