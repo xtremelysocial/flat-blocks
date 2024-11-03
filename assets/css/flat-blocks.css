@@ -829,7 +829,7 @@ header > .wp-block-cover {
 }
 
 /* Group fixed header (position: sticky) */
-.wp-block-group.header.is-position-sticky,
+header.wp-block-group.is-position-sticky,
 .wp-block-group.is-style-fixed-header,
 .wp-block-group.has-background.is-style-fixed-header {
   background-color: var(--wp--preset--color--base);
