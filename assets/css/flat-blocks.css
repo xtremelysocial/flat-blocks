@@ -644,7 +644,7 @@ body .is-layout-constrained > .alignright {
 
 /* Set the contrast color on colored backgrounds and buttons */
 :root :where(.has-background),
-:root .has-background :where(.wp-element-button, .wp-block-button__link) {
+:root :where(.wp-block-background.has-background .wp-element-button, .wp-block-background.has-background .wp-block-button__link) {
   color: var(--wp--custom--color--contrast);
 }
 

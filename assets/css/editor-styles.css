@@ -17,14 +17,6 @@
 # EDITOR BASE STYLES
 -----------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
-# Editor Background and Text
------------------------------------------------------------------------------*/
-.editor-styles-wrapper {
-  background-color: var(--wp--preset--color--base);
-  color: var(--wp--preset--color--contrast);
-}
-
-/*-----------------------------------------------------------------------------
 # Editor Post Title
 -----------------------------------------------------------------------------*/
 /* Style the post title in the Block Editor */
@@ -41,20 +33,6 @@
 /* Fields are still light background, so make text dark in Editor */
 .block-editor-plain-text {
   color: var(--wp--preset--color--very-dark-gray);
-}
-
-/*-----------------------------------------------------------------------------
-# Captions
------------------------------------------------------------------------------*/
-.wp-element-caption {
-  text-align: center;
-}
-
-/*-----------------------------------------------------------------------------
-# Separators
------------------------------------------------------------------------------*/
-.is-root-container.is-outline-mode.block-editor-block-list__layout:has(.wp-block-separator) {
-  width: 100%;
 }
 
 /*-----------------------------------------------------------------------------
@@ -134,4 +112,11 @@ nav.wp-block-navigation.is-style-fixed-menu {
 p.is-style-arrow-icon > a,
 p.is-style-arrow-icon-no-text > a {
   color: inherit !important;
+}
+
+/*-----------------------------------------------------------------------------
+# Separators
+-----------------------------------------------------------------------------*/
+.is-root-container.is-outline-mode.block-editor-block-list__layout:has(.wp-block-separator) {
+  width: 100%;
 }

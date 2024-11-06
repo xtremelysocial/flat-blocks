@@ -466,7 +466,7 @@ ol.is-style-list-plain-centered li {
 # Separator
 -----------------------------------------------------------------------------*/
 /* Default separator width */
-.wp-block-separator {
+.wp-block-separator:not(.is-style-wide, .is-style-dots, .is-style-thick-wide) {
   width: calc(1.5 * var(--wp--preset--spacing--80));
 }
 
@@ -490,20 +490,6 @@ ol.is-style-list-plain-centered li {
 /* Default separator color when on colored background */
 .has-background .wp-block-separator:not(.has-background) {
   color: var(--wp--custom--color--highlight, var(--wp--preset--color--highlight));
-}
-
-/*-----------------------------------------------------------------------------
-# Separator: Custom
------------------------------------------------------------------------------*/
-.wp-block-separator.is-style-thick {
-  border-style: solid;
-  border-width: 0 0 3px;
-}
-
-.wp-block-separator.is-style-thick-wide {
-  border-style: solid;
-  border-width: 0 0 3px;
-  width: 100%;
 }
 
 /*-----------------------------------------------------------------------------

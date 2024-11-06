@@ -1,12 +1,4 @@
 /*-----------------------------------------------------------------------------
-# Editor Background and Text
------------------------------------------------------------------------------*/
-.editor-styles-wrapper {
-	background-color: var(--wp--preset--color--base);
-	color: var(--wp--preset--color--contrast);
-}
-
-/*-----------------------------------------------------------------------------
 # Editor Post Title
 -----------------------------------------------------------------------------*/
 /* Style the post title in the Block Editor */
@@ -24,28 +16,6 @@
 .block-editor-plain-text {
     color: var(--wp--preset--color--very-dark-gray);
 } 
-
-/*-----------------------------------------------------------------------------
-# Captions
------------------------------------------------------------------------------*/
-.wp-element-caption {
-	text-align: center;
-}
-
-/*-----------------------------------------------------------------------------
-# Separators
------------------------------------------------------------------------------*/
-
-// Fix bug in WordPress where default and wide separators don't show
-.is-root-container.is-outline-mode.block-editor-block-list__layout:has(.wp-block-separator) {
-//.is-root-container.is-outline-mode.block-editor-block-list__layout:has(.wp-block-separator.is-style-wide) {
-	width: 100%;
-
-	//.wp-block-separator.is-style-default,
-	//.wp-block-separator:not(.is-style-wide):not(.is-style-dots):not(.is-style-thick-wide) {
-		//width: calc(1.5 * var(--wp--preset--spacing--80)) !important;
-	//}
-}
 
 /*-----------------------------------------------------------------------------
 # Margins (vertical spacing)

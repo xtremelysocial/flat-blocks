@@ -16,7 +16,8 @@
 /*-----------------------------------------------------------------------------
 # CUSTOM BLOCK STYLES (for older WordPress versions)
 -----------------------------------------------------------------------------*/
-@use "compat/wp-compat-base";
-@use "compat/wp-compat-borders";
-@use "compat/wp-compat-buttons";
-@use "compat/wp-compat-heading";
+@use "compat/base";
+@use "compat/borders";
+@use "compat/buttons";
+@use "compat/heading";
+@use "compat/separator";

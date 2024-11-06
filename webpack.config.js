@@ -31,7 +31,7 @@ module.exports = {
 						{ loader: 'css-loader' },
 						{ loader: 'sass-loader', options: {
 
-							// turn of minification
+							// turn off minification
 							sassOptions: {
 								outputStyle: 'expanded',
 							},

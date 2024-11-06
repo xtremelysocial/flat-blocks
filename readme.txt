@@ -147,6 +147,13 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 
 == Changelog ==
 
+= 1.6.8 =
+November 5, 2024
+
+* Remove CSS for Editor background and text color since it now defaults from the settings in theme.json.
+* Fix WordPress bug where Separator preview doesn't display in the Editor.
+* Remove old commented out code in block-patterns.php, block-styles.php, and wp-compatibility.php.
+
 = 1.6.7 =
 October 29, 2024
 
