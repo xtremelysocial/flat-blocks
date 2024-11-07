@@ -49,22 +49,15 @@
 }
 
 /* Columns thick gap */
-.wp-block-columns.is-style-thick-gap,
-.wp-block-columns.is-style-thick-gap.has-background {
-	gap: calc(2 * var(--wp--style--block-gap)); //var(--wp--preset--spacing--60);
-}
-
-//* Column rounded borders */
-// .wp-block-column.is-style-rounded-border {
-// 	border: 1px solid var(--wp--custom--color--border);
-// 	border-radius: var(--wp--custom--border--radius);
-// 	padding: var(--wp--preset--spacing--40);
+// .wp-block-columns.is-style-thick-gap,
+// .wp-block-columns.is-style-thick-gap.has-background {
+// 	gap: calc(2 * var(--wp--style--block-gap)); //var(--wp--preset--spacing--60);
 // }
 
 /* Column no padding */
-.wp-block-column.is-style-no-padding {
-	padding: 0;
-}
+// .wp-block-column.is-style-no-padding {
+// 	padding: 0;
+// }
 
 /* Handle when columns collapse on mobile */
 /* Breakpoint of 781 is what is hard-coded in WordPress v6.0+ to collapse columns */
