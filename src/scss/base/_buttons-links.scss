@@ -13,7 +13,7 @@ a,
 	text-decoration-style: var(--wp--custom--color--link--style, solid);
 }
 
-/* Set link hover opacity */
+/* Set link hover styles */
 :where(.has-background :not(.wp-block-site-title) > a:not(.wp-element-button):not(.wp-block-navigation-item__content):not(.wp-block-social-link-anchor)) {
 	text-decoration: underline;
 

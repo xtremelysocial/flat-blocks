@@ -55,7 +55,7 @@ header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-n
 	& .wp-block-page-list > .wp-block-pages-list__item:hover > a {
 		color: var(--wp--custom--color--highlight, var(--wp--preset--color--highlight));
 		//opacity: 1;
-		opacity: var(--wp--custom--color--opacity, 1);
+		//opacity: var(--wp--custom--color--opacity, 1);
 	}
 
 	// Highlight with custom link color and bold on CURRENT
@@ -81,6 +81,7 @@ header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsiv
 	& > .wp-block-navigation-item:not(.open-on-click):active > .wp-block-navigation__submenu-icon,
 	& .wp-block-page-list > .wp-block-pages-list__item:hover > a {
 		color: var(--wp--preset--color--highlight-alt);
+		//color: var(--wp--preset--color--highlight);		
 	}
 
 	// Highlight with default link color on CURRENT
@@ -104,6 +105,7 @@ header .wp-block-navigation:not(.has-background) .wp-block-navigation-submenu:no
 	&:active > .wp-block-navigation-item__content,
 	&:active > .wp-block-navigation__submenu-icon {
 		color: var(--wp--preset--color--highlight-alt);
+		//color: var(--wp--preset--color--highlight);
 	}
 
 	// Highlight with default link color on CURRENT

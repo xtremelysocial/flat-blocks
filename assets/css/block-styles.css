@@ -19,6 +19,10 @@
 /*-----------------------------------------------------------------------------
 # Calendar
 -----------------------------------------------------------------------------*/
+.wp-block-calendar table:not(.has-background) th {
+  background-color: var(--wp--preset--color--neutral);
+}
+
 .wp-block-calendar table:where(:not(.has-text-color)),
 .wp-block-calendar table th:not(.has-text-color) {
   color: var(--wp--preset--color--contrast);
@@ -461,10 +465,9 @@ ol.is-style-list-plain-centered li {
 /*-----------------------------------------------------------------------------
 # Separator
 -----------------------------------------------------------------------------*/
-/* FIX to center default (narrow) separator when user selects alignfull */
-.wp-block-separator.alignfull {
-  margin-left: auto !important;
-  margin-right: auto !important;
+/* Default separator width */
+.wp-block-separator:not(.is-style-wide, .is-style-dots, .is-style-thick-wide) {
+  width: calc(1.5 * var(--wp--preset--spacing--80));
 }
 
 /* Override our short separator width for wide and dotted separators */
@@ -473,23 +476,20 @@ ol.is-style-list-plain-centered li {
   width: 100% !important;
 }
 
+/* FIX to center default (narrow) separator when user selects alignfull */
+.wp-block-separator.alignfull {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* FIX for theme setting colors on separators. Use only the background color */
+.wp-block-separator:not(.is-style-dots) {
+  color: transparent;
+}
+
 /* Default separator color when on colored background */
 .has-background .wp-block-separator:not(.has-background) {
   color: var(--wp--custom--color--highlight, var(--wp--preset--color--highlight));
-}
-
-/*-----------------------------------------------------------------------------
-# Separator: Custom
------------------------------------------------------------------------------*/
-.wp-block-separator.is-style-thick {
-  border-style: solid;
-  border-width: 0 0 3px;
-}
-
-.wp-block-separator.is-style-thick-wide {
-  border-style: solid;
-  border-width: 0 0 3px;
-  width: 100%;
 }
 
 /*-----------------------------------------------------------------------------
@@ -523,11 +523,8 @@ ol.is-style-list-plain-centered li {
   overflow-x: scroll;
 }
 
-/* On striped tables, use our neutral color for odd rows */
+/* On striped tables, alternate our neutral and neutral-alt colors */
 .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
-  background-color: var(--wp--preset--color--neutral);
-}
-
-.wp-block-table.is-style-stripes table:not(.has-text-color) tbody tr:nth-child(odd) {
+  background-color: var(--wp--preset--color--light-gray);
   color: var(--wp--preset--color--almost-black);
 }

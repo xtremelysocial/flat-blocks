@@ -147,6 +147,26 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 
 == Changelog ==
 
+= 1.6.8 =
+November 5, 2024
+
+* Remove CSS for Editor background and text color since it now defaults from the settings in theme.json.
+* Fix WordPress bug where Separator preview doesn't display in the Editor.
+* Remove old commented out code in block-patterns.php, block-styles.php, and wp-compatibility.php.
+
+= 1.6.7 =
+October 29, 2024
+
+* Added new gradient backgrounds: Primary to Primary Alt, Secondary to Secondary Alt, Tertiary to Tertiary Alt.
+* Updated social media icons in the various footer template parts to switch over to X instead of Twitter.
+* Updated social media icons in the Social Media block patterns to be white instead of off-white for greater contrast with the background color.
+* On blocks with gradient background, default the text color and inherit the link color from the text color.
+* Enhanced CSS for Separator block to fix a bug in WordPress where user settings for separator color were overriden by the default separator color (in theme.json).
+* For WordPress v6.6 and higher, added our Thick and Wide Thick Separator block styles to the Editor so you can change the separator color if you'd like.
+* On header nav menu with colored background, lighten the link text on hover.
+* Updated striped table and calendar block heading background and text colors to work better with dark site backgrounds.
+* Moved the padding on colored groups and columns to CSS (flat-blocks.css) instead of in "additional CSS" on those blocks in theme.json. This keeps the "additional CSS" clean for users to add their own without messing up the defaults.
+
 = 1.6.6 =
 October 12, 2024
 

@@ -3,6 +3,13 @@
 //------------------------------------------------------------------------------
 @use "sass:map";
 
+// Assign color attributes to colored backgrounds
+%link-hover-opacity-1 {
+	& :where(a:not(.wp-element-button):hover) {
+		opacity: 1;
+	}
+}		
+
 // Mixin to default colors
 @mixin color-defaults(
 	$colors,
@@ -19,29 +26,36 @@
 
 				// Set the contrast color, depending on whether there is a default
 				@if $default {
-					color: var(--wp--custom--color--contrast--#{$color}, var(--wp--custom--color--contrast--#{$default}, #{$contrast}));
+					--wp--custom--color--contrast: var(--wp--custom--color--contrast--#{$color}, var(--wp--custom--color--contrast--#{$default}, #{$contrast}));
 				} @else {
-					color: var(--wp--custom--color--contrast--#{$color}, #{$contrast});
+					--wp--custom--color--contrast: var(--wp--custom--color--contrast--#{$color}, #{$contrast});
+				}
+// 				color: var(--wp--custom--color--contrast);
+// 				
+// 				& :where(a.wp-element-button) {
+// 					color: var(--wp--custom--color--contrast);	
+// 				}
+			}		
+
+			// If link color, set it depending on whether there is a default				
+			@if $highlight {
+				@if $default {
+					--wp--custom--color--highlight: var(--wp--custom--color--highlight--#{$color}, var(--wp--custom--color--highlight--#{$default}, #{$highlight}));		
+				} @else {
+					--wp--custom--color--highlight: var(--wp--custom--color--highlight--#{$color}, #{$highlight});
 				}
 
-				// If link color, set it depending on whether there is a default				
-				@if $highlight {
-					@if $default {
-						--wp--custom--color--highlight: var(--wp--custom--color--highlight--#{$color}, var(--wp--custom--color--highlight--#{$default}, #{$highlight}));		
-					} @else {
-						--wp--custom--color--highlight: var(--wp--custom--color--highlight--#{$color}, #{$highlight});
-					}
+				& :where(a:not(.wp-element-button)) {
+					color: var(--wp--custom--color--highlight);	
+				}					
 
-					& :where(a:not(.wp-element-button)) {
-						color: var(--wp--custom--color--highlight);	
-					}					
+			// If no link color here then leave opacity alone on hover 
+			} @else {
+// 				& :where(a:not(.wp-element-button):hover) {
+// 					opacity: 1;
+// 				}	
+				@extend %link-hover-opacity-1;
 
-				// If no link color here then leave opacity alone on hover 
-				} @else {
-					& :where(a:not(.wp-element-button):hover) {
-						opacity: 1;
-					}	
-				}
 			}
 		}
 	}

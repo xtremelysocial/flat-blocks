@@ -34,6 +34,7 @@ module.exports = {
 						{ loader: MiniCssExtractPlugin.loader },
 						{ loader: 'css-loader' },
 						{ loader: 'sass-loader', options: {
+
 							// turn off minification
 							sassOptions: {
 								outputStyle: 'expanded',

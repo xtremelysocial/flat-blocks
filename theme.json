@@ -15,12 +15,6 @@
 					"midnightBlue": "var(--wp--preset--color--highlight)",
 					"darkMidnightBlue": "var(--wp--preset--color--highlight)"
 				},
-				"hover": {
-					"secondary": "var(--wp--preset--color--highlight-alt)",
-					"secondary-alt": "var(--wp--preset--color--highlight-alt)",
-					"midnightBlue": "var(--wp--preset--color--highlight-alt)",
-					"darkMidnightBlue": "var(--wp--preset--color--highlight-alt)"
-				},
 				"button": {
 					"hoverOpacity": "0.8"
 				},
@@ -37,11 +31,9 @@
 				}
 			},
 			"border": {
-				"color": "var(--wp--preset--color--neutral-alt) /* deprecated */",
 				"radius": "5px"
 			},
 			"button": {
-				"color": "var(--wp--preset--color--highlight) /* deprecated */",
 				"radius": "5px",
 				"hoverOpacity": "0.8"
 			},
@@ -388,6 +380,21 @@
 			],
 			"gradients": [
 				{
+					"slug": "primary",
+					"gradient": "linear-gradient(160deg, var(--wp--preset--color--primary), var(--wp--preset--color--primary-alt))",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
+					"gradient": "linear-gradient(160deg, var(--wp--preset--color--secondary), var(--wp--preset--color--secondary-alt))",
+					"name": "Secondary"
+				},
+				{
+					"slug": "tertiary",
+					"gradient": "linear-gradient(160deg, var(--wp--preset--color--tertiary), var(--wp--preset--color--tertiary-alt))",
+					"name": "Tertiary"
+				},
+				{
 					"slug": "primary-to-secondary",
 					"gradient": "linear-gradient(160deg, var(--wp--preset--color--primary), var(--wp--preset--color--secondary))",
 					"name": "Primary to Secondary"
@@ -428,14 +435,14 @@
 					"name": "Yellow"
 				},
 				{
-					"slug": "orange",
-					"gradient": "linear-gradient(160deg, var(--wp--preset--color--light-orange), var(--wp--preset--color--dark-orange))",
-					"name": "Orange"
-				},
-				{
 					"slug": "blue",
 					"gradient": "linear-gradient(160deg, var(--wp--preset--color--light-blue), var(--wp--preset--color--dark-midnight-blue))",
 					"name": "Blue"
+				},
+				{
+					"slug": "orange",
+					"gradient": "linear-gradient(160deg, var(--wp--preset--color--light-orange), var(--wp--preset--color--dark-orange))",
+					"name": "Orange"
 				},
 				{
 					"slug": "purple",
@@ -550,14 +557,14 @@
 					"name": "Tertiary and Primary"
 				},
 				{
-					"colors": ["#000000", "#95a5a6"],
-					"slug": "dark-grayscale",
-					"name": "Dark Grayscale"
-				},
-				{
 					"colors": ["#000000", "#ffffff"],
 					"slug": "grayscale",
 					"name": "Grayscale"
+				},
+				{
+					"colors": ["#000000", "#95a5a6"],
+					"slug": "dark-grayscale",
+					"name": "Dark Grayscale"
 				}
 			]
 		},
@@ -1056,8 +1063,7 @@
 							"textDecoration": "none"
 						}
 					}
-				},
-				"css": "text-align: center"
+				}
 			}					
 		},
 		"blocks": {
@@ -1072,9 +1078,6 @@
 					}
 				}
 			},
-			"core/group": {
-				"css": "&.has-background { padding: var(--wp--preset--spacing--60) }"
-			},
 			"core/columns": {
 				"css": ".has-background { padding: calc(2 * var(--wp--style--block-gap)) }",
 				"spacing": {
@@ -1083,9 +1086,6 @@
 						"bottom": "0"
 					}
 				}
-			},
-			"core/column": {
-				"css": "&.has-background { padding: var(--wp--preset--spacing--40) }"
 			},
 			"core/button": {
 				"border": {
@@ -1130,8 +1130,7 @@
 					"margin": {
 						"bottom": "var:preset|spacing|40"
 					}
-				},
-				"css": "&.has-background { padding: var(--wp--preset--spacing--40) }"
+				}
 			},
 			"core/cover": {
 				"spacing": {
@@ -1542,6 +1541,7 @@
 								"border": {
 									"radius": "var(--wp--custom--button--radius)"
 								},
+								"shadow": "var(--wp--custom--shadow--default)",
 								"spacing": {
 									"padding": {
 										"top": "var:preset|spacing|20",
@@ -1575,8 +1575,7 @@
 						"left": "auto",
 						"right": "auto"
 					}
-				},
-				"css": "width: calc(3 * var(--wp--preset--spacing--60))"
+				}
 			},
 			"core/spacer": {
 				"spacing": {
