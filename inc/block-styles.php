@@ -47,15 +47,15 @@ if ( ! function_exists( 'flatblocks_register_block_styles' ) ) :
 			'bullets' 			=> array( esc_html__('Bullets', 'flat-blocks'), 
 				array('latest-posts', 'latest-comments' )
 			),
-			'no-padding' 		=> array( esc_html__('No Padding', 'flat-blocks'), 
-				array('column', 'media-text' )
-			),
-			'no-gap' 			=> array( esc_html__('No Gap', 'flat-blocks'), 
-				array('columns' )
-			),
-			'thick-gap' 		=> array( esc_html__('Thick Gap', 'flat-blocks'), 
-				array('columns' )
-			),
+// 			'no-padding' 		=> array( esc_html__('No Padding', 'flat-blocks'), 
+// 				array('column', 'media-text' )
+// 			),
+// 			'thick-gap' 		=> array( esc_html__('Thick Gap', 'flat-blocks'), 
+// 				array('columns' )
+// 			),
+// 			'no-gap' 			=> array( esc_html__('No Gap', 'flat-blocks'), 
+// 				array('columns' )
+// 			),
 			'center-on-mobile' 	=> array( esc_html__('Center on Mobile', 'flat-blocks'), 
 				array('columns' )
 			),
@@ -77,15 +77,15 @@ if ( ! function_exists( 'flatblocks_register_block_styles' ) ) :
 			'alignwide' 		=> array( esc_html__('Align Wide', 'flat-blocks'), 
 				array('paragraph' )
 			),
-			'link-underline' 	=> array( esc_html__('Underline Link', 'flat-blocks'), 
-				array('paragraph', 'list', 'list-item', 'categories', 'latest-posts', 'latest-comments', 'page-list', 'post-title', 'post-terms')
-			),
-			'link-no-underline' => array( esc_html__('No Underline Link', 'flat-blocks'), 
-				array('paragraph', 'list', 'list-item', 'categories', 'latest-posts', 'latest-comments', 'page-list', 'post-title', 'post-terms')
-			),
-			'link-underline-hover' => array( esc_html__('Underline Hover', 'flat-blocks'), 
-				array('paragraph', 'list', 'list-item', 'categories', 'latest-posts', 'latest-comments', 'page-list', 'post-title', 'post-terms', 'site-title')
-			),
+// 			'link-underline' 	=> array( esc_html__('Underline Link', 'flat-blocks'), 
+// 				array('paragraph', 'list', 'list-item', 'categories', 'latest-posts', 'latest-comments', 'page-list', 'post-title', 'post-terms')
+// 			),
+// 			'link-no-underline' => array( esc_html__('No Underline Link', 'flat-blocks'), 
+// 				array('paragraph', 'list', 'list-item', 'categories', 'latest-posts', 'latest-comments', 'page-list', 'post-title', 'post-terms')
+// 			),
+// 			'link-underline-hover' => array( esc_html__('Underline Hover', 'flat-blocks'), 
+// 				array('paragraph', 'list', 'list-item', 'categories', 'latest-posts', 'latest-comments', 'page-list', 'post-title', 'post-terms', 'site-title')
+// 			),
 			'arrow-icon' 		=> array( esc_html__('Arrow Icon', 'flat-blocks'), 
 				array('paragraph' )
 			),

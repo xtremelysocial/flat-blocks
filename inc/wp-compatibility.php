@@ -11,7 +11,7 @@
  */
 
 /**
- * Enqueue custom block styles on both front-end and back-end.
+ * If WordPress version <6.6, enqueue custom block styles on front-end and back-end
  */
 if ( version_compare( get_bloginfo( 'version' ), '6.6', '<' ) AND 
 	( file_exists( get_stylesheet_directory() . '/assets/css/wp-compat.css' ) ) ) :
@@ -35,7 +35,7 @@ if ( version_compare( get_bloginfo( 'version' ), '6.6', '<' ) AND
 endif;
 
 /**
- * Register custom block styles only if WordPress version less than 6.6.
+ * If WordPress version <6.6, register custom block styles
  */
 if ( version_compare( get_bloginfo( 'version' ), '6.6', '<' ) and 
 	( ! function_exists( 'flatblocks_register_compat_block_styles' ) ) ) :
@@ -55,6 +55,12 @@ if ( version_compare( get_bloginfo( 'version' ), '6.6', '<' ) and
 			'thick-rounded-border' => array( esc_html__('Thick Border', 'flat-blocks'), 
 				array('group', 'columns', 'column', 'cover', 'media-text', 'comments')
 			),
+			'thick-gap' 		=> array( esc_html__('Thick Gap', 'flat-blocks'), 
+				array('columns' )
+			),
+			'no-gap' 			=> array( esc_html__('No Gap', 'flat-blocks'), 
+				array('columns' )
+			),
 			'thick' 			=> array( esc_html__('Thick', 'flat-blocks'), 
 				array('separator' )
 			),
@@ -72,6 +78,15 @@ if ( version_compare( get_bloginfo( 'version' ), '6.6', '<' ) and
 			),
 			'button-outline-alt-2' => array( esc_html__('Outline Alt 2', 'flat-blocks-pro'), 
 				array('button' )
+			),
+			'link-underline' 	=> array( esc_html__('Underline Link', 'flat-blocks'), 
+				array('paragraph', 'list', 'list-item', 'categories', 'latest-posts', 'latest-comments', 'page-list', 'post-title', 'post-terms')
+			),
+			'link-no-underline' => array( esc_html__('No Underline Link', 'flat-blocks'), 
+				array('paragraph', 'list', 'list-item', 'categories', 'latest-posts', 'latest-comments', 'page-list', 'post-title', 'post-terms')
+			),
+			'link-underline-hover' => array( esc_html__('Underline Hover', 'flat-blocks'), 
+				array('paragraph', 'list', 'list-item', 'categories', 'latest-posts', 'latest-comments', 'page-list', 'post-title', 'post-terms', 'site-title')
 			),
 		);
 
