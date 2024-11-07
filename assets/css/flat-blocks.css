@@ -729,16 +729,7 @@ body .is-layout-constrained > .alignright {
 }
 
 /* Columns thick gap */
-.wp-block-columns.is-style-thick-gap,
-.wp-block-columns.is-style-thick-gap.has-background {
-  gap: calc(2 * var(--wp--style--block-gap));
-}
-
 /* Column no padding */
-.wp-block-column.is-style-no-padding {
-  padding: 0;
-}
-
 /* Handle when columns collapse on mobile */
 /* Breakpoint of 781 is what is hard-coded in WordPress v6.0+ to collapse columns */
 @media only screen and (max-width: 781px) {
@@ -823,11 +814,6 @@ header > .wp-block-cover {
 }
 
 /* Group no padding */
-.wp-block-group.is-style-no-padding {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
 .wp-block-group.is-style-no-padding:not(.has-global-padding) {
   padding-left: 0;
   padding-right: 0;
