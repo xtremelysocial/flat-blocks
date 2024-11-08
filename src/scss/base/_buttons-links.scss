@@ -10,7 +10,7 @@ a,
 .wp-block-navigation a,
 .wp-block-navigation-submenu__toggle {
 	cursor: pointer;
-	text-decoration-style: var(--wp--custom--color--link--style, solid);
+	text-decoration-style: var(--wp--custom--link--style, solid);
 }
 
 /* Set link hover styles */
@@ -22,15 +22,6 @@ a,
 		opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
 	}
 }
-
-// /* For only links in content, also underline on hover */
-// .has-background :not(.wp-block-site-title) > a:not([class*="wp-"]) {
-// 	&:hover,
-// 	&:active {
-// 		text-decoration: underline !important;
-// 		text-decoration-style: var(--wp--custom--color--link--hover-style, solid);
-// 	}
-// }
 
 /* 
  * Style basic buttons to match block buttons. 

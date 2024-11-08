@@ -19,9 +19,7 @@
 					"hoverOpacity": "0.8"
 				},
 				"link": {
-					"style": "solid",
-					"hoverOpacity": "0.8",
-					"hoverStyle": "solid"
+					"hoverOpacity": "0.8"
 				},
 				"border": "var(--wp--preset--color--neutral-alt)",
 				"field": {
@@ -30,20 +28,20 @@
 					"outline": "rgba(0, 0, 0, 0.25)"
 				}
 			},
+			"link": {
+				"style": "solid",
+				"thickness": "1px",
+				"postion": "under",
+				"offset": "auto"
+			},
 			"border": {
 				"radius": "5px"
 			},
 			"button": {
-				"radius": "5px",
-				"hoverOpacity": "0.8"
+				"radius": "5px"
 			},
 			"shadow": {
 				"default": "none"
-			},
-			"link": {
-				"thickness": "1px",
-				"postion": "under",
-				"offset": "auto"
 			},
 			"typography": {
 				"fontWeight": {

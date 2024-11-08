@@ -67,13 +67,13 @@ if ( version_compare( get_bloginfo( 'version' ), '6.6', '<' ) and
 			'thick-wide' 		=> array( esc_html__('Wide Thick', 'flat-blocks'), 
 				array('separator' )
 			),
-			'button-alt' => array( esc_html__('Button Alt', 'flat-blocks'), 
+			'button-alt' 		=> array( esc_html__('Button Alt', 'flat-blocks'), 
 				array('button' )
 			),
 			'button-outline-alt' => array( esc_html__('Outline Alt', 'flat-blocks'), 
 				array('button' )
 			),
-			'button-alt-2' => array( esc_html__('Button Alt 2', 'flat-blocks'), 
+			'button-alt-2' 		=> array( esc_html__('Button Alt 2', 'flat-blocks'), 
 				array('button' )
 			),
 			'button-outline-alt-2' => array( esc_html__('Outline Alt 2', 'flat-blocks'), 
@@ -87,6 +87,9 @@ if ( version_compare( get_bloginfo( 'version' ), '6.6', '<' ) and
 			),
 			'link-underline-hover' => array( esc_html__('Underline Hover', 'flat-blocks'), 
 				array('paragraph', 'list', 'list-item', 'categories', 'latest-posts', 'latest-comments', 'page-list', 'post-title', 'post-terms', 'site-title')
+			),
+			'no-icon' 			=> array( esc_html__('No Icon', 'flat-blocks'), 
+				array('post-author', 'post-date', 'post-terms' )
 			),
 		);
 

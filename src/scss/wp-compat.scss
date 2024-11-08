@@ -16,11 +16,11 @@
 /*-----------------------------------------------------------------------------
 # CUSTOM BLOCK STYLES (for WordPress versions less than 6.6)
 -----------------------------------------------------------------------------*/
-@use "compat/base";
-@use "compat/borders";
-@use "compat/buttons";
-@use "compat/columns";
-@use "compat/group";
-@use "compat/heading";
-@use "compat/query";
-@use "compat/separator";
+@use "wp-compat/base";
+@use "wp-compat/borders";
+@use "wp-compat/buttons";
+@use "wp-compat/columns";
+@use "wp-compat/group";
+@use "wp-compat/heading";
+@use "wp-compat/query";
+@use "wp-compat/separator";
