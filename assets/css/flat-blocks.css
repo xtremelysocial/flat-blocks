@@ -1267,9 +1267,8 @@ p.is-style-arrow-icon > a:after {
 # Dashicons
 -----------------------------------------------------------------------------*/
 /**
- * Override core WordPress base Dashicon styles. Don't let it
- * alter height, width, font-size or line-height. 
- *
+ * Override core WordPress base Dashicon styles. Don't let it alter height, 
+ * width, font-size or line-height. 
  */
 .dashicons {
   display: block;
@@ -1405,6 +1404,10 @@ main.wp-block-group:not(.has-global-padding),
 
 /*-----------------------------------------------------------------------------
 # Flat Blocks Theme Compatibility with Prior Versions
+#
+# This is so that user's CONTENT created with prior theme versions will still
+# work as before. These styles have been DEPRECATED though and will be removed
+# at some point, so its best to update the site content.
 -----------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
 # Flat Blocks Colors (for theme < v1.6)
@@ -1449,7 +1452,7 @@ main.wp-block-group:not(.has-global-padding),
 }
 
 /*-----------------------------------------------------------------------------
-# Flat Blocks Colors and Custom Styles (for theme < v1.6.6)
+# Flat Blocks Group Styles (for theme < v1.6.6)
 -----------------------------------------------------------------------------*/
 /* Default group padding, but remove it on nested groups */
 :where(.wp-block-group:not(main):not(.is-style-no-padding)) {
@@ -1463,6 +1466,10 @@ main.wp-block-group:not(.has-global-padding),
 
 /*-----------------------------------------------------------------------------
 # Color compatibility with other themes
+#
+# This is so that user's CONTENT created with CORE WORDPRESS THEMES will look
+# OK before they update it for the Flat Blocks theme. These styles are
+# temporary and could be removed in future versions of Flat Blocks.
 -----------------------------------------------------------------------------*/
 /* 
  * TwentyTwentyFour theme uses base and contrast in numbered 

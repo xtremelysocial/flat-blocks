@@ -79,18 +79,6 @@ if ( version_compare( get_bloginfo( 'version' ), '6.6', '<' ) and
 			'button-outline-alt-2' => array( esc_html__('Outline Alt 2', 'flat-blocks'), 
 				array('button' )
 			),
-			'link-underline' 	=> array( esc_html__('Underline Link', 'flat-blocks'), 
-				array('paragraph', 'list', 'list-item', 'categories', 'latest-posts', 'latest-comments', 'page-list', 'post-title', 'post-terms')
-			),
-			'link-no-underline' => array( esc_html__('No Underline Link', 'flat-blocks'), 
-				array('paragraph', 'list', 'list-item', 'categories', 'latest-posts', 'latest-comments', 'page-list', 'post-title', 'post-terms')
-			),
-			'link-underline-hover' => array( esc_html__('Underline Hover', 'flat-blocks'), 
-				array('paragraph', 'list', 'list-item', 'categories', 'latest-posts', 'latest-comments', 'page-list', 'post-title', 'post-terms', 'site-title')
-			),
-			'no-icon' 			=> array( esc_html__('No Icon', 'flat-blocks'), 
-				array('post-author', 'post-date', 'post-terms' )
-			),
 		);
 
 		return $theme_styles ? $theme_styles + $compat_styles : $compat_styles;	

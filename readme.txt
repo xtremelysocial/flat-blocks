@@ -148,12 +148,12 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 == Changelog ==
 
 = 1.6.9 =
-November 7, 2024
+November 8, 2024
 
-Version Summary: Made more Block Style Variations available in the Styles Editor, such as Thick Gap and No Gap for Columns, No Padding for Column and Media Text, No Icon for Post Date, Post Author, and Post Terms, Link Underline, No Underline, and Underline on Hover for paragraphs and lists, etc.
+Version Summary: Made more Block Style Variations available in the Styles Editor, including Thick Gap and No Gap for Columns and No Padding for Column and Media Text.
 
 * Fix issue with Theme Styles that set dotted underline on links that was also resetting the color palette to the default one. This required changing --wp--custom--color--link--style to --wp--custom--link--style in theme.json.
-* Move more Custom Block styles from block-styles.php into /styles/blocks/*.json so that they can be viewed and edited in the Styles Editor. This requires WordPress v6.6+, but but built in backwards compatibility to older WordPress versions. The Styles Editor will now show the following Block Style Variations: Thick Gap and No Gap for Columns, No Padding for Column, No Icon for Post Date, Post Author, and Post Terms, Link Underline, No Underline, and Underline on Hover for paragraphs and lists, etc.
+* Move more Custom Block styles from block-styles.php into /styles/blocks/*.json so that they can be viewed and edited in the Styles Editor. This requires WordPress v6.6+, but but built in backwards compatibility to older WordPress versions. The Styles Editor will now show the following Block Style Variations: Thick Gap and No Gap for Columns and No Padding for Column.
 
 = 1.6.8 =
 November 5, 2024
