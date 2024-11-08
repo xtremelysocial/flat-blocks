@@ -46,28 +46,28 @@ if ( version_compare( get_bloginfo( 'version' ), '6.6', '<' ) and
 
 		// Define custom styles and what blocks they apply to. 
 		$compat_styles = array(
-			'rounded-corners' => array( esc_html__('Rounded Corners', 'flat-blocks'), 
+			'rounded-corners' => array( esc_html__('Rounded Corners', 'flat-blocks-pro'), 
 				array('group', 'columns', 'column', 'cover', 'media-text', 'comments')
 			),
-			'rounded-border' 	=> array( esc_html__('Border', 'flat-blocks'), 
+			'rounded-border' 	=> array( esc_html__('Border', 'flat-blocks-pro'), 
 				array('group', 'columns', 'column', 'cover', 'media-text', 'comments')
 			),
-			'thick-rounded-border' => array( esc_html__('Thick Border', 'flat-blocks'), 
+			'thick-rounded-border' => array( esc_html__('Thick Border', 'flat-blocks-pro'), 
 				array('group', 'columns', 'column', 'cover', 'media-text', 'comments')
 			),
-			'thick-gap' 		=> array( esc_html__('Thick Gap', 'flat-blocks'), 
+			'thick-gap' 		=> array( esc_html__('Thick Gap', 'flat-blocks-pro'), 
 				array('columns' )
 			),
-			'no-gap' 			=> array( esc_html__('No Gap', 'flat-blocks'), 
+			'no-gap' 			=> array( esc_html__('No Gap', 'flat-blocks-pro'), 
 				array('columns' )
 			),
-			'thick' 			=> array( esc_html__('Thick', 'flat-blocks'), 
+			'thick' 			=> array( esc_html__('Thick', 'flat-blocks-pro'), 
 				array('separator' )
 			),
-			'thick-wide' 		=> array( esc_html__('Wide Thick', 'flat-blocks'), 
+			'thick-wide' 		=> array( esc_html__('Wide Thick', 'flat-blocks-pro'), 
 				array('separator' )
 			),
-			'button-alt' => array( esc_html__('Button Alt', 'flat-blocks'), 
+			'button-alt' 		=> array( esc_html__('Button Alt', 'flat-blocks-pro'), 
 				array('button' )
 			),
 			'button-outline-alt' => array( esc_html__('Outline Alt', 'flat-blocks-pro'), 
@@ -79,14 +79,17 @@ if ( version_compare( get_bloginfo( 'version' ), '6.6', '<' ) and
 			'button-outline-alt-2' => array( esc_html__('Outline Alt 2', 'flat-blocks-pro'), 
 				array('button' )
 			),
-			'link-underline' 	=> array( esc_html__('Underline Link', 'flat-blocks'), 
+			'link-underline' 	=> array( esc_html__('Underline Link', 'flat-blocks-pro'), 
 				array('paragraph', 'list', 'list-item', 'categories', 'latest-posts', 'latest-comments', 'page-list', 'post-title', 'post-terms')
 			),
-			'link-no-underline' => array( esc_html__('No Underline Link', 'flat-blocks'), 
+			'link-no-underline' => array( esc_html__('No Underline Link', 'flat-blocks-pro'), 
 				array('paragraph', 'list', 'list-item', 'categories', 'latest-posts', 'latest-comments', 'page-list', 'post-title', 'post-terms')
 			),
-			'link-underline-hover' => array( esc_html__('Underline Hover', 'flat-blocks'), 
+			'link-underline-hover' => array( esc_html__('Underline Hover', 'flat-blocks-pro'), 
 				array('paragraph', 'list', 'list-item', 'categories', 'latest-posts', 'latest-comments', 'page-list', 'post-title', 'post-terms', 'site-title')
+			),
+			'no-icon' 			=> array( esc_html__('No Icon', 'flat-blocks-pro'), 
+				array('post-author', 'post-date', 'post-terms' )
 			),
 		);
 

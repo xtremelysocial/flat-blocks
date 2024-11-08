@@ -71,9 +71,9 @@ if ( ! function_exists( 'flatblocks_register_block_styles' ) ) :
 			'list-plain-centered' => array( esc_html__('Plain Centered', 'flat-blocks'), 
 				array('list', 'page-list', 'categories' )
 			),
-			'no-icon' 			=> array( esc_html__('No Icon', 'flat-blocks'), 
-				array('post-author', 'post-date', 'post-terms' )
-			),
+// 			'no-icon' 			=> array( esc_html__('No Icon', 'flat-blocks'), 
+// 				array('post-author', 'post-date', 'post-terms' )
+// 			),
 			'alignwide' 		=> array( esc_html__('Align Wide', 'flat-blocks'), 
 				array('paragraph' )
 			),
