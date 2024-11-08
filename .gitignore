@@ -5,10 +5,11 @@ node_modules/
 # Debugging files 
 *.css.map
 *.js.map
-*.asset.php
 
 # Unneeded build files
 assets/css/blocks/
+*.asset.php
+*-*.asset.php
 *-rtl.css
 
 # Mac files
