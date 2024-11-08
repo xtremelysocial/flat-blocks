@@ -23,6 +23,7 @@ assets/css/blocks/
 **/*-SAVE*
 styles/*-test*.json
 styles/colors-test/
+styles/colors-test-old/
 styles/global-test/
 styles/sections-test/
 styles/blocks-test/
