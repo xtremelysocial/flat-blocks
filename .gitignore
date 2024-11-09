@@ -24,6 +24,7 @@ node_modules/
 **/*-SAVE*
 styles/*-test*.json
 styles/colors-test/
+styles/colors-test-SAVE/
 styles/global-test/
 styles/sections-test/
 styles/blocks-test/
