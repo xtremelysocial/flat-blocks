@@ -55,12 +55,6 @@ if ( version_compare( get_bloginfo( 'version' ), '6.6', '<' ) and
 			'thick-rounded-border' => array( esc_html__('Thick Border', 'flat-blocks'), 
 				array('group', 'columns', 'column', 'cover', 'media-text', 'comments')
 			),
-			'thick-gap' 		=> array( esc_html__('Thick Gap', 'flat-blocks'), 
-				array('columns' )
-			),
-			'no-gap' 			=> array( esc_html__('No Gap', 'flat-blocks'), 
-				array('columns' )
-			),
 			'thick' 			=> array( esc_html__('Thick', 'flat-blocks'), 
 				array('separator' )
 			),

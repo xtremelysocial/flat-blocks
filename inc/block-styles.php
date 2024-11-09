@@ -47,6 +47,15 @@ if ( ! function_exists( 'flatblocks_register_block_styles' ) ) :
 			'bullets' 			=> array( esc_html__('Bullets', 'flat-blocks'), 
 				array('latest-posts', 'latest-comments' )
 			),
+			'thick-gap' 		=> array( esc_html__('Thick Gap', 'flat-blocks'), 
+				array('columns' )
+			),
+			'no-gap' 			=> array( esc_html__('No Gap', 'flat-blocks'), 
+				array('columns' )
+			),
+			'no-padding' 		=> array( esc_html__('No Padding', 'flat-blocks'), 
+				array('column' )
+			),
 			'center-on-mobile' 	=> array( esc_html__('Center on Mobile', 'flat-blocks'), 
 				array('columns' )
 			),
