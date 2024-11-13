@@ -125,16 +125,6 @@ is-style-thick-rounded-border.is-layout-flex {
 }
 
 /*-----------------------------------------------------------------------------
-# Block Styles for Groups
-# @since v1.6.9
-------------------------------------------------------------------------------*/
-/* Group no padding */
-.wp-block-group.is-style-no-padding {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-/*-----------------------------------------------------------------------------
 # Heading Colors
 # @since v1.6.5
 ------------------------------------------------------------------------------*/
@@ -147,16 +137,6 @@ is-style-thick-rounded-border.is-layout-flex {
 .has-background h5:not(.has-text-color),
 .has-background h6:not(.has-text-color) {
   color: inherit;
-}
-
-/*-----------------------------------------------------------------------------
-# Block Styles for Query
-# @since v1.6.9
-------------------------------------------------------------------------------*/
-/* Query no padding */
-.wp-block-query.is-style-no-padding {
-  padding-top: 0;
-  padding-bottom: 0;
 }
 
 /*-----------------------------------------------------------------------------

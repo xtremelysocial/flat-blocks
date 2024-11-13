@@ -685,80 +685,6 @@ body .is-layout-constrained > .alignright {
 # CRITICAL BLOCK STYLES
 -----------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
-# Columns and Column
------------------------------------------------------------------------------*/
-/* Padding for colored backgrounds on columns and individual column */
-.wp-block-columns.has-background {
-  padding: var(--wp--preset--spacing--60);
-}
-
-.wp-block-column.has-background {
-  padding: var(--wp--preset--spacing--40);
-}
-
-/* 
- * Note: Breakpoint of 781 is what is hard-coded in WordPress 
- * v6.0+ to collapse columns
- */
-@media only screen and (max-width: 781px) {
-  /* 
-   * If no global padding, then set colored columns like colored
-   * groups 
-   */
-  .wp-block-columns.has-background,
-  .wp-block-column.has-background {
-    padding-left: calc(2 * var(--wp--style--block-gap));
-    padding-right: calc(2 * var(--wp--style--block-gap));
-  }
-  /* If global padding, then OVERRIDE horizontal padding on mobile */
-  .has-global-padding .wp-block-columns.has-background,
-  .has-global-padding .wp-block-column.has-background {
-    padding-left: var(--wp--style--root--padding-left) !important;
-    padding-right: var(--wp--style--root--padding-right) !important;
-  }
-}
-/*-----------------------------------------------------------------------------
-# Columns and Column: Custom
------------------------------------------------------------------------------*/
-.wp-block-columns.is-style-no-gap,
-.wp-block-columns.is-style-no-gap .wp-block-column:not(.has-background),
-.wp-block-columns.is-style-no-gap.has-background:not(.has-global-padding) {
-  gap: 0 !important;
-  padding: 0 !important;
-}
-
-/* Columns thick gap */
-.wp-block-columns.is-style-thick-gap,
-.wp-block-columns.is-style-thick-gap.has-background {
-  gap: calc(2 * var(--wp--style--block-gap));
-}
-
-/* Column no padding */
-.wp-block-column.is-style-no-padding {
-  padding: 0;
-}
-
-/* Handle when columns collapse on mobile */
-/* Breakpoint of 781 is what is hard-coded in WordPress v6.0+ to collapse columns */
-@media only screen and (max-width: 781px) {
-  /* Reduce row (vertical gap) when collapsing centered columns */
-  .wp-block-columns.is-style-center-on-mobile {
-    row-gap: var(--wp--preset--spacing--30);
-  }
-  /* Center left and right aligned text */
-  .wp-block-columns.is-style-center-on-mobile .wp-block-column:not(.wp-block-navigation__responsive-container-content) > *,
-  .wp-block-columns.is-style-center-on-mobile .wp-block-column:not(.wp-block-navigation__responsive-container-content) > .wp-block-template-part > * {
-    display: flex;
-    justify-content: center;
-    --navigation-layout-justify: center;
-  }
-  /* OVERRIDE columns thick gap so vertical spacing matches up */
-  .wp-block-columns.is-style-thick-gap,
-  .wp-block-columns.is-style-thick-gap.has-background {
-    gap: var(--wp--style--block-gap);
-  }
-}
-/*-----------------------------------------------------------------------------
 # Cover
 -----------------------------------------------------------------------------*/
 /* LIMIT cover image inner content to standard unless wide or full */
@@ -813,15 +739,17 @@ header > .wp-block-cover {
 /*-----------------------------------------------------------------------------
 # Group: Custom
 -----------------------------------------------------------------------------*/
-.wp-block-group.is-style-rounded-border.is-layout-flex {
-  overflow: hidden;
-}
-
+.wp-block-group.is-style-rounded-border.is-layout-flex,
 .wp-block-group.is-style-thick-rounded-border.is-layout-flex {
   overflow: hidden;
 }
 
 /* Group no padding */
+.wp-block-group.is-style-no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .wp-block-group.is-style-no-padding:not(.has-global-padding) {
   padding-left: 0;
   padding-right: 0;
@@ -869,87 +797,6 @@ header.wp-block-group.is-position-sticky,
   }
 }
 /*-----------------------------------------------------------------------------
-# Heading
------------------------------------------------------------------------------*/
-/* Match our padding on headings with backgrounds */
-h1.has-background,
-h2.has-background,
-h3.has-background,
-h4.has-background,
-h5.has-background,
-h6.has-background {
-  padding: var(--wp--preset--spacing--40);
-}
-
-/*-----------------------------------------------------------------------------
-# Image
------------------------------------------------------------------------------*/
-/* Prevent figures (images, tables) with hard-coded dimensions from breaking the 
- * layout. Note the figure line is for older block editor markup. 
- */
-figure.wp-caption:not(.alignfull):not(.alignwide),
-figure.wp-caption:not(.alignfull):not(.alignwide) img {
-  max-width: min(100%, var(--wp--style--global--content-size)) !important;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* FIX rounded images when global image style has a border radius */
-.wp-block-image .is-style-rounded img,
-.wp-block-image.is-style-circle-mask img,
-.wp-block-image.is-style-rounded img {
-  border-radius: 9999px !important;
-}
-
-/*-----------------------------------------------------------------------------
-# Image: Custom
------------------------------------------------------------------------------*/
-/* Image borders */
-.is-style-image-border img {
-  border: 1px solid var(--wp--custom--color--border);
-  border-radius: var(--wp--custom--border--radius);
-  padding: var(--wp--preset--spacing--20);
-}
-
-.wp-block-gallery.has-nested-images figure.is-style-image-border figcaption,
-.wp-block-gallery.is-style-image-border.has-nested-images figure.wp-block-image figcaption {
-  bottom: calc(1px + var(--wp--preset--spacing--20));
-  left: calc(1px + var(--wp--preset--spacing--20));
-  padding: 0 calc(1px + var(--wp--preset--spacing--20)) calc(1px + var(--wp--preset--spacing--20)) 0;
-  width: calc(100% - (2px + 2 * var(--wp--preset--spacing--20)));
-  border-bottom-left-radius: var(--wp--custom--border--radius);
-  border-bottom-right-radius: var(--wp--custom--border--radius);
-}
-
-.is-style-image-round-border img {
-  border: 1px solid var(--wp--custom--color--border);
-  border-radius: 9999px; /*50%;*/
-  padding: var(--wp--preset--spacing--20);
-}
-
-.wp-block-image.is-style-image-computer-screen img {
-  border: var(--wp--preset--spacing--60) solid var(--wp--preset--color--almost-black);
-  border-radius: var(--wp--preset--spacing--40);
-  border-bottom: 3px solid var(--wp--preset--color--almost-black);
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.is-style-image-tablet-phone-screen img {
-  border: var(--wp--preset--spacing--50) solid var(--wp--preset--color--almost-black);
-  border-radius: var(--wp--preset--spacing--40);
-}
-
-/* Featured Image no border */
-.is-style-image-no-border,
-.is-style-image-no-border img {
-  border: none;
-  border-radius: 0;
-  padding: 0;
-}
-
-/*-----------------------------------------------------------------------------
 # Navigation
 -----------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
@@ -978,10 +825,10 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 /*-----------------------------------------------------------------------------
 # On DESKTOP, highlight TOP-LEVEL links
 -----------------------------------------------------------------------------*/
-header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item:hover > .wp-block-navigation-item__content, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item:hover > .wp-block-navigation__submenu-icon, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item:active > .wp-block-navigation-item__content, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item:active > .wp-block-navigation__submenu-icon, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container .wp-block-page-list > .wp-block-pages-list__item:hover > a {
+header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item:hover > .wp-block-navigation-item__content, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item:hover > .wp-block-navigation__submenu-icon, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item:active > .wp-block-navigation-item__content, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item:active > .wp-block-navigation__submenu-icon, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container .wp-block-page-list > .wp-block-pages-list__item:hover > .wp-block-navigation-item__content, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container .wp-block-page-list > .wp-block-pages-list__item:hover > .wp-block-navigation__submenu-icon, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container .wp-block-page-list > .wp-block-pages-list__item:active > .wp-block-navigation-item__content, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container .wp-block-page-list > .wp-block-pages-list__item:active > .wp-block-navigation__submenu-icon {
   color: var(--wp--custom--color--highlight, var(--wp--preset--color--highlight));
 }
-header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item:has(.current-menu-ancestor) > .wp-block-navigation-item__content, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item:has(.current-menu-ancestor) > .wp-block-navigation__submenu-icon, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item.current-menu-item > a[aria-current=page], header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container .wp-block-page-list > .wp-block-pages-list__item.current-menu-item > a {
+header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item:has(.current-menu-ancestor) > .wp-block-navigation-item__content, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item:has(.current-menu-ancestor) > .wp-block-navigation__submenu-icon, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item.current-menu-item > a[aria-current=page], header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container .wp-block-page-list > .wp-block-navigation-item.current-menu-ancestor > .wp-block-navigation-item__content, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container .wp-block-page-list > .wp-block-navigation-item.current-menu-ancestor > .wp-block-navigation__submenu-icon, header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container .wp-block-page-list > .wp-block-navigation-item.current-menu-item > a[aria-current=page] {
   color: var(--wp--custom--color--highlight, var(--wp--preset--color--highlight));
   font-weight: var(--wp--custom--color--font-weight, bolder);
 }
@@ -989,21 +836,28 @@ header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-n
 /*-----------------------------------------------------------------------------
 # On MOBILE, highlight TOP-LEVEL links
 -----------------------------------------------------------------------------*/
-header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item:not(.open-on-click):hover > .wp-block-navigation-item__content, header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item:not(.open-on-click):hover > .wp-block-navigation__submenu-icon, header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item:not(.open-on-click):active > .wp-block-navigation-item__content, header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item:not(.open-on-click):active > .wp-block-navigation__submenu-icon, header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container .wp-block-page-list > .wp-block-pages-list__item:hover > a {
+header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item:not(.open-on-click):hover > .wp-block-navigation-item__content, header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item:not(.open-on-click):active > .wp-block-navigation-item__content, header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container .wp-block-page-list > .wp-block-pages-list__item:not(.has-child):hover > .wp-block-navigation-item__content, header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container .wp-block-page-list > .wp-block-pages-list__item:not(.has-child):active > .wp-block-navigation-item__content {
   color: var(--wp--preset--color--highlight-alt);
 }
-header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item > .current-menu-ancestor, header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item.current-menu-item > .wp-block-navigation-item__content, header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container .wp-block-page-list > .wp-block-pages-list__item.current-menu-item > a {
+header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item > .current-menu-ancestor, header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item.current-menu-item > .wp-block-navigation-item__content, header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container .wp-block-page-list > .wp-block-navigation-item.current-menu-item > .wp-block-navigation-item__content, header .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container .wp-block-page-list > .wp-block-navigation-item.current-menu-ancestor > .wp-block-navigation-item__content {
   color: var(--wp--preset--color--highlight);
   font-weight: var(--wp--custom--color--font-weight, bolder);
 }
 
 /*-----------------------------------------------------------------------------
-# Handle highlight on SUB MENU items WITHOUT it's own background
+# Handle highlight on SUB MENU items WITHOUT it's own background and on 
+# Page Lists
 -----------------------------------------------------------------------------*/
-header .wp-block-navigation:not(.has-background) .wp-block-navigation-submenu:not(.has-background) .wp-block-navigation-item:hover > .wp-block-navigation-item__content, header .wp-block-navigation:not(.has-background) .wp-block-navigation-submenu:not(.has-background) .wp-block-navigation-item:hover > .wp-block-navigation__submenu-icon, header .wp-block-navigation:not(.has-background) .wp-block-navigation-submenu:not(.has-background) .wp-block-navigation-item:active > .wp-block-navigation-item__content, header .wp-block-navigation:not(.has-background) .wp-block-navigation-submenu:not(.has-background) .wp-block-navigation-item:active > .wp-block-navigation__submenu-icon {
+header .wp-block-navigation:not(.has-background) .wp-block-navigation-submenu:not(.has-background) .wp-block-navigation-item:hover > .wp-block-navigation-item__content, header .wp-block-navigation:not(.has-background) .wp-block-navigation-submenu:not(.has-background) .wp-block-navigation-item:hover > .wp-block-navigation__submenu-icon, header .wp-block-navigation:not(.has-background) .wp-block-navigation-submenu:not(.has-background) .wp-block-navigation-item:active > .wp-block-navigation-item__content, header .wp-block-navigation:not(.has-background) .wp-block-navigation-submenu:not(.has-background) .wp-block-navigation-item:active > .wp-block-navigation__submenu-icon,
+header .wp-block-navigation .wp-block-page-list .wp-block-pages-list__item.has-child .wp-block-pages-list__item:hover > .wp-block-navigation-item__content,
+header .wp-block-navigation .wp-block-page-list .wp-block-pages-list__item.has-child .wp-block-pages-list__item:hover > .wp-block-navigation__submenu-icon,
+header .wp-block-navigation .wp-block-page-list .wp-block-pages-list__item.has-child .wp-block-pages-list__item:active > .wp-block-navigation-item__content,
+header .wp-block-navigation .wp-block-page-list .wp-block-pages-list__item.has-child .wp-block-pages-list__item:active > .wp-block-navigation__submenu-icon {
   color: var(--wp--preset--color--highlight-alt);
 }
-header .wp-block-navigation:not(.has-background) .wp-block-navigation-submenu:not(.has-background) .wp-block-navigation-item:has(.current-menu-ancestor), header .wp-block-navigation:not(.has-background) .wp-block-navigation-submenu:not(.has-background) .wp-block-navigation-item.current-menu-item > .wp-block-navigation-item__content {
+header .wp-block-navigation:not(.has-background) .wp-block-navigation-submenu:not(.has-background) .wp-block-navigation-item:has(.current-menu-ancestor), header .wp-block-navigation:not(.has-background) .wp-block-navigation-submenu:not(.has-background) .wp-block-navigation-item.current-menu-item > .wp-block-navigation-item__content,
+header .wp-block-navigation .wp-block-page-list .wp-block-pages-list__item.has-child .wp-block-pages-list__item:has(.current-menu-ancestor),
+header .wp-block-navigation .wp-block-page-list .wp-block-pages-list__item.has-child .wp-block-pages-list__item.current-menu-item > .wp-block-navigation-item__content {
   color: var(--wp--preset--color--highlight);
   font-weight: var(--wp--custom--color--font-weight, bolder);
 }
@@ -1027,7 +881,8 @@ header .wp-block-navigation-submenu.has-background .wp-block-navigation-item.cur
 /*-----------------------------------------------------------------------------
 # On MOBILE nav, don't hover on non-clickable links
 -----------------------------------------------------------------------------*/
-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item.open-on-click:hover > .wp-block-navigation-item__content {
+header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item.open-on-click:hover > .wp-block-navigation-item__content,
+header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item.open-on-click:active > .wp-block-navigation-item__content {
   cursor: unset;
   opacity: 1;
 }
@@ -1087,7 +942,7 @@ header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigat
 }
 
 /*-----------------------------------------------------------------------------
-# Navigation: Custom Fixed Header
+# Custom: Fixed Navigation Menu
 -----------------------------------------------------------------------------*/
 /* Navigation Fixed menu */
 nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container-open,
@@ -1099,7 +954,7 @@ nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-con
   border-radius: 0;
 }
 
-/* On the front-end, position the fixed nav menu to the top left */
+/* On the front-end only, position the fixed nav menu to the top left */
 .wp-site-blocks:not(.is-root-container) nav.wp-block-navigation.is-style-fixed-menu {
   position: fixed;
   top: calc(var(--wp--preset--spacing--60) + 1px * var(--wp--style--root--padding-top, 0));
@@ -1117,15 +972,14 @@ nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-con
  * On the front-end and Editor, default the fixed menu's drop-down and close
  * button also to the left 
  */
-nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container {
-  width: 360px;
+nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container,
+nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container-close {
   left: 0;
   right: auto;
 }
 
-nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container-close {
-  left: 0;
-  right: auto;
+nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container {
+  width: 360px;
 }
 
 /* If right justified, position the fixed menu and its drop-down to the right */
@@ -1136,11 +990,7 @@ nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-con
 }
 
 .site-header.is-content-justification-right > nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container,
-.site-header.is-content-justification-right > .wp-block-template-part > nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container {
-  right: 0;
-  left: auto;
-}
-
+.site-header.is-content-justification-right > .wp-block-template-part > nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container,
 .site-header.is-content-justification-right > nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container-close,
 .site-header.is-content-justification-right > .wp-block-template-part > nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container-close {
   right: 0;
@@ -1267,6 +1117,7 @@ p.is-style-arrow-icon > a:after {
  * 
  * Note: This only works on elements within a Flex Box (Group)
  */
+.wp-block-site-logo,
 .is-layout-flex .is-style-no-shrink {
   flex-shrink: 0;
 }
@@ -1277,8 +1128,9 @@ p.is-style-arrow-icon > a:after {
 /**
  * Override core WordPress base Dashicon styles. Don't let it alter height, 
  * width, font-size or line-height. 
+ * Note: Need higher specificity here than just .dashicons
  */
-.dashicons {
+[class*=dashicons-].dashicons {
   display: block;
   width: auto;
   height: auto;
@@ -1290,7 +1142,7 @@ p.is-style-arrow-icon > a:after {
   text-transform: inherit;
 }
 
-.dashicons:before {
+[class*=dashicons-].dashicons:before {
   display: inline-block;
   width: auto;
   height: auto;

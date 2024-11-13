@@ -224,6 +224,8 @@ endif;
 /**
  * Load BLOCK-specific CSS styles on the FRONT-END AND BACK-END if
  * flatblocks_should_load_separate_block_assets.
+ * 
+ * TO-DO: Filter out *-rtl.css
  */
 if ( apply_filters( 'flatblocks_should_load_separate_block_assets', $separate_theme_block_assets ?? false ) ) {
 	/////add_action( 'wp_enqueue_scripts', 'flatblocks_load_block_styles' );
@@ -263,8 +265,8 @@ endif;
 
 /**
  * Load custom block styles and block patterns (and PRO features if purchased)
- *
  */
+
 // Add custom block styles
 if ( file_exists( get_template_directory() . '/inc/block-styles.php' ) ) {
 	require_once get_template_directory() . '/inc/block-styles.php';
@@ -383,12 +385,12 @@ add_filter( 'excerpt_more', 'flatblocks_excerpt_more' );
 if ( ! function_exists( 'flatblocks_excerpt_more' ) ) :
 	function flatblocks_excerpt_more( $more ) {
 		return '&hellip;';
-		//return str_ireplace( '[…]', '&hellip;', $more);
 	}
 endif;
 
 /**
  * Set post excerpt length
+ * 
  * Note: This doesn't actually work in block themes. It only gets called on the blog, not
  * on pages or posts.
 */

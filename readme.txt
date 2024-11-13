@@ -147,6 +147,17 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 
 == Changelog ==
 
+= 1.7 =
+November 13, 2024
+
+* Updated "Tested up to" with WordPress v6.7.
+* Updated the remaining social media icons over to X instead of Twitter in the sidebar and various template parts and patterns.
+* Updated the default social media links to point to the WordPress page, such as on Facebook and X.
+* Enhance CSS for header navigation with highlight color on link hover and currently active page link to also work with the Page List block. That is what is defaulted on new WordPress sites and in the WordPress.org theme preview.
+* Set Site Logo in the various Header template parts to reduce the tendency to shrink when there is a very long site title or navigation menu (set flex-shrink to 0).
+* Enhanced CSS for the Dashicons used for post icons. Replaced the Dashicon for Lists with Checkmarks with simpler Unicode character. 
+* Moved CSS for Images, Headings, and Columns from flat-blocks.css to block-styles.css. This reduces the size of flat-blocks.css which is the first to load. This is also in preparation for possible future performance enhancements.
+
 = 1.6.9 =
 November 9, 2024
 

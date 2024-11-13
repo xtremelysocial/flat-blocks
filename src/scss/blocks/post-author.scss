@@ -6,7 +6,7 @@
 .wp-block-post-author:before {
 	font-family: dashicons;
 	content: "\f110";
-	margin-right: var(--wp--preset--spacing--20);
+    margin-right: var(--wp--preset--spacing--20);
 }
 
 .rtl .wp-block-post-author:before {

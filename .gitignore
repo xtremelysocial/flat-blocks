@@ -1,7 +1,7 @@
 # npm node modules
 node_modules/
 
-# Output of `wp-scripts plugin-zip`
+# Zip files
 *.zip
 
 # Debugging files 
@@ -16,23 +16,23 @@ node_modules/
 # Shell scripts
 *.sh
 
-# Ignore Mac files
+# Mac files
 .DS_Store
 **/.DS_Store
 
-# Ignore save, test files, and zip files
+# Ignore save and test files
 **/*-SAVE*
-styles/*-test*.json
-styles/colors-test/
-styles/colors-test-SAVE/
-styles/global-test/
-styles/sections-test/
-styles/blocks-test/
-styles/global-test/
-styles/template-parts-test
-*.css.map
+**/*-test*
+styles/*-test*
+#styles/*-test*.json
+#styles/colors-test/
+#styles/colors-test-SAVE/
+#styles/global-test/
+#styles/sections-test/
+#styles/blocks-test/
+#styles/global-test/
+#styles/template-parts-test
 zz_unused
-*.zip
 
 # Ignore individual block styles since not implemented yet
 assets/css/blocks/

@@ -2,15 +2,6 @@
 # Post Excerpt: Custom
 -----------------------------------------------------------------------------*/
 
-// /* Limit post excerpt in page titles to 2 lines */
-// .wp-block-post-excerpt.is-style-no-readmore {
-// 	overflow: hidden;
-//   	width: 100%;
-//   	display: -webkit-box;
-//   	-webkit-line-clamp: 2;
-//   	-webkit-box-orient: vertical;
-// }
-
 /* HIDE read more text and link */
 .wp-block-post-excerpt.is-style-no-readmore > .wp-block-post-excerpt__more-text {
 	display: none;
@@ -20,4 +11,11 @@
 	margin-bottom: 0;
 }
 
-
+// /* Limit post excerpt in page titles to 2 lines */
+// .wp-block-post-excerpt.is-style-no-readmore {
+// 	overflow: hidden;
+//   	width: 100%;
+//   	display: -webkit-box;
+//   	-webkit-line-clamp: 2;
+//   	-webkit-box-orient: vertical;
+// }
