@@ -1,20 +1,17 @@
 # npm node modules
 node_modules/
 
-# Zip files
-*.zip
-
-# Debugging files 
-**/*.asset.php
+# npm debugging files 
 **/*.css.map
 
-# Webpack files
-#webpack.config.js
-#package.json
-#package-lock.json
+# Individual block styles since not implemented yet
+assets/css/blocks/
 
 # Shell scripts
 *.sh
+
+# Zip files
+*.zip
 
 # Mac files
 .DS_Store
@@ -25,15 +22,3 @@ node_modules/
 **/*-test*
 styles/*-test*
 zz_unused
-
-# Ignore individual block styles since not implemented yet
-assets/css/blocks/
-#assets/css/*-rtl.css
-
-# Ignore PRO theme files
-#pro
-#templates/pro-*
-#assets/css/pro/*-rtl.css
-
-# Ignore our xtremelysocial.com files
-styles/*xtremelysocial*.json
