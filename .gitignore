@@ -1,24 +1,20 @@
-# npm node modules
+# npm node modules and debugging files
 node_modules/
-
-# npm debugging files 
 **/*.css.map
 
-# Individual block styles since not implemented yet
-assets/css/blocks/
-
-# Shell scripts
+# Shell scripts and zip files
 *.sh
-
-# Zip files
 *.zip
 
 # Mac files
 .DS_Store
 **/.DS_Store
 
-# Ignore save and test files
+# Save and test files
 **/*-SAVE*
 **/*-test*
-styles/*-test*
 zz_unused
+
+# Individual block styles since not implemented yet
+assets/css/blocks/
+#assets/css/blocks/*.asset.php
