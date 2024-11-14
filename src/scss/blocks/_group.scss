@@ -8,10 +8,6 @@
 	padding: var(--wp--preset--spacing--60) 
 }
 
-// .wp-block-group-is-layout-flex > .wp-block-group {
-// 	flex: 1 1 100%;
-// }
-
 /* 
  * If global padding, then OVERRIDE horizontal padding on mobile
  *
@@ -42,47 +38,26 @@
 -----------------------------------------------------------------------------*/
 
 //* Group borders */
-// .wp-block-group.is-style-rounded-border {
-// 	border: 1px solid var(--wp--custom--color--border);
-// 	border-radius: var(--wp--custom--border--radius);
-// 	padding: var(--wp--preset--spacing--40);
-//     //box-shadow: var(--wp--custom--shadow--default);
-// }
-
-.wp-block-group.is-style-rounded-border.is-layout-flex {
-	overflow: hidden;
-}
-
-// .wp-block-group.is-style-thick-rounded-border {
-// 	border: 3px solid var(--wp--custom--color--border);
-// 	border-radius: var(--wp--custom--border--radius);
-//     //box-shadow: var(--wp--custom--shadow--default);
-// }
-
+.wp-block-group.is-style-rounded-border.is-layout-flex,
 .wp-block-group.is-style-thick-rounded-border.is-layout-flex {
 	overflow: hidden;
 }
 
 /* Group no padding */
-// .wp-block-group.is-style-no-padding {
-// 	padding-top: 0;
-// 	padding-bottom: 0;
-// }
+.wp-block-group.is-style-no-padding {
+	padding-top: 0;
+	padding-bottom: 0;
+}
 .wp-block-group.is-style-no-padding:not(.has-global-padding) {
 	padding-left: 0;
 	padding-right: 0;
 }
 
 /* Group fixed header (position: sticky) */
-//.wp-site-blocks > header.wp-block-template-part:has(header.is-position-sticky),
 header.wp-block-group.is-position-sticky, 
 .wp-block-group.is-style-fixed-header,
 .wp-block-group.has-background.is-style-fixed-header {
 	background-color: var(--wp--preset--color--base); 
-//     border: 1px solid var(--wp--custom--color--border);
-//     border-width: 0 0 1px;
-//     padding-top: var(--wp--preset--spacing--40);
-//     padding-bottom: var(--wp--preset--spacing--40);
     box-shadow: var(--wp--custom--shadow--default);
 }
 
@@ -92,7 +67,7 @@ header.wp-block-group.is-position-sticky,
 	position: sticky;
 	top: 0;
 	background-color: var(--wp--preset--color--base);
-	z-index: 10; //9999;
+	z-index: 10;
 }
 
 /* If WordPress Admin Bar, then adjust fixed header position so its underneath it */

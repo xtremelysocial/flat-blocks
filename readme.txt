@@ -147,13 +147,26 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 
 == Changelog ==
 
-= 1.6.9 =
-November 7, 2024
+= 1.7 =
+November 13, 2024
 
-Version Summary: Made more Block Style Variations available in the Styles Editor, such as Thick Gap and No Gap for Columns, No Padding for Column and Media Text, No Icon for Post Date, Post Author, and Post Terms, Link Underline, No Underline, and Underline on Hover for paragraphs and lists, etc.
+* Updated "Tested up to" with WordPress v6.7 and "Requires at least" to v6.5.
+* Enhanced CSS to map the new WordPress v6.7 TwentyTwentyFive colors to this theme's colors.
+* Updates for much better support of right-to-left languages! This includes updating the CSS for lists and post meta icons as well as updating the various footer template parts that used to have right-alignment on some of the text items. Please do let us know if you run into any issues and/or would like to translate the theme into other languages. 
+* Turned off the ability to edit the normal and wide content width on individual blocks because it will break the vertical alignment of the theme. You can still edit the site-wide normal and wide widths though. 
+* Updated the Post Meta and Post Title template parts to display the Post Author Name. Also default an icon next to it and add a custom block style to remove it, if desired.
+* Updated the Author page template to use a rounded border on the author information so that it is visually set apart from the author's post below it. 
+* Updated the remaining social media icons over to X instead of Twitter in the sidebar and various template parts and patterns.
+* Updated the default social media links to point to the WordPress page, such as on Facebook and X.
+* Enhance CSS for header navigation with highlight color on link hover and currently active page link to also work with the Page List block. That is what is defaulted on new WordPress sites and in the WordPress.org theme preview.
+* Set Site Logo in the various Header template parts to reduce the tendency to shrink when there is a very long site title or navigation menu (set flex-shrink to 0).
+* Enhanced CSS for the Dashicons used for post icons. Replaced the Dashicon for Lists with Checkmarks with simpler Unicode character. 
+* Moved CSS for Images, Headings, and Columns from flat-blocks.css to block-styles.css. This reduces the size of flat-blocks.css which is the first to load. This is also in preparation for possible future performance enhancements.
+
+= 1.6.9 =
+November 9, 2024
 
 * Fix issue with Theme Styles that set dotted underline on links that was also resetting the color palette to the default one. This required changing --wp--custom--color--link--style to --wp--custom--link--style in theme.json.
-* Move more Custom Block styles from block-styles.php into /styles/blocks/*.json so that they can be viewed and edited in the Styles Editor. This requires WordPress v6.6+, but but built in backwards compatibility to older WordPress versions. The Styles Editor will now show the following Block Style Variations: Thick Gap and No Gap for Columns, No Padding for Column, No Icon for Post Date, Post Author, and Post Terms, Link Underline, No Underline, and Underline on Hover for paragraphs and lists, etc.
 
 = 1.6.8 =
 November 5, 2024

@@ -1,39 +1,21 @@
-# Node JS
+# npm node modules and debugging files
 node_modules/
-.npm
+**/*.css.map
 
-# Debugging files 
-*.css.map
-*.js.map
-
-# Unneeded build files
-assets/css/blocks/
-*.asset.php
-*-*.asset.php
-*-rtl.css
+# Shell scripts and zip files
+*.sh
+*.zip
 
 # Mac files
 .DS_Store
 **/.DS_Store
 
-# Zip files
-*.zip
-
-# Ignore save and test files
+# Save and test files
 **/*-SAVE*
-styles/*-test*.json
-styles/colors-test/
-styles/colors-test-old/
-styles/global-test/
-styles/sections-test/
-styles/blocks-test/
-styles/global-test/
-styles/template-parts-test
+**/*-test*
 zz_unused
 
-# PRO theme files
-#pro
-#templates/pro-*
-
-# Ignore our xtremelysocial.com files
-styles/*xtremelysocial*.json
+# Individual block styles since not implemented yet
+assets/css/blocks/
+#assets/css/blocks/*.asset.php
+assets/css/pro/
