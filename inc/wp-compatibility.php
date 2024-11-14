@@ -31,6 +31,7 @@ if ( version_compare( get_bloginfo( 'version' ), '6.6', '<' ) AND
 			array('flatblocks-base'),
 			$version_string
 		);
+		wp_style_add_data( 'flatblocks-compat-styles', 'rtl', 'replace' );
 	}	
 endif;
 

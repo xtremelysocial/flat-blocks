@@ -24,24 +24,16 @@ node_modules/
 **/*-SAVE*
 **/*-test*
 styles/*-test*
-#styles/*-test*.json
-#styles/colors-test/
-#styles/colors-test-SAVE/
-#styles/global-test/
-#styles/sections-test/
-#styles/blocks-test/
-#styles/global-test/
-#styles/template-parts-test
 zz_unused
 
 # Ignore individual block styles since not implemented yet
 assets/css/blocks/
-assets/css/*-rtl.css
+#assets/css/*-rtl.css
 
 # Ignore PRO theme files
 #pro
 #templates/pro-*
-assets/css/pro/*-rtl.css
+#assets/css/pro/*-rtl.css
 
 # Ignore our xtremelysocial.com files
 styles/*xtremelysocial*.json

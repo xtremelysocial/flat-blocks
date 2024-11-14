@@ -70,7 +70,8 @@
 	.wp-block-columns.is-style-center-on-mobile .wp-block-column:not(.wp-block-navigation__responsive-container-content) > .wp-block-template-part > * {
 		display: flex;
 		justify-content: center;
-		--navigation-layout-justify: center;		
+		--navigation-layout-justify: center;
+		text-align: center;		
 	}
 
 	/* OVERRIDE columns thick gap so vertical spacing matches up */	

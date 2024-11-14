@@ -5,6 +5,9 @@
 .is-style-list-checkmarks {
 	list-style-type: '✓ ';
 }
+.rtl .is-style-list-checkmarks {
+	list-style-type: ' ✓';
+}
 
 /* Plain */
 ul.is-style-list-plain,

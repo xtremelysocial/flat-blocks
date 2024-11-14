@@ -150,7 +150,12 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 = 1.7 =
 November 13, 2024
 
-* Updated "Tested up to" with WordPress v6.7.
+* Updated "Tested up to" with WordPress v6.7 and "Requires at least" to v6.5.
+* Enhanced CSS to map the new WordPress v6.7 TwentyTwentyFive colors to this theme's colors.
+* Updates for much better support of right-to-left languages! This includes updating the CSS for lists and post meta icons as well as updating the various footer template parts that used to have right-alignment on some of the text items. Please do let us know if you run into any issues and/or would like to translate the theme into other languages. 
+* Turned off the ability to edit the normal and wide content width on individual blocks because it will break the vertical alignment of the theme. You can still edit the site-wide normal and wide widths though. 
+* Updated the Post Meta and Post Title template parts to display the Post Author Name. Also default an icon next to it and add a custom block style to remove it, if desired.
+* Updated the Author page template to use a rounded border on the author information so that it is visually set apart from the author's post below it. 
 * Updated the remaining social media icons over to X instead of Twitter in the sidebar and various template parts and patterns.
 * Updated the default social media links to point to the WordPress page, such as on Facebook and X.
 * Enhance CSS for header navigation with highlight color on link hover and currently active page link to also work with the Page List block. That is what is defaulted on new WordPress sites and in the WordPress.org theme preview.

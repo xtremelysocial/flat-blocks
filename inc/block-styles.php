@@ -58,6 +58,7 @@ if ( ! function_exists( 'flatblocks_register_block_styles' ) ) :
 			),
 			'center-on-mobile' 	=> array( esc_html__('Center on Mobile', 'flat-blocks'), 
 				array('columns' )
+				//array('columns', 'group' )
 			),
 			'no-read-more' 		=> array( esc_html__('No Read More', 'flat-blocks'), 
 				array('post-excerpt' )
@@ -72,7 +73,7 @@ if ( ! function_exists( 'flatblocks_register_block_styles' ) ) :
 				array('list', 'page-list', 'categories' )
 			),
 			'no-icon' 			=> array( esc_html__('No Icon', 'flat-blocks'), 
-				array('post-author', 'post-date', 'post-terms' )
+				array('post-author-name', 'post-date', 'post-terms' )
 			),
 			'alignwide' 		=> array( esc_html__('Align Wide', 'flat-blocks'), 
 				array('paragraph' )

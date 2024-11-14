@@ -9,12 +9,6 @@
     margin-right: var(--wp--preset--spacing--20);
 }
 
-.rtl .wp-block-post-comments-count:before {
-	padding-right: 0;
-	margin-right: 0;
-	margin-left: var(--wp--preset--spacing--20);
-}
-
 /* 
  * Add word "comment(s)" after post comment count. Note this is 
  * only available with the Gutenberg plugin. 

@@ -68,7 +68,8 @@
 		},
 		"layout": {
 			"contentSize": "760px",
-			"wideSize": "1100px"
+			"wideSize": "1100px",
+			"allowCustomContentAndWideSize": false
 		},
 		"useRootPaddingAwareAlignments": true,
 		"appearanceTools": true,
@@ -1383,10 +1384,17 @@
 					}
 				}
 			},
-			"core/post-author": {
+			"core/post-author-name": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)"
-				}
+				},
+				"elements": {
+					"link": {
+						"typography": {
+							"textDecoration": "none"
+						}
+					}
+				}				
 			},
 			"core/post-navigation-link": {
 				"elements": {
