@@ -27,13 +27,10 @@ if ( ! function_exists( 'flatblocks_register_block_styles' ) ) :
 				array('navigation' )
 			),
 			'image-border' 		=> array( esc_html__('Border', 'flat-blocks'), 
-				array('image' )
+				array('image', 'gallery' )
 			),
 			'image-round-border' => array( esc_html__('Rounded w/Border', 'flat-blocks'), 
 				array('image' )
-			),
-			'image-border' 		=> array( esc_html__('Image Border', 'flat-blocks'), 
-				array( 'gallery' )
 			),
 			'image-computer-screen' => array( esc_html__('Computer Screen', 'flat-blocks'), 
 				array('image' )

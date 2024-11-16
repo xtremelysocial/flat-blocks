@@ -1022,6 +1022,7 @@ nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-con
 /*-----------------------------------------------------------------------------
 # Paragraph
 -----------------------------------------------------------------------------*/
+/* Padding for colored backgrounds on paragraphs */
 .wp-block-paragraph.has-background {
   padding: var(--wp--preset--spacing--40);
 }
@@ -1031,10 +1032,7 @@ nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-con
  * v6.0+ to collapse columns
  */
 @media only screen and (max-width: 781px) {
-  /* 
-   * If no global padding, then set paragraphs like colored
-   * groups 
-   */
+  /* If no global padding, then set paragraphs like colored groups */
   p.has-background:not(.has-global-padding) {
     padding-left: calc(2 * var(--wp--style--block-gap));
     padding-right: calc(2 * var(--wp--style--block-gap));
