@@ -148,11 +148,13 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 == Changelog ==
 
 = 1.7.1 =
-November 15, 2024
+November 17, 2024
 
 * Fix for missing "Border" custom style on Images in the Editor. It was only showing up on Image Galleries.
-* Enhanced CSS for image captions within Image Galleries.
 * Set Excerpt length to 30 words when displayed in the Page title. The Excerpt is still the default 55 words on blog pages.
+* Enhanced CSS for image captions within Image Galleries.
+* Enhanced CSS for multi-level drop-down nav menus. 
+* Enhanced CSS for Dashicons icons.
 
 = 1.7 =
 November 13, 2024
