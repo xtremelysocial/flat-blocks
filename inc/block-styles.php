@@ -57,9 +57,6 @@ if ( ! function_exists( 'flatblocks_register_block_styles' ) ) :
 				array('columns' )
 				//array('columns', 'group' )
 			),
-			'no-read-more' 		=> array( esc_html__('No Read More', 'flat-blocks'), 
-				array('post-excerpt' )
-			),
 			'list-checkmarks' 	=> array( esc_html__('Checkmarks', 'flat-blocks'), 
 				array('list', 'page-list' )
 			),

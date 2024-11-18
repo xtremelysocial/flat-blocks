@@ -155,6 +155,7 @@ November 17, 2024
 * Enhanced CSS for image captions within Image Galleries.
 * Enhanced CSS for multi-level drop-down nav menus. 
 * Enhanced CSS for Dashicons icons.
+* Removed No Read More custom style for Post Excerpt since its no longer needed. Read More now has to be manually added to the block by the user if desired.
 
 = 1.7 =
 November 13, 2024

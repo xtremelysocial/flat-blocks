@@ -1322,6 +1322,14 @@ main.wp-block-group:not(.has-global-padding),
 }
 
 /*-----------------------------------------------------------------------------
+# Flat Blocks Excerpt Custom Style (for theme < v1.7.1)
+-----------------------------------------------------------------------------*/
+/* HIDE read more text and link */
+.wp-block-post-excerpt.is-style-no-readmore > .wp-block-post-excerpt__more-text {
+  display: none;
+}
+
+/*-----------------------------------------------------------------------------
 # Color compatibility with other themes
 #
 # This is so that user's CONTENT created with CORE WORDPRESS THEMES will look
