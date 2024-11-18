@@ -264,8 +264,8 @@ select:focus-visible {
 # Alignments
 -----------------------------------------------------------------------------*/
 /*
- * Don't let anything be wider than our max width. This is so 
- * fullwidth images don't get so wide they lose resolution.
+ * Don't let anything be wider than our max width. This is so fullwidth images
+ * don't get so wide they lose resolution.
  */
 .wp-site-blocks {
   max-width: var(--wp--custom--layout--full-size, 1600px);
@@ -278,9 +278,7 @@ body .is-layout-constrained > .aligncenter {
   text-align: center;
 }
 
-/* 
- * ADD padding to align left and align right to honor wide width 
- */
+/* ADD padding to align left and align right to honor wide width */
 .wp-site-blocks > .alignleft {
   margin-left: var(--wp--style--root--padding-right, var(--wp--preset--spacing--50));
 }
