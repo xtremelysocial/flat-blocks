@@ -393,6 +393,15 @@ if ( ! function_exists( 'flatblocks_body_open' ) ) :
 endif;
 
 /**
+ * Remove the old Menus and Widgets admin page links
+ */
+function flatblocks_adjust_admin_menu() {
+	remove_submenu_page( 'themes.php', 'nav-menus.php' );
+	remove_submenu_page( 'themes.php', 'widgets.php' );
+}
+add_action( 'admin_menu', 'flatblocks_adjust_admin_menu', 999 );
+
+/**
  * Set post excerpt length
  * Note: With block-based themes, this ONLY gets called on blog listings. It is not
  * called on individual posts or pages. 
