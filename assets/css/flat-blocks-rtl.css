@@ -67,10 +67,11 @@ b {
   font-weight: var(--wp--custom--typography--font-weight--bold, 500);
 }
 
-/* Prevent code from breaking layout */
+/* Prevent code from breaking layout and use smaller font */
 code,
 pre {
   overflow-x: scroll;
+  font-size: var(--wp--preset--font-size--small);
 }
 
 /* Set lists with background to match other padding */
@@ -1183,14 +1184,20 @@ p.is-style-arrow-icon > a:after {
   text-decoration: none;
 }
 
+/* Style Dashicons in Nav menus */
+.wp-block-navigation-item.dashicons {
+  display: flex;
+  flex-direction: row;
+}
+
 /* Nav menus already have transitions and text align, so inherit them */
 .wp-block-navigation .dashicons {
   transition: inherit;
   text-align: inherit;
 }
 
-/* Don't display the top-level icon on the drop-down menu */
-.wp-block-navigation__submenu-container.dashicons:before {
+/* Don't display icons on mobile menu because they can't be placed inline */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation-item.dashicons:before, .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation-submenu.dashicons:before {
   content: none;
 }
 
