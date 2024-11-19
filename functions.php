@@ -393,18 +393,6 @@ if ( ! function_exists( 'flatblocks_body_open' ) ) :
 endif;
 
 /**
- * Replace [...] with ... from the excerpt
- * Note: Only needed if altering the excerpt length below
- */
-// add_filter( 'excerpt_more', 'flatblocks_excerpt_more' );
-// 
-// if ( ! function_exists( 'flatblocks_excerpt_more' ) ) :
-// 	function flatblocks_excerpt_more( $more ) {
-// 		return '&hellip;';
-// 	}
-// endif;
-
-/**
  * Set post excerpt length
  * Note: With block-based themes, this ONLY gets called on blog listings. It is not
  * called on individual posts or pages. 
@@ -414,5 +402,17 @@ endif;
 // if ( ! function_exists( 'flatblocks_excerpt_length' ) ) :
 // 	function flatblocks_excerpt_length ( $words ) {
 // 		return 30; //# of words
+// 	}
+// endif;
+
+/**
+ * Replace [...] with ... from the excerpt
+ * Note: Only needed if altering the excerpt length above
+ */
+// add_filter( 'excerpt_more', 'flatblocks_excerpt_more' );
+// 
+// if ( ! function_exists( 'flatblocks_excerpt_more' ) ) :
+// 	function flatblocks_excerpt_more( $more ) {
+// 		return '&hellip;';
 // 	}
 // endif;
