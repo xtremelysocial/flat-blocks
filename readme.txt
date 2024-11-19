@@ -151,6 +151,7 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 November 19, 2024
 
 * Now ALL custom block styles are visible in the Styles Editor! This requires WordPress v6.6+. Note there is still CSS associated with many of these styles, but the attributes that you can change in the Styles Editor will override the default ones in the theme. For example if you want a thicker border on groups or a different colored background on comments, post meta, and sidebars.
+* Removed Admin Menu links to the old Widgets and Menus customizer since these should not be used in a block-based theme.
 * Set font-size to small for <pre> and <code> tags.
 * Relabeled Site Header, Site Footer, and Site Query to Header Template, Footer Template, and Query Template in the Styles Editor. This was done just to better indicate that replacing it will only affect the Template currently being edited. To replace the Header or Footer site-wide across all templates, replace the one below it that has a specific name, such as Header Fixed.
 * Added more labels to special groups in the various page Templates, such as page title groups and query pagination. This is nice for the outline view in the Editor. 
