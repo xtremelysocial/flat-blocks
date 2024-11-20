@@ -335,13 +335,6 @@ if ( ! function_exists( 'flatblocks_template_part_areas' ) ) :
 				'icon'        => ''
 			),
 			array(
-				'area'        => 'query',
-				'area_tag'    => 'section',
-				'label'       => __( 'Query', 'flat-blocks' ),
-				'description' => __( 'Site query template', 'flat-blocks' ),
-				'icon'        => ''
-			),
-			array(
 				'area'        => 'content',
 				'area_tag'    => 'section',
 				'label'       => __( 'Content', 'flat-blocks' ),
