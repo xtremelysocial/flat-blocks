@@ -6,7 +6,8 @@
 	"blockTypes": [ "core/columns" ],
 	"styles": {
 		"spacing": {
-			"blockGap": "0px"
+			"blockGap": "0px",
+			"padding": "0px"
 		}
 	}	
 }

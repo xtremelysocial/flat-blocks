@@ -3,7 +3,7 @@
  * File:	block-styles.php
  * Theme:	Flat Blocks
  * 
- * As of Flat Blocks v1.7.2, custom block styles are all defined in /styles/blocks/*.json.
+ * As of Flat Blocks v1.8, custom block styles are all defined in /styles/blocks/*.json.
  * This function can be used by child themes to register additional ones via PHP. 
  * 
  * Note that some of this theme's custom styles still require CSS and that is in 
