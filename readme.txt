@@ -147,6 +147,11 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 
 == Changelog ==
 
+= 1.8.1 =
+November 21, 2024
+
+* Adjusted CSS for fixed headers to use Background color for older theme versions before changing over to using Base color.
+
 = 1.8 =
 November 20, 2024
 

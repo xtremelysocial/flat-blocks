@@ -715,7 +715,7 @@ header > .wp-block-cover {
 }
 
 /* 
- * If global padding, then OVERRIDE horizontal padding on mobile
+ * If global padding, then OVERRIDE horizontal padding on tablet and mobile
  *
  * Note: Breakpoint of 781 is what is hard-coded in WordPress for tablet
  */
@@ -738,6 +738,12 @@ header > .wp-block-cover {
 /*-----------------------------------------------------------------------------
 # Group: Custom
 -----------------------------------------------------------------------------*/
+/* Group borders */
+.wp-block-group.is-style-rounded-border.is-layout-flex,
+.wp-block-group.is-style-thick-rounded-border.is-layout-flex {
+  overflow: hidden;
+}
+
 /* Group no padding */
 .wp-block-group.is-style-no-padding {
   padding-top: 0;
@@ -749,20 +755,13 @@ header > .wp-block-cover {
   padding-left: 0;
 }
 
-/* Group fixed header (position: sticky) */
-header.wp-block-group.is-position-sticky,
-.wp-block-group.is-style-fixed-header,
-.wp-block-group.has-background.is-style-fixed-header {
-  background-color: var(--wp--preset--color--base);
-  box-shadow: var(--wp--custom--shadow--default);
-}
-
 /* Position the fixed header using sticky so we don't have to have top site margin */
 .wp-site-blocks > header.wp-block-template-part:has(header.is-position-sticky),
 .wp-site-blocks > header:has(.is-style-fixed-header) {
   position: sticky;
   top: 0;
-  background-color: var(--wp--preset--color--base);
+  background-color: var(--wp--preset--color--base, var(--wp--preset--color--background));
+  box-shadow: var(--wp--custom--shadow--default);
   z-index: 10;
 }
 
@@ -772,7 +771,7 @@ header.wp-block-group.is-position-sticky,
   top: var(--wp-admin--admin-bar--height, 32px);
 }
 
-/* Position the fixed footer using sticky */
+/* Position the fixed footer using sticky, but only on large screens */
 .wp-site-blocks > footer.wp-block-template-part:has(footer.is-position-sticky) {
   position: relative;
   bottom: 0;
@@ -788,7 +787,21 @@ header.wp-block-group.is-position-sticky,
 # Navigation
 -----------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
-# Default styles for nav menus that have a background
+# Style Nav Menus
+-----------------------------------------------------------------------------*/
+/* FIX for padding on level 2+ nav menu and pages list drop-downs */
+.wp-block-navigation__submenu-container .wp-block-navigation-item.open-on-click .wp-block-navigation-submenu__toggle {
+  padding-right: 1em;
+}
+
+/* Default nav link opacity on hover */
+.wp-block-navigation .wp-block-navigation-item:hover > .wp-block-navigation-item__content.wp-block-navigation-item__content,
+.wp-block-navigation .wp-block-navigation-item:active > .wp-block-navigation-item__content.wp-block-navigation-item__content {
+  opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+}
+
+/*-----------------------------------------------------------------------------
+# Style Nav Menus with a background
 -----------------------------------------------------------------------------*/
 /* Reduce vertical gap when Nav menu wraps */
 .wp-block-navigation__container {
@@ -804,21 +817,6 @@ header.wp-block-group.is-position-sticky,
 }
 .wp-block-navigation.has-background .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item:not(:last-child) > a:not(.wp-element-button), .wp-block-navigation.has-background .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-submenu:not(:last-child) {
   padding-left: 0;
-}
-
-/*-----------------------------------------------------------------------------
-# FIX for padding on level 2+ nav menu and pages list drop-downs
------------------------------------------------------------------------------*/
-.wp-block-navigation__submenu-container .wp-block-navigation-item.open-on-click .wp-block-navigation-submenu__toggle {
-  padding-right: 1em;
-}
-
-/*-----------------------------------------------------------------------------
-# Default nav link opacity on hover
------------------------------------------------------------------------------*/
-.wp-block-navigation .wp-block-navigation-item:hover > .wp-block-navigation-item__content.wp-block-navigation-item__content,
-.wp-block-navigation .wp-block-navigation-item:active > .wp-block-navigation-item__content.wp-block-navigation-item__content {
-  opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
 }
 
 /*-----------------------------------------------------------------------------
