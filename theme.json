@@ -1748,7 +1748,7 @@
 			"name": "query",
 			"title": "Query Template",
 			"description": "Query Template Part",
-			"area": "query"
+			"area": "content"
 		},
 		{
 			"name": "post-meta",
