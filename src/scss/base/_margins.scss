@@ -23,7 +23,8 @@ footer,
  */
 main > *:first-child:not(.wp-block-template-part):not(.wp-block-post-content):not( .wp-block-query),
 .wp-block-query > *:first-child:not(.wp-block-cover),
-.wp-block-post-content > *:first-child:not(.wp-block-cover):not(.wp-block-group):not(.wp-block-columns) {
+// .wp-block-post-content > *:first-child:not(.wp-block-cover):not(.wp-block-group):not(.wp-block-columns) {
+.wp-block-post-content > *:first-child:not(.wp-block-cover) {
  	margin-block-start: var(--wp--style--block-gap);
 }
 
