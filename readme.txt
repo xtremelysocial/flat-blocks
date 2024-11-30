@@ -147,6 +147,11 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 
 == Changelog ==
 
+= 1.9.2 =
+November 30, 2024
+
+Update to fix child theme patterns within patterns.
+
 = 1.9.1 =
 November 30, 2024
 
