@@ -578,8 +578,8 @@ body .is-layout-constrained > .alignright {
   color: var(--wp--custom--color--contrast--tertiary, var(--wp--preset--color--foreground-alt));
 }
 
-/* Inherit the link color on gradient backgrounds */
-:root :where([class*=-gradient-background]) a:where(:not(.wp-element-button)) {
+/* Inherit the link and outline button color on gradient backgrounds */
+:root :where([class*=-gradient-background]) a:where(:not(.wp-element-button)), :root :where([class*=-gradient-background]) .is-style-outline > .wp-element-button, :root :where([class*=-gradient-background]) [class*=is-style-button-outline-] > .wp-element-button {
   color: inherit;
 }
 
