@@ -147,8 +147,13 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 
 == Changelog ==
 
+= 1.9.1 =
+November 30, 2024
+
+Update to fix child theme patterns within patterns. This is related to the Site Info and Theme Tagline Block Patterns that use the new Current Year, Theme Name, and Theme Author Block Patterns. Specifically replace "slug":"flat-blocks/" with the child theme slug. 
+
 = 1.9 =
-November 29, 2024
+November 30, 2024
 
 Version Summary: Added new Template Parts for Site Copyright (with current year), Theme Tagline (Flat Blocks theme by Xtremelysocial), and Social Icons so you can edit them. Added 2 new Footer Template Parts and updated the one with Site Motto to use the site name and tagline. Outline style buttons are now colored just like standard buttons (wth Highlight color). Overhauled and expanded Duotones for images. Drop-down Navigation menus are now wider. Preset font-sizes can now be edited directly in the Site Editor (WordPress v6.7+).
 

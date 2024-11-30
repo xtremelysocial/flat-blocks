@@ -15,6 +15,6 @@ echo sprintf(
 	'<!-- wp:paragraph --><p>
 <a href="%s" target="_blank">%s</a></p>
 <!-- /wp:paragraph -->',
-	$theme->get( 'ThemeURI' ),
-	$theme->get( 'Name' )
+	$theme->get( 'ThemeURI' ) ?? 'https://xtremelysocial.com/wordpress/flat-blocks',
+	$theme->get( 'Name' ) ?? 'Flat Blocks'
 );
