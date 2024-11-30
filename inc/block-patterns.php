@@ -197,6 +197,10 @@ if ( ! function_exists( 'flatblocks_register_block_patterns' ) ) :
 				'title' => __( 'Title and Subtitle', 'flat-blocks' ),
 				'categories' => array ('flatblocks', 'text', 'banner' )
 			),
+			'text-site-title-and-tagline' => array( 
+				'title' => __( 'Site title and tagline', 'flat-blocks' ),
+				'categories' => array ('flatblocks', 'text', 'banner' )
+			),
 			'text-title-and-subtitle-with-bg-image' => array( 
 				'title' => __( 'Title and Subtitle with Background Image', 'flat-blocks' ),
 				'categories' => array ('flatblocks', 'text', 'media', 'banner', 'featured' )

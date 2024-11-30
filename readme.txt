@@ -150,11 +150,12 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 = 1.9 =
 November 29, 2024
 
-Version Summary: Added new Template Parts for Site Copyright (with current year), Theme Tagline (Flat Blocks theme by Xtremelysocial), and Social Icons so you can edit them. Added 2 new Footer Template Parts. Outline style buttons are now colored just like standard buttons (wth Highlight color). Overhauled and expanded Duotones for images. Drop-down Navigation menus are now wider. Preset font-sizes can now be edited directly in the Site Editor (WordPress v6.7+).
+Version Summary: Added new Template Parts for Site Copyright (with current year), Theme Tagline (Flat Blocks theme by Xtremelysocial), and Social Icons so you can edit them. Added 2 new Footer Template Parts and updated the one with Site Motto to use the site name and tagline. Outline style buttons are now colored just like standard buttons (wth Highlight color). Overhauled and expanded Duotones for images. Drop-down Navigation menus are now wider. Preset font-sizes can now be edited directly in the Site Editor (WordPress v6.7+).
 
 * Added new Template Parts for Site Copyright (with current year), Theme Tagline (Flat Blocks theme by XtremelySocial), and Social Icons. Updated all the Footers and Sidebar to use these new Template Parts. That way, you can edit these Template Parts and the updates will be reflected on all the various Footers and Sidebar.
 * Added new Block Patterns to support the new Template Parts: Current Year, Site Copyright (which uses Current Year), Theme Author, Theme Name, and Theme Tagline (which uses Theme Author and Name).
 * Added two new Footer Template Parts: Footer Compact with Nav Menu and Theme Tagline, Footer 3 Blocks with Nav Menu and Site Copyright.
+* Updated the Footer with Motto, Social Icons, and and Site Info to use a new Site Title and Tagline Block Pattern instead of the more generic Title and Text Pattern.
 * Presets for font-size Large and up now use the new WordPress v6.7 format in theme.json which allows you to edit them! They still work with older WordPress versions, but you can't edit them directly in the Editor.
 * Outline style buttons now default to the Highlight color (instead of the text color), but will inherit the text color on certain colored backgrounds, just like standard buttons.
 * Changed up all the Duotone colors (effects that can be added to images) to have lighter colored shadows to look better. Simplified the Duotone names to Primary, Primary Alt, Secondary, Secondary Alt, Tertiary, and Tertiary Alt.
