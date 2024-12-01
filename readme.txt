@@ -147,6 +147,12 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 
 == Changelog ==
 
+= 1.9.3 =
+December 1, 2024
+
+* Revert replacing theme slug for patterns within patterns in child themes.
+* Let Paragraph top and bottom margin default based on the font size (i.e. "1 em").
+
 = 1.9.2 =
 November 30, 2024
 

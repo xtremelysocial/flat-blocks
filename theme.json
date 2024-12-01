@@ -1100,13 +1100,6 @@
 					}
 				}
 			},
-			"core/paragraph": {
-				"spacing": {
-					"margin": {
-						"bottom": "var:preset|spacing|40"
-					}
-				}
-			},
 			"core/cover": {
 				"spacing": {
 					"padding": {
