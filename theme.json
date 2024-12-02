@@ -5,12 +5,6 @@
 	"settings": {
 		"custom": {
 			"color": {
-				"highlight": {
-					"secondary": "var(--wp--preset--color--highlight)",
-					"secondary-alt": "var(--wp--preset--color--highlight)",
-					"midnightBlue": "var(--wp--preset--color--highlight)",
-					"darkMidnightBlue": "var(--wp--preset--color--highlight)"
-				},
 				"border": "var(--wp--preset--color--neutral-alt)",
 				"field": {
 					"background": "revert",

@@ -42,8 +42,14 @@
  * Add top margin to the container's first block and then between 
  * subsequent blocks 
  */
-.is-root-container > *:first-child:not(.wp-block-template-part, .wp-block-cover, .wp-block-query) {
+:where(.is-root-container > *:first-child:not(.wp-block-template-part):not(.wp-block-cover):not(.wp-block-query)),
+:where(.is-root-container > *:not(main):not(:first-child):not(:last-child)) {
   margin-block-start: var(--wp--style--block-gap);
+}
+
+/* But don't add top margin to main container group */
+.is-root-container > main {
+  margin-block-start: 0;
 }
 
 /*-----------------------------------------------------------------------------
@@ -65,6 +71,18 @@ footer.has-global-padding.wp-block-group.has-background {
 .wp-block-group.alignwide.has-background {
   padding-left: calc(2 * var(--wp--style--block-gap));
   padding-right: calc(2 * var(--wp--style--block-gap));
+}
+
+/* Padding for top-level non-colored groups */
+:where(.is-root-container > .wp-block-group:not(main):not(.has-background):not(.is-style-no-padding)) {
+  padding-top: var(--wp--style--block-gap);
+  padding-bottom: var(--wp--style--block-gap);
+}
+
+/* But don't add padding or margin to the main group */
+.is-root-container > main {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 /*-----------------------------------------------------------------------------

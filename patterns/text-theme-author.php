@@ -3,6 +3,7 @@
   * Title: Theme Author
   * Slug: flat-blocks/text-theme-author
   * Categories: flatblocks, text
+  * Inserter: false
   * viewportWidth: 640
   * Description: Theme author with link
   */

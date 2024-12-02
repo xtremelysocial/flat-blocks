@@ -3,6 +3,7 @@
  * Title: Theme Name
  * Slug: flat-blocks/text-theme-name
  * Categories: flatblocks, text
+ * Inserter: false
  * viewportWidth: 640
  * Description: Theme name with link
  */

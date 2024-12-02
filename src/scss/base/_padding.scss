@@ -7,11 +7,3 @@ main.wp-block-group:not(.has-global-padding),
 .wp-block-template-part {
 	padding: 0;
 }
-
-/* FIX alignfull in WordPress.org theme preview */
-.has-global-padding > #wporg-pattern-preview > div > .alignfull {
-	margin-right: calc(var(--wp--style--root--padding-right) * -1);
-	padding-right: var(--wp--style--root--padding-right);
-	margin-left: calc(var(--wp--style--root--padding-left) * -1);
-	padding-left: var(--wp--style--root--padding-left);
-}

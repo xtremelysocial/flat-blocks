@@ -14,19 +14,16 @@ main,
 footer,
 .wp-block-template-part,
 .wp-block-post-content {
-	margin-block-start: 0 !important;
+	margin-block-start: 0; // !important;
 }
 
 /* 
  * Add top margin to the container's first block. This is mainly for pages with
  * sidebars as well as legacy non-block page content.
  */
-main > *:first-child:not(.wp-block-template-part):not(.wp-block-post-content):not( .wp-block-query),
-// main > *:first-child:not(.wp-block-template-part):not(.wp-block-post-content):not( .wp-block-query):not(.wp-block-columns),
+main > *:first-child:not(.wp-block-template-part):not(.wp-block-post-content):not(.wp-block-query),
 .wp-block-query > *:first-child:not(.wp-block-cover),
-// .wp-block-post-content > *:first-child:not(.wp-block-cover):not(.wp-block-group):not(.wp-block-columns) {
 main > .wp-block-post-content > *:first-child:not(.wp-block-cover) {
-// .wp-block-post-content > *:first-child:not(.wp-block-cover) {
  	margin-block-start: var(--wp--style--block-gap);
 }
 
@@ -40,7 +37,6 @@ main > .wp-block-post-content > *:first-child:not(.wp-block-cover) {
 
 /* Also add bottom margin on the last block for convenience */
 .wp-block-query > *:last-child,
-// .wp-block-query > .wp-block-columns > .wp-block-column:first-child > *:last-child,
 .wp-block-post-content > *:last-child {
   margin-block-end: var(--wp--style--block-gap);
 }
