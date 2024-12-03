@@ -135,9 +135,13 @@ $white-colors: ('neutral', 'neutral-alt', 'foreground-alt', 'white', 'off-white'
 	color: var(--wp--custom--color--contrast--tertiary, var(--wp--preset--color--foreground-alt));
 }
 
-/* Inherit the link color on gradient backgrounds */
-:root :where([class*=-gradient-background]) a:where(:not(.wp-element-button)) {
-  color: inherit;
+/* Inherit the link and outline button color on gradient backgrounds */
+:root :where([class*=-gradient-background]) {
+	& a:where(:not(.wp-element-button)),
+	& .is-style-outline > .wp-element-button, 
+	& [class*="is-style-button-outline-"] > .wp-element-button {	
+		color: inherit;
+	}
 }
 
 /* 

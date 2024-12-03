@@ -5,12 +5,6 @@
 	"settings": {
 		"custom": {
 			"color": {
-				"highlight": {
-					"secondary": "var(--wp--preset--color--highlight)",
-					"secondary-alt": "var(--wp--preset--color--highlight)",
-					"midnightBlue": "var(--wp--preset--color--highlight)",
-					"darkMidnightBlue": "var(--wp--preset--color--highlight)"
-				},
 				"border": "var(--wp--preset--color--neutral-alt)",
 				"field": {
 					"background": "revert",
@@ -999,8 +993,8 @@
 				},
 				"spacing": {
 					"margin": {
-						"top": "var:preset|spacing|40",
-						"bottom": "var:preset|spacing|40"
+						"top": "var(--wp--style--block-gap)",
+						"bottom": "var(--wp--style--block-gap)"
 					}
 				}
 			},
@@ -1105,13 +1099,6 @@
 					}
 				}
 			},
-			"core/paragraph": {
-				"spacing": {
-					"margin": {
-						"bottom": "var:preset|spacing|40"
-					}
-				}
-			},
 			"core/cover": {
 				"spacing": {
 					"padding": {
@@ -1208,7 +1195,7 @@
 						},
 						"spacing": {
 							"margin": {
-								"top": "var:preset|spacing|40"
+								"top": "var(--wp--style--block-gap)"
 							}
 						}
 					}
@@ -1267,7 +1254,7 @@
 						},
 						"spacing": {
 							"margin": {
-								"top": "var:preset|spacing|40"
+								"top": "var(--wp--style--block-gap)"
 							}
 						}
 					}
@@ -2177,6 +2164,30 @@
 			"description": "Post w/right sidebar",
 			"postTypes": ["post"]
 		},
+			"name": "page-nosidebar",
+			"title": "Page No Sidebar",
+			"postTypes": ["page"]
+		},
+		{
+			"name": "page-nocomments-nosidebar",
+			"title": "Page No Comments No Sidebar",
+			"postTypes": ["page"]
+		},
+		{
+			"name": "page-featured-image-nosidebar",
+			"title": "Page Featured Image No Sidebar",
+			"postTypes": ["page"]
+		},
+		{
+			"name": "single-nosidebar",
+			"title": "Post No Sidebar",
+			"postTypes": ["post"]
+		},
+		{
+			"name": "single-featured-image-nosidebar",
+			"title": "Post Featured Image No Sidebar",
+			"postTypes": ["post"]
+		},
 		{
 			"name": "pro-page-home-scroll-header",
 			"title": "PRO Page Home (cover image w/scroll to fixed header, no comments)",
@@ -2218,6 +2229,6 @@
 			"title": "Jetpack Testimonial Item",
 			"description": "Jetpack Testimonial ITem",
 			"postTypes": ["jetpack/testimonial"]
-		}		
+		}
 	]
 }
