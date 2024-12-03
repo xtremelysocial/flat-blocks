@@ -16,8 +16,8 @@
 }
 
 /* Hide empty comments so no extra vertical margin */
-#post-comments:empty,
-.wp-block-template-part > #post-comments {
+#post-comments:empty { //,
+// .wp-block-template-part > #post-comments {
   display: none;
 }
 
