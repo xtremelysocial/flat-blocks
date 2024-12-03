@@ -147,6 +147,24 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 
 == Changelog ==
 
+= 1.9.5 =
+December 3, 2024
+
+* Fix issue with Post Comments not displaying.
+* Added new Templates for Page No Sidebar, Page No Comments or Sidebar, Post No Sidebar, Post Featured Image No Sidebar. This is so the Flat Blocks Classic child theme that uses them will retain the Template when changing from the child theme to the parent theme and back.
+* Adjusted some of the CSS for vertical margins and padding to use the global Block Gap setting (--wp--style--block-gap) rather than Spacing 40 (--wp--preset--spacing--40). By default these are the same, but if the user changes the Block Gap, the vertical spacing will be more in line. This was also to fix the theme preview on WordPress.org. 
+* Featured Images on Posts and Pages with Sidebars now have a rounded border to match Featured Images in the blog. 
+
+= 1.9.4 =
+December 2, 2024
+
+* Due to changes in WordPress v6.7, added vertical margin and padding in the Editor to match the front-end.
+* Updated Call to Action Block Pattern to wrap Button in a Buttons Block for consistency with recent WordPress versions and for the WordPress.org theme preview.
+* Set light default link and button color on Midnight Blue and Dark Midnight Blue backgrounds. This is more consistent with the handling of other dark accent colors.
+* Enhanced CSS to prevent empty Comments section from adding margin before the Footer.
+* Added Block Bindings for Current Year (e.g. 2024), Theme Name (with link) and Theme Author (with link). We may use these in a future theme update as Block Bindings mature in WordPress (e.g. can just now see them at all in the Editor in WordPress v6.7). These are used currently in the Flat Blocks Classic child theme as they work better than PHP-based Block Patterns in the WordPress.org theme previews.
+* Refactored the code in functions.php to load included files using an array. It loads both this theme and child theme files if they exist. This new function also includes a filter for child themes to alter the list, whether to add to it or remove from it.
+
 = 1.9.3 =
 December 1, 2024
 
