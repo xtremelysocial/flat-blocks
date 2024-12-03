@@ -1218,7 +1218,7 @@ main.wp-block-group:not(.has-global-padding),
 }
 
 /*-----------------------------------------------------------------------------
-# Flat Blocks Top Margins (for theme < v1.9.4)
+# Flat Blocks Top Margins (for theme < v1.9.5)
 -----------------------------------------------------------------------------*/
 /* Sidebar and Post Featured Image */
 main > .wp-block-columns > .wp-block-column .sidebar,
