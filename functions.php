@@ -1,13 +1,13 @@
 <?php
 /**
  * File:	functions.php
- * Theme:	Flat Blocks
+ * Theme:	Flat Blocks PRO
  * 
  * Flat Blocks functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package flat-blocks
+ * @package flat-blocks-pro
  * @since	1.0
  */
 
