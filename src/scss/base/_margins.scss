@@ -44,6 +44,8 @@ main > .wp-block-columns > .wp-block-column > .wp-block-post-featured-image,
 /* But don't add top or bottom margin to template part within a column. e.g. Footers. */
 main > .wp-block-columns > .wp-block-column,
 main > #wporg-pattern-preview > div > .wp-block-columns > .wp-block-column,
+.wp-block-query > .wp-block-columns > .wp-block-column,
+.wp-block-query > #wporg-pattern-preview > div > .wp-block-columns > .wp-block-column,
 .wp-block-column > .wp-block-template-part > *:first-child,
 .wp-block-column > .wp-block-group > .wp-block-template-part > .wp-block-social-links {
     margin-block-start: 0;
