@@ -114,12 +114,9 @@
 }
 
 /* Match our bottom margin */
-#post-comments {
-  margin-bottom: var(--wp--style--block-gap);
-}
-
 /* Hide empty comments so no extra vertical margin */
-#post-comments:empty {
+#post-comments:empty,
+.wp-block-template-part > #post-comments:empty {
   display: none;
 }
 

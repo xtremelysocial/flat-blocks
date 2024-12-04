@@ -1126,11 +1126,12 @@ footer,
 
 /* 
  * Add top margin to the content's first block. This lets the user then set top margin
- * to zero on the first block if they don't want it. 
+ * to zero on it to remove it.
  */
 main > .wp-block-columns > .wp-block-column > .wp-block-post-featured-image,
 .wp-block-post-content > *:first-child:not(.wp-block-cover),
-.wp-block-post-content > #wporg-pattern-preview > div > *:first-child:not(.wp-block-cover) {
+.wp-block-post-content > #wporg-pattern-preview > div > *:first-child:not(.wp-block-cover),
+.wp-block-query > *:first-child {
   margin-block-start: var(--wp--style--block-gap);
 }
 
