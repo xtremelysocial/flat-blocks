@@ -113,7 +113,6 @@
   margin-top: 0;
 }
 
-/* Match our bottom margin */
 /* Hide empty comments so no extra vertical margin */
 #post-comments:empty,
 .wp-block-template-part > #post-comments:empty {
@@ -619,7 +618,6 @@ ol.is-style-list-plain-centered li {
 /* Match our margins */
 .wp-block-social-links {
   margin-block-start: var(--wp--style--block-gap);
-  margin-block-end: var(--wp--style--block-gap);
 }
 
 /* FIX for WordPres.org theme preview */
