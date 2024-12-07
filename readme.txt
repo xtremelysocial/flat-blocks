@@ -147,6 +147,11 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 
 == Changelog ==
 
+= 1.9.7 =
+December 7, 2024
+
+More updates to CSS for margins for WordPress v6.7. Specifically for users that have edited the Sidebar or other Template Parts or Templates.
+
 = 1.9.6 =
 December 6, 2024
 
