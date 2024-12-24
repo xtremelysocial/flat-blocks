@@ -1,14 +1,15 @@
 /*-----------------------------------------------------------------------------
-# Post Excerpt: Custom
+# Post Excerpt
 -----------------------------------------------------------------------------*/
-
-/* HIDE read more text and link */
-.wp-block-post-excerpt.is-style-no-readmore > .wp-block-post-excerpt__more-text {
-	display: none;
-}
-
-.wp-block-post-excerpt.is-style-no-readmore > p {
+.wp-block-post-excerpt > p,
+.wp-block-post-excerpt > .wp-block-post-excerpt__excerpt {
 	margin-bottom: 0;
 }
 
-
+/*-----------------------------------------------------------------------------
+# Post Excerpt: Custom
+-----------------------------------------------------------------------------*/
+/* No Read More link */
+.wp-block-post-excerpt.is-style-no-readmore > .wp-block-post-excerpt__more-text {
+	display: none;
+}

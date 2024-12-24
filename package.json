@@ -1,13 +1,12 @@
 {
-	"name": "flat-blocks-pro",
-	"version": "1.6.5",
-	"description": "Flat Blocks PRO Theme",
+	"name": "flat-blocks",
+	"version": "1.0.0",
+	"description": "Flat Blocks Theme",
 	"author": "XtremelySocial",
 	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"Flat",
 		"Blocks",
-		"PRO",
 		"theme"
 	],
 	"homepage": "https://xtremelysocial.com/wordpress/flat-blocks/",
@@ -34,5 +33,8 @@
 		"webpack-fix-style-only-entries": "^0.6.1",
 		"webpack-remove-empty-scripts": "^1.0.4",
 		"webpack-watched-glob-entries-plugin": "^3.0.0"
+	},
+	"dependencies": {
+		"remove-files-webpack-plugin": "^1.5.0"
 	}
 }

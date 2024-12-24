@@ -1,0 +1,57 @@
+/*-----------------------------------------------------------------------------
+# Flat Blocks Theme Compatibility with Prior Versions
+#
+# This is so that user's CONTENT created with prior theme versions will still
+# work as before. These styles have been DEPRECATED though and will be removed
+# at some point, so its best to update the site content.
+-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+# Flat Blocks Styles for theme < v2.0
+-----------------------------------------------------------------------------*/
+
+/* Legacy support for original Down Arrow for Scroll Headers */
+@use "../mixins/icons";
+
+@include icons.svg-icon(
+	'is-style-arrow-icon-no-text',
+	'arrow-down-alt2',
+	'after',
+	false, // $margin
+	true, // $link
+);
+
+p.is-style-arrow-icon-no-text > a {
+	text-decoration: none !important;
+	outline: none !important;
+}
+
+p.is-style-arrow-icon-no-text > a:hover {
+	opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+}
+
+/* Map deprecated font sizes */
+.has-extra-small-font-size {
+	font-size: 14px;
+}
+
+.has-larger-font-size {
+	font-size: var(--wp--preset--font-size--x-large);
+}
+
+.has-huge-font-size {
+	font-size: var(--wp--preset--font-size--xxx-large);
+}
+
+.has-gigantic-font-size {
+	font-size: var(--wp--preset--font-size--xxxx-large);
+}
+
+/* Override top margin in certain situations */
+:where(main) > :first-child:not(.wp-block-post-content):not(.wp-block-post-featured-image):not(.wp-block-cover) {
+    margin-block-start: var(--wp--style--block-gap) !important;
+}
+
+:where(main) > .wp-block-columns > .wp-block-column .sidebar.wp-block-group,
+.wp-block-query > .wp-block-columns > .wp-block-column .sidebar.wp-block-group { 
+ 	margin-block-start: 0 !important;
+}

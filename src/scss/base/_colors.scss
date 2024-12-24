@@ -1,66 +1,129 @@
-/*-----------------------------------------------------------------------------
+/*------------------------------------------------------------------------------
 # Colors
+------------------------------------------------------------------------------*/
+
+/*
+ * Default contrast (text) and/or highlight (link, button) color based on 
+ * background color.
+ * 
+ * Set these in theme.json:
+ *		--wp--custom--color--contrast--{color-group}
+ *		--wp--custom--color--highlight--{color-group}
+ * 
+ * {color-group}: primary, secondary, tertiary, neutral, dark, foreground-alt
+ */
+
+/*-----------------------------------------------------------------------------
+# Default Contrast color
 -----------------------------------------------------------------------------*/
 
-// Load our mixins to set default text and link colors
-@use "../utils/mixin-colors";
+/* Default light text color on colored backgrounds */
+.has-background {
+     color: var(--wp--preset--color--off-white);
+}
 
-/* 
- * Default links on colored backgrounds to underline, then override later
- * for certain colors 
- */
-.has-background:not(.has-link-color) a:not(.wp-element-button):not(.wp-block-navigation-item__content):not(.wp-block-social-link-anchor) {
-	text-decoration: underline;
+/* Accent colored backgrounds use foreground-alt color unless over-ridden */
+.has-primary-background-color, 
+.has-primary-alt-background-color {
+     color: var(--wp--custom--color--contrast--primary, var(--wp--preset--color--foreground-alt));
+}
 
-	&:hover,
-	&:active {
-		text-decoration: underline;
-		opacity: var(--wp--custom--link--hover-opacity, 0.8);
+.has-secondary-background-color, 
+.has-secondary-alt-background-color {
+     color: var(--wp--custom--color--contrast--secondary, var(--wp--preset--color--foreground-alt));
+}
+
+.has-tertiary-background-color, 
+.has-tertiary-alt-background-color {
+     color: var(--wp--custom--color--contrast--tertiary, var(--wp--preset--color--foreground-alt));
+}
+
+/* Neutral colored backgrounds use black color unless over-ridden */
+.has-neutral-background-color, 
+.has-neutral-alt-background-color {
+     color: var(--wp--custom--color--contrast--neutral, var(--wp--preset--color--almost-black));
+}
+
+/* Dark colored backgrounds use white color unless over-ridden */
+.has-dark-background-color, 
+.has-dark-alt-background-color {
+     color: var(--wp--custom--color--contrast--dark, var(--wp--preset--color--off-white));
+}
+
+/* Light-colored backgrounds use black color */
+.has-white-background-color, 
+.has-off-white-background-color, 
+.has-light-yellow-background-color, 
+.has-yellow-background-color, 
+.has-very-light-gray-background-color, 
+.has-light-gray-background-color, 
+.has-gray-background-color {
+     color: var(--wp--preset--color--almost-black);
+}
+
+/* Foreground Alt is normally light, but allow override if it is dark */
+.has-foreground-alt-background-color {
+	color: var(--wp--custom--color--contrast--foreground-alt, var(--wp--preset--color--contrast));
+}
+
+/* Invert contrast and base colors */
+.has-base-background-color {
+     color: var(--wp--preset--color--contrast);
+}
+
+.has-contrast-background-color {
+     color: var(--wp--preset--color--base);
+}
+
+/*-----------------------------------------------------------------------------
+# Default link color
+-----------------------------------------------------------------------------*/
+
+/* Inherit link color on backgrounds except very light or very dark */
+.has-background:not(.has-base-background-color, .has-white-background-color, .has-off-white-background-color, .has-very-light-gray-background-color, .has-light-gray-background-color, .has-gray-background-color, .has-neutral-background-color, .has-neutral-alt-background-color, .has-dark-background-color, .has-dark-alt-background-color, .has-almost-black-background-color, .has-not-quite-black-background-color, .has-black-background-color) {
+	& a:not(.wp-element-button) {
+     	color: inherit;
+    }	
+}
+
+/*-----------------------------------------------------------------------------
+# Default Contrast Color on Gradients
+-----------------------------------------------------------------------------*/
+/* Set the text color on gradient backgrounds */
+:root :where([class*="-gradient-background"]:not(.has-gray-gradient-background):not(.has-yellow-gradient-background)) {
+	color: var(--wp--preset--color--foreground-alt); 
+}
+
+:root :where(.has-primary-gradient-background, .has-primary-to-secondary-gradient-background, .has-secondary-to-primary-gradient-background, .has-primary-to-tertiary-gradient-background, .has-tertiary-to-primary-gradient-background) {
+	color: var(--wp--custom--color--contrast--primary, var(--wp--preset--color--foreground-alt));
+}
+
+:root :where(.has-secondary-gradient-background, .has-secondary-to-tertiary-gradient-background, .has-tertiary-to-secondary-gradient-background) {
+	color: var(--wp--custom--color--contrast--secondary, var(--wp--preset--color--foreground-alt));
+}
+
+:root :where(.has-tertiary-gradient-background) {
+	color: var(--wp--custom--color--contrast--tertiary, var(--wp--preset--color--foreground-alt));
+}
+
+/*-----------------------------------------------------------------------------
+# Default Link Color on Gradients
+-----------------------------------------------------------------------------*/
+
+/* Inherit the link and outline button color on gradient backgrounds */
+:root :where([class*=-gradient-background]) {
+	& a:where(:not(.wp-element-button)),
+	& .is-style-outline > .wp-element-button, 
+	& [class*="is-style-button-outline-"] > .wp-element-button {	
+		color: inherit;
 	}
 }
 
-/* 
- * Black and near-black colors, default light text (but leave link color alone).
- * Override by defining --wp--custom--color--contrast--black and/or 
- * --wp--custom--color--highlight--black in theme.json.
- */
-$black-colors: ('contrast', 'midnight-blue', 'dark-midnight-blue', 'dark', 'dark-alt', 'almost-black', 'not-quite-black', 'black');
-@include mixin-colors.color-defaults($black-colors, 'default-black');
+/*-----------------------------------------------------------------------------
+# Default Contrast Color on Cover Block
+-----------------------------------------------------------------------------*/
 
-/* 
- * Dark colors, default light text and links 
- * Override by defining --wp--custom--color--contrast--dark and/or
- * --wp--custom--color--highlight--dark in theme.json.
- */
-$dark-colors: ('primary', 'secondary', 'tertiary', 'primary-alt', 'secondary-alt', 'tertiary-alt', 'highlight', 'highlight-alt', 'dark-gray', 'very-dark-gray', 'green', 'dark-bright-green', 'orange', 'dark-orange', 'blue', 'dark-blue', 'purple', 'dark-purple', 'light-red', 'red', 'dark-red');
-@include mixin-colors.color-defaults($dark-colors, 'default-dark');
-
-/* 
- * Medium colors, default light text and links too but make it easy for theme
- * styles to Override by defining --wp--custom--color--contrast--medium in
- * theme.json.
- */
-$medium-colors: ('light-green', 'bright-green', 'light-orange', 'light-blue','light-purple');
-@include mixin-colors.color-defaults($medium-colors, 'default-medium');
-
-/* 
- * Light Colors (e.g. Yellow), default dark color to text, link, and buttons 
- * Override by defining --wp--custom--color--contrast--light in theme.json.
- */ 
-$light-colors: ('light-yellow', 'yellow');
-@include mixin-colors.color-defaults($light-colors,'default-light');
-
-/* 
- * White and near-white colors, default dark text (but leave the link color alone) 
- * Override by defining --wp--custom--color--contrast--white in theme.json.
- */
-$white-colors: ('base', 'neutral', 'neutral-alt', 'foreground-alt', 'white', 'off-white', 'very-light-gray', 'light-gray', 'gray' );
-@include mixin-colors.color-defaults($white-colors,'default-white');
-
-/* 
- * On Cover blocks, default the text color to white, but set it back to black
- * on light backgrounds with dim less than 30%
- */
+/* On Cover blocks, default the text color based on the amount of dimming */
 :where(.wp-block-cover-image.is-light:not(.has-text-color)), :where(.wp-block-cover.is-light:not(.has-text-color)) {
     color: #fff;
 

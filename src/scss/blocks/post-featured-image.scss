@@ -3,15 +3,15 @@
 -----------------------------------------------------------------------------*/
 .wp-block-post-featured-image img {
 	padding: var(--wp--preset--spacing--20);
-	box-shadow: var(--wp--custom--shadow--default);
+// 	box-shadow: var(--wp--custom--shadow--default);
 }
 
 /*-----------------------------------------------------------------------------
-# Post Featured Image: Custom
+# Custom: Post Featured Image
 -----------------------------------------------------------------------------*/
 
 /* Featured Image no border */
-.wp-block-post-featured-image.is-style-image-no-border img {
+.is-style-image-no-border img {
 	border: none;
 	border-radius: 0;
 	padding: 0;

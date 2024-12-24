@@ -1,0 +1,667 @@
+/*!************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/scss/flat-blocks.scss ***!
+  \************************************************************************************************************************************************/
+@charset "UTF-8";
+/**
+ * File:	flat-blocks.css
+ * Theme:	Flat Blocks
+ * 
+ * The base stylesheet for the Flat Block theme's CORE CSS
+ * 
+ * NOTE: This file is AUTO-GENERATED from the SASS source files 
+ * in /src/sass/flat-blocks.scss. Do not make updates here.
+ *
+ * @package flat-blocks
+ * @since	1.0
+ */
+/*-----------------------------------------------------------------------------
+# Normalize
+-----------------------------------------------------------------------------*/
+/* 
+ * Default to contain borders and padding within blocks and prevent iOS from 
+ * adjusting text sizes after orientation change. 
+ */
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: auto !important;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* 
+ * Default color scheme to light, but allow theme styles to set it to 
+ * "light dark". That will turn input fields black and also allows the use of the 
+ * CSS light-dark function. e.g. light-dark(white, black).
+ */
+:root {
+  color-scheme: var(--wp--custom--color--scheme, light);
+}
+
+/*
+ * Font smoothing and text decoration styles.
+ * These are niche settings that will not be available via Global Styles.
+ * https://github.com/WordPress/gutenberg/issues/35934
+ */
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-decoration-style: var(--wp--custom--link--style, solid);
+  text-decoration-thickness: var(--wp--custom--link--thickness, 1px);
+  text-underline-position: var(--wp--custom--link--position, under);
+  text-underline-offset: var(--wp--custom--link--offset, 0);
+}
+
+/*-----------------------------------------------------------------------------
+# Elements
+-----------------------------------------------------------------------------*/
+/* Use bold font-weight from theme.json */
+strong,
+b {
+  font-weight: var(--wp--custom--typography--font-weight--bold, 500);
+}
+
+/* Prevent code from breaking layout and use smaller font */
+code,
+pre {
+  overflow-x: scroll;
+  font-size: var(--wp--preset--font-size--small);
+}
+
+/* Style lists */
+ol,
+ul {
+  margin-bottom: 0;
+}
+
+ol.has-background:not(.wp-block-navigation-submenu):not(.wp-block-navigation__container),
+ul.has-background:not(.wp-block-navigation-submenu):not(.wp-block-navigation__container) {
+  padding: var(--wp--preset--spacing--40);
+  list-style-position: inside;
+}
+
+/*-----------------------------------------------------------------------------
+# Buttons and Links
+-----------------------------------------------------------------------------*/
+/*
+ * Link styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
+a,
+.wp-block-navigation a,
+.wp-block-navigation-submenu__toggle {
+  cursor: pointer;
+  text-decoration-style: var(--wp--custom--link--style, solid);
+}
+
+/* Set link hover styles */
+:where(.has-background :not(.wp-block-site-title) > a:not(.wp-element-button):not(.wp-block-navigation-item__content):not(.wp-block-social-link-anchor)) {
+  text-decoration: underline;
+}
+:where(.has-background :not(.wp-block-site-title) > a:not(.wp-element-button):not(.wp-block-navigation-item__content):not(.wp-block-social-link-anchor)):hover, :where(.has-background :not(.wp-block-site-title) > a:not(.wp-element-button):not(.wp-block-navigation-item__content):not(.wp-block-social-link-anchor)):active {
+  opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+}
+
+/* 
+ * Style basic buttons to match block buttons. 
+ */
+input[type=button]:not(.wp-element-button),
+input[type=submit][class*=button]:not(.wp-element-button),
+input[type=reset][class*=button]:not(.wp-element-button),
+input[type=file]::file-selector-button {
+  background-color: var(--wp--custom--color--button--background, var(--wp--custom--color--highlight, var(--wp--preset--color--highlight)));
+  color: var(--wp--custom--color--button--text, var(--wp--preset--color--foreground-alt));
+  border: none;
+  border-width: 0;
+  border-radius: var(--wp--custom--button--radius, 0);
+  padding: var(--wp--preset--spacing--30, 9px) var(--wp--preset--spacing--40, 18px);
+  font-size: var(--wp--preset--font-size--normal, 18px);
+  font-weight: var(--wp--custom--typography--font-weight--medium, 400);
+  line-height: 1.5;
+  text-shadow: none;
+}
+
+input[type=file] {
+  font-size: var(--wp--preset--font-size--small, 16px);
+  width: 100%;
+}
+
+/* 
+ * But override basic buttons to look like outlines on primary-colored backgrounds 
+ */
+.has-primary-background-color input[type=button],
+.has-primary-background-color input[type=submit][class*=button],
+.has-primary-background-color input[type=reset][class*=button],
+.has-primary-background-color input[type=file]::file-selector-button {
+  border: 3px solid var(--wp--custom--color--button--text, var(--wp--preset--color--foreground-alt));
+}
+
+/* FIX for WordPress v6.7 Button not within a Buttons container */
+.wp-site-blocks .wp-block-button__link {
+  width: auto;
+  height: auto;
+}
+
+/*
+ * Button hover styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
+button:not(.wp-block-navigation-submenu__toggle):hover,
+input[type=submit][class*=button]:hover,
+input[type=reset][class*=button]:hover,
+input[type=file]::file-selector-button:hover,
+.wp-block-search__button:hover,
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-button__link:hover {
+  cursor: pointer;
+  opacity: var(--wp--custom--color--button--hover-opacity, 0.8);
+}
+
+input[type=button]:not(.wp-element-button):hover,
+input[type=submit][class*=button]:not(.wp-element-button):hover,
+input[type=reset][class*=button]:not(.wp-element-button):hover,
+input[type=file]::file-selector-button:hover {
+  background-color: var(--wp--custom--color--button--hover-background, var(--wp--custom--color--button--background, var(--wp--custom--color--highlight, var(--wp--preset--color--highlight))));
+  color: var(--wp--custom--color--button--hover-text, var(--wp--custom--color--button--text, var(--wp--preset--color--foreground-alt)));
+}
+
+/*-----------------------------------------------------------------------------
+# Custom: Link Underlines
+-----------------------------------------------------------------------------*/
+/* Underline links */
+.is-style-link-underline a:not(.wp-block-navigation-item__content) {
+  text-decoration: underline;
+}
+
+.is-style-link-underline a:hover,
+.is-style-link-underline a:active {
+  opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+}
+
+/* No Underline links */
+.is-style-link-no-underline a {
+  text-decoration: none;
+}
+
+/* Underline links on hover */
+.is-style-link-underline-hover a {
+  text-decoration: none !important;
+}
+.is-style-link-underline-hover a:hover, .is-style-link-underline-hover a:active {
+  text-decoration: underline !important;
+  opacity: 1;
+}
+
+/*-----------------------------------------------------------------------------
+# Forms
+-----------------------------------------------------------------------------*/
+fieldset {
+  font-size: var(--wp--preset--font-size--normal, 18px);
+  font-weight: var(--wp--custom--typography--font-weight--normal, 300);
+  line-height: 1.5;
+  padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--40);
+  border: 1px solid var(--wp--preset--color--contrast);
+  border-radius: var(--wp--custom--border--radius);
+  text-shadow: none;
+  -webkit-appearance: none;
+}
+
+select,
+textarea,
+input:not(.file):not(.wp-element-button) {
+  font-family: inherit;
+  background-color: var(--wp--custom--color--field--background, revert);
+  color: var(--wp--custom--color--field--text, inherit);
+}
+
+select {
+  font-size: var(--wp--preset--font-size--small, 16px);
+  font-weight: var(--wp--custom--typography--font-weight--normal, 300);
+  line-height: 1.5;
+  border-radius: var(--wp--preset--spacing--20);
+  text-shadow: none;
+  border: 1px solid var(--wp--custom--color--field--border, var(--wp--preset--color--dark-gray));
+}
+
+textarea,
+input {
+  font-size: var(--wp--preset--font-size--normal);
+  font-weight: var(--wp--custom--typography--font-weight--normal, 300);
+  line-height: 1.5;
+  border-radius: var(--wp--preset--spacing--20);
+  text-shadow: none;
+}
+
+textarea,
+input:not([type=radio]):not([type=checkbox]):not([type=file]):not([type=button]):not([type=image]):not([class*=button]):not(.wp-block-button__link) {
+  -webkit-appearance: none;
+  border: 1px solid var(--wp--preset--color--contrast);
+}
+
+/* Style focus outline */
+input:focus,
+textarea:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px var(--wp--custom--color--field--outline, var(--wp--custom--outline--color));
+  transition: box-shadow 0.3s ease;
+}
+
+select:focus,
+select:focus-visible {
+  outline: var(--wp--custom--color--field--outline, var(--wp--custom--outline--color)) 5px solid;
+  transition: outline 0.3s ease;
+}
+
+/*-----------------------------------------------------------------------------
+# Alignments
+-----------------------------------------------------------------------------*/
+/*
+ * Don't let anything be wider than our max width. This is so fullwidth images
+ * don't get so wide they lose resolution.
+ */
+.wp-site-blocks {
+  max-width: var(--wp--custom--layout--full-size, 1600px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* ADD padding and margin to align left and align right to match wide width */
+.wp-site-blocks > .alignleft {
+  margin-left: var(--wp--style--root--padding-right, var(--wp--preset--spacing--50));
+}
+
+body .is-layout-constrained > .alignleft {
+  padding-right: calc(0.5 * (100% - var(--wp--style--global--wide-size)));
+  margin-inline-end: var(--wp--style--root--padding-right, var(--wp--preset--spacing--50));
+}
+
+.wp-site-blocks > .alignright {
+  margin-right: var(--wp--style--root--padding-left, var(--wp--preset--spacing--50));
+}
+
+body .is-layout-constrained > .alignright {
+  padding-left: calc(0.5 * (100% - var(--wp--style--global--wide-size)));
+  margin-inline-start: var(--wp--style--root--padding-left, var(--wp--preset--spacing--50));
+}
+
+/* Automatically clear floats on Groups with align left or right */
+.wp-block-group:not(.is-layout-flex):not(.is-style-fixed-header):has(.alignleft, .alignright):after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*------------------------------------------------------------------------------
+# Margins (Vertical spacing)
+------------------------------------------------------------------------------*/
+/* Don't add top margin to top-level blocks (header, title, main, footer) */
+:root :where(.wp-site-blocks) > * {
+  margin-block-start: 0;
+}
+
+/* Add top margin to main unless its the post content or a featured image */
+main > :first-child:not(.wp-block-post-content):not(.wp-block-post-featured-image):not(.wp-block-cover) {
+  margin-block-start: var(--wp--style--block-gap);
+}
+
+/* Push top margin down on Groups and Columns that have template parts in them */
+:root :where(.is-layout-flow) > .wp-block-template-part > *,
+:root :where(.is-layout-constrained) > .wp-block-template-part > * {
+  margin-block-start: var(--wp--style--block-gap);
+}
+
+:root :where(.is-layout-flow) > .wp-block-template-part > :first-child:not(.wp-block-comments),
+:root :where(.is-layout-constrained) > .wp-block-template-part > :first-child:not(.wp-block-comments) {
+  margin-block-start: 0;
+}
+
+/* But don't put any top margin on the individual columns */
+:root :where(.wp-block-columns-is-layout-flow) > .wp-block-column,
+:root :where(.wp-block-columns-is-layout-constrained) > .wp-block-column {
+  margin-block-start: 0;
+}
+
+/* 
+ * Push top margin on Post Content down to the block level so users can control 
+ * it by adjusting margin on the block itself.
+ */
+.wp-site-blocks .wp-block-post-content {
+  margin-block-start: 0;
+}
+
+.wp-block-post-content > :first-child:not(.wp-block-cover),
+.wp-block-post-content > :last-child {
+  margin-block-start: var(--wp--style--block-gap);
+}
+
+/* 
+ * But don't add it when the Template has columns (i.e. there is a Sidebar) and 
+ * the Post Content is the first thing in the column (i.e. No Featured Image before 
+ * it)*/
+main > .wp-block-columns > .wp-block-column > :first-child.wp-block-post-content > :first-child {
+  margin-block-start: 0;
+}
+
+/* Add bottom margin to the Query block */
+/* Add bottom margin to main unless its the post content */
+main > :last-child:not(.wp-block-post-content) {
+  margin-block-end: var(--wp--style--block-gap);
+}
+
+/*-----------------------------------------------------------------------------
+# Padding (Horizontal and vertical spacing)
+-----------------------------------------------------------------------------*/
+/* Remove padding from containers */
+main.wp-block-group:not(.has-global-padding),
+.wp-block-template-part {
+  padding: 0;
+}
+
+/*------------------------------------------------------------------------------
+# Colors
+------------------------------------------------------------------------------*/
+/*
+ * Default contrast (text) and/or highlight (link, button) color based on 
+ * background color.
+ * 
+ * Set these in theme.json:
+ *		--wp--custom--color--contrast--{color-group}
+ *		--wp--custom--color--highlight--{color-group}
+ * 
+ * {color-group}: primary, secondary, tertiary, neutral, dark, foreground-alt
+ */
+/*-----------------------------------------------------------------------------
+# Default Contrast color
+-----------------------------------------------------------------------------*/
+/* Default light text color on colored backgrounds */
+.has-background {
+  color: var(--wp--preset--color--off-white);
+}
+
+/* Accent colored backgrounds use foreground-alt color unless over-ridden */
+.has-primary-background-color,
+.has-primary-alt-background-color {
+  color: var(--wp--custom--color--contrast--primary, var(--wp--preset--color--foreground-alt));
+}
+
+.has-secondary-background-color,
+.has-secondary-alt-background-color {
+  color: var(--wp--custom--color--contrast--secondary, var(--wp--preset--color--foreground-alt));
+}
+
+.has-tertiary-background-color,
+.has-tertiary-alt-background-color {
+  color: var(--wp--custom--color--contrast--tertiary, var(--wp--preset--color--foreground-alt));
+}
+
+/* Neutral colored backgrounds use black color unless over-ridden */
+.has-neutral-background-color,
+.has-neutral-alt-background-color {
+  color: var(--wp--custom--color--contrast--neutral, var(--wp--preset--color--almost-black));
+}
+
+/* Dark colored backgrounds use white color unless over-ridden */
+.has-dark-background-color,
+.has-dark-alt-background-color {
+  color: var(--wp--custom--color--contrast--dark, var(--wp--preset--color--off-white));
+}
+
+/* Light-colored backgrounds use black color */
+.has-white-background-color,
+.has-off-white-background-color,
+.has-light-yellow-background-color,
+.has-yellow-background-color,
+.has-very-light-gray-background-color,
+.has-light-gray-background-color,
+.has-gray-background-color {
+  color: var(--wp--preset--color--almost-black);
+}
+
+/* Foreground Alt is normally light, but allow override if it is dark */
+.has-foreground-alt-background-color {
+  color: var(--wp--custom--color--contrast--foreground-alt, var(--wp--preset--color--contrast));
+}
+
+/* Invert contrast and base colors */
+.has-base-background-color {
+  color: var(--wp--preset--color--contrast);
+}
+
+.has-contrast-background-color {
+  color: var(--wp--preset--color--base);
+}
+
+/*-----------------------------------------------------------------------------
+# Default link color
+-----------------------------------------------------------------------------*/
+/* Inherit link color on backgrounds except very light or very dark */
+.has-background:not(.has-base-background-color, .has-white-background-color, .has-off-white-background-color, .has-very-light-gray-background-color, .has-light-gray-background-color, .has-gray-background-color, .has-neutral-background-color, .has-neutral-alt-background-color, .has-dark-background-color, .has-dark-alt-background-color, .has-almost-black-background-color, .has-not-quite-black-background-color, .has-black-background-color) a:not(.wp-element-button) {
+  color: inherit;
+}
+
+/*-----------------------------------------------------------------------------
+# Default Contrast Color on Gradients
+-----------------------------------------------------------------------------*/
+/* Set the text color on gradient backgrounds */
+:root :where([class*=-gradient-background]:not(.has-gray-gradient-background):not(.has-yellow-gradient-background)) {
+  color: var(--wp--preset--color--foreground-alt);
+}
+
+:root :where(.has-primary-gradient-background, .has-primary-to-secondary-gradient-background, .has-secondary-to-primary-gradient-background, .has-primary-to-tertiary-gradient-background, .has-tertiary-to-primary-gradient-background) {
+  color: var(--wp--custom--color--contrast--primary, var(--wp--preset--color--foreground-alt));
+}
+
+:root :where(.has-secondary-gradient-background, .has-secondary-to-tertiary-gradient-background, .has-tertiary-to-secondary-gradient-background) {
+  color: var(--wp--custom--color--contrast--secondary, var(--wp--preset--color--foreground-alt));
+}
+
+:root :where(.has-tertiary-gradient-background) {
+  color: var(--wp--custom--color--contrast--tertiary, var(--wp--preset--color--foreground-alt));
+}
+
+/*-----------------------------------------------------------------------------
+# Default Link Color on Gradients
+-----------------------------------------------------------------------------*/
+/* Inherit the link and outline button color on gradient backgrounds */
+:root :where([class*=-gradient-background]) a:where(:not(.wp-element-button)), :root :where([class*=-gradient-background]) .is-style-outline > .wp-element-button, :root :where([class*=-gradient-background]) [class*=is-style-button-outline-] > .wp-element-button {
+  color: inherit;
+}
+
+/*-----------------------------------------------------------------------------
+# Default Contrast Color on Cover Block
+-----------------------------------------------------------------------------*/
+/* On Cover blocks, default the text color based on the amount of dimming */
+:where(.wp-block-cover-image.is-light:not(.has-text-color)), :where(.wp-block-cover.is-light:not(.has-text-color)) {
+  color: #fff;
+}
+:where(.wp-block-cover-image.is-light:not(.has-text-color)):has(.has-background-dim-10), :where(.wp-block-cover-image.is-light:not(.has-text-color)):has(.has-background-dim-20), :where(.wp-block-cover-image.is-light:not(.has-text-color)):has(.has-background-dim-30), :where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-10), :where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-20), :where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-30) {
+  color: #000;
+}
+
+/*------------------------------------------------------------------------------
+# Icons
+#
+# Note: Needed for multiple blocks so load in base stylesheet
+------------------------------------------------------------------------------*/
+.is-style-icon-arrow-up-alt2 > a:before, .is-style-icon-arrow-up-alt2-no-text > a:before, .is-style-icon-arrow-left-alt2 > a:before, .is-style-icon-arrow-left-alt2-no-text > a:before, .is-style-icon-arrow-down-alt2 > a:after, .is-style-icon-arrow-down-alt2-no-text > a:after, .is-style-icon-arrow-right-alt2 > a:after, .is-style-icon-arrow-right-alt2-no-text > a:after {
+  content: "";
+  background-color: currentColor;
+  display: inline-flex;
+  align-self: center;
+  height: 1em;
+  width: 1em;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+/* Setup SVG icons for use in post/page content */
+.is-style-icon-arrow-up-alt2 > a.wp-block-navigation-item__content {
+  display: inline-flex;
+}
+.is-style-icon-arrow-up-alt2 > a:before {
+  /* webpackIgnore: true */
+  mask-image: url(../icons/arrow-up-alt2.svg);
+  /* webpackIgnore: true */
+  -webkit-mask-image: url(../icons/arrow-up-alt2.svg);
+  margin-left: 0.15em;
+}
+
+.is-style-icon-arrow-up-alt2-no-text > a.wp-block-navigation-item__content {
+  display: inline-flex;
+}
+.is-style-icon-arrow-up-alt2-no-text > a:before {
+  /* webpackIgnore: true */
+  mask-image: url(../icons/arrow-up-alt2.svg);
+  /* webpackIgnore: true */
+  -webkit-mask-image: url(../icons/arrow-up-alt2.svg);
+}
+
+.is-style-icon-arrow-left-alt2 > a.wp-block-navigation-item__content {
+  display: inline-flex;
+}
+.is-style-icon-arrow-left-alt2 > a:before {
+  /* webpackIgnore: true */
+  mask-image: url(../icons/arrow-left-alt2.svg);
+  /* webpackIgnore: true */
+  -webkit-mask-image: url(../icons/arrow-left-alt2.svg);
+  margin-left: 0.15em;
+}
+
+.is-style-icon-arrow-left-alt2-no-text > a.wp-block-navigation-item__content {
+  display: inline-flex;
+}
+.is-style-icon-arrow-left-alt2-no-text > a:before {
+  /* webpackIgnore: true */
+  mask-image: url(../icons/arrow-left-alt2.svg);
+  /* webpackIgnore: true */
+  -webkit-mask-image: url(../icons/arrow-left-alt2.svg);
+}
+
+.is-style-icon-arrow-down-alt2 > a.wp-block-navigation-item__content {
+  display: inline-flex;
+}
+.is-style-icon-arrow-down-alt2 > a:after {
+  /* webpackIgnore: true */
+  mask-image: url(../icons/arrow-down-alt2.svg);
+  /* webpackIgnore: true */
+  -webkit-mask-image: url(../icons/arrow-down-alt2.svg);
+  margin-right: 0.15em;
+}
+
+.is-style-icon-arrow-down-alt2-no-text > a.wp-block-navigation-item__content {
+  display: inline-flex;
+}
+.is-style-icon-arrow-down-alt2-no-text > a:after {
+  /* webpackIgnore: true */
+  mask-image: url(../icons/arrow-down-alt2.svg);
+  /* webpackIgnore: true */
+  -webkit-mask-image: url(../icons/arrow-down-alt2.svg);
+}
+
+.is-style-icon-arrow-right-alt2 > a.wp-block-navigation-item__content {
+  display: inline-flex;
+}
+.is-style-icon-arrow-right-alt2 > a:after {
+  /* webpackIgnore: true */
+  mask-image: url(../icons/arrow-right-alt2.svg);
+  /* webpackIgnore: true */
+  -webkit-mask-image: url(../icons/arrow-right-alt2.svg);
+  margin-right: 0.15em;
+}
+
+.is-style-icon-arrow-right-alt2-no-text > a.wp-block-navigation-item__content {
+  display: inline-flex;
+}
+.is-style-icon-arrow-right-alt2-no-text > a:after {
+  /* webpackIgnore: true */
+  mask-image: url(../icons/arrow-right-alt2.svg);
+  /* webpackIgnore: true */
+  -webkit-mask-image: url(../icons/arrow-right-alt2.svg);
+}
+
+/* Don't underline links, but lighten on hover */
+[class*=is-style-icon-] a {
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+[class*=is-style-icon-] a:hover {
+  opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+}
+
+/*-----------------------------------------------------------------------------
+# Icons: Custom
+-----------------------------------------------------------------------------*/
+/* No icons for post meta */
+.is-style-no-icon:before {
+  display: none;
+}
+
+/* No text for icon links in paragraphs */
+p[class*=-no-text] > a {
+  font-size: 0;
+  line-height: 1;
+}
+p[class*=-no-text] > a:before, p[class*=-no-text] > a:after {
+  font-size: var(--wp--preset--font-size--x-large);
+}
+
+/* No text for icon links in navigation menus */
+[class*=-no-text].wp-block-navigation-item > .wp-block-navigation-item__content > .wp-block-navigation-item__label {
+  font-size: 0;
+}
+
+/*-----------------------------------------------------------------------------
+# List: Custom
+#
+# Note: Needed for multiple blocks so load in base stylesheet
+-----------------------------------------------------------------------------*/
+/* Checkmarks */
+.is-style-list-checkmarks {
+  list-style-type: "✓ ";
+}
+
+.rtl .is-style-list-checkmarks {
+  list-style-type: " ✓";
+}
+
+/* Plain */
+.is-style-list-plain,
+.is-style-list-plain ul,
+.is-style-list-plain ol {
+  list-style: none;
+  padding-right: 0;
+}
+
+.is-style-list-plain li {
+  margin-bottom: var(--wp--preset--spacing--30);
+}
+
+.is-style-list-plain:not(.has-background),
+.is-style-list-plain:not(.has-background) li {
+  margin-right: 0;
+}
+
+.is-style-list-plain:not(.has-background) li ul li {
+  padding-right: var(--wp--preset--spacing--40);
+}
+
+/* Plain Centered */
+.is-style-list-plain-centered,
+.is-style-list-plain-centered ul,
+.is-style-list-plain-centered ol {
+  list-style: none;
+  padding-right: 0;
+  margin-right: 0;
+  text-align: center;
+}
+
+.is-style-list-plain-centered li {
+  margin-right: 0;
+}

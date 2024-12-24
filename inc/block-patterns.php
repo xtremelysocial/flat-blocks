@@ -12,53 +12,23 @@
  * @since	1.0
  */
 
-// Include the block pattern helper functions
+/**
+ * Include the block pattern helper functions
+ */
 if ( ! file_exists( get_template_directory() . '/inc/pattern-functions.php' ) ) exit;
 require_once get_template_directory() . '/inc/pattern-functions.php';
 
-// Register the block patterns
+// Register the block patterns. Must come after removing core block patterns below.
+add_action( 'init', 'flatblocks_register_block_patterns' );
+
 if ( ! function_exists( 'flatblocks_register_block_patterns' ) ) :
 
 	function flatblocks_register_block_patterns() {
 
-		// WordPress v6.2 already has categories for featured, header, query, text, 
-		// buttons, gallery, column, banner, footer, call-to-action, team, testimonials,
-		// services, contract, about, portfolio, and media. However, the columns category
-		// doesn't appear to be working.
-
-		// Add our own block pattern categories
-		$block_pattern_categories = array(
-			'flatblocks'	=> array( 'label' => __( 'All Flat Blocks', 'flat-blocks' ) ),
-			'column'   		=> array( 'label' => __( 'Columns', 'flat-blocks' ) ),				
-			'page'    		=> array( 'label' => __( 'Pages', 'flat-blocks' ) ),
-			//'cover'   	=> array( 'label' => __( 'Cover Images', 'flat-blocks' ) ),				
-			//'banner'   	=> array( 'label' => __( 'Banners', 'flat-blocks' ) ),				
-			//'image'   	=> array( 'label' => __( 'Images', 'flat-blocks' ) ),
-			//'testimonial'   => array( 'label' => __( 'Testimonials (Flat Blocks)', 'flat-blocks' ) ),				
-		);
+		// First register additional block pattern categories
+		flatblocks_register_pattern_categories();
 		
-		/**
-		 * Filters the theme block pattern categories.
-		 *
-		 * @param array[] $block_pattern_categories {
-		 *     An associative array of block pattern categories, keyed by category name.
-		 *
-		 *     @type array[] $properties {
-		 *         An array of block category properties.
-		 *
-		 *         @type string $label A human-readable label for the pattern category.
-		 *     }
-		 * }
-		 */
-		$block_pattern_categories = apply_filters( 'flatblocks_block_pattern_categories', $block_pattern_categories );
-
-		foreach ( $block_pattern_categories as $name => $properties ) {
-			if ( ! WP_Block_Pattern_Categories_Registry::get_instance()->is_registered( $name ) ) {
-				register_block_pattern_category( $name, $properties );
-			}
-		}
-		
-		// Define the list of patterns with translatable titles
+		// Then define the list of patterns with translatable titles
 		$block_patterns = array(
 			'buttons-call-to-action' => array( 
 				'title' => __( 'Call to Action', 'flat-blocks' ),
@@ -192,14 +162,6 @@ if ( ! function_exists( 'flatblocks_register_block_patterns' ) ) :
 				'title' => __( 'Cover Typewriter', 'flat-blocks' ),
 				'categories' => array ('flatblocks', 'banner' )
 			),
-			'cover-scroll-media-text' => array( 
-				'title' => __( 'Media w/2 Text Blocks and Scroll to Content', 'flat-blocks' ),
-				'categories' => array ('flatblocks', 'banner' )
-			),
-			'media-text-2-blocks' => array( 
-				'title' => __( 'Media w/2 Text Blocks', 'flat-blocks' ),
-				'categories' => array ('flatblocks', 'banner', 'featured' )
-			),
 			'image-gallery' => array( 
 				'title' => __( 'Image Gallery', 'flat-blocks' ),
 				'categories' => array ('flatblocks', 'column', 'gallery', 'media' )
@@ -216,12 +178,27 @@ if ( ! function_exists( 'flatblocks_register_block_patterns' ) ) :
 				'title' => __( 'Image of Static Map', 'flat-blocks' ),
 				'categories' => array ('flatblocks', 'media' )
 			),
+			'text-social-icons' => array( 
+				'title' => __( 'Social Icons', 'flat-blocks' ),
+				'categories' => array ('flatblocks', 'text' ),
+				'viewportWidth' => 740
+			),
 			'text-social-icons-huge' => array( 
 				'title' => __( 'Social Icons Huge', 'flat-blocks' ),
-				'categories' => array ('flatblocks', 'text' )
+				'categories' => array ('flatblocks', 'text' ),
+				'viewportWidth' => 740
+			),
+			'text-social-icons-neutral' => array( 
+				'title' => __( 'Social Icons Huge Monochrome', 'flat-blocks' ),
+				'categories' => array ('flatblocks', 'text' ),
+				'viewportWidth' => 740
 			),
 			'text-title-and-subtitle' => array( 
 				'title' => __( 'Title and Subtitle', 'flat-blocks' ),
+				'categories' => array ('flatblocks', 'text', 'banner' )
+			),
+			'text-site-title-and-tagline' => array( 
+				'title' => __( 'Site title and tagline', 'flat-blocks' ),
 				'categories' => array ('flatblocks', 'text', 'banner' )
 			),
 			'text-title-and-subtitle-with-bg-image' => array( 
@@ -239,6 +216,14 @@ if ( ! function_exists( 'flatblocks_register_block_patterns' ) ) :
 			'text-faq' => array( 
 				'title' => __( 'Frequently Asked Questions (FAQ)', 'flat-blocks' ),
 				'categories' => array ('flatblocks', 'text', 'featured' )
+			),
+			'text-site-copyright' => array( 
+				'title' => __( 'Site Copyright', 'flat-blocks' ),
+				'categories' => array ('flatblocks', 'text' )
+			),
+			'text-theme-tagline' => array( 
+				'title' => __( 'Theme Tagline', 'flat-blocks' ),
+				'categories' => array ('flatblocks', 'text' )
 			),
 			'query-loop-1-column' => array( 
 				'title' => __( 'Query Loop 1 Column', 'flat-blocks' ),
@@ -265,42 +250,18 @@ if ( ! function_exists( 'flatblocks_register_block_patterns' ) ) :
 		// Allow child themes to alter the block patterns list
 		$block_patterns = apply_filters( 'flatblocks_block_patterns', $block_patterns );
 
-		// Allow child themes to alter whether core WordPress patterns are removed or not
-		if ( apply_filters( 'flatblocks_remove_core_patterns', $default = true ) ) {
-
-			// First remove the core WordPress block patterns if we're registering any
-			if ( is_array( $block_patterns ) && count( $block_patterns ) > 0 ) {
-			
-				remove_theme_support( 'core-block-patterns' );
-
-				// Above still doesn't remove core/query, core/social-links, headers or
-				// footers, so get rid of them as long as we've registed at least one
-				// pattern.
-				$patterns = WP_Block_Patterns_Registry::get_instance()->get_all_registered();
-				foreach ( $patterns as $pattern ) {
-					if (
-						! empty( $pattern['blockTypes'] ) &&
-						is_array( $pattern['blockTypes'] )
-						) {
-
-						if (
-							in_array( 'core/query', $pattern['blockTypes'] ) ||
-							in_array( 'core/social-links', $pattern['blockTypes'] ) ||
-							in_array( 'core/template-part/header', $pattern['blockTypes'] ) ||
-							in_array( 'core/template-part/footer', $pattern['blockTypes'] )
-						) {
-							unregister_block_pattern( $pattern['name'] );
-						}
-				
-					}
-					
-				}
-				
+		// Then remove the core WordPress block patterns if we're registering
+		// any, but also allow child themes to override this.
+		if ( is_array( $block_patterns ) && count( $block_patterns ) > 0 ) {
+			if ( apply_filters( 
+				'flatblocks_remove_core_patterns', 
+				$default = true ) 
+			) {
+				flatblocks_remove_core_block_patterns();
 			}
-
 		}
 
-		// Then loop through all our patterns and register them
+		// Finally, loop through all our block patterns and register them
 		foreach ( $block_patterns as $name => $properties ) {
 		
 			// Get the HTML contents and replace partial URL's
@@ -309,28 +270,94 @@ if ( ! function_exists( 'flatblocks_register_block_patterns' ) ) :
 				$name, 
 				$image_root
 			);
-			if ( $content ) {
-											
-					// Register the block pattern
-					// Note to Theme Reviewers: The title is language translatable
-					// even though a variable is used because of the translations 
-					// in the above array.				
-					register_block_pattern(
-						'flat-blocks/' . $name,
-						array(
-							'title'      => $properties['title'],
-							'categories' => isset( $properties['categories'] ) ? $properties['categories'] : null,
-							'inserter' 	 => isset ( $properties['inserter'] ) ? $properties['inserter'] : true,
-							'blockTypes' => isset ( $properties['blockTypes'] ) ? $properties['blockTypes'] : null,
-							'viewportWidth' => isset ( $properties['viewportWidth'] ) ? $properties['viewportWidth'] : null,
-							'content'    => $content
-						)
-					);
 
+			if ( $content AND is_array( $properties ) ) {
+
+				// Set default viewport width
+				if ( !isset( $properties['viewportWidth'] ) ) $properties['viewportWidth'] = 1100;
+
+				// Add the content to the properties
+				$properties['content'] = $content;
+															
+				// Register the block pattern
+				register_block_pattern(
+					'flat-blocks/' . $name,
+					$properties
+				);
 			}
-			
 		}
-		
 	} 
 endif;
-add_action( 'init', 'flatblocks_register_block_patterns' );
+
+/**
+ * Register additional block pattern categories
+ * 
+ * WordPress already has categories for featured, header, query, text, buttons,
+ * gallery, banner, footer, call-to-action, team, testimonials, services,
+ * contract, about, portfolio, and media.
+ */
+if ( ! function_exists( 'flatblocks_register_pattern_categories' ) ) :
+
+	function flatblocks_register_pattern_categories() {
+
+		// Add our own block pattern categories
+		$block_pattern_categories = array(
+			'flatblocks'	=> array( 'label' => __( 'All Flat Blocks', 'flat-blocks' ) ),
+			'column'   		=> array( 'label' => __( 'Columns', 'flat-blocks' ) ),				
+			'page'    		=> array( 'label' => __( 'Pages', 'flat-blocks' ) ),
+		);
+		
+		/**
+		 * Filters the theme block pattern categories.
+		 *
+		 * @param array[] $block_pattern_categories {
+		 *     An associative array of block pattern categories, keyed by category name.
+		 *
+		 *     @type array[] $properties {
+		 *         An array of block category properties.
+		 *
+		 *         @type string $label A human-readable label for the pattern category.
+		 *     }
+		 * }
+		 */
+		$block_pattern_categories = apply_filters( 'flatblocks_block_pattern_categories', $block_pattern_categories );
+
+		foreach ( $block_pattern_categories as $name => $properties ) {
+			if ( ! WP_Block_Pattern_Categories_Registry::get_instance()->is_registered( $name ) ) {
+				register_block_pattern_category( $name, $properties );
+			}
+		}	
+	}
+endif;
+
+/**
+ * Remove core WordPress block patterns so they don't conflict with ours.
+ */
+if ( ! function_exists( 'flatblocks_remove_core_block_patterns' ) ) :
+
+	function flatblocks_remove_core_block_patterns() {
+		
+		// Remove core WordPress block patterns
+		remove_theme_support( 'core-block-patterns' );
+
+		// Above still doesn't remove core/query, core/social-links, headers or
+		// footers, so get rid of them too.
+		$core_patterns = WP_Block_Patterns_Registry::get_instance()->get_all_registered();
+		foreach ( $core_patterns as $pattern ) {
+			if (
+				! empty( $pattern['blockTypes'] ) &&
+				is_array( $pattern['blockTypes'] )
+				) {
+
+				if (
+					in_array( 'core/query', $pattern['blockTypes'] ) ||
+					in_array( 'core/social-links', $pattern['blockTypes'] ) ||
+					in_array( 'core/template-part/header', $pattern['blockTypes'] ) ||
+					in_array( 'core/template-part/footer', $pattern['blockTypes'] )
+				) {
+					unregister_block_pattern( $pattern['name'] );
+				}
+			}	
+		}			
+	}
+endif;
