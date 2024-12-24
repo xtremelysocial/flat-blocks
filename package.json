@@ -1,12 +1,13 @@
 {
-	"name": "flat-blocks",
+	"name": "flat-blocks-pro",
 	"version": "1.0.0",
-	"description": "Flat Blocks Theme",
+	"description": "Flat Blocks PRO Theme",
 	"author": "XtremelySocial",
 	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"Flat",
 		"Blocks",
+		"PRO",
 		"theme"
 	],
 	"homepage": "https://xtremelysocial.com/wordpress/flat-blocks/",
@@ -19,7 +20,7 @@
 		"format:js": "npm run lint:js -- --fix"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^29.0.0",
+		"@wordpress/scripts": "^30.7.0",
 		"clean-webpack-plugin": "^4.0.0",
 		"copy-webpack-plugin": "^12.0.2",
 		"css-loader": "^7.1.2",

@@ -1,12 +1,12 @@
 <?php
 /**
  * File:	pattern-functions.php
- * Theme:	Flat Blocks
+ * Theme:	Flat Blocks PRO
  * 
  * These are helper functions for registering this theme's block patterns from PHP. 
  * For example the sample about, home, portfolio, and services page patterns.
  *
- * @package flat-blocks
+ * @package flat-blocks-pro
  * @since	1.2.14
  */
 

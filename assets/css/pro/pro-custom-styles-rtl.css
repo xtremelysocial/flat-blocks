@@ -62,12 +62,12 @@
 }
 .dashicons.has-text-align-left,
 [class*=dashicons-].has-text-align-left {
-  text-align: left;
+  text-align: right;
   justify-content: left;
 }
 .dashicons.has-text-align-right,
 [class*=dashicons-].has-text-align-right {
-  text-align: right;
+  text-align: left;
   justify-content: right;
 }
 
@@ -103,7 +103,7 @@
 .is-style-list-dividers,
 .wp-block-list.is-style-list-dividers {
   list-style: none;
-  padding-left: 0;
+  padding-right: 0;
 }
 
 .is-style-list-dividers:not(.wp-block-latest-posts__list.is-grid) li:not(:first-child),
@@ -189,8 +189,8 @@ body.home > #page > #footer {
 --------------------------------------------------------------*/
 .wp-block-group.is-style-scroll-header {
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
   z-index: 9999;
   transition: all var(--wp--custom--animation--duration--normal, 1s) ease;
 }
@@ -258,8 +258,8 @@ body.home > #page > #footer {
   content: "";
   position: absolute;
   top: 100%;
-  left: 0;
   right: 0;
+  left: 0;
   width: calc(3 * var(--wp--preset--spacing--60));
   margin: calc(0.5 * var(--wp--style--block-gap)) 0;
   height: 3px;
@@ -276,13 +276,13 @@ body.home > #page > #footer {
 
 /* Align the separator based on the alignment of its heading */
 .has-text-align-center.wp-block-heading.is-style-separator:after {
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 
 .has-text-align-right.wp-block-heading.is-style-separator:after {
-  margin-right: 0;
-  margin-left: auto;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .wp-block-heading.is-style-separator {
@@ -312,8 +312,8 @@ body.home > #page > #footer {
     margin-bottom: var(--wp--style--block-gap);
   }
   .wp-block-latest-posts.is-grid.is-style-list-dividers li:not(:last-child) {
-    border-right: solid 1px rgba(128, 128, 128, 0.2);
-    padding-right: 1.25em;
+    border-left: solid 1px rgba(128, 128, 128, 0.2);
+    padding-left: 1.25em;
   }
 }
 /*--------------------------------------------------------------
@@ -334,8 +334,8 @@ body.home > #page > #footer {
 }
 .wp-block-navigation.is-style-nav-dividers .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__submenu-container.wp-block-navigation-submenu > .wp-block-navigation-item > .wp-block-navigation-item__content {
   border: none;
-  padding-left: 0;
   padding-right: 0;
+  padding-left: 0;
 }
 .wp-block-navigation.is-style-nav-dividers .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__submenu-container.wp-block-navigation-submenu > .wp-block-navigation-item:not(:last-child) {
   border-bottom: 1px solid rgba(128, 128, 128, 0.2);
@@ -381,12 +381,12 @@ body.home > #page > #footer {
   padding-bottom: var(--wp--preset--spacing--30);
 }
 .wp-block-navigation.is-style-nav-dividers .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container.items-justified-right .wp-block-navigation__submenu-container, .wp-block-navigation.is-style-nav-dividers .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container.items-justified-right .wp-block-navigation-submenu__toggle {
-  padding-left: 0;
-  text-align: right;
-}
-.wp-block-navigation.is-style-nav-dividers .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container.items-justified-left .wp-block-navigation__submenu-container, .wp-block-navigation.is-style-nav-dividers .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container.items-justified-left .wp-block-navigation-submenu__toggle {
   padding-right: 0;
   text-align: left;
+}
+.wp-block-navigation.is-style-nav-dividers .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container.items-justified-left .wp-block-navigation__submenu-container, .wp-block-navigation.is-style-nav-dividers .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container.items-justified-left .wp-block-navigation-submenu__toggle {
+  padding-left: 0;
+  text-align: right;
 }
 .wp-block-navigation.is-style-nav-dividers .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container.items-justified-center .wp-block-navigation__submenu-container, .wp-block-navigation.is-style-nav-dividers .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container.items-justified-center .wp-block-navigation-submenu__toggle {
   text-align: center;
@@ -429,7 +429,7 @@ body.home > #page > #footer {
 .wp-block-navigation-item.is-style-arrow-up-icon > a:before {
   font-family: dashicons;
   line-height: 1;
-  margin-right: 2px;
+  margin-left: 2px;
 }
 
 /* Arrow Up Alt 2 icon */
@@ -450,7 +450,7 @@ p:has(a[href^="mailto:"]:not(.wp-block-social-link-anchor)):before {
   /*color: currentcolor;*/
   /*color: inherit;*/
   font-weight: var(--wp--custom--typography--font-weight--normal);
-  margin-right: var(--wp--preset--spacing--20);
+  margin-left: var(--wp--preset--spacing--20);
   vertical-align: middle;
 }
 
@@ -499,7 +499,7 @@ p.is-style-no-auto-icon a[href^="mailto:"]:not(.wp-block-social-link-anchor):bef
   display: block;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   opacity: 0.5;
