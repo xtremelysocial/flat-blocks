@@ -41,8 +41,22 @@ module.exports = {
 								},
 							},
 						},
+// 						{ loader: 'postcss-loader' },
 					],
 				},
+// 				{
+// 					test: /\.css$/,
+// // 					use: ['style-loader', 'css-loader', 'postcss-loader']
+// // 					use: ['postcss-loader']
+// 					use: [
+// 						{
+// 							loader: 'postcss-loader',
+// 							options: {
+// 								sourceMap: true,
+// 							},
+// 						},
+// 					],
+// 				},
 			],
 		},
 		
