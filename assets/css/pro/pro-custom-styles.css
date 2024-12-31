@@ -55,22 +55,6 @@
 # PRO Dashicon Styles
 --------------------------------------------------------------*/
 /* Override dashicons default centering to match the text */
-.dashicons.has-text-align-center,
-[class*=dashicons-].has-text-align-center {
-  text-align: center;
-  justify-content: center;
-}
-.dashicons.has-text-align-left,
-[class*=dashicons-].has-text-align-left {
-  text-align: left;
-  justify-content: left;
-}
-.dashicons.has-text-align-right,
-[class*=dashicons-].has-text-align-right {
-  text-align: right;
-  justify-content: right;
-}
-
 /* Add a new Dashicons After class */
 /* Add a new Dashicons Above class */
 .dashicons-above {

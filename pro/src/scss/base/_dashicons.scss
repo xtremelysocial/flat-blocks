@@ -3,23 +3,23 @@
 --------------------------------------------------------------*/
 
 /* Override dashicons default centering to match the text */
-.dashicons,
-[class*=dashicons-] {
-	//font-family: dashicons;	
-
-	&.has-text-align-center {
-		text-align: center;
-		justify-content: center;
-	}
-	&.has-text-align-left {
-		text-align: left;
-		justify-content: left;
-	}
-	&.has-text-align-right {
-		text-align: right;
-		justify-content: right;
-	}	
-}
+// .dashicons,
+// [class*=dashicons-] {
+// 	//font-family: dashicons;	
+// 
+// 	&.has-text-align-center {
+// 		text-align: center;
+// 		justify-content: center;
+// 	}
+// 	&.has-text-align-left {
+// 		text-align: left;
+// 		justify-content: left;
+// 	}
+// 	&.has-text-align-right {
+// 		text-align: right;
+// 		justify-content: right;
+// 	}	
+// }
 
 // [class*=dashicons-]:before {
 // 	font-family: dashicons;	

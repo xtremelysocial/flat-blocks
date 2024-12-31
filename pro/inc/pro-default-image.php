@@ -11,11 +11,11 @@
 /**
  * Set a default post featured image if there isn't one already
  */
-add_filter( 'post_thumbnail_html', 'fbp_filter_post_thumbnail_html', 10, 5 );
+add_filter( 'post_thumbnail_html', 'flatblocks_pro_filter_post_thumbnail_html', 10, 5 );
 
-if ( ! function_exists('fbp_filter_post_thumbnail_html') ) :
+if ( ! function_exists('flatblocks_pro_filter_post_thumbnail_html') ) :
  
-	function fbp_filter_post_thumbnail_html( 
+	function flatblocks_pro_filter_post_thumbnail_html( 
 		$html, 
 		$pid, 
 		$post_thumbnail_id, 
@@ -77,10 +77,10 @@ endif;
   * Also make sure that has_post_thumbnail always returns true so the above actually
   * gets called.
   */
-add_filter( 'has_post_thumbnail', 'fbp_has_post_thumbnail', 10, 3 );
-if ( ! function_exists('fbp_has_post_thumbnail') ) :
+add_filter( 'has_post_thumbnail', 'flatblocks_pro_has_post_thumbnail', 10, 3 );
+if ( ! function_exists('flatblocks_pro_has_post_thumbnail') ) :
 
-	function fbp_has_post_thumbnail( $has_thumbnail, $post, $thumbnail_id ) {
+	function flatblocks_pro_has_post_thumbnail( $has_thumbnail, $post, $thumbnail_id ) {
 	
 		$has_thumbnail = true; 
 		return $has_thumbnail; 
