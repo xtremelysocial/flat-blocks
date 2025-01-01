@@ -1,6 +1,6 @@
-/*!**************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./pro/src/scss/pro/pro-custom-styles.scss ***!
-  \**************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js!./pro/src/scss/pro/pro-custom-styles.scss ***!
+  \************************************************************************************************************************************************************************************************************************************/
 /**
  * File:	pro-custom-styles.css
  * Theme:	Flat Blocks PRO
@@ -14,13 +14,35 @@
  * @since 	1.0
  */
 /*--------------------------------------------------------------
-# BASE PRO BLOCK STYLES
+# BASE PRO STYLES
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Base Styles
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-## General Styles
+## Icons
+--------------------------------------------------------------*/
+.is-style-icon-edit:before {
+  content: "";
+  background-color: currentColor;
+  display: inline-flex;
+  align-self: center;
+  height: 1em;
+  width: 1em;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+
+.is-style-icon-edit:before {
+  -webkit-mask-image: url(../../icons/edit.svg);
+          mask-image: url(../../icons/edit.svg);
+  margin-left: 0.15em;
+}
+
+/*--------------------------------------------------------------
+## Drop Shadow
 --------------------------------------------------------------*/
 /* 
  * Allow drop-shadow on anything except post template since it needs
@@ -54,8 +76,6 @@
 /*--------------------------------------------------------------
 # PRO Dashicon Styles
 --------------------------------------------------------------*/
-/* Override dashicons default centering to match the text */
-/* Add a new Dashicons After class */
 /* Add a new Dashicons Above class */
 .dashicons-above {
   display: flex;
@@ -77,9 +97,6 @@
   text-align: center;
 }
 
-/* Nav menus already have transitions so don't add another one on
- * dashicons
- */
 /*--------------------------------------------------------------
 # Custom: List Dividers (Lists, Latest Posts, Latest Comments)
 --------------------------------------------------------------*/
@@ -151,7 +168,7 @@ body.home > #page > #footer {
 }
 
 /*--------------------------------------------------------------
-# ADDITIONAL PRO BLOCK STYLES
+# PRO BLOCK STYLES
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 ## Group: Custom

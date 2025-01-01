@@ -22,7 +22,7 @@ if ( ! function_exists( 'flatblocks_pro_add_edit_link' ) ) :
 		if( is_singular() and current_user_can( 'edit_post', $post_id ) ) {
 			$content .= sprintf(
 				'<p class="%s"><a href="%s">%s</a></p>',
-				'post-edit-link has-small-font-size has-text-align-center dashicons dashicons-edit',
+				'post-edit-link has-small-font-size has-text-align-center is-style-icon-edit',
 				get_edit_post_link( $post_id ),
 				__("Edit", "flat-blocks-pro")
 			);
