@@ -163,7 +163,7 @@ More Details:
 * Updated minimum WordPress version required to 6.7 and dropped all the code needed to support back to Wordpress v6.5.
 * CSS Enhancements and Optimization:
 	* Simplified the CSS for default text and link colors on colored backgrounds as well as for Navigation highlights which reduced CSS by over 25%.
-	* Now Dashicons CSS only loads if in use on a particular page and WordPress.org theme previews only loads on that server, further reducing CSS on most pages.
+	* Now Dashicons CSS only loads if in use on a particular page and WordPress.org theme previews only loads on that server, further reducing CSS on most pages. Also enhanced it to work better with optimization plugins that concatenate CSS, such as Jetpack Boost.
 	* The theme now instructs WordPress to only load the CSS styles needed for each page (which is the default in WordPress v6.7). The theme itself now also does this which lets core WordPress optimize whether styles are loaded inline or in separate CSS file(s).
 	* Rewrote the CSS for top margin on blocks to be consistent with WordPress vertical spacing as well as no longer require certain Template Parts and Templates to add top-margin.
 	* Enhanced the CSS for horizontal padding on tablet and mobile so that groups and columns with colored backgrounds line up better with the site's global padding. 
