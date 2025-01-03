@@ -25,7 +25,7 @@
 .wp-site-blocks .dashicons-before,
 .is-root-container .dashicons,
 .is-root-container .dashicons-before {
-  display: block;
+  display: inherit;
   width: auto;
   height: auto;
   font-family: inherit;
