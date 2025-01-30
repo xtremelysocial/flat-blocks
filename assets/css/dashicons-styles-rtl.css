@@ -32,8 +32,15 @@
   font-size: inherit;
   font-weight: var(--wp--custom--typography--font-weight--normal);
   line-height: inherit;
-  text-align: center;
+  text-align: inherit;
   text-transform: inherit;
+}
+
+.wp-site-blocks .dashicons.has-text-align-center,
+.wp-site-blocks .dashicons-before.has-text-align-center,
+.is-root-container .dashicons.has-text-align-center,
+.is-root-container .dashicons-before.has-text-align-center {
+  text-align: center;
 }
 
 .wp-site-blocks .dashicons:before,
@@ -47,7 +54,7 @@
   font-size: 1em;
   line-height: 1;
   font-weight: inherit;
-  vertical-align: text-top;
+  vertical-align: text-bottom;
 }
 
 /* Add some right margin on inline dashicons before the text */
