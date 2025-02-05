@@ -148,7 +148,7 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 == Changelog ==
 
 = 2.0.2 = 
-January 30, 2025
+February 5, 2025
 
 * Template Parts:
 	* Added new ones for Search Title, 404 (Error Page) Title, and Archive (Blog) Title. These can be found under the "Title" category in the Block Patterns in the Editor along with the Page Title and Post Title Template Parts. 
