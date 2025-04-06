@@ -44,8 +44,10 @@
 			},
 			"animation": {
 				"default": {
-					"entrance": "fadeInUp",
-					"hover": "scale3d(1.1, 1.1, 1.1)"
+					"entranceAnimation": "fadeInUp",
+					"entranceTransform": "none",
+					"hoverAnimation": "none",
+					"hoverTransform": "scale3d(1.1, 1.1, 1.1)"
 				},
 				"duration": {
 					"normal": "800ms",

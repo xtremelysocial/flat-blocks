@@ -79,7 +79,6 @@ endif;
 // Build array of include files relative to theme root
 $includes = array (
 	'/inc/block-patterns.php',
-	'/inc/plugin-recommendations.php', //PRO
 	'/pro/flat-blocks-pro.php', //PRO
 );
 
