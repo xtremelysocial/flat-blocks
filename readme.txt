@@ -146,6 +146,7 @@ December 26, 2025
 * Updated CSS for the Group Block with colored backgrounds to use the theme's overall left and right margins when they are full width.
 * Removed box-shadow: none from the rounded border styles for Groups, Columns, Code, etc. User can add box-shadow on individual blocks, if desired.
 * Arrow Down Icon paragraph style now inherits the font color from it's parent, such as the Group or Cover blocks.
+* PRO Version: Updated Jetpack Sharing icons to grow when hovered to match WordPress Social Icon block.
 
 = 2.0.3 = 
 April 14, 2025
