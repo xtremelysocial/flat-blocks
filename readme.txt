@@ -133,6 +133,20 @@ You can check out our other themes here: https://xtremelysocial.com/wordpress/
 
 == Changelog ==
 
+= 2.1 = 
+December 26, 2025
+
+* Updates for WordPress v6.9:
+	* Styled the new Accordion Block to use the theme's Primary color for the heading and icon.
+	* Added Post Time to Read Block to the Post Title (after Post Date and Author).
+	* Added clock icon to the new Post Time to Read block. Added style option for users to remove the icon if desired.
+* Added neutral color background to the Query Pagination block to match the Comments block, Page templates with Sidebar, etc. This required updating theme.json and the various Query Patterns.
+* Set Mobile Nav Menu icon to use the theme style's border-radius. By default that is 5px.
+* Adjusted horizontal position of the Fixed Mobile Nav Only menu to line up just outside the horizontal margins on the page.
+* Updated CSS for the Group Block with colored backgrounds to use the theme's overall left and right margins when they are full width.
+* Removed box-shadow: none from the rounded border styles for Groups, Columns, Code, etc. User can add box-shadow on individual blocks, if desired.
+* Arrow Down Icon paragraph style now inherits the font color from it's parent, such as the Group or Cover blocks.
+
 = 2.0.3 = 
 April 14, 2025
 
