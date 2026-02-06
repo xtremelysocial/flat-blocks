@@ -32,6 +32,7 @@
 			//console.log('stickyHeader.outerHeight: ' + stickyHeader.outerHeight()); //TEST
 			topOffset = topOffset + stickyHeader.outerHeight();
 		}
+		var commentOffset = topOffset;
 		if (adminBar.length > 0) topOffset = topOffset + adminBar.outerHeight();
 		//console.log('topOffset: ' + topOffset); //TEST
 		
@@ -43,7 +44,8 @@
 			const comments = $('[id*=comment-]');
 			//if ( comments.length > 0 ) {
 			comments.each(function() {
-				$(this).css('scroll-margin-top', topOffset + 'px');
+// 				$(this).css('scroll-margin-top', topOffset + 'px');
+				$(this).css('scroll-margin-top', commentOffset + 'px');
 			});
 			//}
 		}
