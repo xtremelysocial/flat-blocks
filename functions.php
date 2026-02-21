@@ -110,7 +110,7 @@ foreach ( $includes as $include ) {
  * This THEME also loads individual block CSS by default. Uncomment the following 
  * line to have it load the single combined /assets/css/blocks/block-styles.css file.
  */
-add_filter( 'flatblocks_load_separate_block_assets', '__return_false' );
+// add_filter( 'flatblocks_load_separate_block_assets', '__return_false' );
 
 /*
  * On the front-end ONLY, load the core theme CSS files and then load block styles 
