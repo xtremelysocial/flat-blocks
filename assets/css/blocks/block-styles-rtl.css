@@ -2,6 +2,9 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/scss/blocks/block-styles.scss ***!
   \******************************************************************************************************************************************************************************************************************************/
 /**
+ * Breakpoints & Media Queries
+ */
+/**
  * File:	block-styles.css
  * Theme:	Flat Blocks
  * 
@@ -42,9 +45,6 @@
 }
 
 /* OVERRIDE horizontal padding on mobile and tablet (782px) */
-/**
- * Breakpoints & Media Queries
- */
 @media only screen and (max-width: 781px) {
   .wp-block-columns.has-background,
   .wp-block-columns > .wp-block-column.has-background {
@@ -110,9 +110,6 @@
 }
 
 /* Adjust padding on mobile and tablet (782px) */
-/**
- * Breakpoints & Media Queries
- */
 @media only screen and (max-width: 781px) {
   .post-comments:not(.has-global-padding) {
     padding-right: var(--wp--style--root--padding-left) !important;
@@ -237,9 +234,6 @@ header > .wp-block-cover {
 
 /* 
  * If full-width, OVERRIDE horizontal padding on mobile and tablet (<782px)
- */
-/**
- * Breakpoints & Media Queries
  */
 @media only screen and (max-width: 781px) {
   .wp-block-group.alignfull {
@@ -414,9 +408,6 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 }
 
 /* Override horizontal padding on mobile (600px) */
-/**
- * Breakpoints & Media Queries
- */
 @media only screen and (max-width: 600px) {
   .wp-block-latest-posts.is-grid li {
     margin-left: 0;
@@ -458,9 +449,6 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 }
 
 /* Remove the padding when collapsed on mobile (600px) */
-/**
- * Breakpoints & Media Queries
- */
 @media only screen and (max-width: 600px) {
   .wp-block-media-text.is-stacked-on-mobile:not(.has-background) .wp-block-media-text__content {
     padding-right: 0;
@@ -483,6 +471,9 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 /*-----------------------------------------------------------------------------
 # Navigation
 -----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+# Custom: Up Arrow Icon
+-----------------------------------------------------------------------------*/
 .wp-block-post-time-to-read:before, .wp-block-post-terms.taxonomy-category:before, .wp-block-post-terms.taxonomy-post_tag:before, .wp-block-post-date:before, .wp-block-post-comments-link:before, .wp-block-post-comments-count:before, .wp-block-post-author-name:before, .is-style-arrow-icon-no-text > a:after, .is-style-icon-arrow-down-alt2-no-text > a:after, .is-style-icon-arrow-up-alt2 > a:before {
   content: "";
   background-color: currentColor;
@@ -497,6 +488,21 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
           mask-size: contain;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
+}
+
+.is-style-icon-arrow-up-alt2 > a:before {
+  -webkit-mask-image: url(../../icons/arrow-up-alt2.svg);
+          mask-image: url(../../icons/arrow-up-alt2.svg);
+  margin-left: 0.15em;
+}
+
+.is-style-icon-arrow-up-alt2 > a:before {
+  top: 0;
+}
+
+/* Set icons on navigation items to inline flex */
+[class*=is-style-icon-] > a.wp-block-navigation-item__content {
+  display: inline-flex;
 }
 
 /*-----------------------------------------------------------------------------
@@ -631,24 +637,6 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 }
 
 /*-----------------------------------------------------------------------------
-# Custom: Up Arrow Icon
------------------------------------------------------------------------------*/
-.is-style-icon-arrow-up-alt2 > a:before {
-  -webkit-mask-image: url(../../icons/arrow-up-alt2.svg);
-          mask-image: url(../../icons/arrow-up-alt2.svg);
-  margin-left: 0.15em;
-}
-
-.is-style-icon-arrow-up-alt2 > a:before {
-  top: 0;
-}
-
-/* Set icons on navigation items to inline flex */
-[class*=is-style-icon-] > a.wp-block-navigation-item__content {
-  display: inline-flex;
-}
-
-/*-----------------------------------------------------------------------------
 # Custom: Fixed Navigation Menu
 -----------------------------------------------------------------------------*/
 /* Navigation Fixed menu */
@@ -718,11 +706,11 @@ nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-con
 # Navigation
 -----------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
+# Custom: Up Arrow Icon
+-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
 # Paragraph
 -----------------------------------------------------------------------------*/
-/**
- * Breakpoints & Media Queries
- */
 /* Padding for colored backgrounds on paragraphs */
 .wp-block-paragraph.has-background {
   padding: var(--wp--preset--spacing--40);
@@ -782,6 +770,9 @@ p.is-style-alignwide {
 # Navigation
 -----------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
+# Custom: Up Arrow Icon
+-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
 # Post Author Name
 -----------------------------------------------------------------------------*/
 .wp-block-post-author-name:before {
@@ -814,6 +805,9 @@ p.is-style-alignwide {
 
 /*-----------------------------------------------------------------------------
 # Navigation
+-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+# Custom: Up Arrow Icon
 -----------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
 # Post Comments Count (Only w/WordPress v6.9+ or Gutenberg Plugin)
@@ -852,6 +846,9 @@ p.is-style-alignwide {
 # Navigation
 -----------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
+# Custom: Up Arrow Icon
+-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
 # Post Comments Link (Only w/WordPress v6.9+ or Gutenberg Plugin)
 -----------------------------------------------------------------------------*/
 .wp-block-post-comments-link:before {
@@ -876,6 +873,9 @@ p.is-style-alignwide {
 
 /*-----------------------------------------------------------------------------
 # Navigation
+-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+# Custom: Up Arrow Icon
 -----------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
 # Post Date
@@ -923,6 +923,9 @@ p.is-style-alignwide {
 # Navigation
 -----------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
+# Custom: Up Arrow Icon
+-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
 # Post Terms:
 -----------------------------------------------------------------------------*/
 .wp-block-post-terms.taxonomy-category:before {
@@ -945,6 +948,9 @@ p.is-style-alignwide {
 
 /*-----------------------------------------------------------------------------
 # Navigation
+-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+# Custom: Up Arrow Icon
 -----------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
 # Post Time to Read

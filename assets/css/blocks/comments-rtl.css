@@ -4,15 +4,15 @@
 /*-----------------------------------------------------------------------------
 # Comments
 -----------------------------------------------------------------------------*/
+/**
+ * Breakpoints & Media Queries
+ */
 /* Remove vertical margins if no comments */
 .wp-block-template-part:has(.post-comments):not(:has(.wp-block-comments)) {
   margin-block-start: 0;
 }
 
 /* Adjust padding on mobile and tablet (782px) */
-/**
- * Breakpoints & Media Queries
- */
 @media only screen and (max-width: 781px) {
   .post-comments:not(.has-global-padding) {
     padding-right: var(--wp--style--root--padding-left) !important;

@@ -4,6 +4,9 @@
 /*-----------------------------------------------------------------------------
 # Group
 -----------------------------------------------------------------------------*/
+/**
+ * Breakpoints & Media Queries
+ */
 /* Padding for colored backgrounds on groups */
 .wp-block-group.has-background {
   padding-top: var(--wp--preset--spacing--60);
@@ -24,9 +27,6 @@
 
 /* 
  * If full-width, OVERRIDE horizontal padding on mobile and tablet (<782px)
- */
-/**
- * Breakpoints & Media Queries
  */
 @media only screen and (max-width: 781px) {
   .wp-block-group.alignfull {

@@ -4,6 +4,9 @@
 /*-----------------------------------------------------------------------------
 # Media & Text
 -----------------------------------------------------------------------------*/
+/**
+ * Breakpoints & Media Queries
+ */
 /* Default padding on the content (which is on the right by default) */
 .wp-block-media-text:not(.is-style-no-padding) .wp-block-media-text__content {
   padding-right: var(--wp--preset--spacing--40);
@@ -17,9 +20,6 @@
 }
 
 /* Remove the padding when collapsed on mobile (600px) */
-/**
- * Breakpoints & Media Queries
- */
 @media only screen and (max-width: 600px) {
   .wp-block-media-text.is-stacked-on-mobile:not(.has-background) .wp-block-media-text__content {
     padding-right: 0;

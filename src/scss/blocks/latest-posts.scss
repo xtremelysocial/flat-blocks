@@ -2,6 +2,9 @@
 # Latest Posts
 -----------------------------------------------------------------------------*/
 
+// WordPress breakpoints
+@use "@wordpress/base-styles/breakpoints";
+
 /* Increase post title size */
 .wp-block-latest-posts.is-grid .wp-block-latest-posts__post-title {
 	font-size: var(--wp--preset--font-size--medium);
@@ -31,8 +34,8 @@
 }
 
 /* Override horizontal padding on mobile (600px) */
-@import "@wordpress/base-styles/breakpoints";
-@media only screen and (max-width: #{ ($break-small) }) {
+
+@media only screen and (max-width: #{ (breakpoints.$break-small) }) {
 	.wp-block-latest-posts.is-grid li {
         margin-right: 0;
     }

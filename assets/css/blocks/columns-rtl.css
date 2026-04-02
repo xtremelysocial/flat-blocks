@@ -4,6 +4,9 @@
 /*-----------------------------------------------------------------------------
 # Columns and Column
 -----------------------------------------------------------------------------*/
+/**
+ * Breakpoints & Media Queries
+ */
 /* Padding for colored backgrounds on columns and individual column */
 .wp-block-columns.has-background {
   padding: var(--wp--preset--spacing--60);
@@ -14,9 +17,6 @@
 }
 
 /* OVERRIDE horizontal padding on mobile and tablet (782px) */
-/**
- * Breakpoints & Media Queries
- */
 @media only screen and (max-width: 781px) {
   .wp-block-columns.has-background,
   .wp-block-columns > .wp-block-column.has-background {

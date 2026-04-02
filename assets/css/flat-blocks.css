@@ -577,14 +577,14 @@ main > :last-child:not(.wp-block-post-content),
   border-color: var(--wp--preset--color--neutral-alt);
 }
 
+/**
+ * Breakpoints & Media Queries
+ */
 /*-----------------------------------------------------------------------------
 # Utilities
 -----------------------------------------------------------------------------*/
 /* FIX WordPress Admin bar on phones not sticking to the top */
-/**
- * Breakpoints & Media Queries
- */
-@media only screen and (max-width: 782px) {
+@media only screen and (max-width: 600px) {
   body > #wpadminbar {
     position: fixed;
   }
