@@ -4,6 +4,9 @@
 /*-----------------------------------------------------------------------------
 # Latest Posts
 -----------------------------------------------------------------------------*/
+/**
+ * Breakpoints & Media Queries
+ */
 /* Increase post title size */
 .wp-block-latest-posts.is-grid .wp-block-latest-posts__post-title {
   font-size: var(--wp--preset--font-size--medium);
@@ -33,9 +36,6 @@
 }
 
 /* Override horizontal padding on mobile (600px) */
-/**
- * Breakpoints & Media Queries
- */
 @media only screen and (max-width: 600px) {
   .wp-block-latest-posts.is-grid li {
     margin-left: 0;

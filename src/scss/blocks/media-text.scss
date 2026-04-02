@@ -2,6 +2,9 @@
 # Media & Text
 -----------------------------------------------------------------------------*/
 
+// WordPress breakpoints
+@use "@wordpress/base-styles/breakpoints";
+
 /* Default padding on the content (which is on the right by default) */
 .wp-block-media-text:not(.is-style-no-padding) .wp-block-media-text__content {
 	padding-left: var(--wp--preset--spacing--40);
@@ -15,8 +18,8 @@
 }
 
 /* Remove the padding when collapsed on mobile (600px) */
-@import "@wordpress/base-styles/breakpoints";
-@media only screen and (max-width: #{ ($break-small) }) {
+
+@media only screen and (max-width: #{ (breakpoints.$break-small) }) {
 	.wp-block-media-text.is-stacked-on-mobile:not(.has-background) {
 		& .wp-block-media-text__content {
 			padding-left: 0;

@@ -4,6 +4,9 @@
 /*-----------------------------------------------------------------------------
 # Navigation
 -----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+# Custom: Up Arrow Icon
+-----------------------------------------------------------------------------*/
 .is-style-icon-arrow-up-alt2 > a:before {
   content: "";
   background-color: currentColor;
@@ -18,6 +21,21 @@
           mask-size: contain;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
+}
+
+.is-style-icon-arrow-up-alt2 > a:before {
+  -webkit-mask-image: url(../../icons/arrow-up-alt2.svg);
+          mask-image: url(../../icons/arrow-up-alt2.svg);
+  margin-left: 0.15em;
+}
+
+.is-style-icon-arrow-up-alt2 > a:before {
+  top: 0;
+}
+
+/* Set icons on navigation items to inline flex */
+[class*=is-style-icon-] > a.wp-block-navigation-item__content {
+  display: inline-flex;
 }
 
 /*-----------------------------------------------------------------------------
@@ -149,24 +167,6 @@
 /* Increase animation DELAY on nav drop-downs when NOT requiring a click */
 .wp-block-navigation .has-child:not(.open-on-click):hover > .wp-block-navigation__submenu-container {
   transition-delay: var(--wp--custom--animation--duration--short);
-}
-
-/*-----------------------------------------------------------------------------
-# Custom: Up Arrow Icon
------------------------------------------------------------------------------*/
-.is-style-icon-arrow-up-alt2 > a:before {
-  -webkit-mask-image: url(../../icons/arrow-up-alt2.svg);
-          mask-image: url(../../icons/arrow-up-alt2.svg);
-  margin-left: 0.15em;
-}
-
-.is-style-icon-arrow-up-alt2 > a:before {
-  top: 0;
-}
-
-/* Set icons on navigation items to inline flex */
-[class*=is-style-icon-] > a.wp-block-navigation-item__content {
-  display: inline-flex;
 }
 
 /*-----------------------------------------------------------------------------
