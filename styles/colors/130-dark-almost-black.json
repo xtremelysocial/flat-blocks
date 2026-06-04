@@ -1,0 +1,256 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Dark - Almost Black",
+	"styles": {
+		"color": {
+			"background": "var:preset|color|base",
+			"text": "var:preset|color|contrast"
+		}
+	},
+	"settings": {
+		"custom": {
+			"color": {
+				"contrast": {
+					"neutral": "var(--wp--preset--color--foreground-alt)"
+				},
+				"highlight": {
+					"neutral": "var(--wp--preset--color--foreground-alt)"
+				},
+				"border": "var(--wp--preset--color--neutral-alt)",
+				"field": {
+					"background": "var(--wp--preset--color--neutral)"
+				}
+			}
+		},
+		"color": {
+			"palette": [
+				{
+					"slug": "primary",
+					"color": "#1abc9c",
+					"name": "Primary (Light Green)"
+				},
+				{
+					"slug": "secondary",
+					"color": "#34495e",
+					"name": "Secondary (Midnight Blue)"
+				},
+				{
+					"slug": "tertiary",
+					"color": "#f39c12",
+					"name": "Tertiary (Light Orange)"
+				},
+				{
+					"slug": "base",
+					"color": "#2f2f2f",
+					"name": "Background (Almost Black)"
+				},
+				{
+					"slug": "contrast",
+					"color": "#f7f9f9",
+					"name": "Foreground (Off White)"
+				},
+				{
+					"slug": "dark",
+					"color": "#222222",
+					"name": "Dark (Not Quite Black)"
+				},
+				{
+					"slug": "neutral",
+					"color": "#383838",
+					"name": "Neutral (Elevated Charcoal)"
+				},
+				{
+					"slug": "primary-alt",
+					"color": "#16a085",
+					"name": "Primary Alt (Green)"
+				},
+				{
+					"slug": "secondary-alt",
+					"color": "#2c3e50",
+					"name": "Secondary Alt (Dark Midnight Blue)"
+				},
+				{
+					"slug": "tertiary-alt",
+					"color": "#e67e22",
+					"name": "Tertiary Alt (Orange)"
+				},
+				{
+					"slug": "dark-alt",
+					"color": "#1a1a1a",
+					"name": "Dark Alt (Deep Matte Black)"
+				},
+				{
+					"slug": "neutral-alt",
+					"color": "#444444",
+					"name": "Neutral Alt (Steel Border)"
+				},
+				{
+					"slug": "foreground-alt",
+					"color": "#ffffff",
+					"name": "Foreground Alt (White)"
+				},
+				{
+					"slug": "highlight",
+					"color": "#1abc9c",
+					"name": "Highlight (Light Green)"
+				},
+				{
+					"slug": "highlight-alt",
+					"color": "#16a085",
+					"name": "Highlight Alt (Green)"
+				},
+				{
+					"slug": "white",
+					"color": "#ffffff",
+					"name": "White"
+				},
+				{
+					"slug": "off-white",
+					"color": "#f7f9f9",
+					"name": "Off White"
+				},
+				{
+					"slug": "very-light-gray",
+					"color": "#f0f3f4",
+					"name": "Very Light Gray"
+				},
+				{
+					"slug": "light-gray",
+					"color": "#e5e8e8",
+					"name": "Light Gray (Light Silver)"
+				},
+				{
+					"slug": "gray",
+					"color": "#c5c9ca",
+					"name": "Gray (Steel Silver)"
+				},
+				{
+					"slug": "dark-gray",
+					"color": "#757575",
+					"name": "Dark Gray (Steel)"
+				},
+				{
+					"slug": "very-dark-gray",
+					"color": "#4f5d5e",
+					"name": "Very Dark Gray (Dark Steel)"
+				},
+				{
+					"slug": "light-green",
+					"color": "#1abc9c",
+					"name": "Light Green"
+				},
+				{
+					"slug": "green",
+					"color": "#16a085",
+					"name": "Green"
+				},
+				{
+					"slug": "bright-green",
+					"color": "#2ecc71",
+					"name": "Bright Green"
+				},
+				{
+					"slug": "dark-bright-green",
+					"color": "#27ae60",
+					"name": "Dark Bright Green"
+				},
+				{
+					"slug": "light-yellow",
+					"color": "#f5d659",
+					"name": "Light Yellow"
+				},
+				{
+					"slug": "yellow",
+					"color": "#f1c40f",
+					"name": "Yellow"
+				},
+				{
+					"slug": "light-orange",
+					"color": "#f39c12",
+					"name": "Light Orange"
+				},
+				{
+					"slug": "orange",
+					"color": "#e67e22",
+					"name": "Orange"
+				},
+				{
+					"slug": "dark-orange",
+					"color": "#d35400",
+					"name": "Dark Orange"
+				},
+				{
+					"slug": "light-blue",
+					"color": "#85c1e9",
+					"name": "Light Blue"
+				},
+				{
+					"slug": "blue",
+					"color": "#3498db",
+					"name": "Blue"
+				},
+				{
+					"slug": "dark-blue",
+					"color": "#2980b9",
+					"name": "Dark Blue"
+				},
+				{
+					"slug": "midnight-blue",
+					"color": "#34495e",
+					"name": "Midnight Blue"
+				},
+				{
+					"slug": "dark-midnight-blue",
+					"color": "#2c3e50",
+					"name": "Dark Midnight Blue"
+				},
+				{
+					"slug": "light-purple",
+					"color": "#c39bd3",
+					"name": "Light Purple"
+				},
+				{
+					"slug": "purple",
+					"color": "#9b59b6",
+					"name": "Purple"
+				},
+				{
+					"slug": "dark-purple",
+					"color": "#8e44ad",
+					"name": "Dark Purple"
+				},
+				{
+					"slug": "light-red",
+					"color": "#f1948a",
+					"name": "Light Red"
+				},
+				{
+					"slug": "red",
+					"color": "#e74c3c",
+					"name": "Red"
+				},
+				{
+					"slug": "dark-red",
+					"color": "#c0392b",
+					"name": "Dark Red"
+				},
+				{
+					"slug": "almost-black",
+					"color": "#2f2f2f",
+					"name": "Almost Black"
+				},
+				{
+					"slug": "not-quite-black",
+					"color": "#222222",
+					"name": "Not Quite Black"
+				},
+				{
+					"slug": "black",
+					"color": "#000000",
+					"name": "Black"
+				}
+			]
+		}
+	}
+}

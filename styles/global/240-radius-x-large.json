@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "X-Large Border Radius (Buttons and Featured Images)",
+	"settings": {
+		"custom": {
+			"border": {
+				"radius": "25px"
+			},
+			"button": {
+				"radius": "25px"
+			}
+		}
+	}	
+}

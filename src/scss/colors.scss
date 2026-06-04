@@ -1,0 +1,232 @@
+/*------------------------------------------------------------------------------
+# Colors - Default text, button text, and link colors
+------------------------------------------------------------------------------*/
+
+// We need list and string functions
+@use "sass:list";
+@use "sass:string";
+
+// Load our colors mixin
+@use "../mixins/colors" as logic;
+
+/*
+ * Default contrast (text) based on background color.
+ * Set these in theme.json:
+ *		--wp--custom--color--contrast--{color-group}
+ *		... OR...
+ *		--wp--custom--color--contrast--{color}
+ *
+ * {color-group}:
+ *		primary, secondary, tertiary, neutral, dark and their -alt counterparts 
+ *		plus any individual named color (e.g. light-green)
+ */
+
+// SETUP: GROUP INDIVIDUAL COLORS INTO A COLOR GROUP
+
+// Semantic colors
+$grp-primary:   ('primary', 'primary-alt');
+$grp-secondary: ('secondary', 'secondary-alt');
+$grp-tertiary:  ('tertiary', 'tertiary-alt');
+$grp-neutral:   ('neutral', 'neutral-alt');
+$grp-dark:      ('dark', 'dark-alt');
+
+// Named colors
+$grp-light:     (
+				'foreground-alt', 'white', 'off-white', 'very-light-gray', 
+				'light-gray', 'base'
+				);
+$grp-medium:    (
+				'light-blue', 'light-purple', 'light-red', 'light-yellow', 'yellow', 
+				'gray'
+				);
+$grp-heavy:     (
+				'very-dark-gray', 'dark-gray', 'dark-midnight-blue', 'midnight-blue', 
+				'dark-purple', 'dark-red', 'dark-blue', 'dark-orange', 
+				'dark-bright-green', 'light-green', 'green', 'bright-green', 
+				'light-orange', 'orange', 'blue', 'purple', 'red'
+);
+$grp-black:     ('black', 'not-quite-black', 'almost-black');
+
+/*-----------------------------------------------------------------------------
+# 1.  SET DEFAULT TEXT COLOR FOR EACH COLOR GROUP
+-----------------------------------------------------------------------------*/
+@include logic.set-contrast-logic(
+	$grp-primary,   
+	var(--wp--preset--color--foreground-alt)
+);
+
+@include logic.set-contrast-logic(
+	$grp-secondary, 
+	var(--wp--preset--color--foreground-alt)
+);
+
+@include logic.set-contrast-logic(
+	$grp-tertiary,  
+	var(--wp--preset--color--foreground-alt)
+);
+
+@include logic.set-contrast-logic(
+	$grp-neutral,   
+	var(--wp--preset--color--almost-black)
+);
+
+@include logic.set-contrast-logic(
+	$grp-dark,
+	var(--wp--preset--color--foreground-alt)
+);
+
+@include logic.set-contrast-logic(
+	$grp-light,
+	var(--wp--preset--color--very-dark-gray)
+);
+
+@include logic.set-contrast-logic(
+	$grp-medium,    
+	var(--wp--preset--color--almost-black)
+);
+
+@include logic.set-contrast-logic(
+	$grp-heavy,     
+	var(--wp--preset--color--foreground-alt)
+);
+
+@include logic.set-contrast-logic(
+	$grp-black,
+	var(--wp--preset--color--foreground-alt)
+);
+
+// Invert base and contrast text colors
+.has-base-background-color,
+.has-base-background-color .wp-block-heading,
+.has-base-background-color.wp-element-button {
+	color: var(--wp--preset--color--contrast);
+}
+
+.has-contrast-background-color,
+.has-contrast-background-color .wp-block-heading,
+.has-contrast-background-color.wp-element-button {
+	color: var(--wp--preset--color--base);
+}
+
+// 4. LOGIC BUCKETS FOR GLOBAL INHERITANCE
+// "Light-ish" backgrounds (Heading and link colors preserved)
+$is-light-bg: join($grp-light, join($grp-medium, $grp-neutral));
+
+// "Dark-ish" backgrounds (Heading colors inherit, Link colors preserved)
+$is-dark-bg: join($grp-primary, join($grp-secondary, join($grp-tertiary, join($grp-dark, join($grp-heavy, $grp-black)))));
+
+// Colors where links should NOT inherit (keep highlight/highlight-alt link color)
+$preserve-link-colors: join($is-light-bg, $is-dark-bg);
+
+/*-----------------------------------------------------------------------------
+# 2. SET DEFAULT HEADING TEXT COLOR 
+-----------------------------------------------------------------------------*/
+// HEADING INHERITANCE (Grouped Selector)
+#{logic.build-exclusion-list($is-light-bg)} {
+    .wp-block-heading, .wp-block-post-title, .wp-block-query-title {
+        color: inherit;
+    }
+}
+
+/*-----------------------------------------------------------------------------
+# 3. SET DEFAULT LINK AND BUTTON TEXT COLORS AND HOVER COLORS
+-----------------------------------------------------------------------------*/
+
+// FADE LOGIC (Highlight -> Highlight-Alt) for Light Backgrounds
+#{logic.build-exclusion-list($is-light-bg)} {
+    a:not(.wp-element-button) {
+        --local-link: var(--wp--preset--color--highlight);
+        --local-hover: var(--wp--preset--color--highlight-alt);
+        color: var(--local-link);
+        
+        &:hover,
+        &:active { 
+        	color: var(--local-hover); 
+        }
+    }
+    .wp-block-button__link, .wp-element-button {
+        background-color: var(--wp--preset--color--highlight);
+        
+        &:hover { 
+        	background-color: var(--wp--preset--color--highlight-alt); 
+    	}
+    }
+}
+
+// GLOW LOGIC (Highlight-Alt -> Highlight) for Dark Backgrounds
+#{logic.build-exclusion-list($is-dark-bg)} {
+
+    a:not(.wp-element-button) {
+        --local-link: var(--wp--preset--color--highlight-alt);
+        --local-hover: var(--wp--preset--color--highlight);
+        color: var(--local-link) !important;
+        
+        &:hover { 
+        	color: var(--local-hover); 
+        }
+    }
+    
+    .wp-block-button__link, .wp-element-button {
+        background-color: var(--wp--preset--color--highlight-alt);
+        
+        &:hover { 
+        	background-color: var(--wp--preset--color--highlight); 
+        }
+    }
+}
+
+/*-----------------------------------------------------------------------------
+# 4. LINK COLOR OVERRIDES (FOR NON-PRESERVED COLORS)
+-----------------------------------------------------------------------------*/
+/* * If the background is NOT very light or very dark (vibrant colors), 
+ * force links to inherit text color and use opacity for hover visibility.
+ */
+.has-background:not(#{logic.build-exclusion-list($preserve-link-colors)}) {
+	& a:not(.wp-element-button) {
+		color: inherit; 
+		transition: opacity var(--wp--custom--animation--duration--short, 250ms) ease-in-out;
+		
+		&:hover,
+		&:active {
+			opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+		}
+	}	
+}
+
+/*-----------------------------------------------------------------------------
+# 5. GRADIENT TEXT COLOR OVERRIDES
+-----------------------------------------------------------------------------*/
+:root :where([class*="-gradient-background"]:not(.has-gray-gradient-background):not(.has-yellow-gradient-background)) {
+	color: var(--wp--preset--color--foreground-alt); 
+}
+
+:root :where(.has-primary-gradient-background, .has-primary-to-secondary-gradient-background, .has-secondary-to-primary-gradient-background, .has-primary-to-tertiary-gradient-background, .has-tertiary-to-primary-gradient-background) {
+	color: var(--wp--custom--color--contrast--primary, var(--wp--preset--color--foreground-alt));
+}
+
+:root :where(.has-secondary-gradient-background, .has-secondary-to-tertiary-gradient-background, .has-tertiary-to-secondary-gradient-background) {
+	color: var(--wp--custom--color--contrast--secondary, var(--wp--preset--color--foreground-alt));
+}
+
+:root :where(.has-tertiary-gradient-background) {
+	color: var(--wp--custom--color--contrast--tertiary, var(--wp--preset--color--foreground-alt));
+}
+
+/*-----------------------------------------------------------------------------
+# 6. GRADIENT LINK COLOR OVERRIDES
+-----------------------------------------------------------------------------*/
+/* Force links and outline buttons to inherit on gradients */
+:root :where([class*=-gradient-background]) {
+	& a:where(:not(.wp-element-button)),
+	& .is-style-outline > .wp-element-button, 
+	& .is-style-outline > .wp-block-button__link,
+	& [class*="is-style-button-outline-"] > .wp-element-button,
+	& [class*="is-style-button-outline-"] > .wp-block-button__link {	
+		color: inherit;
+
+		&:hover,
+		&:active {
+			opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+		}		
+	}
+}

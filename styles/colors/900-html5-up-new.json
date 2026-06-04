@@ -1,0 +1,180 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "HTML5 Up - Modernized 2.0 (Final)",
+	"settings": {
+		"color": {
+			"palette": [
+				{ "slug": "primary", "color": "#64abb4", "name": "Soft Teal" },
+				{ "slug": "secondary", "color": "#ab7aad", "name": "Muted Orchid" },
+				{ "slug": "tertiary", "color": "#db8992", "name": "Rosewood" },
+				{ "slug": "dark", "color": "#575b72", "name": "Slate Blue" },
+				{ "slug": "neutral", "color": "#f4f5f7", "name": "Cloud Gray" },
+				{ "slug": "primary-alt", "color": "#5a9a9a", "name": "Deep Seafoam" },
+				{ "slug": "secondary-alt", "color": "#966a98", "name": "Deep Orchid" },
+				{ "slug": "tertiary-alt", "color": "#7794ce", "name": "Periwinkle" },
+				{ "slug": "dark-alt", "color": "#4e5266", "name": "Deep Slate" },
+				{ "slug": "neutral-alt", "color": "#e9ebef", "name": "Ash" },
+				{ "slug": "foreground-alt", "color": "#ffffff", "name": "White" },
+				{ "slug": "base", "color": "#ffffff", "name": "Base White" },
+				{ "slug": "contrast", "color": "#555555", "name": "Graphite" },
+				{ "slug": "highlight", "color": "#48a9e7", "name": "Sky Blue" },
+				{ "slug": "highlight-alt", "color": "#8cc9f0", "name": "Powder Blue" },
+				{ "slug": "white", "color": "#ffffff", "name": "White" },
+				{ "slug": "off-white", "color": "#f9f9f9", "name": "Off White" },
+				{ "slug": "very-light-gray", "color": "#f4f5f7", "name": "Very Light Gray" },
+				{ "slug": "light-gray", "color": "#e9ebef", "name": "Light Gray" },
+				{ "slug": "gray", "color": "#d9dce2", "name": "Gray" },
+				{ "slug": "dark-gray", "color": "#8a8f9d", "name": "Slate Pewter" },
+				{ "slug": "very-dark-gray", "color": "#575b72", "name": "Very Dark Gray" },
+				{ "slug": "light-green", "color": "#92c9c2", "name": "Mist Teal" },
+				{ "slug": "green", "color": "#6ba78c", "name": "Sage Seafoam" },
+				{ "slug": "bright-green", "color": "#81d4af", "name": "Soft Mint" },
+				{ "slug": "dark-bright-green", "color": "#5ea185", "name": "Deep Mint" },
+				{ "slug": "light-yellow", "color": "#f9e8c4", "name": "Champagne" },
+				{ "slug": "yellow", "color": "#e6d1a5", "name": "Sand" },
+				{ "slug": "light-orange", "color": "#f6cba0", "name": "Pale Peach" },
+				{ "slug": "orange", "color": "#e0a181", "name": "Muted Coral" },
+				{ "slug": "dark-orange", "color": "#c17f5f", "name": "Terracotta" },
+				{ "slug": "light-blue", "color": "#87dce6", "name": "Icy Blue" },
+				{ "slug": "blue", "color": "#8cc9f0", "name": "Pastel Blue" },
+				{ "slug": "dark-blue", "color": "#48a9e7", "name": "Steel Blue" },
+				{ "slug": "midnight-blue", "color": "#575b72", "name": "Slate Indigo" },
+				{ "slug": "dark-midnight-blue", "color": "#4e5266", "name": "Deep Slate" },
+				{ "slug": "light-purple", "color": "#c4a6c7", "name": "Dusty Lavender" },
+				{ "slug": "purple", "color": "#ab7aad", "name": "Muted Orchid" },
+				{ "slug": "dark-purple", "color": "#89618b", "name": "Deep Purple" },
+				{ "slug": "light-red", "color": "#f1bcc2", "name": "Soft Rose" },
+				{ "slug": "red", "color": "#db8992", "name": "Muted Rosewood" },
+				{ "slug": "dark-red", "color": "#b86e77", "name": "Deep Rose" },
+				{ "slug": "almost-black", "color": "#2f2f2f", "name": "Almost Black" },
+				{ "slug": "not-quite-black", "color": "#222222", "name": "Not Quite Black" },
+				{ "slug": "black", "color": "#000000", "name": "True Black" }
+			],
+			"duotone": [
+				{
+					"colors": ["#64abb4", "#f4f5f7"],
+					"slug": "primary",
+					"name": "Primary"
+				},
+				{
+					"colors": ["#5a9a9a", "#f4f5f7"],
+					"slug": "primary-alt",
+					"name": "Primary Alt"
+				},
+				{
+					"colors": ["#575b72", "#f4f5f7"],
+					"slug": "secondary",
+					"name": "Secondary"
+				},
+				{
+					"colors": ["#4e5266", "#f4f5f7"],
+					"slug": "secondary-alt",
+					"name": "Secondary Alt"
+				},
+				{
+					"colors": ["#e0a181", "#f4f5f7"],
+					"slug": "tertiary",
+					"name": "Tertiary"
+				},
+				{
+					"colors": ["#c17f5f", "#f4f5f7"],
+					"slug": "tertiary-alt",
+					"name": "Tertiary Alt"
+				},
+				{
+					"colors": ["#ab7aad", "#e6d1a5"],
+					"slug": "purple-yellow",
+					"name": "Purple and Yellow"
+				},
+				{
+					"colors": ["#48a9e7", "#db8992"],
+					"slug": "blue-red",
+					"name": "Blue and Red"
+				},
+				{
+					"colors": ["#2f2f2f", "#48a9e7"],
+					"slug": "midnight",
+					"name": "Midnight (Black and Blue)"
+				},
+				{
+					"colors": ["#db8992", "#e6d1a5"],
+					"slug": "magenta-yellow",
+					"name": "Red and Yellow"
+				},
+				{
+					"colors": ["#ab7aad", "#64abb4"],
+					"slug": "purple-green",
+					"name": "Purple and Green"
+				},
+				{
+					"colors": ["#48a9e7", "#e0a181"],
+					"slug": "blue-orange",
+					"name": "Blue and Orange"
+				},
+				{
+					"colors": ["#000000", "#ffffff"],
+					"slug": "grayscale",
+					"name": "Grayscale"
+				},
+				{
+					"colors": ["#000000", "#8a8f9d"],
+					"slug": "dark-grayscale",
+					"name": "Dark Grayscale"
+				}
+			]
+		},
+		"custom": {
+			"color": {
+				"contrast": {
+					"primary": "var(--wp--preset--color--foreground-alt)",
+					"secondary": "var(--wp--preset--color--foreground-alt)",
+					"tertiary": "var(--wp--preset--color--foreground-alt)",
+					"dark": "var(--wp--preset--color--foreground-alt)",
+					"dark-alt": "var(--wp--preset--color--foreground-alt)",
+					"midnight-blue": "var(--wp--preset--color--foreground-alt)",
+					"black": "var(--wp--preset--color--foreground-alt)",
+					"red": "var(--wp--preset--color--foreground-alt)",
+					"blue": "var(--wp--preset--color--foreground-alt)",
+					"light-yellow": "var(--wp--preset--color--contrast)",
+					"light-green": "var(--wp--preset--color--contrast)",
+					"neutral": "var(--wp--preset--color--contrast)",
+					"base": "var(--wp--preset--color--contrast)"
+				}
+			}
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var:preset|color|base",
+			"text": "var:preset|color|dark-alt"
+		},
+		"typography": {
+			"fontWeight": "300"
+		},
+		"elements": {
+			"link": {
+				"color": { "text": "var:preset|color|highlight" },
+				":hover": { "color": { "text": "var:preset|color|highlight-alt" } }
+			},
+			"button": {
+				"color": {
+					"background": "var:preset|color|dark",
+					"text": "var:preset|color|foreground-alt"
+				},
+				"typography": { "fontWeight": "400" },
+				"border": { "radius": "4px" },
+				":hover": {
+					"color": {
+						"background": "var:preset|color|dark-alt",
+						"text": "var:preset|color|foreground-alt"
+					}
+				}
+			},
+			"heading": {
+				"typography": { "fontWeight": "400", "letterSpacing": "-0.01em" }
+			}
+		},
+		"css": "body { -webkit-font-smoothing: antialiased; } h1, h2, h3, h4, h5, h6 { color: var(--wp--preset--color--dark); letter-spacing: -0.02em; }"
+	}
+}
