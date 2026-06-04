@@ -11,10 +11,15 @@ a,
 .wp-block-navigation-submenu__toggle {
 	cursor: pointer;
 	text-decoration-style: var(--wp--custom--link--style, solid);
+	transition: opacity var(--wp--custom--animation--duration--short, 250ms) ease-in-out, color var(--wp--custom--animation--duration--short, 250ms) ease-in-out;
 }
 
-/* Set link hover styles */
-:where(.has-background :not(.wp-block-site-title) > a:not(.wp-element-button):not(.wp-block-navigation-item__content):not(.wp-block-social-link-anchor)) {
+/* 
+ * Set link underlines in post content where the link color on colored 
+ * backgrounds.  
+ */
+// :where(.has-background :not(.wp-block-site-title) > a:not(.wp-element-button):not(.wp-block-navigation-item__content):not(.wp-block-social-link-anchor)) {
+:where(.wp-block-post-content .has-background a:not(.wp-element-button)) {
 	text-decoration: underline;
 
 	&:hover,
@@ -69,7 +74,7 @@ input[type=file] {
  * Necessary until the following issue is resolved in Gutenberg:
  * https://github.com/WordPress/gutenberg/issues/27075
  */
-button:not(.wp-block-navigation-submenu__toggle):hover,
+button:not(.wp-block-navigation-submenu__toggle, .wp-block-accordion-heading__toggle):hover,
 input[type=submit][class*="button"]:hover,
 input[type=submit][class*="submit"]:hover,
 input[type=reset][class*="button"]:hover,
@@ -77,10 +82,13 @@ input[type=file]::file-selector-button:hover,
 .wp-block-search__button:hover,
 .wp-block-file .wp-block-file__button:hover,
 .wp-block-button__link:hover {
-	cursor: pointer;
+// 	cursor: pointer;
 	opacity: var(--wp--custom--color--button--hover-opacity, 0.8);
 }
 
+/* 
+ * Set Basic (non-block) button hover to match block button hover. 
+ */
 input[type=button]:not(.wp-element-button):hover,
 input[type=submit][class*="button"]:not(.wp-element-button):hover,
 input[type=reset][class*="button"]:not(.wp-element-button):hover,

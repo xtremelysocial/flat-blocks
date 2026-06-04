@@ -13,9 +13,9 @@
   padding-bottom: var(--wp--preset--spacing--60);
 }
 
-.wp-block-group.has-background:not(.has-global-padding) {
-  padding-left: var(--wp--preset--spacing--60);
-  padding-right: var(--wp--preset--spacing--60);
+.wp-block-group.has-background:not(.alignfull) {
+  padding-left: var(--wp--preset--spacing--40);
+  padding-right: var(--wp--preset--spacing--40);
 }
 
 /* Padding for top-level non-colored groups */
@@ -61,7 +61,7 @@
   top: 0;
   background-color: var(--wp--preset--color--base, var(--wp--preset--color--background));
   box-shadow: var(--wp--custom--shadow--default);
-  z-index: 10;
+  z-index: 101;
 }
 
 /* If WordPress Admin Bar, then adjust fixed header position so its underneath it */
