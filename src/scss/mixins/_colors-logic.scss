@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------
-// Colors Mixins
+// Colors Logic Mixins
 //------------------------------------------------------------------------------
 
 @use "sass:list";
@@ -9,9 +9,9 @@
 // Maps color groups to semantic leaders with JSON-driven fallbacks.
 @mixin set-contrast-logic(
 	$colors, 
-	$group-slug, 
+// 	$group-slug, 
 	$default, 
-	$semantic-groups: ()
+// 	$semantic-groups: ()
 ) {
 
 	@each $color in $colors {
@@ -33,21 +33,21 @@
 }
 
 // 2. SET NAMED CONTRAST LOGIC
-@mixin set-named-contrast-logic(
-	$colors, 
-	$group-slug, 
-	$default
-) {
-
-    @each $color in $colors {
-        .has-#{$color}-background-color { //,
-//         .has-#{$color}-background-color.wp-element-button {
-//             color: var(--wp--custom--color--contrast--#{$color}, 
-//                    var(--wp--custom--color--contrast--#{$group-slug}, #{$default})) !important;
-			color: var(--wp--custom--color--contrast--#{$color}, #{$default}) !important;
-        }
-    }
-}
+// @mixin set-named-contrast-logic(
+// 	$colors, 
+// 	$group-slug, 
+// 	$default
+// ) {
+// 
+//     @each $color in $colors {
+//         .has-#{$color}-background-color { //,
+// //         .has-#{$color}-background-color.wp-element-button {
+// //             color: var(--wp--custom--color--contrast--#{$color}, 
+// //                    var(--wp--custom--color--contrast--#{$group-slug}, #{$default})) !important;
+// 			color: var(--wp--custom--color--contrast--#{$color}, #{$default}) !important;
+//         }
+//     }
+// }
 
 //
 // 3. BUILD BACKGROUND COLOR EXCLUSION LIST
