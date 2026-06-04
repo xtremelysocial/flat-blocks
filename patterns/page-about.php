@@ -10,10 +10,10 @@
 
 <!-- wp:pattern {"slug":"flat-blocks/cover-desk-light"} /-->
 
-<!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group">
-<!-- wp:heading {"placeholder":"About Us"} -->
-<h2 class="wp-block-heading" id="about-us">About Us</h2>
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)">
+<!-- wp:heading {"placeholder":"A<?php echo __("About Us", "flat-blocks"); ?>"} -->
+<h2 class="wp-block-heading" id="about-us"><?php echo __("About Us", "flat-blocks"); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -23,10 +23,10 @@
 
 <!-- wp:pattern {"slug":"flat-blocks/columns-features-3-columns"} /-->
 
-<!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group">
-<!-- wp:heading {"placeholder":"Meet our Team"} -->
-<h2 class="wp-block-heading" id="stay-connected">Meet our Team</h2>
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)">
+<!-- wp:heading {"placeholder":"<?php echo __("Meet Our Team", "flat-blocks"); ?>"} -->
+<h2 class="wp-block-heading" id="our-team"><?php echo __("Meet Our Team", "flat-blocks"); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->

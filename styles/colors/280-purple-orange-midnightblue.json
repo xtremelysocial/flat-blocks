@@ -6,7 +6,7 @@
 		"custom": {
 			"color": {
 				"highlight": {
-					"tertiary": "var(--wp--preset--color--highlight)"
+					"tertiary": "var:preset|color|highlight"
 				}
 			}
 		},
@@ -14,7 +14,7 @@
 			"palette": [
 				{
 					"slug": "primary",
-					"color": "#a29bfe",
+					"color": "#c39bd3",
 					"name": "Primary (Light Purple)"
 				},
 				{
@@ -28,13 +28,23 @@
 					"name": "Tertiary (Midnight Blue)"
 				},
 				{
+					"slug": "base",
+					"color": "#f7f9f9",
+					"name": "Base / Background (Off White)"
+				},
+				{
+					"slug": "contrast",
+					"color": "#4f5d5e",
+					"name": "Contrast / Foreground (Very Very Dark Gray)"
+				},
+				{
 					"slug": "dark",
 					"color": "#2f2f2f",
 					"name": "Dark (Almost Black)"
 				},
 				{
 					"slug": "neutral",
-					"color": "#ebebeb",
+					"color": "#f0f3f4",
 					"name": "Neutral (Very Light Gray)"
 				},
 				{
@@ -59,8 +69,8 @@
 				},
 				{
 					"slug": "neutral-alt",
-					"color": "#e0e0e0",
-					"name": "Neutral Alt (Gray)"
+					"color": "#e5e8e8",
+					"name": "Neutral Alt (Light Gray)"
 				},
 				{
 					"slug": "foreground-alt",
@@ -68,18 +78,8 @@
 					"name": "Foreground Alt (White)"
 				},
 				{
-					"slug": "base",
-					"color": "#f2f2f2",
-					"name": "Base / Background (Off White)"
-				},
-				{
-					"slug": "contrast",
-					"color": "#555555",
-					"name": "Contrast / Foreground (Very Dark Gray)"
-				},
-				{
 					"slug": "highlight",
-					"color": "#a29bfe",
+					"color": "#c39bd3",
 					"name": "Highlight (Light Purple)"
 				},
 				{
@@ -94,33 +94,33 @@
 				},
 				{
 					"slug": "off-white",
-					"color": "#f2f2f2",
+					"color": "#f7f9f9",
 					"name": "Off White"
 				},
 				{
 					"slug": "very-light-gray",
-					"color": "#ebebeb",
+					"color": "#f0f3f4",
 					"name": "Very Light Gray"
 				},
 				{
 					"slug": "light-gray",
-					"color": "#e7e7e7",
-					"name": "Light Gray"
+					"color": "#e5e8e8",
+					"name": "Light Gray (Light Silver)"
 				},
 				{
 					"slug": "gray",
-					"color": "#e0e0e0",
-					"name": "Gray"
+					"color": "#c5c9ca",
+					"name": "Gray (Steel Silver)"
 				},
 				{
 					"slug": "dark-gray",
-					"color": "#95a5a6",
-					"name": "Dark Gray"
+					"color": "#757575",
+					"name": "Dark Gray (Steel)"
 				},
 				{
 					"slug": "very-dark-gray",
-					"color": "#555555",
-					"name": "Very Dark Gray"
+					"color": "#4f5d5e",
+					"name": "Very Dark Gray (Dark Steel)"
 				},
 				{
 					"slug": "light-green",
@@ -144,7 +144,7 @@
 				},
 				{
 					"slug": "light-yellow",
-					"color": "#fdcb6e",
+					"color": "#f5d659",
 					"name": "Light Yellow"
 				},
 				{
@@ -169,7 +169,7 @@
 				},
 				{
 					"slug": "light-blue",
-					"color": "#74b9ff",
+					"color": "#85c1e9",
 					"name": "Light Blue"
 				},
 				{
@@ -194,7 +194,7 @@
 				},
 				{
 					"slug": "light-purple",
-					"color": "#a29bfe",
+					"color": "#c39bd3",
 					"name": "Light Purple"
 				},
 				{
@@ -209,7 +209,7 @@
 				},
 				{
 					"slug": "light-red",
-					"color": "#ff7878",
+					"color": "#f1948a",
 					"name": "Light Red"
 				},
 				{
@@ -240,37 +240,37 @@
 			],
 			"duotone": [
 				{
-					"colors": ["#a29bfe", "#f2f2f2"],
+					"colors": ["#c39bd3", "#f7f9f9"],
 					"slug": "primary",
 					"name": "Primary"
 				},
 				{
-					"colors": ["#9b59b6", "#f2f2f2"],
+					"colors": ["#9b59b6", "#f7f9f9"],
 					"slug": "primary-alt",
 					"name": "Primary Alt"
 				},
 				{
-					"colors": ["#f39c12", "#f2f2f2"],
+					"colors": ["#f39c12", "#f7f9f9"],
 					"slug": "secondary",
 					"name": "Secondary"
 				},
 				{
-					"colors": ["#e67e22", "#f2f2f2"],
+					"colors": ["#e67e22", "#f7f9f9"],
 					"slug": "secondary-alt",
 					"name": "Secondary Alt"
 				},
 				{
-					"colors": ["#34495e", "#f2f2f2"],
+					"colors": ["#34495e", "#f7f9f9"],
 					"slug": "tertiary",
 					"name": "Tertiary"
 				},
 				{
-					"colors": ["#2c3e50", "#f2f2f2"],
+					"colors": ["#2c3e50", "#f7f9f9"],
 					"slug": "tertiary-alt",
 					"name": "Tertiary Alt"
 				},
 				{
-					"colors": ["#9b59b6", "#fdcb6e"],
+					"colors": ["#9b59b6", "#f5d659"],
 					"slug": "purple-yellow",
 					"name": "Purple and Yellow"
 				},
@@ -305,7 +305,7 @@
 					"name": "Grayscale"
 				},
 				{
-					"colors": ["#000000", "#95a5a6"],
+					"colors": ["#000000", "#757575"],
 					"slug": "dark-grayscale",
 					"name": "Dark Grayscale"
 				}

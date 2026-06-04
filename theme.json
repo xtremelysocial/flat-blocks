@@ -605,32 +605,76 @@
 					"fontFace": [
 						{
 							"fontFamily": "Lato",
-							"fontWeight": "300",
+							"fontWeight": "200",
 							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/Lato/Lato-Light.ttf" ]
+							"src": [ 
+								"file:./assets/fonts/Lato/Lato-Hairline.woff2",
+								"file:./assets/fonts/Lato/Lato-Hairline.woff"
+							]							
 						},
 						{
 							"fontFamily": "Lato",
-							"fontWeight": "400",
+							"fontWeight": "200",
+							"fontStyle": "italic",
+							"src": [ 
+								"file:./assets/fonts/Lato/Lato-HairlineItalic.woff2",
+								"file:./assets/fonts/Lato/Lato-HairlineItalic.woff" 				 				
+							]
+						},						
+						{
+							"fontFamily": "Lato",
+							"fontWeight": "300",
 							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/Lato/Lato-Regular.ttf" ]
+							"src": [ 
+								"file:./assets/fonts/Lato/Lato-Light.woff2",
+								"file:./assets/fonts/Lato/Lato-Light.woff"
+							]
 						},
 						{
 							"fontFamily": "Lato",
 							"fontWeight": "300",
 							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/Lato/Lato-LightItalic.ttf" ]
+							"src": [ 
+								"file:./assets/fonts/Lato/Lato-LightItalic.woff2", 
+								"file:./assets/fonts/Lato/Lato-LightItalic.woff"
+							]
+						},						
+						{
+							"fontFamily": "Lato",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"src": [ 
+								"file:./assets/fonts/Lato/Lato-Regular.woff2",
+								"file:./assets/fonts/Lato/Lato-Regular.woff"
+							]
 						},
 						{
 							"fontFamily": "Lato",
 							"fontWeight": "400",
 							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/Lato/Lato-Italic.ttf" ]
-						}
+							"src": [ 
+								"file:./assets/fonts/Lato/Lato-Italic.woff2",
+								"file:./assets/fonts/Lato/Lato-Italic.woff"
+							]
+						},						
+						{
+							"fontFamily": "Lato",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"src": [ 
+								"file:./assets/fonts/Lato/Lato-Medium.woff2",
+								"file:./assets/fonts/Lato/Lato-Medium.woff"
+							]
+						},
+						{
+							"fontFamily": "Lato",
+							"fontWeight": "500",
+							"fontStyle": "italic",
+							"src": [ 
+								"file:./assets/fonts/Lato/Lato-MediumItalic.woff2",
+								"file:./assets/fonts/Lato/Lato-MediumItalic.woff"
+							]
+						}						
 					]
 				},
 				{
@@ -640,14 +684,14 @@
 					"fontFace": [
 						{
 							"fontFamily": "Raleway",
-							"fontWeight": "300 500",
+							"fontWeight": "200 500",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/Raleway/Raleway-VariableFont_wght.ttf" ]
 						},
 						{
 							"fontFamily": "Raleway",
-							"fontWeight": "300 500",
+							"fontWeight": "200 500",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/Raleway/Raleway-Italic-VariableFont_wght.ttf" ]
@@ -661,24 +705,24 @@
 					"fontFace": [
 						{
 							"fontFamily": "Roboto",
+							"fontWeight": "200",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/Roboto/Roboto-Thin.ttf" ]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontWeight": "200",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/Roboto/Roboto-ThinItalic.ttf" ]
+						},
+						{
+							"fontFamily": "Roboto",
 							"fontWeight": "300",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/Roboto/Roboto-Light.ttf" ]
-						},
-						{
-							"fontFamily": "Roboto",
-							"fontWeight": "400",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/Roboto/Roboto-Regular.ttf" ]
-						},
-						{
-							"fontFamily": "Roboto",
-							"fontWeight": "500",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/Roboto/Roboto-Medium.ttf" ]
 						},
 						{
 							"fontFamily": "Roboto",
@@ -690,6 +734,13 @@
 						{
 							"fontFamily": "Roboto",
 							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/Roboto/Roboto-Regular.ttf" ]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontWeight": "400",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/Roboto/Roboto-Italic.ttf" ]
@@ -697,9 +748,16 @@
 						{
 							"fontFamily": "Roboto",
 							"fontWeight": "500",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/Roboto/Roboto-Medium.ttf" ]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontWeight": "500",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/Roboto/Medium-Italic.ttf" ]
+							"src": [ "file:./assets/fonts/Roboto/Roboto-MediumItalic.ttf" ]
 						}
 					]
 				},
@@ -710,14 +768,14 @@
 					"fontFace": [
 						{
 							"fontFamily": "Lora",
-							"fontWeight": "300 500",
+							"fontWeight": "200 500",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/Lora/Lora-VariableFont_wght.ttf" ]
 						},
 						{
 							"fontFamily": "Lora",
-							"fontWeight": "300 500",
+							"fontWeight": "200 500",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/Lora/Lora-Italic-VariableFont_wght.ttf" ]
@@ -766,14 +824,14 @@
 					"fontFace": [
 						{
 							"fontFamily": "Playfair Display",
-							"fontWeight": "300 500",
+							"fontWeight": "200 500",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf" ]
 						},
 						{
 							"fontFamily": "Playfair Display",
-							"fontWeight": "300 500",
+							"fontWeight": "200 500",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf" ]
@@ -787,14 +845,14 @@
 					"fontFace": [
 						{
 							"fontFamily": "Source Serif Pro",
-							"fontWeight": "300 500",
+							"fontWeight": "200 500",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/Source_Serif_Pro/SourceSerif4Variable-Roman.ttf.woff2" ]
 						},
 						{
 							"fontFamily": "Source Serif Pro",
-							"fontWeight": "300 500",
+							"fontWeight": "200 500",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/Source_Serif_Pro/SourceSerif4Variable-Italic.ttf.woff2" ]
@@ -808,22 +866,23 @@
 					"fontFace": [
 						{
 							"fontFamily": "Nunito",
-							"fontWeight": "300 500",
+							"fontWeight": "200 500",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/Nunito/Nunito-VariableFont_wght.ttf" ]
 						},
 						{
 							"fontFamily": "Nunito",
-							"fontWeight": "300 500",
+							"fontWeight": "200 500",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf" ]
 						}
 					]
 				},
+				
 				{
-					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
+					"fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
 					"name": "System Font (Pair 6 Body)",
 					"slug": "system-font"
 				},
@@ -858,14 +917,14 @@
 					"fontFace": [
 						{
 							"fontFamily": "Roboto Mono",
-							"fontWeight": "300 500",
+							"fontWeight": "200 500",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf" ]
 						},
 						{
 							"fontFamily": "Roboto Mono",
-							"fontWeight": "300 500",
+							"fontWeight": "200 500",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf" ]

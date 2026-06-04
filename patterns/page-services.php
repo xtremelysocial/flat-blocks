@@ -18,8 +18,8 @@
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group">
-<!-- wp:heading {"placeholder":"What We Do"} -->
-<h2 class="wp-block-heading" id="what-we-do">What We Do</h2>
+<!-- wp:heading {"placeholder":"<?php echo __("What We Do", "flat-blocks"); ?>"} -->
+<h2 class="wp-block-heading" id="what-we-do"><?php echo __("What We Do", "flat-blocks"); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -31,8 +31,8 @@
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group">
-<!-- wp:heading {"placeholder":"Our Pricing"} -->
-<h2 class="wp-block-heading" id="our-pricing">Our Pricing</h2>
+<!-- wp:heading {"placeholder":"<?php echo __("Our Pricing", "flat-blocks"); ?>"} -->
+<h2 class="wp-block-heading" id="our-pricing"><?php echo __("Our Pricing", "flat-blocks"); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->

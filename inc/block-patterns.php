@@ -50,11 +50,12 @@ if ( ! function_exists( 'flatblocks_register_block_patterns' ) ) :
 			),
 			'columns-map-static' => array( 
 				'title' => __( 'Static Map and Address', 'flat-blocks' ),
-				'categories' => array ('flatblocks', 'column', 'featured' )
+				'categories' => array ('flatblocks', 'column', 'featured' ),
 			),
 			'columns-map-jetpack' => array( 
 				'title' => __( 'Jetpack Map and Address', 'flat-blocks' ),
-				'categories' => array ('flatblocks', 'column' )
+				'categories' => array ('flatblocks', 'column' ),
+				'syncStatus'  => 'fully', // This makes it a synced pattern
 			),
 			'columns-pricing-table-3-columns' => array( 
 				'title' => __( 'Pricing Table 3 Columns', 'flat-blocks' ),
@@ -156,6 +157,10 @@ if ( ! function_exists( 'flatblocks_register_block_patterns' ) ) :
 				'title' => __( 'Cover Typewriter', 'flat-blocks' ),
 				'categories' => array ('flatblocks', 'banner' )
 			),
+			'image-media-text-2-blocks' => array( 
+				'title' => __( 'Image w/2 Text Blocks', 'flat-blocks' ),
+				'categories' => array ('flatblocks', 'column', 'media', 'banner', 'featured' )
+			),
 			'image-gallery' => array( 
 				'title' => __( 'Image Gallery', 'flat-blocks' ),
 				'categories' => array ('flatblocks', 'column', 'gallery', 'media' )
@@ -170,22 +175,25 @@ if ( ! function_exists( 'flatblocks_register_block_patterns' ) ) :
 			),
 			'image-static-map' => array( 
 				'title' => __( 'Image of Static Map', 'flat-blocks' ),
-				'categories' => array ('flatblocks', 'media' )
+				'categories' => array ('flatblocks', 'media' ),
 			),
 			'text-social-icons' => array( 
 				'title' => __( 'Social Icons', 'flat-blocks' ),
 				'categories' => array ('flatblocks', 'text' ),
-				'viewportWidth' => 740
+				'viewportWidth' => 740,
+				'syncStatus'  => 'fully', // This makes it a synced pattern
 			),
 			'text-social-icons-huge' => array( 
 				'title' => __( 'Social Icons Huge', 'flat-blocks' ),
 				'categories' => array ('flatblocks', 'text' ),
-				'viewportWidth' => 740
+				'viewportWidth' => 740,
+				'syncStatus'  => 'fully', // This makes it a synced pattern
 			),
 			'text-social-icons-neutral' => array( 
 				'title' => __( 'Social Icons Huge Monochrome', 'flat-blocks' ),
 				'categories' => array ('flatblocks', 'text' ),
-				'viewportWidth' => 740
+				'viewportWidth' => 740,
+				'syncStatus'  => 'fully', // This makes it a synced pattern
 			),
 			'text-title-and-subtitle' => array( 
 				'title' => __( 'Title and Subtitle', 'flat-blocks' ),
@@ -205,7 +213,9 @@ if ( ! function_exists( 'flatblocks_register_block_patterns' ) ) :
 			),
 			'text-testimonial' => array( 
 				'title' => __( 'Testimonial', 'flat-blocks' ),
-				'categories' => array ('flatblocks', 'text', 'media', 'testimonials' )
+				'categories' => array ('flatblocks', 'text', 'media', 'testimonials' ),
+				'inserter'   => true, // Explicitly tell WP to show it in the UI				
+				'syncStatus' => 'fully' // This makes it a synced pattern
 			),
 			'text-faq' => array( 
 				'title' => __( 'Frequently Asked Questions (FAQ)', 'flat-blocks' ),
@@ -218,6 +228,10 @@ if ( ! function_exists( 'flatblocks_register_block_patterns' ) ) :
 			'text-theme-tagline' => array( 
 				'title' => __( 'Theme Tagline', 'flat-blocks' ),
 				'categories' => array ('flatblocks', 'text' )
+			),
+			'text-author-bio' => array( 
+				'title' => __( 'Author Bio', 'flat-blocks' ),
+				'categories' => array ('flatblocks', 'text', 'media' )
 			),
 			'query-loop-1-column' => array( 
 				'title' => __( 'Query Loop 1 Column', 'flat-blocks' ),
@@ -236,6 +250,11 @@ if ( ! function_exists( 'flatblocks_register_block_patterns' ) ) :
 			),
 			'query-loop-sidebar-right' => array( 
 				'title' => __( 'Query Loop with Right Sidebar', 'flat-blocks' ),
+				'categories' => array ('flatblocks', 'query' ),
+				'blockTypes' => array ('core/query')
+			),
+			'query-loop-1-column-img-left' => array( 
+				'title' => __( 'Query Loop 1 Column Image Left', 'flat-blocks' ),
 				'categories' => array ('flatblocks', 'query' ),
 				'blockTypes' => array ('core/query')
 			)
