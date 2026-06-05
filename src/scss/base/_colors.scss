@@ -47,6 +47,9 @@ $grp-heavy:     (
 );
 $grp-black:     ('black', 'not-quite-black', 'almost-black');
 
+
+// not(.has-foreground-alt-background-color, .has-white-background-color, .has-off-white-background-color, .has-very-light-gray-background-color, .has-light-gray-background-color, .has-base-background-color, .has-neutral-background-color, .has-neutral-alt-background-color) 
+
 /*-----------------------------------------------------------------------------
 # 1.  SET DEFAULT TEXT COLOR FOR EACH COLOR GROUP
 -----------------------------------------------------------------------------*/
@@ -96,84 +99,100 @@ $grp-black:     ('black', 'not-quite-black', 'almost-black');
 );
 
 // Invert base and contrast text colors
-.has-base-background-color,
-.has-base-background-color .wp-block-heading,
-.has-base-background-color.wp-element-button {
+.has-base-background-color { //,
+// .has-base-background-color .wp-block-heading,
+// .has-base-background-color.wp-element-button {
 	color: var(--wp--preset--color--contrast);
 }
 
-.has-contrast-background-color,
-.has-contrast-background-color .wp-block-heading,
-.has-contrast-background-color.wp-element-button {
+.has-contrast-background-color { //,
+// .has-contrast-background-color .wp-block-heading,
+// .has-contrast-background-color.wp-element-button {
 	color: var(--wp--preset--color--base);
 }
 
 // 4. LOGIC BUCKETS FOR GLOBAL INHERITANCE
 // "Light-ish" backgrounds (Heading and link colors preserved)
-$is-light-bg: join($grp-light, join($grp-medium, $grp-neutral));
+// $is-light-bg: join($grp-light, join($grp-medium, $grp-neutral));
+$is-light-bg: join($grp-light, $grp-neutral);
 
 // "Dark-ish" backgrounds (Heading colors inherit, Link colors preserved)
-$is-dark-bg: join($grp-primary, join($grp-secondary, join($grp-tertiary, join($grp-dark, join($grp-heavy, $grp-black)))));
+// $is-dark-bg: join($grp-primary, join($grp-secondary, join($grp-tertiary, join($grp-dark, join($grp-heavy, $grp-black)))));
+$is-dark-bg: join($grp-dark, $grp-black);
 
 // Colors where links should NOT inherit (keep highlight/highlight-alt link color)
 $preserve-link-colors: join($is-light-bg, $is-dark-bg);
 
+// Gradient colors where text color should NOT inherit (keep existing color)
+$gradient-preserve-colors: ('gray-gradient', 'yellow-gradient');
+
 /*-----------------------------------------------------------------------------
-# 2. SET DEFAULT HEADING TEXT COLOR 
+# 2. SET HEADING COLOR OVERRIDES
 -----------------------------------------------------------------------------*/
 // HEADING INHERITANCE (Grouped Selector)
-#{logic.build-exclusion-list($is-light-bg)} {
+// #{logic.build-exclusion-list($is-light-bg)} {
+.has-background:not(#{logic.build-exclusion-list($is-light-bg)}) {
     .wp-block-heading, .wp-block-post-title, .wp-block-query-title {
         color: inherit;
     }
 }
 
 /*-----------------------------------------------------------------------------
-# 3. SET DEFAULT LINK AND BUTTON TEXT COLORS AND HOVER COLORS
+# 3. SET LINK COLOR OVERRIDES
 -----------------------------------------------------------------------------*/
-
-// FADE LOGIC (Highlight -> Highlight-Alt) for Light Backgrounds
-#{logic.build-exclusion-list($is-light-bg)} {
-    a:not(.wp-element-button) {
-        --local-link: var(--wp--preset--color--highlight);
-        --local-hover: var(--wp--preset--color--highlight-alt);
-        color: var(--local-link);
-        
-        &:hover,
-        &:active { 
-        	color: var(--local-hover); 
-        }
-    }
-    .wp-block-button__link, .wp-element-button {
-        background-color: var(--wp--preset--color--highlight);
-        
-        &:hover { 
-        	background-color: var(--wp--preset--color--highlight-alt); 
-    	}
-    }
-}
 
 // GLOW LOGIC (Highlight-Alt -> Highlight) for Dark Backgrounds
 #{logic.build-exclusion-list($is-dark-bg)} {
 
-    a:not(.wp-element-button) {
-        --local-link: var(--wp--preset--color--highlight-alt);
-        --local-hover: var(--wp--preset--color--highlight);
-        color: var(--local-link) !important;
+    a:not(.wp-element-button, .wp-block-social-link-anchor) {
+//         --local-link: var(--wp--preset--color--highlight-alt);
+//         --local-hover: var(--wp--preset--color--highlight);
+//         color: var(--local-link) !important;
+
+		color: var(--wp--preset--color--highlight-alt, 
+			   var(--wp--preset--color--highlight)
+		);
         
-        &:hover { 
-        	color: var(--local-hover); 
+        &:hover,
+        &:active { 
+//         	color: var(--local-hover); 
+			color: var(--wp--preset--color--highlight, 
+				   var(--wp--preset--color--highlight-alt)
+			)
         }
     }
     
-    .wp-block-button__link, .wp-element-button {
-        background-color: var(--wp--preset--color--highlight-alt);
-        
-        &:hover { 
-        	background-color: var(--wp--preset--color--highlight); 
-        }
-    }
+//     .wp-block-button__link, .wp-element-button {
+//         background-color: var(--wp--preset--color--highlight-alt);
+//         
+//         &:hover { 
+//         	background-color: var(--wp--preset--color--highlight); 
+//         }
+//     }
 }
+
+// FADE LOGIC (Highlight -> Highlight-Alt) for Light Backgrounds
+// #{logic.build-exclusion-list($is-light-bg)} {
+//     a:not(.wp-element-button, .wp-block-social-link-anchor) {
+// //         --local-link: var(--wp--preset--color--highlight);
+// //         --local-hover: var(--wp--preset--color--highlight-alt);
+// //         color: var(--local-link);
+// 		color: inherit;
+//         
+//         &:hover,
+//         &:active { 
+// //         	color: var(--local-hover); 
+// 			opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+//         }
+//     }
+// //     .wp-block-button__link, .wp-element-button {
+// //         background-color: var(--wp--preset--color--highlight);
+// //         
+// //         &:hover { 
+// //         	background-color: var(--wp--preset--color--highlight-alt); 
+// //     	}
+// //     }
+// }
 
 /*-----------------------------------------------------------------------------
 # 4. LINK COLOR OVERRIDES (FOR NON-PRESERVED COLORS)
@@ -184,7 +203,7 @@ $preserve-link-colors: join($is-light-bg, $is-dark-bg);
 .has-background:not(#{logic.build-exclusion-list($preserve-link-colors)}) {
 	& a:not(.wp-element-button) {
 		color: inherit; 
-		transition: opacity var(--wp--custom--animation--duration--short, 250ms) ease-in-out;
+// 		transition: opacity var(--wp--custom--animation--duration--short, 250ms) ease-in-out;
 		
 		&:hover,
 		&:active {
@@ -196,8 +215,11 @@ $preserve-link-colors: join($is-light-bg, $is-dark-bg);
 /*-----------------------------------------------------------------------------
 # 5. GRADIENT TEXT COLOR OVERRIDES
 -----------------------------------------------------------------------------*/
-:root :where([class*="-gradient-background"]:not(.has-gray-gradient-background):not(.has-yellow-gradient-background)) {
-	color: var(--wp--preset--color--foreground-alt); 
+// :root :where([class*="-gradient-background"]:not(.has-gray-gradient-background):not(.has-yellow-gradient-background)) {
+// 	color: var(--wp--preset--color--foreground-alt); 
+// }
+:root :where([class*=-gradient-background]:not(#{logic.build-exclusion-list($gradient-preserve-colors)})) {
+    color: var(--wp--preset--color--foreground-alt);
 }
 
 :root :where(.has-primary-gradient-background, .has-primary-to-secondary-gradient-background, .has-secondary-to-primary-gradient-background, .has-primary-to-tertiary-gradient-background, .has-tertiary-to-primary-gradient-background) {
@@ -216,17 +238,22 @@ $preserve-link-colors: join($is-light-bg, $is-dark-bg);
 # 6. GRADIENT LINK COLOR OVERRIDES
 -----------------------------------------------------------------------------*/
 /* Force links and outline buttons to inherit on gradients */
-:root :where([class*=-gradient-background]) {
-	& a:where(:not(.wp-element-button)),
-	& .is-style-outline > .wp-element-button, 
-	& .is-style-outline > .wp-block-button__link,
-	& [class*="is-style-button-outline-"] > .wp-element-button,
-	& [class*="is-style-button-outline-"] > .wp-block-button__link {	
-		color: inherit;
+// :root :where([class*=-gradient-background]) :where(a:where(:not(.wp-element-button)),
+// 	& a:where(:not(.wp-element-button)),
+// .is-style-outline > .wp-element-button, 
+// .is-style-outline > .wp-block-button__link,
+// [class*="is-style-button-outline-"] > .wp-element-button,
+// [class*="is-style-button-outline-"] > .wp-block-button__link {	
+:root :where([class*=-gradient-background]) :where(a:where(:not(.wp-element-button)),
+.is-style-outline > .wp-element-button,
+.is-style-outline > .wp-block-button__link,
+[class*=is-style-button-outline-] > .wp-element-button,
+[class*=is-style-button-outline-] > .wp-block-button__link) {
 
-		&:hover,
-		&:active {
-			opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
-		}		
-	}
+	color: inherit;
+
+	&:hover,
+	&:active {
+		opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+	}		
 }

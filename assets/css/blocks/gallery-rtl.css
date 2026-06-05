@@ -10,11 +10,16 @@
   border-bottom-left-radius: var(--wp--custom--border--radius);
 }
 
-/* Image Border captions*/
+/* Image Border captions */
 .wp-block-gallery.is-style-image-border .wp-block-image:not(.is-style-image-round-border):not(.is-style-image-computer-screen):not(.is-style-image-tablet-phone-screen) img {
   padding: var(--wp--preset--spacing--20);
+  border-radius: var(--wp--custom--border--radius);
 }
-.wp-block-gallery.is-style-image-border.has-nested-images figure.wp-block-image:not(.is-style-rounded):not(.is-style-image-round-border):not(.is-style-image-computer-screen):not(.is-style-image-tablet-phone-screen):has(figcaption):before, .wp-block-gallery.is-style-image-border.has-nested-images figure.wp-block-image:not(.is-style-rounded):not(.is-style-image-round-border):not(.is-style-image-computer-screen):not(.is-style-image-tablet-phone-screen) figcaption {
+.wp-block-gallery.is-style-image-border .wp-block-image:not(.is-style-image-round-border):not(.is-style-image-computer-screen):not(.is-style-image-tablet-phone-screen).has-nested-images {
+  border-radius: var(--wp--custom--border--radius);
+  overflow: hidden;
+}
+.wp-block-gallery.is-style-image-border .wp-block-image:not(.is-style-image-round-border):not(.is-style-image-computer-screen):not(.is-style-image-tablet-phone-screen).has-nested-images:has(figcaption):before, .wp-block-gallery.is-style-image-border .wp-block-image:not(.is-style-image-round-border):not(.is-style-image-computer-screen):not(.is-style-image-tablet-phone-screen).has-nested-images figcaption {
   bottom: calc(1px + var(--wp--preset--spacing--20));
   right: calc(1px + var(--wp--preset--spacing--20));
   padding: calc(1px + var(--wp--preset--spacing--20)) 0;
@@ -27,7 +32,6 @@
 .wp-block-gallery.has-nested-images figure.wp-block-image.is-style-image-round-border:before {
   content: none;
 }
-
 .wp-block-gallery.has-nested-images figure.wp-block-image.is-style-image-round-border figcaption {
   background: none;
   color: inherit;
