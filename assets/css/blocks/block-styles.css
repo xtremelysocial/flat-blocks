@@ -48,8 +48,8 @@
 @media only screen and (max-width: 781px) {
   .wp-block-columns.has-background,
   .wp-block-columns > .wp-block-column.has-background {
-    padding-right: var(--wp--style--root--padding-left) !important;
-    padding-left: var(--wp--style--root--padding-right) !important;
+    padding-left: var(--wp--style--root--padding-left) !important;
+    padding-right: var(--wp--style--root--padding-right) !important;
   }
 }
 /*-----------------------------------------------------------------------------
@@ -98,7 +98,7 @@
 -----------------------------------------------------------------------------*/
 /* Add padding to comment page numbers */
 .wp-block-comments-pagination .page-numbers:nth-last-child(n+2) {
-  padding-left: var(--wp--preset--spacing--30);
+  padding-right: var(--wp--preset--spacing--30);
 }
 
 /*-----------------------------------------------------------------------------
@@ -112,8 +112,8 @@
 /* Adjust padding on mobile and tablet (782px) */
 @media only screen and (max-width: 781px) {
   .post-comments:not(.has-global-padding) {
-    padding-right: var(--wp--style--root--padding-left) !important;
-    padding-left: var(--wp--style--root--padding-right) !important;
+    padding-left: var(--wp--style--root--padding-left) !important;
+    padding-right: var(--wp--style--root--padding-right) !important;
   }
 }
 /*-----------------------------------------------------------------------------
@@ -121,8 +121,8 @@
 -----------------------------------------------------------------------------*/
 /* LIMIT cover image inner content to standard unless wide or full */
 .wp-block-cover .wp-block-cover__inner-container > * {
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
 }
 .wp-block-cover .wp-block-cover__inner-container > *:not(.alignfull):not(.alignwide) {
   max-width: var(--wp--style--global--content-size);
@@ -166,8 +166,8 @@ header > .wp-block-cover {
 -----------------------------------------------------------------------------*/
 /* Image captions */
 .wp-block-gallery.has-nested-images figure.wp-block-image:has(figcaption):before, .wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
-  border-bottom-right-radius: var(--wp--custom--border--radius);
   border-bottom-left-radius: var(--wp--custom--border--radius);
+  border-bottom-right-radius: var(--wp--custom--border--radius);
 }
 
 /* Image Border captions */
@@ -181,11 +181,11 @@ header > .wp-block-cover {
 }
 .wp-block-gallery.is-style-image-border .wp-block-image:not(.is-style-image-round-border):not(.is-style-image-computer-screen):not(.is-style-image-tablet-phone-screen).has-nested-images:has(figcaption):before, .wp-block-gallery.is-style-image-border .wp-block-image:not(.is-style-image-round-border):not(.is-style-image-computer-screen):not(.is-style-image-tablet-phone-screen).has-nested-images figcaption {
   bottom: calc(1px + var(--wp--preset--spacing--20));
-  right: calc(1px + var(--wp--preset--spacing--20));
+  left: calc(1px + var(--wp--preset--spacing--20));
   padding: calc(1px + var(--wp--preset--spacing--20)) 0;
   width: calc(100% - 2 * (1px + var(--wp--preset--spacing--20)));
-  border-bottom-right-radius: var(--wp--custom--border--radius);
   border-bottom-left-radius: var(--wp--custom--border--radius);
+  border-bottom-right-radius: var(--wp--custom--border--radius);
 }
 
 /* Image Round Border captions */
@@ -204,13 +204,13 @@ header > .wp-block-cover {
 
 /* Image Computer Screen captions */
 .wp-block-gallery.has-nested-images figure.wp-block-image.is-style-image-computer-screen:has(figcaption):before, .wp-block-gallery.has-nested-images figure.wp-block-image.is-style-image-computer-screen figcaption {
-  right: var(--wp--preset--spacing--60);
+  left: var(--wp--preset--spacing--60);
   width: calc(100% - 2 * var(--wp--preset--spacing--60));
 }
 
 /* Image Tablet/Phone Screen captions */
 .wp-block-gallery.has-nested-images figure.wp-block-image.is-style-image-tablet-phone-screen:has(figcaption):before, .wp-block-gallery.has-nested-images figure.wp-block-image.is-style-image-tablet-phone-screen figcaption {
-  right: var(--wp--preset--spacing--50);
+  left: var(--wp--preset--spacing--50);
   padding: var(--wp--preset--spacing--20) 0;
   width: calc(100% - 2 * var(--wp--preset--spacing--50));
 }
@@ -225,8 +225,8 @@ header > .wp-block-cover {
 }
 
 .wp-block-group.has-background:not(.alignfull) {
-  padding-right: var(--wp--preset--spacing--40);
   padding-left: var(--wp--preset--spacing--40);
+  padding-right: var(--wp--preset--spacing--40);
 }
 
 /* Padding for top-level non-colored groups */
@@ -241,8 +241,8 @@ header > .wp-block-cover {
  */
 @media only screen and (max-width: 781px) {
   .wp-block-group.alignfull {
-    padding-right: var(--wp--style--root--padding-left) !important;
-    padding-left: var(--wp--style--root--padding-right) !important;
+    padding-left: var(--wp--style--root--padding-left) !important;
+    padding-right: var(--wp--style--root--padding-right) !important;
   }
 }
 /*-----------------------------------------------------------------------------
@@ -261,8 +261,8 @@ header > .wp-block-cover {
 }
 
 .wp-block-group.is-style-no-padding:not(.has-global-padding) {
-  padding-right: 0;
   padding-left: 0;
+  padding-right: 0;
 }
 
 /* Position the fixed header using sticky so we don't have to have top site margin */
@@ -317,8 +317,8 @@ figure.wp-caption:not(.alignfull):not(.alignwide),
 figure.wp-caption:not(.alignfull):not(.alignwide) img {
   max-width: min(100%, var(--wp--style--global--content-size)) !important;
   height: auto;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
 }
 
 /* FIX rounded images when global image style has a border radius */
@@ -348,7 +348,7 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
   list-style: none;
 }
 .wp-block-latest-comments:not(.is-style-bullets) {
-  padding-right: 0;
+  padding-left: 0;
   padding-inline-start: 0;
 }
 .wp-block-latest-comments li {
@@ -370,7 +370,7 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
   list-style: disc;
 }
 .wp-block-latest-comments.is-style-bullets:not(.has-avatars) {
-  padding-right: 2em;
+  padding-left: 2em;
 }
 .wp-block-latest-comments.is-style-bullets.has-avatars .wp-block-latest-comments__comment {
   list-style-position: inside;
@@ -414,7 +414,7 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 /* Override horizontal padding on mobile (600px) */
 @media only screen and (max-width: 600px) {
   .wp-block-latest-posts.is-grid li {
-    margin-left: 0;
+    margin-right: 0;
   }
 }
 /*-----------------------------------------------------------------------------
@@ -423,7 +423,7 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 /* Bullets */
 .wp-block-latest-posts.is-style-bullets.wp-block-latest-posts__list:not(.is-grid) {
   list-style: disc;
-  padding-right: 2em;
+  padding-left: 2em;
 }
 
 .wp-block-latest-posts.is-style-bullets:not(.is-grid) li {
@@ -442,21 +442,21 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 -----------------------------------------------------------------------------*/
 /* Default padding on the content (which is on the right by default) */
 .wp-block-media-text:not(.is-style-no-padding) .wp-block-media-text__content {
-  padding-right: var(--wp--preset--spacing--40);
-  padding-left: 0;
+  padding-left: var(--wp--preset--spacing--40);
+  padding-right: 0;
 }
 
 /* Swap the padding if content is on the left */
 .wp-block-media-text.has-media-on-the-right:not(.is-style-no-padding) .wp-block-media-text__content {
-  padding-right: 0;
-  padding-left: var(--wp--preset--spacing--40);
+  padding-left: 0;
+  padding-right: var(--wp--preset--spacing--40);
 }
 
 /* Remove the padding when collapsed on mobile (600px) */
 @media only screen and (max-width: 600px) {
   .wp-block-media-text.is-stacked-on-mobile:not(.has-background) .wp-block-media-text__content {
-    padding-right: 0;
     padding-left: 0;
+    padding-right: 0;
   }
 }
 /* FIX core WordPress so that border radius works */
@@ -497,7 +497,7 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 .is-style-icon-arrow-up-alt2 > a:before {
   -webkit-mask-image: url(../../icons/arrow-up-alt2.svg);
           mask-image: url(../../icons/arrow-up-alt2.svg);
-  margin-left: 0.15em;
+  margin-right: 0.15em;
 }
 
 .is-style-icon-arrow-up-alt2 > a:before {
@@ -520,7 +520,7 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 
 /* FIX for padding on level 2+ nav menu and pages list drop-downs */
 .wp-block-navigation__submenu-container .wp-block-navigation-item.open-on-click .wp-block-navigation-submenu__toggle {
-  padding-right: 1em;
+  padding-left: 1em;
 }
 
 /*-----------------------------------------------------------------------------
@@ -602,8 +602,8 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 .wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open {
   padding-top: calc(var(--wp--preset--spacing--40) + 14px);
   padding-bottom: calc(var(--wp--preset--spacing--40) + 14px);
-  padding-left: var(--wp--style--root--padding-right, var(--wp--preset--spacing--50));
-  padding-right: var(--wp--style--root--padding-left, var(--wp--preset--spacing--50));
+  padding-right: var(--wp--style--root--padding-right, var(--wp--preset--spacing--50));
+  padding-left: var(--wp--style--root--padding-left, var(--wp--preset--spacing--50));
 }
 
 /* Adjust mobile nav menu top when Admin Bar is present */
@@ -658,15 +658,15 @@ nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-con
 
 /* On the front-end, default the fixed nav menu position to the left */
 .wp-site-blocks:not(.is-root-container) nav.wp-block-navigation.is-style-fixed-menu {
-  right: max(0.5 * (100% - var(--wp--style--global--wide-size)), var(--wp--style--root--padding-left, calc(2 * var(--wp--preset--spacing--50))));
-  left: auto;
+  left: max(0.5 * (100% - var(--wp--style--global--wide-size)), var(--wp--style--root--padding-left, calc(2 * var(--wp--preset--spacing--50))));
+  right: auto;
   z-index: 9999;
 }
 
 /* Default the fixed menu's drop-down and close button also to the left */
 nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container, nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container-close {
-  right: max(0.5 * (100% - var(--wp--style--global--wide-size) - 2 * var(--wp--style--root--padding-right, var(--wp--preset--spacing--50))), 0px);
-  left: auto;
+  left: max(0.5 * (100% - var(--wp--style--global--wide-size) - 2 * var(--wp--style--root--padding-right, var(--wp--preset--spacing--50))), 0px);
+  right: auto;
 }
 nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container {
   width: var(--wp--custom--navigation--wide-width, 360px);
@@ -674,26 +674,26 @@ nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-con
 
 /* If header right justified, position the fixed menu to the right */
 .site-header.is-content-justification-right > nav.wp-block-navigation.is-style-fixed-menu, .site-header.is-content-justification-right > .wp-block-template-part > nav.wp-block-navigation.is-style-fixed-menu {
-  left: max(0.5 * (100% - var(--wp--style--global--wide-size)), var(--wp--style--root--padding-right, calc(2 * var(--wp--preset--spacing--50))));
-  right: auto;
+  right: max(0.5 * (100% - var(--wp--style--global--wide-size)), var(--wp--style--root--padding-right, calc(2 * var(--wp--preset--spacing--50))));
+  left: auto;
 }
 .site-header.is-content-justification-right > nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container, .site-header.is-content-justification-right > nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container-close, .site-header.is-content-justification-right > .wp-block-template-part > nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container, .site-header.is-content-justification-right > .wp-block-template-part > nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container-close {
-  left: max(0.5 * (100% - var(--wp--style--global--wide-size) - 2 * var(--wp--style--root--padding-right, var(--wp--preset--spacing--50))), 0px);
-  right: auto;
+  right: max(0.5 * (100% - var(--wp--style--global--wide-size) - 2 * var(--wp--style--root--padding-right, var(--wp--preset--spacing--50))), 0px);
+  left: auto;
 }
 
 /* If header center justified, position the fixed menu in the center */
 .site-header.is-content-justification-center > nav.wp-block-navigation.is-style-fixed-menu, .site-header.is-content-justification-center > .wp-block-template-part > nav.wp-block-navigation.is-style-fixed-menu {
-  right: calc(50% - 12px - 1.25 * var(--wp--preset--spacing--20));
-  left: auto;
+  left: calc(50% - 12px - 1.25 * var(--wp--preset--spacing--20));
+  right: auto;
 }
 .site-header.is-content-justification-center > nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container-close, .site-header.is-content-justification-center > .wp-block-template-part > nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container-close {
-  right: calc(50% - 12px - 1.25 * var(--wp--preset--spacing--20));
-  left: auto;
+  left: calc(50% - 12px - 1.25 * var(--wp--preset--spacing--20));
+  right: auto;
 }
 .site-header.is-content-justification-center > nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container, .site-header.is-content-justification-center > .wp-block-template-part > nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-container {
-  right: calc(50% - 0.5 * var(--wp--custom--navigation--wide-width, 360px));
-  left: auto;
+  left: calc(50% - 0.5 * var(--wp--custom--navigation--wide-width, 360px));
+  right: auto;
 }
 
 /*-----------------------------------------------------------------------------
@@ -714,13 +714,13 @@ nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-con
 @media only screen and (max-width: 781px) {
   /* If no global padding, then set paragraphs like colored groups */
   p.has-background:not(.has-global-padding) {
-    padding-right: calc(2 * var(--wp--style--block-gap));
     padding-left: calc(2 * var(--wp--style--block-gap));
+    padding-right: calc(2 * var(--wp--style--block-gap));
   }
   /* If global padding, then OVERRIDE horizontal padding on mobile */
   .has-global-padding p.has-background {
-    padding-right: var(--wp--style--root--padding-left) !important;
-    padding-left: var(--wp--style--root--padding-right) !important;
+    padding-left: var(--wp--style--root--padding-left) !important;
+    padding-right: var(--wp--style--root--padding-right) !important;
   }
 }
 /*-----------------------------------------------------------------------------
@@ -729,8 +729,8 @@ nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-con
 /* Alignwide */
 p.is-style-alignwide {
   max-width: var(--wp--style--global--wide-size) !important;
-  margin-right: auto !important;
   margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /*  Deprecated: Down Arrow for Scroll Headers */
@@ -772,7 +772,7 @@ p.is-style-alignwide {
 .wp-block-post-author-name:before {
   -webkit-mask-image: url(../../icons/admin-users.svg);
           mask-image: url(../../icons/admin-users.svg);
-  margin-left: 0.15em;
+  margin-right: 0.15em;
 }
 
 /*-----------------------------------------------------------------------------
@@ -783,7 +783,7 @@ p.is-style-alignwide {
 }
 
 .wp-block-post-author__avatar {
-  margin-left: var(--wp--style--block-gap);
+  margin-right: var(--wp--style--block-gap);
 }
 
 .wp-block-post-author__avatar img {
@@ -809,13 +809,13 @@ p.is-style-alignwide {
 .wp-block-post-comments-count:before {
   -webkit-mask-image: url(../../icons/admin-comments.svg);
           mask-image: url(../../icons/admin-comments.svg);
-  margin-left: 0.15em;
+  margin-right: 0.15em;
 }
 
 /* Add word "comment(s)" after post comment count */
 .wp-block-post-comments-count:after {
   content: "comment(s)";
-  margin-right: 0.15em;
+  margin-left: 0.15em;
 }
 
 /*-----------------------------------------------------------------------------
@@ -848,7 +848,7 @@ p.is-style-alignwide {
 .wp-block-post-comments-link:before {
   -webkit-mask-image: url(../../icons/admin-comments.svg);
           mask-image: url(../../icons/admin-comments.svg);
-  margin-left: 0.15em;
+  margin-right: 0.15em;
 }
 
 /*-----------------------------------------------------------------------------
@@ -877,7 +877,7 @@ p.is-style-alignwide {
 .wp-block-post-date:before {
   -webkit-mask-image: url(../../icons/calendar-alt.svg);
           mask-image: url(../../icons/calendar-alt.svg);
-  margin-left: 0.15em;
+  margin-right: 0.15em;
 }
 
 /*-----------------------------------------------------------------------------
@@ -926,13 +926,13 @@ p.is-style-alignwide {
 .wp-block-post-terms.taxonomy-category:before {
   -webkit-mask-image: url(../../icons/category.svg);
           mask-image: url(../../icons/category.svg);
-  margin-left: 0.15em;
+  margin-right: 0.15em;
 }
 
 .wp-block-post-terms.taxonomy-post_tag:before {
   -webkit-mask-image: url(../../icons/tag.svg);
           mask-image: url(../../icons/tag.svg);
-  margin-left: 0.15em;
+  margin-right: 0.15em;
 }
 
 /* Remove bottom margin on Category and Tag descriptions */
@@ -953,14 +953,14 @@ p.is-style-alignwide {
 .wp-block-post-time-to-read:before {
   -webkit-mask-image: url(../../icons/clock.svg);
           mask-image: url(../../icons/clock.svg);
-  margin-left: 0.15em;
+  margin-right: 0.15em;
 }
 
 /*-----------------------------------------------------------------------------
 # Query Pagination
 -----------------------------------------------------------------------------*/
 .wp-block-query-pagination-numbers .page-numbers:nth-last-child(n+2) {
-  padding-left: var(--wp--preset--spacing--30);
+  padding-right: var(--wp--preset--spacing--30);
 }
 
 /*-----------------------------------------------------------------------------
@@ -988,8 +988,8 @@ p.is-style-alignwide {
 
 /* FIX to center default (narrow) separator when user selects alignfull */
 .wp-block-separator.alignfull {
-  margin-right: auto !important;
   margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* FIX for theme setting colors on separators. Use only the background color. */

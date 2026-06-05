@@ -132,6 +132,45 @@ For more information, see these pages on the XtremelySocial.com website:
 You can check out our other themes here: https://xtremelysocial.com/wordpress/
 
 == Changelog ==
+= 2.3 =
+June 5, 2026
+
+* Default Colors:
+	* Rewrote the CSS for defaulting text color, link color, and heading color on colored backgrounds. It now has the ability to override these things for any color in the color palette within a Global Theme Style.
+	* Inverted Link colors to improve visibility and accessibility:
+		* Link colors are now darker on light backgrounds and lighten up on hover.
+		* Link colors are now lighter on very dark backgrounds and darken on hover. 
+	* Added new Global Theme Styles for colors: 
+		* Shades of Gray, 
+		* Blue w/Red Links and Midnight, 
+		* Dark - Almost Black, 
+		* Original Colors. This can be used to make your Global Style changes while still allowing you to reset back to the theme defaults.
+	* Updated all of the other color-related Global Theme Styles
+	* ??? Updated link color in navigation block to lighten on hover instead of darken with opacity.
+	* ??? Updated link color on Dark and Dark-Alt backgrounds, such as the Footer areas, to be brighter and then darken on hover. 
+* Block Patterns: 
+	* Added a new Query Loop 1 Column with Image on Left. This can be used to change up how your Blog index page looks.
+	* Added a new Media Text Block Pattern that has 2 colored groups and action buttons on the Content side of the block.
+	* Enhanced some other Block Patterns: Testimonial, Social Icons Neutral, 
+	* Enhanced the full-paged Block Patterns: Services, Portfolio, Home, and About pages.
+* Template Parts: 
+	* Redid the Author Bio Template Part to use discreet fields so that they can be styled individually. 
+	* Added a new Content Article Image on Left Template Part for the new Query Loop Block Pattern above.
+	* Added a new Header Centered Nav Only and Header Centered Fixed Nav (sticks to top of page)
+* Padding: 
+	* Adjusted horizontal padding on Groups with background color. 
+	* Added top padding to the Sitemap Page Template.
+	* Removed !important from padding and gap with No Gap style for Columns so that users can override this. 
+* Fonts:
+	* Replaced the default body font (Lato) with .woff2 file formats.
+	* Added a new Hairline (200 weight) Lato font that you can now use.
+	* Now only adding link underlines within the Page/Post Content, not in headers, footers, or the sidebar. 
+* Social Icons: 
+	* Increased the size of them to be better for mobile users and accessibility. 
+* Post Templates:
+	* Styled Post Pagination to match Query Pagination, which is with neutral background and rounded border. 
+* Fixed Headers: Updated z-index to 101 to make sure the drop-down menus display over any block content on the page. 
+	
 
 = 2.2.3 =
 February 21, 2026

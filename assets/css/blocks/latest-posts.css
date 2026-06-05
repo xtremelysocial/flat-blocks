@@ -38,7 +38,7 @@
 /* Override horizontal padding on mobile (600px) */
 @media only screen and (max-width: 600px) {
   .wp-block-latest-posts.is-grid li {
-    margin-left: 0;
+    margin-right: 0;
   }
 }
 /*-----------------------------------------------------------------------------
@@ -47,7 +47,7 @@
 /* Bullets */
 .wp-block-latest-posts.is-style-bullets.wp-block-latest-posts__list:not(.is-grid) {
   list-style: disc;
-  padding-right: 2em;
+  padding-left: 2em;
 }
 
 .wp-block-latest-posts.is-style-bullets:not(.is-grid) li {
