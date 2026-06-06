@@ -18,7 +18,7 @@
  */
 
 /*-----------------------------------------------------------------------------
-# 0.  SETUP: GROUP INDIVIDUAL COLORS INTO COLOR GROUPS
+# 0.1  SETUP: GROUP INDIVIDUAL COLORS INTO COLOR GROUPS
 -----------------------------------------------------------------------------*/
 
 // Semantic colors
@@ -46,7 +46,7 @@ $grp-heavy:     (
 $grp-black:     ('black', 'not-quite-black', 'almost-black');
 
 /*-----------------------------------------------------------------------------
-# 0.  SETUP: BUILD ADDITIONAL COLOR GROUPS
+# 0.2  SETUP: BUILD ADDITIONAL COLOR GROUPS
 -----------------------------------------------------------------------------*/
 // "Light-ish" backgrounds (Heading and link colors preserved)
 $is-light-bg: join($grp-light, $grp-neutral);
@@ -61,7 +61,7 @@ $preserve-link-colors: join($is-light-bg, $is-dark-bg);
 $gradient-preserve-colors: ('gray-gradient', 'yellow-gradient');
 
 /*-----------------------------------------------------------------------------
-# 1.  SET DEFAULT TEXT COLOR FOR EACH BACKGROUND COLOR
+# 1.0  SET DEFAULT TEXT COLOR FOR EACH BACKGROUND COLOR
 -----------------------------------------------------------------------------*/
 @include logic.set-contrast-logic(
 	$grp-primary,   
@@ -118,7 +118,7 @@ $gradient-preserve-colors: ('gray-gradient', 'yellow-gradient');
 }
 
 /*-----------------------------------------------------------------------------
-# 2. SET HEADING COLORS TO INHERIT EXCEPT ON VERY LIGHT BACKGROUNDS
+# 2.0 SET HEADING COLORS TO INHERIT EXCEPT ON VERY LIGHT BACKGROUNDS
 -----------------------------------------------------------------------------*/
 .has-background:not(#{logic.build-selector-list($is-light-bg)}) {
     .wp-block-heading, .wp-block-post-title, .wp-block-query-title {
@@ -126,56 +126,33 @@ $gradient-preserve-colors: ('gray-gradient', 'yellow-gradient');
     }
 }
 
-// /*-----------------------------------------------------------------------------
-// # 3. SET LINK COLORS TO BE LIGHTER ON VERY DARK BACKGROUNDS
-// -----------------------------------------------------------------------------*/
-// GLOW LOGIC (Highlight-Alt -> Highlight) for Dark Backgrounds
-// #{logic.build-selector-list($is-dark-bg)} {
-// 
-//     a:not(.wp-element-button, .wp-block-social-link-anchor) {
-// 
-// 		color: var(--wp--preset--color--highlight-alt, 
-// 			   var(--wp--preset--color--highlight)
-// 		);
-//         
-//         &:hover,
-//         &:active { 
-// 			color: var(--wp--preset--color--highlight, 
-// 				   var(--wp--preset--color--highlight-alt)
-// 			);
-//         }
-//     }
-// }
+/*-----------------------------------------------------------------------------
+# 3.0 SET LINK COLORS TO BE BRIGHTER ON VERY DARK BACKGROUNDS
+-----------------------------------------------------------------------------*/
+// GLOW LOGIC (Highlight -> Opacity)
+#{logic.build-selector-list($is-dark-bg)} {
 
-// /*-----------------------------------------------------------------------------
-// # 4. SET LINK COLORS TO BE DARKER ON VERY LIGHT BACKGROUNDS
-// -----------------------------------------------------------------------------*/
-// FADE LOGIC (Highlight -> Highlight-Alt) for Light Backgrounds
-// #{logic.build-selector-list($is-light-bg)} {
-// 
-//     a:not(.wp-element-button, .wp-block-social-link-anchor) {
-// 
-// 		color: var(--wp--preset--color--highlight, 
-// 			   var(--wp--preset--color--highlight-alt)
-// 		);
-//         
-//         &:hover,
-//         &:active { 
-// 			color: var(--wp--preset--color--highlight-alt, 
-// 				   var(--wp--preset--color--highlight)
-// 			);
-//         }
-//     }
-// }
+    a:not(.wp-element-button, .wp-block-social-link-anchor) {
+
+		color: var(--wp--preset--color--highlight);
+        
+        &:hover,
+        &:active { 
+// 			color: var(--wp--preset--color--highlight-alt);
+			opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+        }
+    }
+}
 
 /*-----------------------------------------------------------------------------
-# 5. INHERIT LINK COLORS IF NOT VERY LIGHT OR VERY DARK BACKGROUND
+# 4.0 INHERIT LINK COLORS IF NOT VERY LIGHT OR VERY DARK BACKGROUND
 -----------------------------------------------------------------------------*/
 // If the background is NOT very light or very dark (vibrant colors), 
 // force links to inherit text color and use opacity for hover visibility.
 .has-background:not(#{logic.build-selector-list($preserve-link-colors)}) {
 	& a:not(.wp-element-button) {
 		color: inherit; 
+// 		text-decoration: underline;
 		
 		&:hover,
 		&:active {
@@ -184,8 +161,15 @@ $gradient-preserve-colors: ('gray-gradient', 'yellow-gradient');
 	}	
 }
 
+// Underline links if inheriting link color, but only in the Post Content
+:where(.wp-block-post-content .has-background):not(#{logic.build-selector-list($preserve-link-colors)}) {
+	& a:not(.wp-element-button) {
+		text-decoration: underline;
+	}
+}
+
 /*-----------------------------------------------------------------------------
-# 6. INHERIT COLORS FOR OUTLINE BUTTONS IN COLORED SECTIONS
+# 5.0 INHERIT COLORS FOR OUTLINE BUTTONS IN COLORED SECTIONS
 -----------------------------------------------------------------------------*/
 /* Force links and outline buttons to inherit on gradients */
 .is-style-outline > .wp-element-button,
@@ -201,7 +185,7 @@ $gradient-preserve-colors: ('gray-gradient', 'yellow-gradient');
 }
 
 /*-----------------------------------------------------------------------------
-# 7. SET TEXT COLOR ON GRADIENT BACKGROUNDS
+# 6.0 SET TEXT COLOR ON GRADIENT BACKGROUNDS
 -----------------------------------------------------------------------------*/
 :root :where([class*=-gradient-background]:not(#{logic.build-selector-list($gradient-preserve-colors)})) {
     color: var(--wp--preset--color--foreground-alt);
@@ -220,7 +204,7 @@ $gradient-preserve-colors: ('gray-gradient', 'yellow-gradient');
 }
 
 /*-----------------------------------------------------------------------------
-# 8. INHERIT LINK COLOR ON GRADIENT BACKGROUNDS
+# 7.0 INHERIT LINK COLOR ON GRADIENT BACKGROUNDS
 -----------------------------------------------------------------------------*/
 /* Force links and outline buttons to inherit on gradients */
 :root :where([class*=-gradient-background]) :where(a:where(:not(.wp-element-button))) {

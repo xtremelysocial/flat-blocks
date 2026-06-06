@@ -20,20 +20,6 @@ a,
 }
 
 /* 
- * Set link underlines in post content where the link color gets inherited on
- * a colored background. This is a requirement for public themes.
- */
-:where(.has-background :not(.wp-block-site-title) > a:not(.wp-element-button):not(.wp-block-navigation-item__content):not(.wp-block-social-link-anchor)) {
-// :where(.wp-block-post-content .has-background a:not(.wp-element-button)) {
-	text-decoration: underline;
-// 
-// 	&:hover,
-// 	&:active {
-// 		opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
-// 	}
-}
-
-/* 
  * Style basic buttons to match block buttons. 
  */
 input[type=button]:not(.wp-element-button),
@@ -99,8 +85,6 @@ input[type=button]:not(.wp-element-button):hover,
 input[type=submit][class*="button"]:not(.wp-element-button):hover,
 input[type=reset][class*="button"]:not(.wp-element-button):hover,
 input[type=file]::file-selector-button:hover {
-// 	background-color: var(--wp--custom--color--button--hover-background, var(--wp--custom--color--button--background, var(--wp--custom--color--highlight, var(--wp--preset--color--highlight))));
-// 	color: var(--wp--custom--color--button--hover-text, var(--wp--custom--color--button--text, var(--wp--preset--color--foreground-alt)));
 	opacity: var(--wp--custom--color--button--hover-opacity, 0.8);
 }
 

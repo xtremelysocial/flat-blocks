@@ -170,14 +170,6 @@ a:hover, a:active,
 }
 
 /* 
- * Set link underlines in post content where the link color gets inherited on
- * a colored background. This is a requirement for public themes.
- */
-:where(.has-background :not(.wp-block-site-title) > a:not(.wp-element-button):not(.wp-block-navigation-item__content):not(.wp-block-social-link-anchor)) {
-  text-decoration: underline;
-}
-
-/* 
  * Style basic buttons to match block buttons. 
  */
 input[type=button]:not(.wp-element-button),
@@ -390,13 +382,13 @@ main > :last-child:not(.wp-block-post-content),
  *		--wp--custom--color--contrast--{color}
  */
 /*-----------------------------------------------------------------------------
-# 0.  SETUP: GROUP INDIVIDUAL COLORS INTO COLOR GROUPS
+# 0.1  SETUP: GROUP INDIVIDUAL COLORS INTO COLOR GROUPS
 -----------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
-# 0.  SETUP: BUILD ADDITIONAL COLOR GROUPS
+# 0.2  SETUP: BUILD ADDITIONAL COLOR GROUPS
 -----------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
-# 1.  SET DEFAULT TEXT COLOR FOR EACH BACKGROUND COLOR
+# 1.0  SET DEFAULT TEXT COLOR FOR EACH BACKGROUND COLOR
 -----------------------------------------------------------------------------*/
 .has-primary-background-color {
   color: var(--wp--custom--color--contrast--primary, var(--wp--preset--color--foreground-alt)) !important;
@@ -575,14 +567,24 @@ main > :last-child:not(.wp-block-post-content),
 }
 
 /*-----------------------------------------------------------------------------
-# 2. SET HEADING COLORS TO INHERIT EXCEPT ON VERY LIGHT BACKGROUNDS
+# 2.0 SET HEADING COLORS TO INHERIT EXCEPT ON VERY LIGHT BACKGROUNDS
 -----------------------------------------------------------------------------*/
 .has-background:not(.has-foreground-alt-background-color, .has-white-background-color, .has-off-white-background-color, .has-very-light-gray-background-color, .has-light-gray-background-color, .has-base-background-color, .has-neutral-background-color, .has-neutral-alt-background-color) .wp-block-heading, .has-background:not(.has-foreground-alt-background-color, .has-white-background-color, .has-off-white-background-color, .has-very-light-gray-background-color, .has-light-gray-background-color, .has-base-background-color, .has-neutral-background-color, .has-neutral-alt-background-color) .wp-block-post-title, .has-background:not(.has-foreground-alt-background-color, .has-white-background-color, .has-off-white-background-color, .has-very-light-gray-background-color, .has-light-gray-background-color, .has-base-background-color, .has-neutral-background-color, .has-neutral-alt-background-color) .wp-block-query-title {
   color: inherit;
 }
 
 /*-----------------------------------------------------------------------------
-# 5. INHERIT LINK COLORS IF NOT VERY LIGHT OR VERY DARK BACKGROUND
+# 3.0 SET LINK COLORS TO BE BRIGHTER ON VERY DARK BACKGROUNDS
+-----------------------------------------------------------------------------*/
+.has-dark-background-color a:not(.wp-element-button, .wp-block-social-link-anchor), .has-dark-alt-background-color a:not(.wp-element-button, .wp-block-social-link-anchor), .has-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor), .has-not-quite-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor), .has-almost-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor) {
+  color: var(--wp--preset--color--highlight);
+}
+.has-dark-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):hover, .has-dark-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):active, .has-dark-alt-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):hover, .has-dark-alt-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):active, .has-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):hover, .has-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):active, .has-not-quite-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):hover, .has-not-quite-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):active, .has-almost-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):hover, .has-almost-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):active {
+  opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+}
+
+/*-----------------------------------------------------------------------------
+# 4.0 INHERIT LINK COLORS IF NOT VERY LIGHT OR VERY DARK BACKGROUND
 -----------------------------------------------------------------------------*/
 .has-background:not(.has-foreground-alt-background-color, .has-white-background-color, .has-off-white-background-color, .has-very-light-gray-background-color, .has-light-gray-background-color, .has-base-background-color, .has-neutral-background-color, .has-neutral-alt-background-color, .has-dark-background-color, .has-dark-alt-background-color, .has-black-background-color, .has-not-quite-black-background-color, .has-almost-black-background-color) a:not(.wp-element-button) {
   color: inherit;
@@ -591,8 +593,12 @@ main > :last-child:not(.wp-block-post-content),
   opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
 }
 
+:where(.wp-block-post-content .has-background):not(.has-foreground-alt-background-color, .has-white-background-color, .has-off-white-background-color, .has-very-light-gray-background-color, .has-light-gray-background-color, .has-base-background-color, .has-neutral-background-color, .has-neutral-alt-background-color, .has-dark-background-color, .has-dark-alt-background-color, .has-black-background-color, .has-not-quite-black-background-color, .has-almost-black-background-color) a:not(.wp-element-button) {
+  text-decoration: underline;
+}
+
 /*-----------------------------------------------------------------------------
-# 6. INHERIT COLORS FOR OUTLINE BUTTONS IN COLORED SECTIONS
+# 5.0 INHERIT COLORS FOR OUTLINE BUTTONS IN COLORED SECTIONS
 -----------------------------------------------------------------------------*/
 /* Force links and outline buttons to inherit on gradients */
 .is-style-outline > .wp-element-button,
@@ -612,7 +618,7 @@ main > :last-child:not(.wp-block-post-content),
 }
 
 /*-----------------------------------------------------------------------------
-# 7. SET TEXT COLOR ON GRADIENT BACKGROUNDS
+# 6.0 SET TEXT COLOR ON GRADIENT BACKGROUNDS
 -----------------------------------------------------------------------------*/
 :root :where([class*=-gradient-background]:not(.has-gray-gradient-background-color, .has-yellow-gradient-background-color)) {
   color: var(--wp--preset--color--foreground-alt);
@@ -631,7 +637,7 @@ main > :last-child:not(.wp-block-post-content),
 }
 
 /*-----------------------------------------------------------------------------
-# 8. INHERIT LINK COLOR ON GRADIENT BACKGROUNDS
+# 7.0 INHERIT LINK COLOR ON GRADIENT BACKGROUNDS
 -----------------------------------------------------------------------------*/
 /* Force links and outline buttons to inherit on gradients */
 :root :where([class*=-gradient-background]) :where(a:where(:not(.wp-element-button))) {

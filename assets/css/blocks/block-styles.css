@@ -150,7 +150,7 @@ header > .wp-block-cover {
 -----------------------------------------------------------------------------*/
 /* Closed Summary will have primary font color */
 .wp-block-details:not(.has-text-color) > summary {
-  color: var(--wp--custom--color--highlight, var(--wp--preset--color--highlight));
+  color: var(--wp--custom--color--highlight, var(--wp--preset--color--highlight-alt));
   font-weight: var(--wp--custom--typography--font-weight--medium);
   transition: color var(--wp--custom--animation--duration--medium, 500ms) var(--wp--custom--animation--timing-function, ease-in);
 }
@@ -158,7 +158,8 @@ header > .wp-block-cover {
 /* Highlight Summary on hover and when open */
 .wp-block-details:not(.has-text-color) > summary:hover,
 .wp-block-details:not(.has-text-color)[open] > summary {
-  color: var(--wp--custom--color--highlight, var(--wp--preset--color--highlight-alt));
+  color: var(--wp--custom--color--highlight, var(--wp--preset--color--highlight));
+  opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
 }
 
 /*-----------------------------------------------------------------------------
@@ -513,8 +514,9 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 /*-----------------------------------------------------------------------------
 # Style the Nav on HEADER MENU
 -----------------------------------------------------------------------------*/
+/* Bold or highlight the current menu item, depending on whether bg color or not */
 .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item.current-menu-item, .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:has(.current-menu-ancestor), .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item.current-menu-ancestor, .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:has(.current-menu-ancestor) > .wp-block-navigation-item__content, .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item.wp-block-pages-list__item.current-menu-item > a, .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item.wp-block-home-link > a[aria-current=page] {
-  color: var(--wp--preset--color--highlight);
+  color: var(--wp--preset--color--highlight-alt);
 }
 
 .site-header:not(.has-background) .wp-block-navigation.has-background .wp-block-navigation-item.current-menu-item:not(.has-child) > a, .site-header:not(.has-background) .wp-block-navigation.has-background .wp-block-navigation-item.current-menu-ancestor, .site-header:not(.has-background) .wp-block-navigation.has-background .wp-block-navigation-item:has(.current-menu-ancestor) > .wp-block-navigation-item__content, .site-header:not(.has-background) .wp-block-navigation.has-background .wp-block-navigation-item.wp-block-pages-list__item.current-menu-item > a, .site-header:not(.has-background) .wp-block-navigation.has-background .wp-block-navigation-item.wp-block-home-link > a[aria-current=page],
@@ -528,7 +530,7 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 
 /* Bold or highlight active sub-menu items, depending on whether text color or not */
 .wp-block-navigation__submenu-container:not(.has-text-color) .wp-block-navigation-item.current-menu-item .wp-block-navigation-item__content.wp-block-navigation-item__content {
-  color: var(--wp--preset--color--highlight);
+  color: var(--wp--preset--color--highlight-alt);
 }
 
 .wp-block-navigation__submenu-container.has-text-color .wp-block-navigation-item.current-menu-item .wp-block-navigation-item__content.wp-block-navigation-item__content {
@@ -537,7 +539,7 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 
 /* On hover, bold or highlight menu items, depending on whether background color or not */
 .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:hover > .wp-block-navigation-item__content, .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:hover > .wp-block-navigation__submenu-icon {
-  color: var(--wp--preset--color--highlight-alt);
+  color: var(--wp--preset--color--highlight);
 }
 
 /* Drop-down link hover color. */
