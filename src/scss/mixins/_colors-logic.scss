@@ -5,69 +5,31 @@
 @use "sass:list";
 @use "sass:string";
 
-// 1. SET SEMANTIC CONTRAST LOGIC
-// Maps color groups to semantic leaders with JSON-driven fallbacks.
+/*-----------------------------------------------------------------------------
+// SET CONTRAST LOGIC: Provide theme.json override for each color
+-----------------------------------------------------------------------------*/
 @mixin set-contrast-logic(
 	$colors, 
-// 	$group-slug, 
-	$default, 
-// 	$semantic-groups: ()
+	$default
 ) {
-
-	@each $color in $colors {
-		
-		.has-#{$color}-background-color { //,
-// 		.has-#{$color}-background-color.wp-element-button {
-			
-			// CASE 1: Variation (e.g., 'primary-alt' inherits from 'primary')
-// 			@if $color != $group-slug and list.index($semantic-groups, $color) {
-// 				color: var(--wp--custom--color--contrast--#{$color}, 
-// 					   var(--wp--custom--color--contrast--#{$group-slug}, #{$default})) !important;
-// 
-			// CASE 2: Group Leaders (e.g., 'primary') or Individual Named Colors
-// 			} @else {
-				color: var(--wp--custom--color--contrast--#{$color}, #{$default}) !important;
-// 			}			
+	@each $color in $colors {		
+		.has-#{$color}-background-color { 
+			color: var(--wp--custom--color--contrast--#{$color}, #{$default}) !important;
 		}
 	}
 }
 
-// 2. SET NAMED CONTRAST LOGIC
-// @mixin set-named-contrast-logic(
-// 	$colors, 
-// 	$group-slug, 
-// 	$default
-// ) {
-// 
-//     @each $color in $colors {
-//         .has-#{$color}-background-color { //,
-// //         .has-#{$color}-background-color.wp-element-button {
-// //             color: var(--wp--custom--color--contrast--#{$color}, 
-// //                    var(--wp--custom--color--contrast--#{$group-slug}, #{$default})) !important;
-// 			color: var(--wp--custom--color--contrast--#{$color}, #{$default}) !important;
-//         }
-//     }
-// }
-
-//
-// 3. BUILD BACKGROUND COLOR EXCLUSION LIST
-// Utility to build :not() exclusion lists
-@function build-exclusion-list($color-list) {
-	$selectors: "";
-
-	@each $slug in $color-list {
-		$selectors: $selectors + ".has-#{$slug}-background-color,";
-	}
-
-	@return string.slice($selectors, 1, string.length($selectors) - 1);
-}
-
-// 4. BUILD GRADIENT INCLUSION LIST
-// Utility to build gradient selectors: .has-X-gradient-background
-@function build-grad-list($slug-list) {
+/*-----------------------------------------------------------------------------
+# BUILD SELECTOR LIST: Build a CSS selector string
+-----------------------------------------------------------------------------*/
+@function build-selector-list(
+	$colors, 
+	$prefix: ".has-", 
+	$suffix: "-background-color"
+) {
     $selectors: "";
-    @each $slug in $slug-list {
-        $selectors: $selectors + ".has-#{$slug}-gradient-background,";
+    @each $color in $colors {
+        $selectors: $selectors + "#{$prefix}#{$color}#{$suffix},";
     }
     @return string.slice($selectors, 1, string.length($selectors) - 1);
 }

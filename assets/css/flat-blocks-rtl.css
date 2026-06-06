@@ -150,7 +150,7 @@ select:focus-visible {
 # Buttons and Links
 -----------------------------------------------------------------------------*/
 /*
- * Link styles.
+ * Link and link hover styles.
  * Necessary until the following issue is resolved in Gutenberg:
  * https://github.com/WordPress/gutenberg/issues/27075
  */
@@ -161,16 +161,20 @@ a,
   text-decoration-style: var(--wp--custom--link--style, solid);
   transition: opacity var(--wp--custom--animation--duration--short, 250ms) ease-in-out, color var(--wp--custom--animation--duration--short, 250ms) ease-in-out;
 }
+a:hover, a:active,
+.wp-block-navigation a:hover,
+.wp-block-navigation a:active,
+.wp-block-navigation-submenu__toggle:hover,
+.wp-block-navigation-submenu__toggle:active {
+  opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+}
 
 /* 
- * Set link underlines in post content where the link color on colored 
- * backgrounds. This is a requirement for public themes.
+ * Set link underlines in post content where the link color gets inherited on
+ * a colored background. This is a requirement for public themes.
  */
-:where(.wp-block-post-content .has-background a:not(.wp-element-button)) {
+:where(.has-background :not(.wp-block-site-title) > a:not(.wp-element-button):not(.wp-block-navigation-item__content):not(.wp-block-social-link-anchor)) {
   text-decoration: underline;
-}
-:where(.wp-block-post-content .has-background a:not(.wp-element-button)):hover, :where(.wp-block-post-content .has-background a:not(.wp-element-button)):active {
-  opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
 }
 
 /* 
@@ -199,7 +203,8 @@ input[type=file] {
 }
 
 /* 
- * But override basic buttons to look like outlines on primary-colored backgrounds 
+ * But override basic buttons to look like outlines on primary-colored 
+ * backgrounds 
  */
 .has-primary-background-color input[type=button],
 .has-primary-background-color input[type=submit][class*=button],
@@ -237,8 +242,7 @@ input[type=button]:not(.wp-element-button):hover,
 input[type=submit][class*=button]:not(.wp-element-button):hover,
 input[type=reset][class*=button]:not(.wp-element-button):hover,
 input[type=file]::file-selector-button:hover {
-  background-color: var(--wp--custom--color--button--hover-background, var(--wp--custom--color--button--background, var(--wp--custom--color--highlight, var(--wp--preset--color--highlight))));
-  color: var(--wp--custom--color--button--hover-text, var(--wp--custom--color--button--text, var(--wp--preset--color--foreground-alt)));
+  opacity: var(--wp--custom--color--button--hover-opacity, 0.8);
 }
 
 /*-----------------------------------------------------------------------------
@@ -247,6 +251,11 @@ input[type=file]::file-selector-button:hover {
 /* Underline links */
 .is-style-link-underline a:not(.wp-block-navigation-item__content) {
   text-decoration: underline;
+}
+
+.is-style-link-underline a:hover,
+.is-style-link-underline a:active {
+  opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
 }
 
 /* No Underline links */
@@ -367,19 +376,27 @@ main > :last-child:not(.wp-block-post-content),
 /*------------------------------------------------------------------------------
 # Colors - Default text, button text, and link colors
 ------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+// SET CONTRAST LOGIC: Provide theme.json override for each color
+-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+# BUILD SELECTOR LIST: Build a CSS selector string
+-----------------------------------------------------------------------------*/
 /*
  * Default contrast (text) based on background color.
  * Set these in theme.json:
  *		--wp--custom--color--contrast--{color-group}
  *		... OR...
  *		--wp--custom--color--contrast--{color}
- *
- * {color-group}:
- *		primary, secondary, tertiary, neutral, dark and their -alt counterparts 
- *		plus any individual named color (e.g. light-green)
  */
 /*-----------------------------------------------------------------------------
-# 1.  SET DEFAULT TEXT COLOR FOR EACH COLOR GROUP
+# 0.  SETUP: GROUP INDIVIDUAL COLORS INTO COLOR GROUPS
+-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+# 0.  SETUP: BUILD ADDITIONAL COLOR GROUPS
+-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+# 1.  SET DEFAULT TEXT COLOR FOR EACH BACKGROUND COLOR
 -----------------------------------------------------------------------------*/
 .has-primary-background-color {
   color: var(--wp--custom--color--contrast--primary, var(--wp--preset--color--foreground-alt)) !important;
@@ -558,28 +575,15 @@ main > :last-child:not(.wp-block-post-content),
 }
 
 /*-----------------------------------------------------------------------------
-# 2. SET HEADING COLOR OVERRIDES
+# 2. SET HEADING COLORS TO INHERIT EXCEPT ON VERY LIGHT BACKGROUNDS
 -----------------------------------------------------------------------------*/
 .has-background:not(.has-foreground-alt-background-color, .has-white-background-color, .has-off-white-background-color, .has-very-light-gray-background-color, .has-light-gray-background-color, .has-base-background-color, .has-neutral-background-color, .has-neutral-alt-background-color) .wp-block-heading, .has-background:not(.has-foreground-alt-background-color, .has-white-background-color, .has-off-white-background-color, .has-very-light-gray-background-color, .has-light-gray-background-color, .has-base-background-color, .has-neutral-background-color, .has-neutral-alt-background-color) .wp-block-post-title, .has-background:not(.has-foreground-alt-background-color, .has-white-background-color, .has-off-white-background-color, .has-very-light-gray-background-color, .has-light-gray-background-color, .has-base-background-color, .has-neutral-background-color, .has-neutral-alt-background-color) .wp-block-query-title {
   color: inherit;
 }
 
 /*-----------------------------------------------------------------------------
-# 3. SET LINK COLOR OVERRIDES
+# 5. INHERIT LINK COLORS IF NOT VERY LIGHT OR VERY DARK BACKGROUND
 -----------------------------------------------------------------------------*/
-.has-dark-background-color a:not(.wp-element-button, .wp-block-social-link-anchor), .has-dark-alt-background-color a:not(.wp-element-button, .wp-block-social-link-anchor), .has-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor), .has-not-quite-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor), .has-almost-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor) {
-  color: var(--wp--preset--color--highlight-alt, var(--wp--preset--color--highlight));
-}
-.has-dark-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):hover, .has-dark-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):active, .has-dark-alt-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):hover, .has-dark-alt-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):active, .has-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):hover, .has-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):active, .has-not-quite-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):hover, .has-not-quite-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):active, .has-almost-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):hover, .has-almost-black-background-color a:not(.wp-element-button, .wp-block-social-link-anchor):active {
-  color: var(--wp--preset--color--highlight, var(--wp--preset--color--highlight-alt));
-}
-
-/*-----------------------------------------------------------------------------
-# 4. LINK COLOR OVERRIDES (FOR NON-PRESERVED COLORS)
------------------------------------------------------------------------------*/
-/* * If the background is NOT very light or very dark (vibrant colors), 
- * force links to inherit text color and use opacity for hover visibility.
- */
 .has-background:not(.has-foreground-alt-background-color, .has-white-background-color, .has-off-white-background-color, .has-very-light-gray-background-color, .has-light-gray-background-color, .has-base-background-color, .has-neutral-background-color, .has-neutral-alt-background-color, .has-dark-background-color, .has-dark-alt-background-color, .has-black-background-color, .has-not-quite-black-background-color, .has-almost-black-background-color) a:not(.wp-element-button) {
   color: inherit;
 }
@@ -588,7 +592,27 @@ main > :last-child:not(.wp-block-post-content),
 }
 
 /*-----------------------------------------------------------------------------
-# 5. GRADIENT TEXT COLOR OVERRIDES
+# 6. INHERIT COLORS FOR OUTLINE BUTTONS IN COLORED SECTIONS
+-----------------------------------------------------------------------------*/
+/* Force links and outline buttons to inherit on gradients */
+.is-style-outline > .wp-element-button,
+.is-style-outline > .wp-block-button__link,
+[class*=is-style-button-outline-] > .wp-element-button,
+[class*=is-style-button-outline-] > .wp-block-button__link {
+  color: inherit;
+}
+.is-style-outline > .wp-element-button:hover, .is-style-outline > .wp-element-button:active,
+.is-style-outline > .wp-block-button__link:hover,
+.is-style-outline > .wp-block-button__link:active,
+[class*=is-style-button-outline-] > .wp-element-button:hover,
+[class*=is-style-button-outline-] > .wp-element-button:active,
+[class*=is-style-button-outline-] > .wp-block-button__link:hover,
+[class*=is-style-button-outline-] > .wp-block-button__link:active {
+  opacity: var(--wp--custom--color--button--hover-opacity, 0.8);
+}
+
+/*-----------------------------------------------------------------------------
+# 7. SET TEXT COLOR ON GRADIENT BACKGROUNDS
 -----------------------------------------------------------------------------*/
 :root :where([class*=-gradient-background]:not(.has-gray-gradient-background-color, .has-yellow-gradient-background-color)) {
   color: var(--wp--preset--color--foreground-alt);
@@ -607,25 +631,13 @@ main > :last-child:not(.wp-block-post-content),
 }
 
 /*-----------------------------------------------------------------------------
-# 6. GRADIENT LINK COLOR OVERRIDES
+# 8. INHERIT LINK COLOR ON GRADIENT BACKGROUNDS
 -----------------------------------------------------------------------------*/
 /* Force links and outline buttons to inherit on gradients */
-:root :where([class*=-gradient-background]) :where(a:where(:not(.wp-element-button)),
-.is-style-outline > .wp-element-button,
-.is-style-outline > .wp-block-button__link,
-[class*=is-style-button-outline-] > .wp-element-button,
-[class*=is-style-button-outline-] > .wp-block-button__link) {
+:root :where([class*=-gradient-background]) :where(a:where(:not(.wp-element-button))) {
   color: inherit;
 }
-:root :where([class*=-gradient-background]) :where(a:where(:not(.wp-element-button)),
-.is-style-outline > .wp-element-button,
-.is-style-outline > .wp-block-button__link,
-[class*=is-style-button-outline-] > .wp-element-button,
-[class*=is-style-button-outline-] > .wp-block-button__link):hover, :root :where([class*=-gradient-background]) :where(a:where(:not(.wp-element-button)),
-.is-style-outline > .wp-element-button,
-.is-style-outline > .wp-block-button__link,
-[class*=is-style-button-outline-] > .wp-element-button,
-[class*=is-style-button-outline-] > .wp-block-button__link):active {
+:root :where([class*=-gradient-background]) :where(a:where(:not(.wp-element-button))):hover, :root :where([class*=-gradient-background]) :where(a:where(:not(.wp-element-button))):active {
   opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
 }
 

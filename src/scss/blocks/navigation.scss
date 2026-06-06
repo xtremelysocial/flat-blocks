@@ -1,30 +1,9 @@
-/*-----------------------------------------------------------------------------
-# Navigation
------------------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------------
-# Custom: Up Arrow Icon
------------------------------------------------------------------------------*/
-
 // Mixin for icons
 @use "../mixins/icons";
 
-@include icons.svg-icon(
-	$class: 'is-style-icon-arrow-up-alt2',
-	$icon: 'arrow-up-alt2',
-	$location: 'before',
-	$link: true,
-	$margin: true,
-);
-
-.is-style-icon-arrow-up-alt2 > a:before {
-// 	top: 0.25em;
-	top: 0;
-}
-
-/* Set icons on navigation items to inline flex */
-[class*="is-style-icon-"] > a.wp-block-navigation-item__content {
-	display: inline-flex;
-}
+/*-----------------------------------------------------------------------------
+# Navigation
+-----------------------------------------------------------------------------*/
 
 /*-----------------------------------------------------------------------------
 # Style Nav Menus
@@ -41,10 +20,10 @@
 }
 
 // /* Default nav link opacity on hover */
-// .wp-block-navigation .wp-block-navigation-item:hover >  .wp-block-navigation-item__content.wp-block-navigation-item__content, 
-// .wp-block-navigation .wp-block-navigation-item:active > .wp-block-navigation-item__content.wp-block-navigation-item__content {
-// 	opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
-// }
+.wp-block-navigation .wp-block-navigation-item:hover >  .wp-block-navigation-item__content.wp-block-navigation-item__content, 
+.wp-block-navigation .wp-block-navigation-item:active > .wp-block-navigation-item__content.wp-block-navigation-item__content {
+	opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+}
 
 /*-----------------------------------------------------------------------------
 # Style the Nav on HEADER MENU
@@ -98,12 +77,12 @@
     color: var(--wp--preset--color--highlight);
 }
 
-// .wp-block-navigation.has-background .wp-block-navigation-item {
-// 	&:hover > .wp-block-navigation-item__content,
-// 	&:hover > .wp-block-navigation__submenu-icon {
-//     	opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
-//     }
-// }
+.wp-block-navigation.has-background .wp-block-navigation-item {
+	&:hover > .wp-block-navigation-item__content,
+	&:hover > .wp-block-navigation__submenu-icon {
+    	opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+    }
+}
 
 /* But on mobile nav, don't hover on non-clickable links */
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item.has-child.open-on-click {
@@ -283,4 +262,26 @@ nav.wp-block-navigation.is-style-fixed-menu {
 			right: auto;
 		}		
 	}
+}
+
+/*-----------------------------------------------------------------------------
+# Custom: Up Arrow Icon
+-----------------------------------------------------------------------------*/
+
+@include icons.svg-icon(
+	$class: 'is-style-icon-arrow-up-alt2',
+	$icon: 'arrow-up-alt2',
+	$location: 'before',
+	$link: true,
+	$margin: true,
+);
+
+.is-style-icon-arrow-up-alt2 > a:before {
+// 	top: 0.25em;
+	top: 0;
+}
+
+/* Set icons on navigation items to inline flex */
+[class*="is-style-icon-"] > a.wp-block-navigation-item__content {
+	display: inline-flex;
 }

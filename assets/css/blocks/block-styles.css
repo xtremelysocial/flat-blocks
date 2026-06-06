@@ -472,12 +472,6 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
   padding: 0;
 }
 
-/*-----------------------------------------------------------------------------
-# Navigation
------------------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------------
-# Custom: Up Arrow Icon
------------------------------------------------------------------------------*/
 .wp-block-post-time-to-read:before, .wp-block-post-terms.taxonomy-category:before, .wp-block-post-terms.taxonomy-post_tag:before, .wp-block-post-date:before, .wp-block-post-comments-link:before, .wp-block-post-comments-count:before, .wp-block-post-author-name:before, .is-style-arrow-icon-no-text > a:after, .is-style-icon-arrow-down-alt2-no-text > a:after, .is-style-icon-arrow-up-alt2 > a:before {
   content: "";
   background-color: currentColor;
@@ -494,21 +488,9 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
           mask-repeat: no-repeat;
 }
 
-.is-style-icon-arrow-up-alt2 > a:before {
-  -webkit-mask-image: url(../../icons/arrow-up-alt2.svg);
-          mask-image: url(../../icons/arrow-up-alt2.svg);
-  margin-right: 0.15em;
-}
-
-.is-style-icon-arrow-up-alt2 > a:before {
-  top: 0;
-}
-
-/* Set icons on navigation items to inline flex */
-[class*=is-style-icon-] > a.wp-block-navigation-item__content {
-  display: inline-flex;
-}
-
+/*-----------------------------------------------------------------------------
+# Navigation
+-----------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
 # Style Nav Menus
 -----------------------------------------------------------------------------*/
@@ -521,6 +503,11 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 /* FIX for padding on level 2+ nav menu and pages list drop-downs */
 .wp-block-navigation__submenu-container .wp-block-navigation-item.open-on-click .wp-block-navigation-submenu__toggle {
   padding-left: 1em;
+}
+
+.wp-block-navigation .wp-block-navigation-item:hover > .wp-block-navigation-item__content.wp-block-navigation-item__content,
+.wp-block-navigation .wp-block-navigation-item:active > .wp-block-navigation-item__content.wp-block-navigation-item__content {
+  opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
 }
 
 /*-----------------------------------------------------------------------------
@@ -561,6 +548,10 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 
 .wp-block-navigation__submenu-container:not(.has-background) > .wp-block-navigation-item > .wp-block-navigation-item__content:hover {
   color: var(--wp--preset--color--highlight);
+}
+
+.wp-block-navigation.has-background .wp-block-navigation-item:hover > .wp-block-navigation-item__content, .wp-block-navigation.has-background .wp-block-navigation-item:hover > .wp-block-navigation__submenu-icon {
+  opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
 }
 
 /* But on mobile nav, don't hover on non-clickable links */
@@ -697,11 +688,23 @@ nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-con
 }
 
 /*-----------------------------------------------------------------------------
-# Navigation
------------------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------------
 # Custom: Up Arrow Icon
 -----------------------------------------------------------------------------*/
+.is-style-icon-arrow-up-alt2 > a:before {
+  -webkit-mask-image: url(../../icons/arrow-up-alt2.svg);
+          mask-image: url(../../icons/arrow-up-alt2.svg);
+  margin-right: 0.15em;
+}
+
+.is-style-icon-arrow-up-alt2 > a:before {
+  top: 0;
+}
+
+/* Set icons on navigation items to inline flex */
+[class*=is-style-icon-] > a.wp-block-navigation-item__content {
+  display: inline-flex;
+}
+
 /*-----------------------------------------------------------------------------
 # Paragraph
 -----------------------------------------------------------------------------*/
@@ -761,12 +764,6 @@ p.is-style-alignwide {
 }
 
 /*-----------------------------------------------------------------------------
-# Navigation
------------------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------------
-# Custom: Up Arrow Icon
------------------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------------
 # Post Author Name
 -----------------------------------------------------------------------------*/
 .wp-block-post-author-name:before {
@@ -797,12 +794,6 @@ p.is-style-alignwide {
   margin-bottom: var(--wp--style--block-gap);
 }
 
-/*-----------------------------------------------------------------------------
-# Navigation
------------------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------------
-# Custom: Up Arrow Icon
------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
 # Post Comments Count (Only w/WordPress v6.9+ or Gutenberg Plugin)
 -----------------------------------------------------------------------------*/
@@ -837,12 +828,6 @@ p.is-style-alignwide {
 }
 
 /*-----------------------------------------------------------------------------
-# Navigation
------------------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------------
-# Custom: Up Arrow Icon
------------------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------------
 # Post Comments Link (Only w/WordPress v6.9+ or Gutenberg Plugin)
 -----------------------------------------------------------------------------*/
 .wp-block-post-comments-link:before {
@@ -865,12 +850,6 @@ p.is-style-alignwide {
   pointer-events: none;
 }
 
-/*-----------------------------------------------------------------------------
-# Navigation
------------------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------------
-# Custom: Up Arrow Icon
------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
 # Post Date
 -----------------------------------------------------------------------------*/
@@ -915,12 +894,6 @@ p.is-style-alignwide {
 }
 
 /*-----------------------------------------------------------------------------
-# Navigation
------------------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------------
-# Custom: Up Arrow Icon
------------------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------------
 # Post Terms:
 -----------------------------------------------------------------------------*/
 .wp-block-post-terms.taxonomy-category:before {
@@ -941,12 +914,6 @@ p.is-style-alignwide {
   margin-block-end: 0;
 }
 
-/*-----------------------------------------------------------------------------
-# Navigation
------------------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------------
-# Custom: Up Arrow Icon
------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
 # Post Time to Read
 -----------------------------------------------------------------------------*/
@@ -1054,4 +1021,12 @@ p.is-style-alignwide {
 .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
   background-color: var(--wp--preset--color--light-gray);
   color: var(--wp--preset--color--almost-black);
+}
+
+/*-----------------------------------------------------------------------------
+# Tag Cloud
+-----------------------------------------------------------------------------*/
+/* Match button padding on outline-style tag clouds */
+.wp-block-tag-cloud.is-style-outline .tag-cloud-link {
+  padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--40);
 }
