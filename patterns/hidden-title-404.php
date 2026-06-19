@@ -8,8 +8,8 @@
   */
 ?>
 
-<!-- wp:heading {"level":1,"align":"wide","fontSize":"x-large","className":"entry-title wp-block-post-title"} -->
-<h1 class="alignwide entry-title wp-block-post-title has-x-large-font-size" id="404-title"><?php echo __("Oops! That page can’t be found", "flat-blocks"); ?></h1>
+<!-- wp:heading {"level":1,"align":"wide","className":"entry-title wp-block-post-title","fontSize":"x-large"} -->
+<h1 class="alignwide entry-title has-x-large-font-size wp-block-post-title" id="404-title"><?php echo __("Oops! That page can’t be found", "flat-blocks"); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"entry-subtitle","fontSize":"medium"} -->

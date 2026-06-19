@@ -66,21 +66,16 @@
 }
 
 /* On hover, bold or highlight menu items, depending on whether background color or not */
-.site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:hover > .wp-block-navigation-item__content, .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:hover > .wp-block-navigation__submenu-icon {
+.site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item > .wp-block-navigation-item__content:hover, .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:hover > .wp-block-navigation__submenu-icon {
   color: var(--wp--preset--color--highlight);
 }
 
 /* Drop-down link hover color. */
-.site-header:not(.has-background) .wp-block-navigation-submenu.open-on-click:hover,
-.site-header:not(.has-background) .wp-block-navigation-item.has-child.open-on-click:hover {
-  color: var(--wp--preset--color--highlight);
-}
-
 .wp-block-navigation__submenu-container:not(.has-background) > .wp-block-navigation-item > .wp-block-navigation-item__content:hover {
   color: var(--wp--preset--color--highlight);
 }
 
-.wp-block-navigation.has-background .wp-block-navigation-item:hover > .wp-block-navigation-item__content, .wp-block-navigation.has-background .wp-block-navigation-item:hover > .wp-block-navigation__submenu-icon {
+.wp-block-navigation.has-background .wp-block-navigation-item > .wp-block-navigation-item__content:hover, .wp-block-navigation.has-background .wp-block-navigation-item:hover > .wp-block-navigation__submenu-icon {
   opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
 }
 

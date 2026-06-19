@@ -8,6 +8,6 @@
   */
 ?>
 
-<!-- wp:heading {"level":1,"align":"wide","fontSize":"x-large","className":"entry-title wp-block-post-title"} -->
-<h1 class="alignwide entry-title wp-block-post-title has-x-large-font-size" id="search-title"><?php echo __("Search Results", "flat-blocks"); ?></h1>
+<!-- wp:heading {"level":1,"align":"wide","className":"entry-title wp-block-post-title","fontSize":"x-large"} -->
+<h1 class="alignwide has-x-large-font-size entry-title wp-block-post-title" id="search-title"><?php echo __("Search Results", "flat-blocks"); ?></h1>
 <!-- /wp:heading -->

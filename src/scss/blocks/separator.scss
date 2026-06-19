@@ -7,24 +7,32 @@
 	width: calc(1.5 * var(--wp--preset--spacing--80))
 }
 
-/* Override our short separator width for wide and dotted separators */
+ /* Override our short separator width for wide and dotted separators */
 .wp-block-separator.is-style-wide,
 .wp-block-separator.is-style-dots {
-	width: 100% !important;
+// 	max-width: var(--wp--style--global--wide-size);
+	width: 100%; // !important;
 }
 
-/* FIX to center default (narrow) separator when user selects alignfull */
+/* Add bottom margin */
+.wp-block-separator {
+	margin-bottom: var(--wp--style--block-gap);
+}
+
+// /* FIX to center default (narrow) separator when user selects alignfull */
 .wp-block-separator.alignfull {
 	margin-left: auto !important;
 	margin-right: auto !important;
 }
 
-/* FIX for theme setting colors on separators. Use only the background color. */
-.wp-block-separator:not(.is-style-dots) {
-	color: transparent;
-}
+// /* FIX for theme setting colors on separators. Use only the text color. */
+// .wp-block-separator:not(.is-style-dots) {
+// // 	color: transparent;
+// 	background-color: transparent; 
+// }
 
-/* Default separator color when on colored background */
+ /* Default separator color when on colored background */
 .has-background .wp-block-separator:not(.has-background) {
- 	color: inherit;
+//  	color: inherit;
+	background-color: inherit; 
 }

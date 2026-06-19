@@ -13,10 +13,10 @@ a,
 	text-decoration-style: var(--wp--custom--link--style, solid);
 	transition: opacity var(--wp--custom--animation--duration--short, 250ms) ease-in-out, color var(--wp--custom--animation--duration--short, 250ms) ease-in-out;
 	
-	&:hover,
-	&:active {
-		opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
-	}	
+// 	&:hover,
+// 	&:active {
+// 		opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+// 	}	
 }
 
 /* 
@@ -89,7 +89,7 @@ input[type=file]::file-selector-button:hover {
 }
 
 /*-----------------------------------------------------------------------------
-# Link Underlines
+# Links: Custom Underlines
 -----------------------------------------------------------------------------*/
 
 /* Underline links */
@@ -103,7 +103,7 @@ input[type=file]::file-selector-button:hover {
 
 /* No Underline links */
 .is-style-link-no-underline a {
-  	text-decoration: none;
+  	text-decoration: none; // !important;
 }
 
 /* Underline links on hover */

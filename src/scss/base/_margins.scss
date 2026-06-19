@@ -10,6 +10,7 @@
 /* Add top margin to main unless its the post content or a featured image */
 main > :first-child:not(.wp-block-post-content):not(.wp-block-post-featured-image):not(.wp-block-cover) {
 	margin-block-start: var(--wp--style--block-gap);
+// 	margin-block-start: var(--wp--preset--spacing--50);
 }
 
 /* Push top margin down on Groups and Columns that have template parts in them */
@@ -18,6 +19,7 @@ main > :first-child:not(.wp-block-post-content):not(.wp-block-post-featured-imag
 :root :where(.is-layout-flow) > .wp-block-template-part > *,
 :root :where(.is-layout-constrained) > .wp-block-template-part > * {
  	margin-block-start: var(--wp--style--block-gap);
+// 	margin-block-start: var(--wp--preset--spacing--50);
 }
 
 :root :where(.is-layout-flow) > .wp-block-template-part > :first-child:not(.wp-block-comments),
@@ -40,7 +42,8 @@ main > :first-child:not(.wp-block-post-content):not(.wp-block-post-featured-imag
 // 	margin-top: 0;
 }
 
-:root :where(.wp-block-post-content) > :first-child:not(.wp-block-cover) { //,
+// :root :where(.wp-block-post-content) > :first-child:not(.wp-block-cover) { //,
+:root :where(.wp-block-post-content) > :first-child:not(.alignfull) { //,
 // .wp-block-post-content > :last-child {
 	margin-block-start: var(--wp--style--block-gap);
 }
@@ -59,4 +62,5 @@ main > :last-child:not(.wp-block-post-content),
 :root :where(.is-layout-flow).wp-block-post-content > :last-child,
 :root :where(.is-layout-constrained).wp-block-post-content > :last-child {	
 	margin-block-end: var(--wp--style--block-gap);
+// 	margin-block-end: var(--wp--preset--spacing--50);
 }

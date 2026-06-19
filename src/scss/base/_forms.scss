@@ -47,7 +47,8 @@ input {
 textarea,
 input:not([type="radio"]):not([type="checkbox"]):not([type="file"]):not([type="button"]):not([type="image"]):not([class*="button"]):not(.wp-block-button__link) {
 	-webkit-appearance: none;
-	border: 1px solid var(--wp--preset--color--contrast);
+// 	border: 1px solid var(--wp--preset--color--contrast);
+	border: 1px solid var(--wp--custom--color--field--border, var(--wp--preset--color--dark-gray));
 }
 
 /* Style focus outline */

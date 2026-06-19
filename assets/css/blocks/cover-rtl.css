@@ -24,8 +24,8 @@ header > .wp-block-cover {
 
 /* Default Contrast Color - Use black and white since base and contrast can change */
 :where(.wp-block-cover.is-light:not(.has-text-color)) {
-  color: #fff;
-}
-:where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-0), :where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-10), :where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-20), :where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-30) {
   color: #000;
+}
+:where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-60), :where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-70), :where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-80), :where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-90) {
+  color: #fff;
 }

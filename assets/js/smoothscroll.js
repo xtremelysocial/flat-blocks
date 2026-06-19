@@ -19,9 +19,12 @@
 		/*
 		 * Figure out top offset from fixed headers height and/or admin bar
 		 */
-		const fixedHeader = $('.wp-site-blocks > header:has(.is-style-fixed-header)');
+// 		const fixedHeader = $('.wp-site-blocks > header:has(.is-style-fixed-header)');
 		//const scrollHeader = $('header.site-header.is-style-scroll-header');
-		const stickyHeader = $('.wp-site-blocks > header:has(.is-position-sticky)');
+// 		const stickyHeader = $('.wp-site-blocks > header:has(.is-position-sticky)');
+		
+		const fixedHeader = $('.wp-site-blocks > :first-child').filter('.is-style-fixed-header, :has(.is-style-fixed-header)');
+		const stickyHeader = $('.wp-site-blocks > :first-child').filter('.is-position-sticky, :has(.is-position-sticky)');
 		const adminBar = $('#wpadminbar');
 
 		var topOffset = 0;
@@ -77,7 +80,8 @@
 					}, 1000);
 				}
 			}
-		});		
+		});
+					
 	});
 	
 } )( jQuery );

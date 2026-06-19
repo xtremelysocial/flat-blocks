@@ -30,8 +30,8 @@
 .wp-block-columns.is-style-no-gap,
 .wp-block-columns.is-style-no-gap .wp-block-column:not(.has-background),
 .wp-block-columns.is-style-no-gap.has-background:not(.has-global-padding) {
-  gap: 0;
-  padding: 0;
+  gap: 0 !important;
+  padding: 0 !important;
 }
 
 /* Columns thick gap */

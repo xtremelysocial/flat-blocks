@@ -24,6 +24,7 @@
  * Breakpoints & Media Queries
  */
 /* Padding for colored backgrounds on paragraphs */
+p.has-background,
 .wp-block-paragraph.has-background {
   padding: var(--wp--preset--spacing--40);
 }

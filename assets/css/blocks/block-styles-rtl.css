@@ -58,8 +58,8 @@
 .wp-block-columns.is-style-no-gap,
 .wp-block-columns.is-style-no-gap .wp-block-column:not(.has-background),
 .wp-block-columns.is-style-no-gap.has-background:not(.has-global-padding) {
-  gap: 0;
-  padding: 0;
+  gap: 0 !important;
+  padding: 0 !important;
 }
 
 /* Columns thick gap */
@@ -139,10 +139,10 @@ header > .wp-block-cover {
 
 /* Default Contrast Color - Use black and white since base and contrast can change */
 :where(.wp-block-cover.is-light:not(.has-text-color)) {
-  color: #fff;
-}
-:where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-0), :where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-10), :where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-20), :where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-30) {
   color: #000;
+}
+:where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-60), :where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-70), :where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-80), :where(.wp-block-cover.is-light:not(.has-text-color)):has(.has-background-dim-90) {
+  color: #fff;
 }
 
 /*-----------------------------------------------------------------------------
@@ -171,16 +171,11 @@ header > .wp-block-cover {
   border-bottom-left-radius: var(--wp--custom--border--radius);
 }
 
-/* Image Border captions */
+/* Image Border captions*/
 .wp-block-gallery.is-style-image-border .wp-block-image:not(.is-style-image-round-border):not(.is-style-image-computer-screen):not(.is-style-image-tablet-phone-screen) img {
   padding: var(--wp--preset--spacing--20);
-  border-radius: var(--wp--custom--border--radius);
 }
-.wp-block-gallery.is-style-image-border .wp-block-image:not(.is-style-image-round-border):not(.is-style-image-computer-screen):not(.is-style-image-tablet-phone-screen).has-nested-images {
-  border-radius: var(--wp--custom--border--radius);
-  overflow: hidden;
-}
-.wp-block-gallery.is-style-image-border .wp-block-image:not(.is-style-image-round-border):not(.is-style-image-computer-screen):not(.is-style-image-tablet-phone-screen).has-nested-images:has(figcaption):before, .wp-block-gallery.is-style-image-border .wp-block-image:not(.is-style-image-round-border):not(.is-style-image-computer-screen):not(.is-style-image-tablet-phone-screen).has-nested-images figcaption {
+.wp-block-gallery.is-style-image-border.has-nested-images figure.wp-block-image:not(.is-style-rounded):not(.is-style-image-round-border):not(.is-style-image-computer-screen):not(.is-style-image-tablet-phone-screen):has(figcaption):before, .wp-block-gallery.is-style-image-border.has-nested-images figure.wp-block-image:not(.is-style-rounded):not(.is-style-image-round-border):not(.is-style-image-computer-screen):not(.is-style-image-tablet-phone-screen) figcaption {
   bottom: calc(1px + var(--wp--preset--spacing--20));
   right: calc(1px + var(--wp--preset--spacing--20));
   padding: calc(1px + var(--wp--preset--spacing--20)) 0;
@@ -193,6 +188,7 @@ header > .wp-block-cover {
 .wp-block-gallery.has-nested-images figure.wp-block-image.is-style-image-round-border:before {
   content: none;
 }
+
 .wp-block-gallery.has-nested-images figure.wp-block-image.is-style-image-round-border figcaption {
   background: none;
   color: inherit;
@@ -267,18 +263,18 @@ header > .wp-block-cover {
 }
 
 /* Position the fixed header using sticky so we don't have to have top site margin */
-.wp-site-blocks > header:has(.is-position-sticky),
-.wp-site-blocks > header:has(.is-style-fixed-header) {
+.wp-site-blocks > :has(.is-position-sticky),
+.wp-site-blocks > :has(.is-style-fixed-header) {
   position: sticky;
   top: 0;
-  background-color: var(--wp--preset--color--base, var(--wp--preset--color--background));
+  background-color: var(--wp--custom--color--navigation--background, var(--wp--preset--color--base));
   box-shadow: var(--wp--custom--shadow--default);
   z-index: 101;
 }
 
 /* If WordPress Admin Bar, then adjust fixed header position so its underneath it */
-.admin-bar .wp-site-blocks > header:has(.is-position-sticky),
-.admin-bar .wp-site-blocks > header:has(.is-style-fixed-header) {
+.admin-bar .wp-site-blocks > :has(.is-position-sticky),
+.admin-bar .wp-site-blocks > :has(.is-style-fixed-header) {
   top: var(--wp-admin--admin-bar--height, 32px);
 }
 
@@ -441,16 +437,13 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 /*-----------------------------------------------------------------------------
 # Media & Text
 -----------------------------------------------------------------------------*/
-/* Default padding on the content (which is on the right by default) */
-.wp-block-media-text:not(.is-style-no-padding) .wp-block-media-text__content {
-  padding-right: var(--wp--preset--spacing--40);
-  padding-left: 0;
+/* Default padding on the content */
+.wp-block-media-text:not(.is-style-no-padding, .has-background) .wp-block-media-text__content {
+  padding: var(--wp--preset--spacing--40);
 }
 
-/* Swap the padding if content is on the left */
-.wp-block-media-text.has-media-on-the-right:not(.is-style-no-padding) .wp-block-media-text__content {
-  padding-right: 0;
-  padding-left: var(--wp--preset--spacing--40);
+.wp-block-media-text.has-background:not(.is-style-no-padding) .wp-block-media-text__content {
+  padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--40);
 }
 
 /* Remove the padding when collapsed on mobile (600px) */
@@ -538,21 +531,16 @@ figure.wp-caption:not(.alignfull):not(.alignwide) img {
 }
 
 /* On hover, bold or highlight menu items, depending on whether background color or not */
-.site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:hover > .wp-block-navigation-item__content, .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:hover > .wp-block-navigation__submenu-icon {
+.site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item > .wp-block-navigation-item__content:hover, .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:hover > .wp-block-navigation__submenu-icon {
   color: var(--wp--preset--color--highlight);
 }
 
 /* Drop-down link hover color. */
-.site-header:not(.has-background) .wp-block-navigation-submenu.open-on-click:hover,
-.site-header:not(.has-background) .wp-block-navigation-item.has-child.open-on-click:hover {
-  color: var(--wp--preset--color--highlight);
-}
-
 .wp-block-navigation__submenu-container:not(.has-background) > .wp-block-navigation-item > .wp-block-navigation-item__content:hover {
   color: var(--wp--preset--color--highlight);
 }
 
-.wp-block-navigation.has-background .wp-block-navigation-item:hover > .wp-block-navigation-item__content, .wp-block-navigation.has-background .wp-block-navigation-item:hover > .wp-block-navigation__submenu-icon {
+.wp-block-navigation.has-background .wp-block-navigation-item > .wp-block-navigation-item__content:hover, .wp-block-navigation.has-background .wp-block-navigation-item:hover > .wp-block-navigation__submenu-icon {
   opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
 }
 
@@ -711,6 +699,7 @@ nav.wp-block-navigation.is-style-fixed-menu .wp-block-navigation__responsive-con
 # Paragraph
 -----------------------------------------------------------------------------*/
 /* Padding for colored backgrounds on paragraphs */
+p.has-background,
 .wp-block-paragraph.has-background {
   padding: var(--wp--preset--spacing--40);
 }
@@ -862,14 +851,6 @@ p.is-style-alignwide {
 }
 
 /*-----------------------------------------------------------------------------
-# Post Excerpt
------------------------------------------------------------------------------*/
-.wp-block-post-excerpt > p,
-.wp-block-post-excerpt > .wp-block-post-excerpt__excerpt {
-  margin-bottom: 0;
-}
-
-/*-----------------------------------------------------------------------------
 # Post Excerpt: Custom
 -----------------------------------------------------------------------------*/
 /* No Read More link */
@@ -952,30 +933,30 @@ p.is-style-alignwide {
 /* Override our short separator width for wide and dotted separators */
 .wp-block-separator.is-style-wide,
 .wp-block-separator.is-style-dots {
-  width: 100% !important;
+  width: 100%;
 }
 
-/* FIX to center default (narrow) separator when user selects alignfull */
+/* Add bottom margin */
+.wp-block-separator {
+  margin-bottom: var(--wp--style--block-gap);
+}
+
 .wp-block-separator.alignfull {
   margin-right: auto !important;
   margin-left: auto !important;
 }
 
-/* FIX for theme setting colors on separators. Use only the background color. */
-.wp-block-separator:not(.is-style-dots) {
-  color: transparent;
-}
-
 /* Default separator color when on colored background */
 .has-background .wp-block-separator:not(.has-background) {
-  color: inherit;
+  background-color: inherit;
 }
 
 /*-----------------------------------------------------------------------------
 # Site Logo
 -----------------------------------------------------------------------------*/
 /* Don't shrink the site logo */
-.wp-block-site-logo {
+.wp-block-site-logo,
+.site-logo-title {
   flex-shrink: 0;
 }
 
@@ -1006,7 +987,12 @@ p.is-style-alignwide {
   font-size: var(--wp--preset--font-size--huge);
 }
 
-/* Adjust animation on social icons to better match our other animation */
+/* Inherit icon color for logo-only style on colored backgrounds */
+.has-background .wp-block-social-links.is-style-logos-only .wp-block-social-link {
+  color: inherit;
+}
+
+/* Adjust animation on social icons to better match our other animations */
 .wp-block-social-link {
   transition: transform var(--wp--custom--animation--duration--medium, 500ms) ease-in-out;
 }
@@ -1023,12 +1009,4 @@ p.is-style-alignwide {
 .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
   background-color: var(--wp--preset--color--light-gray);
   color: var(--wp--preset--color--almost-black);
-}
-
-/*-----------------------------------------------------------------------------
-# Tag Cloud
------------------------------------------------------------------------------*/
-/* Match button padding on outline-style tag clouds */
-.wp-block-tag-cloud.is-style-outline .tag-cloud-link {
-  padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--40);
 }

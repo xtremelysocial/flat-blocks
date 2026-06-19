@@ -28,7 +28,12 @@
   font-size: var(--wp--preset--font-size--huge);
 }
 
-/* Adjust animation on social icons to better match our other animation */
+/* Inherit icon color for logo-only style on colored backgrounds */
+.has-background .wp-block-social-links.is-style-logos-only .wp-block-social-link {
+  color: inherit;
+}
+
+/* Adjust animation on social icons to better match our other animations */
 .wp-block-social-link {
   transition: transform var(--wp--custom--animation--duration--medium, 500ms) ease-in-out;
 }
