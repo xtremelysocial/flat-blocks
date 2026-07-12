@@ -40,6 +40,9 @@ if ( ! function_exists( 'flatblocks_support' ) ) :
 		// with enqueue_block_assets() so that the styles don't interfere with the 
 		// Editor UI itself. Note that the RTL styles will automatically be used
 		// when needed.
+
+		add_theme_support( 'editor-styles' );
+		
 		$editor_styles = array(
 			'/assets/css/flat-blocks.css',
 			'/assets/css/blocks/block-styles.css',
@@ -322,7 +325,7 @@ add_filter( 'image_size_names_choose', 'flatblocks_image_sizes' );
 if ( ! function_exists( 'flatblocks_image_sizes' ) ) :
 	function flatblocks_image_sizes( $sizes ) {
 		return array_merge( $sizes, array(
-			//'medium-large' => __( 'Medium Large', 'flat-blocks' ),
+			'medium-large' => __( 'Medium Large', 'flat-blocks' ), //768 px
 			'cropped-thumbnail' => __( 'Post Thumbnail Medium (cropped)', 'flat-blocks' ),
 			'cropped-large' => __( 'Post Thumbnail Large (cropped)', 'flat-blocks' )
 		) );

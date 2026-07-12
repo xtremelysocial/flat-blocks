@@ -28,14 +28,22 @@ header > .wp-block-cover {
 
 /* Default Contrast Color - Use black and white since base and contrast can change */
 :where(.wp-block-cover.is-light:not(.has-text-color)) {
-    color: #fff;
+//     color: #fff;
+    color: #000;
 //     color: var(--wp--preset--color--foreground-alt);
 
-	&:has(.has-background-dim-0),
-	&:has(.has-background-dim-10),
-	&:has(.has-background-dim-20),
-	&:has(.has-background-dim-30) {
-		color: #000;
+// 	&:has(.has-background-dim-0),
+// 	&:has(.has-background-dim-10),
+// 	&:has(.has-background-dim-20),
+// 	&:has(.has-background-dim-30) {
+// 		color: #000;
+// 	&:has(.has-background-dim-40),
+// 	&:has(.has-background-dim-50),
+	&:has(.has-background-dim-60),
+	&:has(.has-background-dim-70),
+	&:has(.has-background-dim-80),
+	&:has(.has-background-dim-90) {
+		color: #fff;
 // 		color: var(--wp--preset--color--foreground);
 	}
 }

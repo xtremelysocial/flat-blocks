@@ -2,9 +2,22 @@
 # Separator
 -----------------------------------------------------------------------------*/
 
+/* 
+ * WordPress sets background color on separators, so set border to transparent
+ * which then allows the background color to show through it 
+ */
+.wp-block-separator {
+    border-color: transparent;
+}
+
+:where(.wp-block-separator) {
+    background-color: currentColor;
+}
+
 /* Default separator width */
 .wp-block-separator:not(.is-style-wide, .is-style-dots, .is-style-thick-wide) {
-	width: calc(1.5 * var(--wp--preset--spacing--80))
+// 	width: calc(1.5 * var(--wp--preset--spacing--80))
+	width: calc(6 * var(--wp--style--block-gap));
 }
 
  /* Override our short separator width for wide and dotted separators */

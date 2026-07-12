@@ -26,50 +26,168 @@
 }
 
 /*-----------------------------------------------------------------------------
-# Style the Nav on HEADER MENU
+# Style the Nav on TOP-LEVEL Items within the Site Header only
 -----------------------------------------------------------------------------*/
-/* Bold or highlight the current menu item, depending on whether bg color or not */
 .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item {
-	&.current-menu-item,
-	&:has(.current-menu-ancestor),
-	&.current-menu-ancestor,
-	&:has(.current-menu-ancestor) > .wp-block-navigation-item__content,
-	&.wp-block-pages-list__item.current-menu-item > a,
-	&.wp-block-home-link > a[aria-current='page'] {
+
+	// If background, then bold the current item
+	&.has-background {
+		&.current-menu-item > a,
+		&.current-menu-ancestor.has-child > a {
+			font-weight: var(--wp--custom--typography--font-weight--medium);
+		}
+		
+		// Bold on hover too
+		& > .wp-block-navigation-item__content:hover,
+		&:hover > .wp-block-navigation__submenu-icon {
+			font-weight: var(--wp--custom--typography--font-weight--medium);
+		}		
+	}
+	
+	// If no background, then highlight the current item 
+	&:not(.has-background) {
+		&.current-menu-item > a,
+		&.current-menu-ancestor.has-child > a {
+			color: var(--wp--preset--color--highlight-alt);
+		}
+		
+		// Highlight on hover too
+		& > .wp-block-navigation-item__content:hover,
+		&:hover > .wp-block-navigation__submenu-icon {
+// 			color: var(--wp--preset--color--highlight);
+			opacity: var(--wp--custom--link-hover--opacity, 0.8);
+			color: var(--wp--preset--color--highlight-alt);
+		}
+	}
+}
+
+
+.site-header.has-background .wp-block-navigation .wp-block-navigation-item,
+.site-header .wp-block-navigation.has-background .wp-block-navigation-item {
+
+	// If background, then bold the current item
+// 	&.has-background {
+		&.current-menu-item > a,
+		&.current-menu-ancestor.has-child > a {
+			font-weight: var(--wp--custom--typography--font-weight--medium);
+			
+			&:hover,
+			&:active {
+				font-weight: var(--wp--custom--typography--font-weight--medium);
+			} 
+		}
+		
+		// Bold on hover too
+// 		& > .wp-block-navigation-item__content:hover,
+// 		&:hover > .wp-block-navigation__submenu-icon {
+// 			font-weight: var(--wp--custom--typography--font-weight--medium);
+// 		}		
+// 	}
+	
+	// If no background, then highlight the current item 
+// 	&:not(.has-background) {
+// 		&.current-menu-item > a,
+// 		&.current-menu-ancestor.has-child > a {
+// 			color: var(--wp--preset--color--highlight-alt);
+// 		}
+// 		
+// 		// Highlight on hover too
+// 		& > .wp-block-navigation-item__content:hover,
+// 		&:hover > .wp-block-navigation__submenu-icon {
+// 			color: var(--wp--preset--color--highlight);
+// 		}
+// 	}
+}
+
+/* Bold or highlight the current menu item, depending on whether bg color or not */
+
+// .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item {
+// .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:not(.has-background) {
+// 	&.current-menu-item,
+// 	&:has(.current-menu-ancestor),
+// // 	&.current-menu-ancestor,
+// // 	&.current-menu-ancestor.has-child > a,
+// 	&:has(.current-menu-ancestor) > .wp-block-navigation-item__content,
+// 	&.wp-block-pages-list__item.current-menu-item > a,
+// 	&.wp-block-home-link > a[aria-current='page'] {
+// // 		color: var(--wp--preset--color--highlight);
+
+// .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:not(.has-background) {
+// 
+// 	// Highlight Alt on current menu item
+// 	&.current-menu-item > a,
+// 	&.current-menu-ancestor.has-child > a {
+// 		color: var(--wp--preset--color--highlight-alt);
+// 	}
+// 	
+// 	// Highlight on hover
+// 	& > .wp-block-navigation-item__content:hover,
+// 	&:hover > .wp-block-navigation__submenu-icon {
 // 		color: var(--wp--preset--color--highlight);
-		color: var(--wp--preset--color--highlight-alt);
-	}
-}
-
-.site-header:not(.has-background) .wp-block-navigation.has-background .wp-block-navigation-item,
-.site-header.has-background .wp-block-navigation .wp-block-navigation-item {
-	&.current-menu-item:not(.has-child) > a,
-	&.current-menu-ancestor,
-	&:has(.current-menu-ancestor) > .wp-block-navigation-item__content,
-	&.wp-block-pages-list__item.current-menu-item > a,
-	&.wp-block-home-link > a[aria-current='page'] {
-		font-weight: var(--wp--custom--typography--font-weight--medium);
-	}
-}
-
-/* Bold or highlight active sub-menu items, depending on whether text color or not */
-.wp-block-navigation__submenu-container:not(.has-text-color) .wp-block-navigation-item.current-menu-item .wp-block-navigation-item__content.wp-block-navigation-item__content {
-// 	color: var(--wp--preset--color--highlight);
-	color: var(--wp--preset--color--highlight-alt);
-}
-.wp-block-navigation__submenu-container.has-text-color .wp-block-navigation-item.current-menu-item .wp-block-navigation-item__content.wp-block-navigation-item__content {
-	font-weight: var(--wp--custom--typography--font-weight--medium);
-}
+// 	}
+// 
+// }
 
 /* On hover, bold or highlight menu items, depending on whether background color or not */
-.site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item {
-// 	&:hover > .wp-block-navigation-item__content,
-	& > .wp-block-navigation-item__content:hover,
-	&:hover > .wp-block-navigation__submenu-icon {
-//     	color: var(--wp--preset--color--highlight-alt);
-    	color: var(--wp--preset--color--highlight);
-    }
-}
+// .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item {
+// .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:not(.has-background) {
+// // 	&:hover > .wp-block-navigation-item__content,
+// 	& > .wp-block-navigation-item__content:hover,
+// 	&:hover > .wp-block-navigation__submenu-icon {
+// //     	color: var(--wp--preset--color--highlight-alt);
+//     	color: var(--wp--preset--color--highlight);
+//     }
+// }
+
+// .site-header:not(.has-background) .wp-block-navigation.has-background .wp-block-navigation-item,
+// .site-header.has-background .wp-block-navigation .wp-block-navigation-item {
+// 	&.current-menu-item:not(.has-child) > a,
+// 	&.current-menu-item:not(.has-child),
+// 	&.current-menu-ancestor,
+// 	&.current-menu-ancestor.has-child,
+// 	&:has(.current-menu-ancestor) > .wp-block-navigation-item__content,
+// 	&.wp-block-pages-list__item.current-menu-item > a,
+// 	&.wp-block-home-link > a[aria-current='page'] {
+// .site-header .wp-block-navigation.has-background .wp-block-navigation-item,
+// .site-header.has-background .wp-block-navigation .wp-block-navigation-item {
+// 
+// 	// Bold current menu item
+// 	&.current-menu-item > a,
+// 	&.current-menu-ancestor.has-child > a {
+// 		font-weight: var(--wp--custom--typography--font-weight--medium);
+// 		
+// // 		&:hover,
+// // 		&:active {
+// // 			font-weight: var(--wp--custom--typography--font-weight--medium);
+// // // 			opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+// // 
+// // 		}
+// 	}
+// 	
+// 	// Bold on hover too
+// // 	& > .wp-block-navigation-item__content:hover,
+// // 	&:hover > .wp-block-navigation__submenu-icon {
+// // 		font-weight: var(--wp--custom--typography--font-weight--medium);
+// // 	}
+// }
+
+/*-----------------------------------------------------------------------------
+# Style the Drop-down Menus in Site Header
+-----------------------------------------------------------------------------*/
+
+/* Bold or highlight active sub-menu items, depending on whether text color or not */
+// // .wp-block-navigation__submenu-container:not(.has-text-color) .wp-block-navigation-item.current-menu-item .wp-block-navigation-item__content.wp-block-navigation-item__content {
+// .wp-block-navigation__submenu-container .wp-block-navigation-item:not(.has-background).current-menu-item .wp-block-navigation-item__content.wp-block-navigation-item__content {
+// // 	color: var(--wp--preset--color--highlight);
+// 	color: var(--wp--preset--color--highlight-alt);
+// }
+
+// .wp-block-navigation__submenu-container.has-text-color // .wp-block-navigation-item.current-menu-item .wp-block-navigation-item__content.wp-block-navigation-item__content {
+// .wp-block-navigation__submenu-container .wp-block-navigation-item.has-background.current-menu-item .wp-block-navigation-item__content.wp-block-navigation-item__content {
+// 	font-weight: var(--wp--custom--typography--font-weight--medium);
+// }
+
+/* wp-block-navigation-item has-text-color has-white-color has-background has-dark-alt-background-color */
 
 /* Drop-down link hover color. */
 // .site-header:not(.has-background) .wp-block-navigation-submenu.open-on-click:hover,
@@ -77,17 +195,22 @@
 //     color: var(--wp--preset--color--highlight);
 // }
 
-.wp-block-navigation__submenu-container:not(.has-background) > .wp-block-navigation-item > .wp-block-navigation-item__content:hover {
-    color: var(--wp--preset--color--highlight);
-}
 
-.wp-block-navigation.has-background .wp-block-navigation-item {
-// 	&:hover > .wp-block-navigation-item__content,
-	& > .wp-block-navigation-item__content:hover,
-	&:hover > .wp-block-navigation__submenu-icon {
-    	opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
-    }
-}
+// .wp-block-navigation__submenu-container:not(.has-background) > .wp-block-navigation-item > .wp-block-navigation-item__content:hover {
+//     color: var(--wp--preset--color--highlight);
+// }
+
+// .wp-block-navigation.has-background .wp-block-navigation-item {
+// // 	&:hover > .wp-block-navigation-item__content,
+// 	& > .wp-block-navigation-item__content:hover,
+// 	&:hover > .wp-block-navigation__submenu-icon {
+//     	opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+//     }
+// }
+
+/*-----------------------------------------------------------------------------
+# Style the Mobile Nav Menu
+-----------------------------------------------------------------------------*/
 
 /* But on mobile nav, don't hover on non-clickable links */
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item.has-child.open-on-click {
@@ -102,10 +225,6 @@
 		opacity: 1;
 	}
 }
-
-/*-----------------------------------------------------------------------------
-# Style the Mobile Nav Menu
------------------------------------------------------------------------------*/
 
 // /* Default navigation drop-down menu colors */
 // .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {

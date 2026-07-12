@@ -22,7 +22,7 @@
 			"link": {
 				"style": "solid",
 				"thickness": "1px",
-				"postion": "under",
+				"position": "under",
 				"offset": "auto"
 			},
 			"border": {
@@ -73,7 +73,7 @@
 		},
 		"lightbox": {
 			"allowEditing": true,
-			"enabled": false
+			"enabled": true
 		},
 		"spacing": {
 			"blockGap": true,
@@ -95,7 +95,7 @@
 				},
 				{
 					"slug": "40",
-					"size": "clamp(var(--wp--preset--spacing--30), 3vw, var(--wp--custom--spacing--gap))",
+					"size": "clamp(var(--wp--preset--spacing--30), 2.5svh, var(--wp--custom--spacing--gap))",
 					"name": "Small"
 				},
 				{
@@ -1035,7 +1035,7 @@
 					"text": "var:preset|color|highlight-alt"
 				},
 				"typography": {
-					"textDecoration": "underline"
+					"textDecoration": "none"
 				},
 				":hover": {
 					"color": {
@@ -1683,9 +1683,22 @@
                     "link": {
                         "color": {
                             "text": "var:preset|color|highlight-alt"
-                        }
-                    }
-                }
+                        },
+						"typography": {
+							"textDecoration": "none"
+						},
+						":hover": {
+							"typography": {
+								"textDecoration": "none"
+							}
+						},
+						":active": {
+							"typography": {
+								"textDecoration": "none"
+							}
+						}
+					}
+				}
             },			
 			"core/rss": {
 				"spacing": {

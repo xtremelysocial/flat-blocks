@@ -265,7 +265,8 @@ if ( ! function_exists( 'flatblocks_register_block_patterns' ) ) :
 
 		// Then remove the core WordPress block patterns if we're registering
 		// any, but also allow child themes to override this.
-		if ( is_array( $block_patterns ) && count( $block_patterns ) > 0 ) {
+// 		if ( is_array( $block_patterns ) && count( $block_patterns ) > 0 ) {
+		if ( is_array( $block_patterns ) {
 			if ( apply_filters( 
 				'flatblocks_remove_core_patterns', 
 				$default = true ) 

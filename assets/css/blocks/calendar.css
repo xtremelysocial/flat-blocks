@@ -5,7 +5,7 @@
 # Calendar
 -----------------------------------------------------------------------------*/
 .wp-block-calendar table:not(.has-background) th {
-  background-color: var(--wp--preset--color--neutral);
+  background-color: var(--wp--preset--color--neutral-alt);
 }
 
 .wp-block-calendar table:where(:not(.has-text-color)),

@@ -21,10 +21,13 @@ ul {
 	margin-bottom: 0;
 }
 
-ol.has-background:not(.wp-block-navigation-submenu):not(.wp-block-navigation__container),
-ul.has-background:not(.wp-block-navigation-submenu):not(.wp-block-navigation__container) {
-    padding: var(--wp--preset--spacing--40);
-    list-style-position: inside;
+ol.has-background,
+ul.has-background {
+// 	&:not(.wp-block-navigation__container, .wp-block-navigation-submenu, .wp-block-page-list) {
+	&:not(.wp-block-navigation__container):not(.wp-block-navigation-submenu):not(.wp-block-page-list) {
+		padding: var(--wp--preset--spacing--40);
+		list-style-position: inside;
+	}
 }
 
 /* Center captions and don't underline links in them by default */
@@ -34,4 +37,12 @@ ul.has-background:not(.wp-block-navigation-submenu):not(.wp-block-navigation__co
 
 .wp-element-caption a {
 	text-decoration: none;
+}
+
+/* Style raw HTML quotes like the block quotes */
+/* Target strictly naked, legacy blockquotes—ignore both real quotes and pullquotes */
+:where(blockquote:not(.wp-block-quote):not(.wp-block-pullquote blockquote)) {
+    border-left: 6px solid var(--wp--preset--color--highlight--alt);
+//     font-size: var(--wp--preset--font-size--medium);
+//     padding-left: var(--wp--preset--spacing--40);
 }

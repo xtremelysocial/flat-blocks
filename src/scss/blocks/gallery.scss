@@ -3,13 +3,13 @@
 -----------------------------------------------------------------------------*/
 
 /* Image captions */
-.wp-block-gallery.has-nested-images figure.wp-block-image {
-	&:has(figcaption):before,
-	& figcaption {
-		border-bottom-left-radius: var(--wp--custom--border--radius);
-    	border-bottom-right-radius: var(--wp--custom--border--radius);
-    }
-}
+// .wp-block-gallery.has-nested-images figure.wp-block-image {
+// 	&:has(figcaption):before,
+// 	& figcaption {
+// 		border-bottom-left-radius: var(--wp--custom--border--radius);
+//     	border-bottom-right-radius: var(--wp--custom--border--radius);
+//     }
+// }
 
 /* Image Border captions*/
 .wp-block-gallery.is-style-image-border {

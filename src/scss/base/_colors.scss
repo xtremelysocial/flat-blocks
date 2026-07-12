@@ -1,256 +1,306 @@
-/*------------------------------------------------------------------------------
-# Colors - Default text, button text, and link colors
-------------------------------------------------------------------------------*/
+/*==========================================================================
+  COLORS ENGINE: Flat Blocks Foundational Parent Core
+  ========================================================================== */
+
+//*-----------------------------------------------------------------------------
+// 0.0  SETUP: FUNCTIONS AND MIXINS
+// -----------------------------------------------------------------------------*/
 
 // We need list and string functions
 @use "sass:list";
 @use "sass:string";
+@use 'sass:map';
 
 // Load our colors mixin
 @use "../mixins/colors-logic" as logic;
 
+//*-----------------------------------------------------------------------------
+// 0.1  SETUP: COLOR REGISTRY ENTRY DEFAULTS
+// -----------------------------------------------------------------------------*/
 /*
  * Default contrast (text) based on background color.
- * Set these in theme.json:
- *		--wp--custom--color--contrast--{color-group}
- *		... OR...
+ * To override, set these in theme.json:
  *		--wp--custom--color--contrast--{color}
  */
 
-//*-----------------------------------------------------------------------------
-// 0.1  SETUP: GROUP INDIVIDUAL COLORS INTO COLOR GROUPS
-// -----------------------------------------------------------------------------*/
-
-// Semantic colors (Don't include base or contrast as those get directly swapped)
-$grp-primary:   ('primary', 'primary-alt');
-$grp-secondary: ('secondary', 'secondary-alt');
-$grp-tertiary:  ('tertiary', 'tertiary-alt');
-$grp-neutral:   ('neutral', 'neutral-alt');
-$grp-dark:      ('dark', 'dark-alt');
-
-// Named colors
-$grp-base:     (
-				'foreground-alt', 'white', 'off-white', 'very-light-gray', 
-				'light-gray' //, 'base'
-				);
-
-$grp-light: (
-				'very-light-green', 'very-light-yellow', 'very-light-orange',
-				'very-light-blue', 'very-light-purple', 'very-light-red', 
-				'light-green', 'light-yellow', 'light-orange', 'light-blue', 
-				'light-purple', 'light-red'
-				);
-
-$grp-medium:    (
-				'yellow', 'gray'
-				);
-
-$grp-heavy:     (
-				'very-dark-gray', 'dark-gray', 'dark-midnight-blue', 'midnight-blue', 
-				'dark-purple', 'dark-yellow', 'dark-red', 'dark-blue', 'dark-orange', 
-				'dark-bright-green', 'green', 'bright-green', 'very-dark-green', 
-				'orange', 'blue', 'purple', 'red'
-				);
-
-$grp-black:     ('black', 'not-quite-black', 'almost-black');
+// SETUP DEFAULTS SO WE DON'T HAVE TO INCLUDE ALL FIELDS IN THE REGISTRY
+$color-defaults: (
+    color:          null, 
+    text:           null, 
+    heading-dark:   null, 
+    link:           null, 
+    link-dark:      null, 
+    footer:         null  
+);
 
 //*-----------------------------------------------------------------------------
-// 0.2  SETUP: BUILD ADDITIONAL COLOR GROUPS
+// 0.2  SETUP: FLAT-BLOCKS COLOR REGISTRY
 // -----------------------------------------------------------------------------*/
-// Light backgrounds preserve heading colors
-$is-light-bg: join(join($grp-base, $grp-neutral), $grp-light);
 
-// Very dark and very light backgrounds get brighter link colors
-// $is-dark-bg: join($grp-dark, $grp-black);
-$is-dark-bg: join(join($grp-dark, $grp-black), $grp-light);
+// MAP OF ALL COLORS IN THE PALETTE
+$color-registry: (
+    // --- MAIN COLORS (DARK) ---
+    ( color: 'primary',           text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'primary-alt',       text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'secondary',         text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'secondary-alt',     text: 'fixed-dark',  link: 'lighten' ), 
+    ( color: 'tertiary',          text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'tertiary-alt',      text: 'fixed-dark',  link: 'inherit' ),
 
-// Colors where links should NOT inherit (keep highlight/highlight-alt link color)
-// $preserve-link-colors: join(join($grp-base, $grp-neutral), $is-dark-bg);
-$preserve-link-colors: join($is-light-bg, $is-dark-bg);
+    // --- CORE CANVAS CONTRASTS ---
+    ( color: 'base',              text: 'fixed-light' ),      
+    ( color: 'foreground-alt',    text: 'fixed-light' ),
+    ( color: 'contrast',          text: 'fixed-dark' ),
+    
+    // --- NEUTRALS (E.G. SIDEBAR, BORDERS ) ---
+    ( color: 'neutral',           text: 'fixed-light' ),
+    ( color: 'neutral-alt',       text: 'fixed-light' ),
+    
+    // --- SPECIAL HIGHLIGHT SLOTS ---
+    ( color: 'highlight',     	  text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'highlight-alt', 	  text: 'fixed-light', link: 'inherit' ),
+    
+    // --- WHITE & GRAY NAMED COLORS ---
+    ( color: 'white',             text: 'fixed-light' ),
+    ( color: 'off-white',         text: 'fixed-light' ),
+    ( color: 'very-light-gray',   text: 'fixed-light' ),
+    ( color: 'light-gray',        text: 'fixed-light' ),
+    ( color: 'gray',              text: 'fixed-light' ),
+    ( color: 'dark-gray',         text: 'fixed-dark', link: 'inherit' ),
 
-// Gradient colors where text color should NOT inherit (keep existing color)
-$gradient-preserve-colors: ('gray-gradient', 'yellow-gradient');
+    // --- GREEN NAMED COLORS ---
+    ( color: 'light-green',       text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'green',             text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'bright-green',      text: 'fixed-light', link: 'inherit' ),
+    ( color: 'dark-bright-green', text: 'fixed-dark',  link: 'inherit' ),
 
-/*-----------------------------------------------------------------------------
-  1.0  SET DEFAULT TEXT COLOR FOR EACH BACKGROUND COLOR
------------------------------------------------------------------------------*/
-@include logic.set-contrast-logic(
-	$grp-primary,   
-	var(--wp--preset--color--foreground-alt)
+    // --- YELLOW & ORANGE NAMED COLORS ---
+    ( color: 'light-yellow',      text: 'fixed-light', link: 'inherit' ),
+    ( color: 'yellow',            text: 'fixed-light', link: 'inherit' ),
+    ( color: 'light-orange',      text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'orange',            text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'dark-orange',       text: 'fixed-dark',  link: 'inherit' ),
+
+    // --- BLUE NAMED COLORS ---
+    ( color: 'light-blue',        text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'blue',              text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'dark-blue',         text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'midnight-blue',     text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'dark-midnight-blue',text: 'fixed-dark',  link: 'lighten' ),
+
+    // --- PURPLE NAMED COLORS ---
+    ( color: 'light-purple',      text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'purple',            text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'dark-purple',       text: 'fixed-dark',  link: 'inherit' ),
+
+    // --- RED NAMED COLORS ---
+    ( color: 'light-red',         text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'red',               text: 'fixed-dark',  link: 'inherit' ),
+    ( color: 'dark-red',          text: 'fixed-dark',  link: 'inherit' ),
+
+    // --- VERY DARK NAMED COLORS ---
+    ( color: 'dark',              text: 'fixed-dark',  link: 'lighten' ),
+    ( color: 'dark-alt',          text: 'fixed-dark',  link: 'lighten' ),
+    ( color: 'very-dark-gray',    text: 'fixed-dark',  link: 'lighten' ),
+    ( color: 'black',             text: 'fixed-dark',  link: 'lighten' ),
+    ( color: 'not-quite-black',   text: 'fixed-dark',  link: 'lighten' ),
+    ( color: 'almost-black',      text: 'fixed-dark',  link: 'lighten' )
 );
 
-@include logic.set-contrast-logic(
-	$grp-secondary, 
-	var(--wp--preset--color--foreground-alt)
-);
+/* ==========================================================================
+   THE CORE ENGINE (100% IDENTICAL ACROSS PARENT AND CHILD)
+   ========================================================================== */
 
-@include logic.set-contrast-logic(
-	$grp-tertiary,  
-	var(--wp--preset--color--foreground-alt)
-);
-
-@include logic.set-contrast-logic(
-	$grp-neutral,   
-	var(--wp--preset--color--almost-black)
-);
-
-@include logic.set-contrast-logic(
-	$grp-dark,
-	var(--wp--preset--color--foreground-alt)
-);
-
-@include logic.set-contrast-logic(
-	$grp-base,
-	var(--wp--preset--color--very-dark-gray)
-);
-
-@include logic.set-contrast-logic(
-	$grp-light,
-	var(--wp--preset--color--almost-black)
-);
-
-@include logic.set-contrast-logic(
-	$grp-medium,    
-	var(--wp--preset--color--almost-black)
-);
-
-@include logic.set-contrast-logic(
-	$grp-heavy,     
-	var(--wp--preset--color--foreground-alt)
-);
-
-@include logic.set-contrast-logic(
-	$grp-black,
-	var(--wp--preset--color--foreground-alt)
-);
-
-// Invert base and contrast text colors
-.has-base-background-color {
-	color: var(--wp--preset--color--contrast);
-}
-
-.has-contrast-background-color {
-	color: var(--wp--preset--color--base);
-}
-
-/*-----------------------------------------------------------------------------
-  2.0 SET HEADING COLORS TO INHERIT EXCEPT ON VERY LIGHT BACKGROUNDS
------------------------------------------------------------------------------*/
-.has-background:not(#{logic.build-selector-list($is-light-bg)}) {
-    .wp-block-heading, .wp-block-post-title, .wp-block-query-title {
+%global-heading-inherit {
+    .wp-block-heading, 
+    .wp-block-post-title, 
+    .wp-block-query-title, 
+    .wp-block-site-title, 
+    .wp-block-site-tagline {
         color: inherit;
     }
 }
 
-/*-----------------------------------------------------------------------------
-  3.0 SET LINK COLORS TO BE BRIGHTER ON VERY DARK BACKGROUNDS
------------------------------------------------------------------------------*/
-// GLOW LOGIC (Highlight -> Opacity)
-#{logic.build-selector-list($is-dark-bg)} {
+%engine-link-inherit { 
+	color: inherit; 
+}
 
-//     a:not(.wp-element-button, .wp-block-social-link-anchor, .wp-block-media-text__media > a, .wp-block-image > a) {
-    a:not(.wp-element-button, .wp-block-social-link-anchor) {
+%engine-link-underline { 
+	text-decoration-line: underline; 
+}
 
-		color: var(--wp--preset--color--highlight);
-        
-        &:hover,
-        &:active { 
-// 			color: var(--wp--preset--color--highlight-alt);
-			opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+%engine-link-lighten { 
+	color: var(--wp--preset--color--highlight); 
+}
+
+%engine-heading-dark { 
+	color: var(--wp--custom--color--heading--text, var(--wp--preset--color--primary-alt)) !important; 
+}
+
+%engine-footer-nav-hover { 
+	color: var(--wp--preset--color--highlight) !important; 
+}
+
+%engine-footer-nav-hover-alt { 
+	color: var(--wp--preset--color--highlight-alt) !important; 
+}
+
+%engine-link-underline-special {
+    text-decoration-line: underline;
+    text-decoration-style: var(--wp--custom--link--special-style, dotted);
+}
+
+.site-footer, .footer-info {
+    .wp-block-navigation .wp-block-navigation-item__content:hover {
+        @extend %engine-footer-nav-hover-alt;
+    }
+}
+
+@mixin apply-link-action($selectors, $action) {
+    @if $action == 'inherit' {
+        #{$selectors} {
+            a:where(:not(.wp-element-button, .wp-block-social-link-anchor)) {
+                @extend %engine-link-inherit;
+            }              
+        }
+        .wp-block-post-content {
+            #{$selectors} {
+                a:where(:not(.wp-element-button, .wp-block-social-link-anchor)) {
+                    @extend %engine-link-underline;
+                }
+            }
+        }
+        #{$selectors} {
+            &.site-footer, &.footer-info {
+                a:where(:not(.wp-element-button, .wp-block-social-link-anchor, .wp-block-navigation-item__content)) {
+                    @extend %engine-link-underline-special;
+                }           
+                .wp-block-navigation-item__content:hover {
+                    color: inherit !important;
+                    opacity: 1 !important;
+                    text-decoration-line: underline !important;
+                    text-decoration-style: var(--wp--custom--link--special-style, dotted) !important;
+                }
+            }
+        }       
+    } @else if $action == 'lighten' {
+        #{$selectors} {
+            a:where(:not(.wp-element-button, .wp-block-social-link-anchor)) {
+                @extend %engine-link-lighten;
+            }
         }
     }
 }
 
 /*-----------------------------------------------------------------------------
-  4.0 INHERIT LINK COLORS IF NOT NEAR WHITE OR VERY DARK BACKGROUND
+# 3.0 MASTER CORE COLOR PROCESSOR LOOP
 -----------------------------------------------------------------------------*/
-// If the background is NOT very light or very dark (vibrant colors), 
-// force links to inherit text color and use opacity for hover visibility.
-////:root .has-background:not(#{logic.build-selector-list($preserve-link-colors)}) {
-// 	& a:not(.wp-element-button, .wp-block-social-link-anchor, .wp-block-media-text__media > a, .wp-block-image > a) {
-////	& a:not(.wp-element-button, .wp-block-social-link-anchor) {
+@each $entry in $color-registry {
 
-// :where(.has-background, .is-style-rounded-border, .is-style-rounded-corners):not(#{logic.build-selector-list($preserve-link-colors)}) {
-.has-background:not(#{logic.build-selector-list($preserve-link-colors)}) {
-  	a:where(:not(.wp-element-button, .wp-block-social-link-anchor)) {
-		color: inherit; 
-// 		text-decoration: underline;
-		
-		&:hover,
-		&:active {
-			color: inherit;
-			opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
+    $config:       map.merge($color-defaults, $entry);
+    $color:        map.get($config, color);
+    $text:         map.get($config, text);
+    $heading-dark: map.get($config, heading-dark);
+    $link:         map.get($config, link);         
+    $link-dark:    map.get($config, link-dark);            
+    $footer:       map.get($config, footer);
+
+    $selectors:    logic.build-selector-list($color);
+
+    // --- 3.1 TEXT CONTRAST RESOLUTION TRACK ---
+    @if $text {
+        @include logic.set-contrast-logic($color, $text);
+        
+        // 🚀 HEADING INHERITANCE FIX:
+        // Bundles fixed-dark utilities cleanly onto a single shared CSS line 
+        // to prevent massive selector file-size explosion.
+        @if $text == 'fixed-dark' {
+            #{$selectors} {
+                @extend %global-heading-inherit;
+            }
+        } 
+        
+        // Automated Contrast Shield for isolated Dark Themes
+        @else if $text == 'fixed-light' {
+            .is-dark-theme {
+                @if not $link-dark {
+                    @include apply-link-action($selectors, 'inherit');
+                }
+            }
+        }
+    } @else {
+        #{$selectors} {
+            color: var(--wp--custom--color--contrast--#{$color});
+        }
+    }
+
+    // --- 3.2 TRACK A: LIGHT MODE LINKS ---
+    @if $link {
+        body:not(.is-dark-theme) {
+            @include apply-link-action($selectors, $link);
+        }
+    }
+    
+    // --- 3.3 TRACK B: DARK MODE INVERSIONS ---
+    .is-dark-theme {
+        @if $heading-dark and $heading-dark != 'inherit' {
+            #{$selectors} {
+                .wp-block-heading, .wp-block-post-title, .wp-block-query-title, .wp-block-site-title, .wp-block-site-tagline {
+                    @extend %engine-heading-dark;
+                }
+            }
+        }
+        @if $link-dark {
+            @include apply-link-action($selectors, $link-dark);
+        }
+    }
+
+    // --- 3.4 TRACK C: NAVIGATION OVERRIDE EXCEPTIONS ---
+    @if $footer == 'hover-highlight' {
+        #{$selectors} {
+            &.site-footer, &.footer-info {
+                .wp-block-navigation .wp-block-navigation-item__content:hover {
+                    @extend %engine-footer-nav-hover;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   PARENT-ONLY LAYOUT EXTENSIONS (GRADIENTS & OUTLINES)
+   ========================================================================== */
+.is-style-outline, [class*="is-style-button-outline-"] {
+	> .wp-element-button, > .wp-block-button__link {
+		color: inherit;
+		&:hover, &:active {
+			opacity: var(--wp--custom--color--button--hover-opacity, 0.8);
 		}
-	}	
-}
-
-// But don't dim images on hover
-:root .has-background {
-	.wp-block-image,
-	.wp-block-post-featured-image,
-	.wp-block-latest-posts__featured-image,
-	.wp-block-media-text__media {
-	
-		& a:hover,
-		& a:active {
-			opacity: 1;
-		}	
 	}
 }
 
-// Underline links if inheriting link color, but only in the Post Content
-:where(.wp-block-post-content .has-background):not(#{logic.build-selector-list($preserve-link-colors)}) {
-// 	& a:not(.wp-element-button, .is-style-link-no-underline a) {
-// 	a:where(:not(.wp-element-button, .wp-block-social-link-anchor)) {
-	& a:not(.wp-element-button, .wp-block-social-link-anchor) {
-		text-decoration: underline;
+$gradient-preserve-colors: ('gray-gradient', 'yellow-gradient');
+
+:root :where([class*="-gradient-background"]:not(#{logic.build-selector-list($gradient-preserve-colors, ".has-", "")})) {
+	color: var(--wp--preset--color--foreground-alt);
+}
+
+// Pass clean color track tokens directly to the list generator
+$gradient-tracks: (
+	'primary':   ('primary-gradient', 'primary-to-secondary-gradient', 'secondary-to-primary-gradient', 'primary-to-tertiary-gradient', 'tertiary-to-primary-gradient'),
+	'secondary': ('secondary-gradient', 'secondary-to-tertiary-gradient', 'tertiary-to-secondary-gradient'),
+	'tertiary':  ('tertiary-gradient')
+);
+
+@each $track, $slugs in $gradient-tracks {
+	:root :where(#{logic.build-selector-list($slugs, ".has-", "")}) {
+		color: var(--wp--custom--color--contrast--#{$track}, var(--wp--preset--color--foreground-alt));
 	}
 }
 
-/*-----------------------------------------------------------------------------
-  5.0 INHERIT COLORS FOR OUTLINE BUTTONS IN COLORED SECTIONS
------------------------------------------------------------------------------*/
-/* Force links and outline buttons to inherit on gradients */
-.is-style-outline > .wp-element-button,
-.is-style-outline > .wp-block-button__link,
-[class*=is-style-button-outline-] > .wp-element-button,
-[class*=is-style-button-outline-] > .wp-block-button__link {
+:root :where([class*="-gradient-background"]) :where(a:not(.wp-element-button)) {
 	color: inherit;
-
-	&:hover,
-	&:active {
-		opacity: var(--wp--custom--color--button--hover-opacity, 0.8);
-	}		
-}
-
-/*-----------------------------------------------------------------------------
-  6.0 SET TEXT COLOR ON GRADIENT BACKGROUNDS
------------------------------------------------------------------------------*/
-:root :where([class*=-gradient-background]:not(#{logic.build-selector-list($gradient-preserve-colors)})) {
-    color: var(--wp--preset--color--foreground-alt);
-}
-
-:root :where(.has-primary-gradient-background, .has-primary-to-secondary-gradient-background, .has-secondary-to-primary-gradient-background, .has-primary-to-tertiary-gradient-background, .has-tertiary-to-primary-gradient-background) {
-	color: var(--wp--custom--color--contrast--primary, var(--wp--preset--color--foreground-alt));
-}
-
-:root :where(.has-secondary-gradient-background, .has-secondary-to-tertiary-gradient-background, .has-tertiary-to-secondary-gradient-background) {
-	color: var(--wp--custom--color--contrast--secondary, var(--wp--preset--color--foreground-alt));
-}
-
-:root :where(.has-tertiary-gradient-background) {
-	color: var(--wp--custom--color--contrast--tertiary, var(--wp--preset--color--foreground-alt));
-}
-
-/*-----------------------------------------------------------------------------
-  7.0 INHERIT LINK COLOR ON GRADIENT BACKGROUNDS
------------------------------------------------------------------------------*/
-/* Force links and outline buttons to inherit on gradients */
-:root :where([class*=-gradient-background]) :where(a:where(:not(.wp-element-button))) {
-	color: inherit;
-
-	&:hover,
-	&:active {
+	&:hover, &:active {
 		opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
 	}		
 }
