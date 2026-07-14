@@ -163,8 +163,7 @@ header > .wp-block-cover {
 }
 
 /* Highlight Summary on hover and when open */
-.wp-block-details:not(.has-text-color) > summary:hover,
-.wp-block-details:not(.has-text-color)[open] > summary {
+.wp-block-details:not(.has-text-color) > summary:hover {
   opacity: var(--wp--custom--color--link--hover-opacity, 0.8);
 }
 
