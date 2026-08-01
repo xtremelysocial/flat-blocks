@@ -48,19 +48,20 @@
 	&:not(.has-background) {
 		&.current-menu-item > a,
 		&.current-menu-ancestor.has-child > a {
-			color: var(--wp--preset--color--highlight-alt);
+// 			color: var(--wp--preset--color--highlight-alt);
+			color: var(--wp--custom--color--nav--highlight, var(--wp--preset--color--highlight-alt));
 		}
 		
 		// Highlight on hover too
 		& > .wp-block-navigation-item__content:hover,
 		&:hover > .wp-block-navigation__submenu-icon {
 // 			color: var(--wp--preset--color--highlight);
+			color: var(--wp--custom--color--nav--highlight, var(--wp--preset--color--highlight-alt));
 			opacity: var(--wp--custom--link-hover--opacity, 0.8);
-			color: var(--wp--preset--color--highlight-alt);
+// 			color: var(--wp--preset--color--highlight-alt);
 		}
 	}
 }
-
 
 .site-header.has-background .wp-block-navigation .wp-block-navigation-item,
 .site-header .wp-block-navigation.has-background .wp-block-navigation-item {

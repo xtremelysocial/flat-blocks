@@ -1,0 +1,109 @@
+//* ==========================================================================
+//   04 DARK-MODE COLORS: Set colors for dark-mode color schemes
+//	    v0.9.9 Build 30 MVP
+//   ========================================================================== */
+
+// @use 'sass:list';
+@use 'sass:map';
+
+// @use '00-config' as config;
+// @use '01-logic' as logic;
+@use "index" as logic;
+
+//*-----------------------------------------------------------------------------
+// # GLOBAL 3-PASS COLORS ENGINE
+//*-----------------------------------------------------------------------------
+
+//*-----------------------------------------------------------------------------
+// # PASS 3: DARK THEME CONTEXT
+// # Text, headings, and links default to light in dark mode
+// -----------------------------------------------------------------------------*/
+
+@mixin apply-colors-dark-mode {
+
+	/* ==========================================================================
+	   03 DARK-MODE COLORS: Apply text, heading, and link colors for dark-mode
+	   	  color schemes.
+	========================================================================== */
+
+	:root :where(.is-dark-theme) {
+
+		@each $entry in logic.$color-registry {
+			$config:       		map.merge(logic.$color-defaults, $entry);
+			$color:        		map.get($config, color);
+			$text:   			map.get($config, text);    
+			$buttons:   		map.get($config, buttons);
+			$link-dark:    		map.get($config, link-dark);
+			$heading-dark: 		map.get($config, heading-dark);
+			$footer-dark: 		map.get($config, footer-dark);
+	
+			$selectors: logic.build-selector-list($color);
+
+			// Add :root in dark mode to override parent them
+// 			$root: true; 
+	
+			// Dark-light colors need light text in dark mode. Headings are already
+			// light. 
+			@if $text == 'dark-light' {
+				@include logic.apply-contrast-color(
+					$color, 
+					'light', 
+					$buttons, 
+// 					$root
+				);
+				
+				// This should only be needed to override the parent theme
+/////	            @include logic.apply-heading-action($selectors, 'light');
+// 				@include logic.apply-heading-action($selectors, 'heading-dark');
+	
+	//             @include logic.apply-link-action($selectors, 'highlight');
+				
+			// If dark text is needed in dark mode, then apply it to text AND headings
+			} @else if $text == 'light-dark' {
+				@include logic.apply-contrast-color($color, 'dark', $buttons);
+	
+				@include logic.apply-heading-action($selectors, 'dark'); /////				
+// 			}
+				
+			// Lightness-locked backgrounds need to inherit heading colors as well
+/////			} @else if $text == 'no-fallback' or $text == 'dark' {
+/////				@include logic.apply-heading-action($selectors, 'dark');
+			}        
+
+			// Heading Action Evaluation Stack in Dark Mode
+			// Priority 1: Explicit $heading-dark directive from registry
+			@if $heading-dark == 'darken' {
+				@include logic.apply-heading-action($selectors, 'darken');
+		
+			} @else if $heading-dark == 'dark' {
+				@include logic.apply-heading-action($selectors, 'dark');
+		
+			} @else if $heading-dark == 'heading-dark' {
+				@include logic.apply-heading-action($selectors, 'heading-dark');
+
+			} @else if $heading-dark == 'light' {
+				@include logic.apply-heading-action($selectors, 'light');
+			
+			// Priority 2: Fallback only if $heading-dark is null AND text demands 
+			// explicit dark text
+			} @else if $text == 'light-dark' {
+				@include logic.apply-heading-action($selectors, 'dark');
+			}
+	
+			// Apply link color in dark mode, if specified
+			@if $link-dark {
+// 				@include logic.apply-link-action($selectors, $link-dark);
+				@include logic.apply-link-action(
+					$selectors, 
+					$link-dark, 
+					$remove-underline: true
+				);
+			}
+			
+			// Apply footer effects in dark mode
+			@if $footer-dark {
+				@include logic.apply-footer-action($selectors, $footer-dark);
+			}
+		}
+	}
+}

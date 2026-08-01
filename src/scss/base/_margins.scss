@@ -2,30 +2,60 @@
 # Margins (Vertical spacing)
 ------------------------------------------------------------------------------*/
 
-/* Don't add top margin to top-level blocks (header, title, main, footer) */
-:root :where(.wp-site-blocks) > * {
-	margin-block-start: 0; // !important; 
-}
+/* 
+ * Let content before main handle it's own top margin (e.g. page titles, 
+ * featured images 
+ */
+// .wp-site-blocks > .wp-block-template-part,
+// .wp-site-blocks > .wp-block-template-part > .wp-block-template-part,
+// .wp-site-blocks > main#page-content {
+// 	margin-block-start: 0;
+// 	
+// 	> :not(.alignfull):not(.has-background):not(.wp-block-post-content) {
+// 		margin-block-start: var(--wp--style--block-gap);
+// 	}
+// }
 
-/* Add top margin to main unless its the post content or a featured image */
-// main > :first-child:not(.wp-block-post-content):not(.wp-block-post-featured-image):not(.wp-block-cover):not(.wp-block-image) {
-main > :first-child:not(.wp-block-post-content):not(.wp-block-post-featured-image):not(.wp-block-cover):not(.wp-block-template-part):not(.wp-block-image) {
-// main > :first-child:not(.wp-block-post-content):not(.alignfull) {
-	margin-block-start: var(--wp--style--block-gap);
-// 	margin-block-start: var(--wp--preset--spacing--50);
-}
-
-// main > :first-child:not(.wp-block-post-content).alignfull {
+/* Don't add top margin on column blocks in templates with sidebars */
+// main#page-content > .wp-block-columns > .wp-block-column,
+// main#page-content > .wp-block-post-content {
 // 	margin-block-start: 0;
 // }
 
+// .wp-block-post-content > :first-child.alignfull {
+// 	margin-block-start: 0; 
+// }
+// :root :where(.is-layout-constrained).wp-block-post-content > :first-child:not(.alignfull.has-background),
+// :root :where(.wp-block-post-content) > :first-child:not(.alignfull.has-background),
+// .wp-block-post-content > :first-child:not(.alignfull.has-background) {
+// 	margin-block-start: var(--wp--style--block-gap); 
+// }
+// 
+// main#page-content > :last-child:not(.alignfull) {
+// 	margin-block-end: var(--wp--style--block-gap);
+// }
+// 
+// .site-footer > .wp-block-columns > .wp-block-column > .wp-block-template-part > :first-child:not(.alignfull):not(.has-background) {
+// 	margin-block-start: 0; 
+// }
+
+/* FLAT-BLOCKS CURRENT MARGIN CSS */
+
+/* Don't add top margin to top-level blocks (header, title, main, footer) */
+:root :where(.wp-site-blocks) > * {
+	margin-block-start: 0;
+}
+
+/* Add top margin to main unless its the post content or a featured image */
+main > :first-child:not(.wp-block-post-content):not(.wp-block-post-featured-image):not(.wp-block-cover):not(.wp-block-template-part):not(.wp-block-image):not(.entry-header-wrapper.has-background):not(.content-home-top) {
+	margin-block-start: var(--wp--style--block-gap);
+}
+
+
 /* Push top margin down on Groups and Columns that have template parts in them */
-// :root :where(.is-layout-flow) > .wp-block-template-part > *:not(.wp-block-template-part),
-// :root :where(.is-layout-constrained) > .wp-block-template-part > *:not(.wp-block-template-part) {
 :root :where(.is-layout-flow) > .wp-block-template-part > *,
 :root :where(.is-layout-constrained) > .wp-block-template-part > * {
  	margin-block-start: var(--wp--style--block-gap);
-// 	margin-block-start: var(--wp--preset--spacing--50);
 }
 
 :root :where(.is-layout-flow) > .wp-block-template-part > :first-child:not(.wp-block-comments):not(.wp-block-query),
@@ -45,12 +75,9 @@ main > :first-child:not(.wp-block-post-content):not(.wp-block-post-featured-imag
  */
 .wp-site-blocks .wp-block-post-content {
 	margin-block-start: 0;
-// 	margin-top: 0;
 }
 
-// :root :where(.wp-block-post-content) > :first-child:not(.wp-block-cover) { //,
 :root :where(.wp-block-post-content) > :first-child:not(.alignfull) { //,
-// .wp-block-post-content > :last-child {
 	margin-block-start: var(--wp--style--block-gap);
 }
 
@@ -64,9 +91,7 @@ main > .wp-block-columns > .wp-block-column > :first-child.wp-block-post-content
 
 /* Add bottom margin to main unless its the post content, then add it to that */
 main > :last-child:not(.wp-block-post-content):not(:empty),
-// main > :last-child:not(.wp-block-post-content):not(.wp-block-template-part),
 :root :where(.is-layout-flow).wp-block-post-content > :last-child:not(.alignfull),
 :root :where(.is-layout-constrained).wp-block-post-content > :last-child:not(.alignfull) {	
 	margin-block-end: var(--wp--style--block-gap);
-// 	margin-block-end: var(--wp--preset--spacing--50);
 }

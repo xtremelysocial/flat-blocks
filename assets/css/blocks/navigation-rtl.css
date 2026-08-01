@@ -49,11 +49,11 @@
   font-weight: var(--wp--custom--typography--font-weight--medium);
 }
 .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:not(.has-background).current-menu-item > a, .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:not(.has-background).current-menu-ancestor.has-child > a {
-  color: var(--wp--preset--color--highlight-alt);
+  color: var(--wp--custom--color--nav--highlight, var(--wp--preset--color--highlight-alt));
 }
 .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:not(.has-background) > .wp-block-navigation-item__content:hover, .site-header:not(.has-background) .wp-block-navigation:not(.has-background) .wp-block-navigation-item:not(.has-background):hover > .wp-block-navigation__submenu-icon {
+  color: var(--wp--custom--color--nav--highlight, var(--wp--preset--color--highlight-alt));
   opacity: var(--wp--custom--link-hover--opacity, 0.8);
-  color: var(--wp--preset--color--highlight-alt);
 }
 
 .site-header.has-background .wp-block-navigation .wp-block-navigation-item.current-menu-item > a, .site-header.has-background .wp-block-navigation .wp-block-navigation-item.current-menu-ancestor.has-child > a,

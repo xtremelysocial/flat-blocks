@@ -26,9 +26,16 @@ a,
 .wp-block-navigation a,
 .wp-block-navigation-submenu__toggle {
 	cursor: pointer;
+	
+// 	-webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+	will-change: opacity, filter; // Pre-promotes the layer to prevent GPU flash
+	backface-visibility: hidden;  // Enforces stable font rendering
+	
 	transition: 
 		opacity var(--wp--custom--animation--duration--short, 250ms) ease-in-out, 
 		color var(--wp--custom--animation--duration--short, 250ms) ease-in-out,
+// 		filter var(--wp--custom--animation--duration--short, 250ms) ease-in-out
 // 		text-decoration-color var(--wp--custom--animation--duration--short, 250ms) ease-in-out;
 }
 
@@ -40,8 +47,8 @@ a:where(
         .wp-block-social-link-anchor,
         .wp-block-image a, 
         figure > a,
-        .wp-block-post-featured-image,
-        .wp-block-latest-posts__featured-image,
+        .wp-block-post-featured-image a,
+        .wp-block-latest-posts__featured-image a,
         .wp-block-media-text__media a
     )
 ) {
@@ -51,12 +58,17 @@ a:where(
     }
 }
 
-// /* Don't apply opacity on linked images though */
-// .wp-block-image a,
-// figure > a {
-//     opacity: 1 !important; // Force static
-//     transition: none;      // Remove hover lag
-// }
+/* Use BUTTON hover opacity on images that are links */
+.wp-block-image a,
+figure > a,
+.wp-block-post-featured-image a,
+.wp-block-latest-posts__featured-image a,
+.wp-block-media-text__media a {
+    &:hover,
+    &:active {
+        opacity: var(--wp--custom--color--button--hover-opacity, 0.8);
+    }
+}
 
 /* 
  * Style basic buttons to match block buttons. 
@@ -92,6 +104,16 @@ input[type=file] {
 .has-primary-background-color input[type=reset][class*="button"],
 .has-primary-background-color input[type=file]::file-selector-button {
 	border: 3px solid var(--wp--custom--color--button--text, var(--wp--preset--color--foreground-alt));
+}
+
+/* Inherit color on outline style buttons */
+.is-style-outline, [class*="is-style-button-outline-"] {
+	> .wp-element-button, > .wp-block-button__link {
+		color: inherit;
+// 		&:hover, &:active {
+// 			opacity: var(--wp--custom--color--button--hover-opacity, 0.8);
+// 		}
+	}
 }
 
 /* FIX for WordPress v6.7 when older Button not within a Buttons container */

@@ -12,7 +12,8 @@
 		"custom": {
 			"color": {
 				"contrast": {
-					"neutral": "var(--wp--preset--color--foreground-alt)"
+					"neutral": "var(--wp--preset--color--foreground-alt)",
+					"neutral-alt": "var(--wp--preset--color--foreground-alt)"
 				},
 				"highlight": {
 					"neutral": "var(--wp--preset--color--foreground-alt)"

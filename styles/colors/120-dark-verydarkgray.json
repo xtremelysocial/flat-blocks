@@ -6,7 +6,8 @@
 		"custom": {
 			"color": {
 				"contrast": {
-					"neutral": "var:preset|color|foreground-alt"
+					"neutral": "var:preset|color|foreground-alt",
+					"neutral-alt": "var:preset|color|foreground-alt"
 				},
 				"border": "var:preset|color|neutral-alt",
 				"field": {
