@@ -8,17 +8,6 @@
 // Schema: (Color, Text, Heading, Link, Footer)
 // ==========================================================================
 
-// SETUP DEFAULTS SO WE DON'T HAVE TO INCLUDE ALL FIELDS IN THE REGISTRY
-
-//*-----------------------------------------------------------------------------
-// 0.0  SETUP: FUNCTIONS AND MIXINS
-// -----------------------------------------------------------------------------*/
-
-// @use "sass:list";
-// @use "sass:string";
-// @use 'sass:map';
-// @use "colors-logic" as logic;
-
 /*-----------------------------------------------------------------------------
   COLORS: DEFAULT TEXT, HEADING, AND LINK COLORS
  -----------------------------------------------------------------------------*/
@@ -130,6 +119,3 @@ $color-registry: (
 // Optimize link lighten and darken for Flat Blocks specifically
 $filter-link-lighten: brightness(1.17) saturate(1.0) !default;
 $filter-link-darken:  brightness(0.85) saturate(1.0) !default;
-
-// When setting text colors also set button text colors explicitly
-$explicit-button-text-color: false; 

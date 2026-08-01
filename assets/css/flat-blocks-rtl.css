@@ -781,6 +781,7 @@ h1, h2, h3, h4, h5, h6) {
 .wp-block-navigation-item__content), .has-black-background-color a:not(.wp-element-button,
 .wp-block-social-link-anchor,
 .wp-block-navigation-item__content) {
+  /* Lighten link color on dark backgrounds */
   color: var(--wp--preset--color--highlight);
 }
 
@@ -953,6 +954,10 @@ h1, h2, h3, h4, h5, h6) {
 
 :root .has-foreground-alt-background-color {
   color: var(--wp--custom--color--contrast--foreground-alt, var(--wp--preset--color--almost-black));
+}
+
+:root .has-contrast-background-color {
+  color: var(--wp--custom--color--contrast--contrast, var(--wp--preset--color--base));
 }
 
 :root .has-neutral-background-color {
